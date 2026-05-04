@@ -20,3 +20,8 @@ idf.py set-target esp32
 idf.py add-dependency "esp-idf-lib/si7021"
 idf.py add-dependency "esp-idf-lib/i2cdev"
 ```
+
+```bash
+cd ~/sed/esp-idf
+./install.sh esp32,esp32c3
+```
