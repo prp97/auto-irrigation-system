@@ -1,0 +1,11 @@
+menu "Example Configuration"
+    config ESP_WIFI_SSID
+        string "WiFi SSID"
+        default "Paula"
+    config ESP_WIFI_PASSWORD
+        string "WiFi Password"
+        default "wkmh4687"
+    config BROKER_URL
+        string "Broker URL"
+        default "mqtt://broker.hivemq.com"
+endmenu

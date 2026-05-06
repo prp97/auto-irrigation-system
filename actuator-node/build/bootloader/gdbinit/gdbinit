@@ -1,0 +1,2 @@
+source /home/paula/sed/esp-workspace/auto-irrigation-system/actuator-node/build/bootloader/gdbinit/symbols
+source /home/paula/sed/esp-workspace/auto-irrigation-system/actuator-node/build/bootloader/gdbinit/connect
