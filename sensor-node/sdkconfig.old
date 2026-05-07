@@ -500,7 +500,7 @@ CONFIG_PARTITION_TABLE_MD5=y
 #
 CONFIG_ESP_WIFI_SSID="Paula"
 CONFIG_ESP_WIFI_PASSWORD="wkmh4687"
-CONFIG_BROKER_URL="mqtt://test.mosquitto.org"
+CONFIG_BROKER_URL="mqtt://broker.hivemq.com"
 # end of Example Configuration
 
 #

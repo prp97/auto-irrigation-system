@@ -21,9 +21,11 @@ static const char *TAG = "sensor-node";
 
 // Sustituye GXX por tu grupo, p.e. G01:
 #define LED_GPIO 2
-#define TOPIC_STATUS "sed/G03/status"
-#define TOPIC_LED "sed/G03/actuador/led"
-#define TOPIC_TEMP "sed/G03/sensor/temp"
+
+#define TOPIC_STATUS "sed/G03/auto-irrigation-system/status"
+// #define TOPIC_LED "sed/G03/actuador/led"
+#define TOPIC_TEMP "sed/G03/auto-irrigation-system/sensor/temp"
+#define TOPIC_HUM "sed/G03/auto-irrigation-system/sensor/hum"
 
 static i2c_dev_t dev = {0}; // Variable global para acceder desde el callback
 
@@ -68,25 +70,7 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
         ESP_LOGI(TAG, "Conectado al Broker");
         // Publicar mensaje "Online" para coherencia con LWT
         esp_mqtt_client_publish(client, TOPIC_STATUS, "Online", 0, 1, 1);
-        // Suscribirse al tópico del LED
-        esp_mqtt_client_subscribe(client, TOPIC_LED, 1);
-        break;
-
-    case MQTT_EVENT_DATA:
-        ESP_LOGI(TAG, "Mensaje recibido en Tópico: %.*s", event->topic_len, event->topic);
-        ESP_LOGI(TAG, "Datos: %.*s", event->data_len, event->data);
-
-        // Procesar comando para el LED
-        if (strncmp(event->data, "ON", event->data_len) == 0)
-        {
-            gpio_set_level(LED_GPIO, 1);
-            ESP_LOGI(TAG, "LED encendido");
-        }
-        else if (strncmp(event->data, "OFF", event->data_len) == 0)
-        {
-            gpio_set_level(LED_GPIO, 0);
-            ESP_LOGI(TAG, "LED apagado");
-        }
+       
         break;
 
     case MQTT_EVENT_ERROR:
@@ -131,24 +115,29 @@ void task_lectura(void *pvParameters) {
   esp_err_t res2 = ESP_OK;
 
   while (1) {
-    // Leer valores del sensor
+    // Reading sensor data
     res1 = si7021_measure_temperature(&dev, &temperature);
     res2 = si7021_measure_humidity(&dev, &humidity);
 
     if (res1 == ESP_OK && res2 == ESP_OK) {
-      ESP_LOGI(TAG, "Temperatura: %.2f C, Humedad: %.2f %%", temperature, humidity);
-      // Convertir float a string
-      snprintf(payload, sizeof(payload), "%.2f", temperature);            
-      // PUBLICAR: Si el cliente existe, enviamos el dato
+      ESP_LOGI(TAG, "Temperature: %.2f C, Humidity: %.2f %%", temperature, humidity);
+      
+      // Publish humidity
+      snprintf(payload, sizeof(payload), "%.2f", humidity);
       if (client != NULL) {
-        esp_mqtt_client_publish(client, TOPIC_TEMP, payload, 0, 1, 0);
+          esp_mqtt_client_publish(client, TOPIC_HUM, payload, 0, 1, 0);
       }
-      // =====================================================
+      // Publish temperature
+      snprintf(payload, sizeof(payload), "%.2f", temperature);
+      if (client != NULL) {
+          esp_mqtt_client_publish(client, TOPIC_TEMP, payload, 0, 1, 0);
+      }
+// =====================================================
     } else {
-      ESP_LOGE(TAG, "Error leyendo la temperatura: %d (%s)", res1, esp_err_to_name(res1));
-      ESP_LOGE(TAG, "Error leyendo la humedad: %d (%s)", res2, esp_err_to_name(res2));
+      ESP_LOGE(TAG, "Error reading temperature: %d (%s)", res1, esp_err_to_name(res1));
+      ESP_LOGE(TAG, "Error reading humidity: %d (%s)", res2, esp_err_to_name(res2));
     }
-    // Esperar 10 segundos
+    // Wait 10 seconds
     vTaskDelay(pdMS_TO_TICKS(10000));
   }
 }
@@ -182,6 +171,7 @@ void app_main()
     vTaskDelay(pdMS_TO_TICKS(5000));
     esp_mqtt_client_handle_t client = mqtt_app_start();
 
+    
     // Crear tarea de lectura
     xTaskCreate(task_lectura, "task_lectura", 4096, (void*) client, 5, NULL);
 

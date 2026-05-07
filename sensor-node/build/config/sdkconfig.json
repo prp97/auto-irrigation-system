@@ -65,7 +65,7 @@
     "BOOT_ROM_LOG_ALWAYS_ON": true,
     "BOOT_ROM_LOG_ON_GPIO_HIGH": false,
     "BOOT_ROM_LOG_ON_GPIO_LOW": false,
-    "BROKER_URL": "mqtt://test.mosquitto.org",
+    "BROKER_URL": "mqtt://broker.hivemq.com",
     "BT_BLE_LOG_SPI_OUT_ENABLED": false,
     "BT_BLE_LOG_UHCI_OUT_ENABLED": false,
     "BT_ENABLED": false,

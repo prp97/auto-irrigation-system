@@ -19,9 +19,28 @@
 #include <stdlib.h>
 
 static const char *TAG = "actuator-node";
+
 #define ACTUATOR_GPIO 2
-#define TOPIC_STATUS "sed/G03/status"
-#define TOPIC_TEMP "sed/G03/sensor/temp"
+#define TOPIC_STATUS "sed/G03/auto-irrigation-system/status"
+#define TOPIC_TEMP "sed/G03/auto-irrigation-system/sensor/temp"
+#define TOPIC_HUM "sed/G03/auto-irrigation-system/sensor/hum"
+
+// Set thresholsd values remotly from NodeRed dashboard
+#define TOPIC_SET_TEMP "sed/G03/auto-irrigation-system/actuator/temp"
+#define TOPIC_SET_HUM "sed/G03/auto-irrigation-system/actuator/hum"
+
+
+// Thresholds for decision making
+#define TEMP_THRESHOLD 22.0f
+#define HUM_THRESHOLD 40.0f
+
+static float temp_threshold = TEMP_THRESHOLD;
+static float hum_threshold = HUM_THRESHOLD;
+
+static float g_last_temp = 0.0f;
+static float g_last_hum = 0.0f;
+static bool g_have_temp = false;
+static bool g_have_hum = false;
 
 void wifi_init_sta(void)
 {
@@ -57,19 +76,26 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
     esp_mqtt_event_handle_t event = event_data;
     esp_mqtt_client_handle_t client = event->client;
 
-	switch ((esp_mqtt_event_id_t)event_id)
-	{
-	case MQTT_EVENT_CONNECTED:
-		ESP_LOGI(TAG, "Actuator node connected to Broker");
+    switch ((esp_mqtt_event_id_t)event_id)
+    {
+    case MQTT_EVENT_CONNECTED:
+        ESP_LOGI(TAG, "Actuator node connected to Broker");
         // Publish "Online" message for consistency with LWT
         esp_mqtt_client_publish(client, TOPIC_STATUS, "Online", 0, 1, 1);
-        // Subscribe to temperature topic
-		esp_mqtt_client_subscribe(client, TOPIC_TEMP, 1);
-		break;
 
-	case MQTT_EVENT_DATA:
+        // Subscribe to temperature and humidity sensor topics
+        esp_mqtt_client_subscribe(client, TOPIC_TEMP, 1);
+        esp_mqtt_client_subscribe(client, TOPIC_HUM, 1);
+
+        // Subscribe to actuator set thresholds topics
+        esp_mqtt_client_subscribe(client, TOPIC_SET_TEMP, 1);
+        esp_mqtt_client_subscribe(client, TOPIC_SET_HUM, 1);
+
+        break;
+
+    case MQTT_EVENT_DATA:
         ESP_LOGI(TAG, "Message received in Topic: %.*s", event->topic_len, event->topic);
-        ESP_LOGI(TAG, "Data: %.*s", event->data_len, event->data);
+        // ESP_LOGI(TAG, "Data: %.*s", event->data_len, event->data);
 
         /* Copy payload to a null-terminated buffer */
         char buf[32];
@@ -77,38 +103,94 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
         memcpy(buf, event->data, len);
         buf[len] = '\0';
 
+
         /* Convert to float with validation */
         char *endptr = NULL;
-        float temp = strtof(buf, &endptr);
-        if (endptr == buf) {
+        float value = strtof(buf, &endptr);
+
+        if (endptr == buf)
+        {
             ESP_LOGW(TAG, "Payload is not a valid float: '%s'", buf);
             break;
         }
 
-        ESP_LOGI(TAG, "Temperature received: %.2f", temp);
-
-        /* Simple action: activate actuator if temp < 22.0 */
-        if (temp < 22.0f) {
-            gpio_set_level(ACTUATOR_GPIO, 1);
-            ESP_LOGI(TAG, "Actuator ON");
-        } else {
-            gpio_set_level(ACTUATOR_GPIO, 0);
-            ESP_LOGI(TAG, "Actuator OFF");
+        /* Determine which topic the message was for (topic is not NUL-terminated) */
+        if (event->topic_len == (int)strlen(TOPIC_TEMP) && strncmp(event->topic, TOPIC_TEMP, event->topic_len) == 0)
+        {
+            g_last_temp = value;
+            g_have_temp = true;
+            ESP_LOGI(TAG, "Temperature received: %.2f", g_last_temp);
         }
+        else if (event->topic_len == (int)strlen(TOPIC_HUM) && strncmp(event->topic, TOPIC_HUM, event->topic_len) == 0)
+        {
+            g_last_hum = value;
+            g_have_hum = true;
+            ESP_LOGI(TAG, "Humidity received: %.2f", g_last_hum);
+        }
+        else if (event->topic_len == (int)strlen(TOPIC_SET_HUM) && strncmp(event->topic, TOPIC_SET_HUM, event->topic_len) == 0)
+        {
+            hum_threshold = value;
+            ESP_LOGI(TAG, "Humidity threshold set to: %.2f", hum_threshold);
+        }
+        else if (event->topic_len == (int)strlen(TOPIC_SET_HUM) && strncmp(event->topic, TOPIC_SET_HUM, event->topic_len) == 0)
+        {
+            hum_threshold = value;
+            ESP_LOGI(TAG, "Humidity threshold set to: %.2f", hum_threshold);
+        }
+        else if (event->topic_len == (int)strlen(TOPIC_SET_TEMP) && strncmp(event->topic, TOPIC_SET_TEMP, event->topic_len) == 0)
+        {
+            temp_threshold = value;
+            ESP_LOGI(TAG, "Temperature threshold set to: %.2f", temp_threshold);
+        }
+        else
+        {
+            ESP_LOGI(TAG, "Message on unrelated topic: %.*s", event->topic_len, event->topic);
+            break;
+        }
+
+        /*
+        Decision making:
+        If humidity is available and it's below 40.0%
+            turn on the actuator.
+        If humidity is not available
+            but temperature is above 22.0°C
+            turn on the actuator
+        */
+        bool turn_on = false;
+
+        // Turn on when humidity below 40.0
+        if (g_have_hum)
+        {
+            if (g_last_hum < hum_threshold)
+            {
+                turn_on = true;
+            }
+        }
+        // If humidity is not available check temperature
+        else
+        {
+            if (g_have_temp && g_last_temp > temp_threshold)
+            {
+                turn_on = true;
+            }
+        }
+
+        gpio_set_level(ACTUATOR_GPIO, turn_on ? 1 : 0);
+        ESP_LOGI(TAG, "Actuator %s (temp=%.2f, hum=%.2f)", turn_on ? "ON" : "OFF", g_have_temp ? g_last_temp : -1.0f, g_have_hum ? g_last_hum : -1.0f);
         break;
-    
+
     case MQTT_EVENT_ERROR:
         ESP_LOGE(TAG, "Error en el stack MQTT");
         break;
 
-	default:
-		break;
-	}
+    default:
+        break;
+    }
 }
 
 static esp_mqtt_client_handle_t mqtt_app_start(void)
 {
-	esp_mqtt_client_config_t mqtt_cfg = {
+    esp_mqtt_client_config_t mqtt_cfg = {
         // .broker.address.uri = "mqtt://test.mosquitto.org",
         .broker.address.uri = "mqtt://broker.hivemq.com",
         .session.last_will = {
@@ -121,19 +203,18 @@ static esp_mqtt_client_handle_t mqtt_app_start(void)
         .session.keepalive = 10, // Detección rápida de desconexión
     };
 
-	esp_mqtt_client_handle_t client = esp_mqtt_client_init(&mqtt_cfg);
-	esp_mqtt_client_register_event(client, ESP_EVENT_ANY_ID, mqtt_event_handler, NULL);
-	esp_mqtt_client_start(client);
-	return client;
+    esp_mqtt_client_handle_t client = esp_mqtt_client_init(&mqtt_cfg);
+    esp_mqtt_client_register_event(client, ESP_EVENT_ANY_ID, mqtt_event_handler, NULL);
+    esp_mqtt_client_start(client);
+    return client;
 }
 
 void app_main(void)
 {
-	// Configurar GPIO
-	gpio_reset_pin(ACTUATOR_GPIO);
-	gpio_set_direction(ACTUATOR_GPIO, GPIO_MODE_OUTPUT);
-	gpio_set_level(ACTUATOR_GPIO, 0);
-
+    // Configurar GPIO
+    gpio_reset_pin(ACTUATOR_GPIO);
+    gpio_set_direction(ACTUATOR_GPIO, GPIO_MODE_OUTPUT);
+    gpio_set_level(ACTUATOR_GPIO, 0);
 
     // Iniciar WiFi
     esp_err_t ret = nvs_flash_init();
@@ -145,13 +226,13 @@ void app_main(void)
     ESP_ERROR_CHECK(ret);
     wifi_init_sta(); // Conectamos a la red SED
 
-
-	// Iniciar MQTT
-	vTaskDelay(pdMS_TO_TICKS(5000));
+    // Init MQTT
+    vTaskDelay(pdMS_TO_TICKS(5000));
     esp_mqtt_client_handle_t client = mqtt_app_start();
 
-	// Dejar la app corriendo
-	while (1) {
-		vTaskDelay(pdMS_TO_TICKS(10000));
-	}
+    // Dejar la app corriendo
+    while (1)
+    {
+        vTaskDelay(pdMS_TO_TICKS(10000));
+    }
 }

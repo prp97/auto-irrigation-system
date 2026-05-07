@@ -1,0 +1,141 @@
+Command: /home/paula/.espressif/python_env/idf5.5_py3.12_env/bin/python /home/paula/sed/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/paula/sed/esp-workspace/auto-irrigation-system/actuator-node/build/actuator-node.elf /home/paula/sed/esp-workspace/auto-irrigation-system/actuator-node/build/bootloader/bootloader.elf -m '/home/paula/.espressif/python_env/idf5.5_py3.12_env/bin/python' '/home/paula/sed/esp-idf/tools/idf.py' '-p' '/dev/ttyUSB0'
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6280
+load:0x40078000,len:15864
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (27) boot: ESP-IDF v5.5.3 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time May  7 2026 11:18:08[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v3.0[0m
+[0;32mI (32) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (35) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (42) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (62) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (75) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=1de10h (122384) map[0m
+[0;32mI (128) esp_image: segment 1: paddr=0002de38 vaddr=3ffb0000 size=021e0h (  8672) load[0m
+[0;32mI (131) esp_image: segment 2: paddr=00030020 vaddr=400d0020 size=9d774h (644980) map[0m
+[0;32mI (352) esp_image: segment 3: paddr=000cd79c vaddr=3ffb21e0 size=02178h (  8568) load[0m
+[0;32mI (356) esp_image: segment 4: paddr=000cf91c vaddr=40080000 size=18188h ( 98696) load[0m
+[0;32mI (394) esp_image: segment 5: paddr=000e7aac vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (406) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (407) boot: Disabling RNG early entropy source...[0m
+[0;32mI (417) cpu_start: Multicore app[0m
+[0;32mI (425) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (426) cpu_start: Pro cpu start user code[0m
+[0;32mI (426) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (428) app_init: Application information:[0m
+[0;32mI (431) app_init: Project name:     actuator-node[0m
+[0;32mI (436) app_init: App version:      1[0m
+[0;32mI (439) app_init: Compile time:     May  7 2026 11:18:03[0m
+[0;32mI (444) app_init: ELF file SHA256:  b4892fd60...[0m
+[0;32mI (448) app_init: ESP-IDF:          v5.5.3[0m
+[0;32mI (452) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (456) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (460) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (464) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (470) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (475) heap_init: At 3FFB8C58 len 000273A8 (156 KiB): DRAM[0m
+[0;32mI (481) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (486) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (492) heap_init: At 40098188 len 00007E78 (31 KiB): IRAM[0m
+[0;32mI (498) spi_flash: detected chip: generic[0m
+[0;32mI (500) spi_flash: flash io: dio[0m
+[0;33mW (503) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (517) main_task: Started on CPU0[0m
+[0;32mI (527) main_task: Calling app_main()[0m
+[0;32mI (557) wifi:wifi driver task: 3ffc0c3c, prio:23, stack:6656, core=0[0m
+[0;32mI (567) wifi:wifi firmware version: 4df78f2[0m
+[0;32mI (567) wifi:wifi certification version: v7.0[0m
+[0;32mI (567) wifi:config NVS flash: enabled[0m
+[0;32mI (567) wifi:config nano formatting: disabled[0m
+[0;32mI (577) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (577) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (577) wifi:Init management short buffer num: 32[0m
+[0;32mI (587) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (587) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (597) wifi:Init static rx buffer num: 10[0m
+[0;32mI (597) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (607) wifi_init: rx ba win: 6[0m
+[0;32mI (607) wifi_init: accept mbox: 6[0m
+[0;32mI (607) wifi_init: tcpip mbox: 32[0m
+[0;32mI (607) wifi_init: udp mbox: 6[0m
+[0;32mI (617) wifi_init: tcp mbox: 6[0m
+[0;32mI (617) wifi_init: tcp tx win: 5760[0m
+[0;32mI (617) wifi_init: tcp rx win: 5760[0m
+[0;32mI (617) wifi_init: tcp mss: 1440[0m
+[0;32mI (627) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (627) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (637) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (637) phy_init: phy_version 4863,a3a4459,Oct 28 2025,14:30:06[0m
+[0;32mI (717) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (837) wifi:mode : sta (94:3c:c6:cd:c5:cc)[0m
+[0;32mI (837) wifi:enable tsf[0m
+[0;32mI (837) WIFI: Conectando a Paula...[0m
+[1;31mE (5837) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (5837) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (5837) mqtt_client: Error transport connect[0m
+[1;31mE (5847) actuator-node: Error en el stack MQTT[0m
+[1;31mE (20847) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (20847) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (20847) mqtt_client: Error transport connect[0m
+[1;31mE (20847) actuator-node: Error en el stack MQTT[0m
+[1;31mE (35857) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (35857) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (35857) mqtt_client: Error transport connect[0m
+[1;31mE (35857) actuator-node: Error en el stack MQTT[0m
+[1;31mE (50867) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (50867) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (50867) mqtt_client: Error transport connect[0m
+[1;31mE (50867) actuator-node: Error en el stack MQTT[0m
+[1;31mE (65877) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (65877) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (65877) mqtt_client: Error transport connect[0m
+[1;31mE (65877) actuator-node: Error en el stack MQTT[0m
+[1;31mE (80887) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (80887) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (80887) mqtt_client: Error transport connect[0m
+[1;31mE (80887) actuator-node: Error en el stack MQTT[0m
+[1;31mE (95897) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (95897) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (95897) mqtt_client: Error transport connect[0m
+[1;31mE (95897) actuator-node: Error en el stack MQTT[0m
+[1;31mE (110907) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (110907) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (110907) mqtt_client: Error transport connect[0m
+[1;31mE (110907) actuator-node: Error en el stack MQTT[0m
+[1;31mE (125917) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (125917) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (125917) mqtt_client: Error transport connect[0m
+[1;31mE (125917) actuator-node: Error en el stack MQTT[0m
+[1;31mE (140927) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (140927) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (140927) mqtt_client: Error transport connect[0m
+[1;31mE (140927) actuator-node: Error en el stack MQTT[0m
+[1;31mE (155937) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (155937) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (155937) mqtt_client: Error transport connect[0m
+[1;31mE (155937) actuator-node: Error en el stack MQTT[0m
+[1;31mE (170947) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (170947) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (170947) mqtt_client: Error transport connect[0m
+[1;31mE (170947) actuator-node: Error en el stack MQTT[0m
+[1;31mE (185957) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (185957) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (185957) mqtt_client: Error transport connect[0m
+[1;31mE (185957) actuator-node: Error en el stack MQTT[0m
+[1;31mE (200967) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (200967) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (200967) mqtt_client: Error transport connect[0m
+[1;31mE (200967) actuator-node: Error en el stack MQTT[0m

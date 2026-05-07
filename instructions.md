@@ -78,3 +78,32 @@ mosquitto_sub -h broker.hivemq.com -t "sed/G03/sensor/temp" -v
 # Subscriber
 mosquitto_pub -h broker.hivemq.com -t "sed/G03/actuador/led" -m "ON"
 ``` 
+
+#### Node Red
+
+###### Docker install
+`` bash
+sudo apt update
+sudo apt install docker.io
+sudo usermod -aG docker $USER
+```
+
+###### Create Node Red container
+``` bash
+mkdir -p ~/sed/node-red/data
+cd ~/sed/node-red
+docker run -it -p 1880:1880 -v ./data:/data --name mynodered nodered/node-red
+```
+
+###### Node Red mangement
+
+```bash
+docker stop mynodered
+docker start mynodered
+docker logs --tail=100 -f mynodered
+```
+
+URL: http://127.0.0.1:1880/
+
+Dashboard: http://127.0.0.1:1880/dashboard/page2 
+
