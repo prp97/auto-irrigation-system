@@ -35326,6 +35326,715 @@
             {
                 "children": [
                     {
+                        "children": [
+                            {
+                                "children": [],
+                                "depends_on": null,
+                                "help": "Set the Mender server host URL to be used on the device.",
+                                "id": "MENDER_SERVER_HOST",
+                                "name": "MENDER_SERVER_HOST",
+                                "range": null,
+                                "title": "Mender server host URL",
+                                "type": "string"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": null,
+                                "help": "Set the Mender server Tenant Token, to be used with https://hosted.mender.io. Retrieve it from the \"Organization and billing\" settings of your account.",
+                                "id": "MENDER_SERVER_TENANT_TOKEN",
+                                "name": "MENDER_SERVER_TENANT_TOKEN",
+                                "range": null,
+                                "title": "Mender server Tenant Token",
+                                "type": "string"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": null,
+                                "help": "Interval used to periodically try to authenticate to the Mender server until it succeeds.\nSetting this value to 0 permits to disable the periodic execution and relies on the application to do it.",
+                                "id": "MENDER_CLIENT_AUTHENTICATION_POLL_INTERVAL",
+                                "name": "MENDER_CLIENT_AUTHENTICATION_POLL_INTERVAL",
+                                "range": [
+                                    0,
+                                    3600
+                                ],
+                                "title": "Mender client Authentication poll interval (seconds)",
+                                "type": "int"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": null,
+                                "help": "Interval used to periodically check for new deployments on the Mender server.\nSetting this value to 0 permits to disable the periodic execution and relies on the application to do it.",
+                                "id": "MENDER_CLIENT_UPDATE_POLL_INTERVAL",
+                                "name": "MENDER_CLIENT_UPDATE_POLL_INTERVAL",
+                                "range": [
+                                    0,
+                                    86400
+                                ],
+                                "title": "Mender client Update poll interval (seconds)",
+                                "type": "int"
+                            },
+                            {
+                                "children": [
+                                    {
+                                        "children": [],
+                                        "depends_on": "<choice MENDER_LOG_LEVEL>",
+                                        "help": null,
+                                        "id": "MENDER_LOG_LEVEL_OFF",
+                                        "name": "MENDER_LOG_LEVEL_OFF",
+                                        "range": null,
+                                        "title": "No output",
+                                        "type": "bool"
+                                    },
+                                    {
+                                        "children": [],
+                                        "depends_on": "<choice MENDER_LOG_LEVEL>",
+                                        "help": null,
+                                        "id": "MENDER_LOG_LEVEL_ERR",
+                                        "name": "MENDER_LOG_LEVEL_ERR",
+                                        "range": null,
+                                        "title": "Error",
+                                        "type": "bool"
+                                    },
+                                    {
+                                        "children": [],
+                                        "depends_on": "<choice MENDER_LOG_LEVEL>",
+                                        "help": null,
+                                        "id": "MENDER_LOG_LEVEL_WRN",
+                                        "name": "MENDER_LOG_LEVEL_WRN",
+                                        "range": null,
+                                        "title": "Warning",
+                                        "type": "bool"
+                                    },
+                                    {
+                                        "children": [],
+                                        "depends_on": "<choice MENDER_LOG_LEVEL>",
+                                        "help": null,
+                                        "id": "MENDER_LOG_LEVEL_INF",
+                                        "name": "MENDER_LOG_LEVEL_INF",
+                                        "range": null,
+                                        "title": "Info",
+                                        "type": "bool"
+                                    },
+                                    {
+                                        "children": [],
+                                        "depends_on": "<choice MENDER_LOG_LEVEL>",
+                                        "help": null,
+                                        "id": "MENDER_LOG_LEVEL_DBG",
+                                        "name": "MENDER_LOG_LEVEL_DBG",
+                                        "range": null,
+                                        "title": "Debug",
+                                        "type": "bool"
+                                    }
+                                ],
+                                "depends_on": null,
+                                "help": "Specify how much output to see in Mender client logs.",
+                                "id": "component-config-mender-firmware-over-the-air-support-general-configuration-mender-client-log-verbosity",
+                                "name": "MENDER_LOG_LEVEL",
+                                "title": "Mender client log verbosity",
+                                "type": "choice"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": null,
+                                "help": null,
+                                "id": "MENDER_LOG_LEVEL",
+                                "name": "MENDER_LOG_LEVEL",
+                                "range": null,
+                                "title": null,
+                                "type": "int"
+                            }
+                        ],
+                        "depends_on": null,
+                        "id": "component-config-mender-firmware-over-the-air-support-general-configuration",
+                        "title": "General configuration",
+                        "type": "menu"
+                    },
+                    {
+                        "children": [
+                            {
+                                "children": [
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [],
+                                                "depends_on": "MENDER_CLIENT_ADD_ON_CONFIGURE",
+                                                "help": "Activate this option to save the configuration from the Mender server in the storage area of the device.",
+                                                "id": "MENDER_CLIENT_CONFIGURE_STORAGE",
+                                                "name": "MENDER_CLIENT_CONFIGURE_STORAGE",
+                                                "range": null,
+                                                "title": "Mender client Configure storage",
+                                                "type": "bool"
+                                            },
+                                            {
+                                                "children": [],
+                                                "depends_on": "MENDER_CLIENT_ADD_ON_CONFIGURE",
+                                                "help": "Interval used to periodically refresh configuration to/from the Mender server.\nSetting this value to 0 permits to disable the periodic execution and relies on the application to do it.",
+                                                "id": "MENDER_CLIENT_CONFIGURE_REFRESH_INTERVAL",
+                                                "name": "MENDER_CLIENT_CONFIGURE_REFRESH_INTERVAL",
+                                                "range": null,
+                                                "title": "Mender client Configure refresh interval (seconds)",
+                                                "type": "int"
+                                            }
+                                        ],
+                                        "depends_on": null,
+                                        "help": "Configure add-on permits to get/set configuration key-value pairs to/from the Mender server.",
+                                        "id": "MENDER_CLIENT_ADD_ON_CONFIGURE",
+                                        "name": "MENDER_CLIENT_ADD_ON_CONFIGURE",
+                                        "range": null,
+                                        "title": "Mender client Configure",
+                                        "type": "bool"
+                                    }
+                                ],
+                                "depends_on": null,
+                                "id": "component-config-mender-firmware-over-the-air-support-addons-integration-configure-addon-configuration",
+                                "title": "Configure Addon configuration",
+                                "type": "menu"
+                            },
+                            {
+                                "children": [
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [],
+                                                "depends_on": "MENDER_CLIENT_ADD_ON_INVENTORY",
+                                                "help": "Interval used to periodically send inventory to the Mender server.\nSetting this value to 0 permits to disable the periodic execution and relies on the application to do it.",
+                                                "id": "MENDER_CLIENT_INVENTORY_REFRESH_INTERVAL",
+                                                "name": "MENDER_CLIENT_INVENTORY_REFRESH_INTERVAL",
+                                                "range": [
+                                                    0,
+                                                    86400
+                                                ],
+                                                "title": "Mender client Inventory refresh interval (seconds)",
+                                                "type": "int"
+                                            }
+                                        ],
+                                        "depends_on": null,
+                                        "help": "Inventory add-on permits to send inventory key-value pairs to the Mender server.\nIt is particularly used to send artifact name and device type, and it permits to see the last check-in time of the device.",
+                                        "id": "MENDER_CLIENT_ADD_ON_INVENTORY",
+                                        "name": "MENDER_CLIENT_ADD_ON_INVENTORY",
+                                        "range": null,
+                                        "title": "Mender client Inventory",
+                                        "type": "bool"
+                                    }
+                                ],
+                                "depends_on": null,
+                                "id": "component-config-mender-firmware-over-the-air-support-addons-integration-inventory-addon-configuration",
+                                "title": "Inventory Addon configuration",
+                                "type": "menu"
+                            },
+                            {
+                                "children": [
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [],
+                                                "depends_on": "MENDER_CLIENT_ADD_ON_TROUBLESHOOT",
+                                                "help": "Interval used to periodically perform healthcheck with the Mender server.",
+                                                "id": "MENDER_CLIENT_TROUBLESHOOT_HEALTHCHECK_INTERVAL",
+                                                "name": "MENDER_CLIENT_TROUBLESHOOT_HEALTHCHECK_INTERVAL",
+                                                "range": null,
+                                                "title": "Mender client Troubleshoot healthcheck interval (seconds)",
+                                                "type": "int"
+                                            },
+                                            {
+                                                "children": [],
+                                                "depends_on": "MENDER_CLIENT_ADD_ON_TROUBLESHOOT",
+                                                "help": "Troubleshoot shell permits to display a remote shell interface on the Mender server.",
+                                                "id": "MENDER_CLIENT_TROUBLESHOOT_SHELL",
+                                                "name": "MENDER_CLIENT_TROUBLESHOOT_SHELL",
+                                                "range": null,
+                                                "title": "Mender client Troubleshoot Shell",
+                                                "type": "bool"
+                                            },
+                                            {
+                                                "children": [],
+                                                "depends_on": "MENDER_CLIENT_ADD_ON_TROUBLESHOOT",
+                                                "help": "Troubleshoot file transfer permits to upload/download files to/from the device on the Mender server.",
+                                                "id": "MENDER_CLIENT_TROUBLESHOOT_FILE_TRANSFER",
+                                                "name": "MENDER_CLIENT_TROUBLESHOOT_FILE_TRANSFER",
+                                                "range": null,
+                                                "title": "Mender client Troubleshoot File Transfer",
+                                                "type": "bool"
+                                            },
+                                            {
+                                                "children": [],
+                                                "depends_on": "MENDER_CLIENT_ADD_ON_TROUBLESHOOT",
+                                                "help": "Troubleshoot port forwarding permits to remotly connect to a local service from the Mender server.",
+                                                "id": "MENDER_CLIENT_TROUBLESHOOT_PORT_FORWARDING",
+                                                "name": "MENDER_CLIENT_TROUBLESHOOT_PORT_FORWARDING",
+                                                "range": null,
+                                                "title": "Mender client Troubleshoot Port Forwarding",
+                                                "type": "bool"
+                                            }
+                                        ],
+                                        "depends_on": null,
+                                        "help": "Troubleshoot add-on permits to perform debugging on the target from the Mender server.\nIt is particularly used to connect to the remote terminal of the device.",
+                                        "id": "MENDER_CLIENT_ADD_ON_TROUBLESHOOT",
+                                        "name": "MENDER_CLIENT_ADD_ON_TROUBLESHOOT",
+                                        "range": null,
+                                        "title": "Mender client Troubleshoot (EXPERIMENTAL)",
+                                        "type": "bool"
+                                    }
+                                ],
+                                "depends_on": null,
+                                "id": "component-config-mender-firmware-over-the-air-support-addons-integration-troubleshoot-addon-configuration",
+                                "title": "Troubleshoot Addon configuration",
+                                "type": "menu"
+                            }
+                        ],
+                        "depends_on": null,
+                        "id": "component-config-mender-firmware-over-the-air-support-addons-integration",
+                        "title": "Addons integration",
+                        "type": "menu"
+                    },
+                    {
+                        "children": [
+                            {
+                                "children": [
+                                    {
+                                        "children": [],
+                                        "depends_on": "<choice MENDER_PLATFORM_FLASH_TYPE>",
+                                        "help": null,
+                                        "id": "MENDER_PLATFORM_FLASH_TYPE_DEFAULT",
+                                        "name": "MENDER_PLATFORM_FLASH_TYPE_DEFAULT",
+                                        "range": null,
+                                        "title": "default",
+                                        "type": "bool"
+                                    },
+                                    {
+                                        "children": [],
+                                        "depends_on": "<choice MENDER_PLATFORM_FLASH_TYPE>",
+                                        "help": null,
+                                        "id": "MENDER_PLATFORM_FLASH_TYPE_WEAK",
+                                        "name": "MENDER_PLATFORM_FLASH_TYPE_WEAK",
+                                        "range": null,
+                                        "title": "weak",
+                                        "type": "bool"
+                                    }
+                                ],
+                                "depends_on": null,
+                                "help": "Specify platform flash implementation type, select 'weak' to use you own implementation.",
+                                "id": "component-config-mender-firmware-over-the-air-support-platform-configuration-advanced--mender-platform-flash-implementation-type",
+                                "name": "MENDER_PLATFORM_FLASH_TYPE",
+                                "title": "Mender platform flash implementation type",
+                                "type": "choice"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": null,
+                                "help": null,
+                                "id": "MENDER_PLATFORM_FLASH_TYPE",
+                                "name": "MENDER_PLATFORM_FLASH_TYPE",
+                                "range": null,
+                                "title": null,
+                                "type": "string"
+                            },
+                            {
+                                "children": [
+                                    {
+                                        "children": [],
+                                        "depends_on": "<choice MENDER_PLATFORM_LOG_TYPE>",
+                                        "help": null,
+                                        "id": "MENDER_PLATFORM_LOG_TYPE_DEFAULT",
+                                        "name": "MENDER_PLATFORM_LOG_TYPE_DEFAULT",
+                                        "range": null,
+                                        "title": "default",
+                                        "type": "bool"
+                                    },
+                                    {
+                                        "children": [],
+                                        "depends_on": "<choice MENDER_PLATFORM_LOG_TYPE>",
+                                        "help": null,
+                                        "id": "MENDER_PLATFORM_LOG_TYPE_WEAK",
+                                        "name": "MENDER_PLATFORM_LOG_TYPE_WEAK",
+                                        "range": null,
+                                        "title": "weak",
+                                        "type": "bool"
+                                    }
+                                ],
+                                "depends_on": null,
+                                "help": "Specify platform log implementation type, select 'weak' to use you own implementation.",
+                                "id": "component-config-mender-firmware-over-the-air-support-platform-configuration-advanced--mender-platform-log-implementation-type",
+                                "name": "MENDER_PLATFORM_LOG_TYPE",
+                                "title": "Mender platform log implementation type",
+                                "type": "choice"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": null,
+                                "help": null,
+                                "id": "MENDER_PLATFORM_LOG_TYPE",
+                                "name": "MENDER_PLATFORM_LOG_TYPE",
+                                "range": null,
+                                "title": null,
+                                "type": "string"
+                            },
+                            {
+                                "children": [
+                                    {
+                                        "children": [],
+                                        "depends_on": "<choice MENDER_PLATFORM_NET_TYPE>",
+                                        "help": null,
+                                        "id": "MENDER_PLATFORM_NET_TYPE_DEFAULT",
+                                        "name": "MENDER_PLATFORM_NET_TYPE_DEFAULT",
+                                        "range": null,
+                                        "title": "default",
+                                        "type": "bool"
+                                    },
+                                    {
+                                        "children": [],
+                                        "depends_on": "<choice MENDER_PLATFORM_NET_TYPE>",
+                                        "help": null,
+                                        "id": "MENDER_PLATFORM_NET_TYPE_WEAK",
+                                        "name": "MENDER_PLATFORM_NET_TYPE_WEAK",
+                                        "range": null,
+                                        "title": "weak",
+                                        "type": "bool"
+                                    }
+                                ],
+                                "depends_on": null,
+                                "help": "Specify platform network implementation type, select 'weak' to use you own implementation.",
+                                "id": "component-config-mender-firmware-over-the-air-support-platform-configuration-advanced--mender-platform-network-implementation-type",
+                                "name": "MENDER_PLATFORM_NET_TYPE",
+                                "title": "Mender platform network implementation type",
+                                "type": "choice"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": null,
+                                "help": null,
+                                "id": "MENDER_PLATFORM_NET_TYPE",
+                                "name": "MENDER_PLATFORM_NET_TYPE",
+                                "range": null,
+                                "title": null,
+                                "type": "string"
+                            },
+                            {
+                                "children": [
+                                    {
+                                        "children": [],
+                                        "depends_on": "<choice MENDER_PLATFORM_SCHEDULER_TYPE>",
+                                        "help": null,
+                                        "id": "MENDER_PLATFORM_SCHEDULER_TYPE_DEFAULT",
+                                        "name": "MENDER_PLATFORM_SCHEDULER_TYPE_DEFAULT",
+                                        "range": null,
+                                        "title": "default",
+                                        "type": "bool"
+                                    },
+                                    {
+                                        "children": [],
+                                        "depends_on": "<choice MENDER_PLATFORM_SCHEDULER_TYPE>",
+                                        "help": null,
+                                        "id": "MENDER_PLATFORM_SCHEDULER_TYPE_WEAK",
+                                        "name": "MENDER_PLATFORM_SCHEDULER_TYPE_WEAK",
+                                        "range": null,
+                                        "title": "weak",
+                                        "type": "bool"
+                                    }
+                                ],
+                                "depends_on": null,
+                                "help": "Specify platform scheduler implementation type, select 'weak' to use you own implementation.",
+                                "id": "component-config-mender-firmware-over-the-air-support-platform-configuration-advanced--mender-platform-scheduler-implementation-type",
+                                "name": "MENDER_PLATFORM_SCHEDULER_TYPE",
+                                "title": "Mender platform scheduler implementation type",
+                                "type": "choice"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": null,
+                                "help": null,
+                                "id": "MENDER_PLATFORM_SCHEDULER_TYPE",
+                                "name": "MENDER_PLATFORM_SCHEDULER_TYPE",
+                                "range": null,
+                                "title": null,
+                                "type": "string"
+                            },
+                            {
+                                "children": [
+                                    {
+                                        "children": [],
+                                        "depends_on": "<choice MENDER_PLATFORM_STORAGE_TYPE>",
+                                        "help": null,
+                                        "id": "MENDER_PLATFORM_STORAGE_TYPE_NVS",
+                                        "name": "MENDER_PLATFORM_STORAGE_TYPE_NVS",
+                                        "range": null,
+                                        "title": "nvs",
+                                        "type": "bool"
+                                    },
+                                    {
+                                        "children": [],
+                                        "depends_on": "<choice MENDER_PLATFORM_STORAGE_TYPE>",
+                                        "help": null,
+                                        "id": "MENDER_PLATFORM_STORAGE_TYPE_WEAK",
+                                        "name": "MENDER_PLATFORM_STORAGE_TYPE_WEAK",
+                                        "range": null,
+                                        "title": "weak",
+                                        "type": "bool"
+                                    }
+                                ],
+                                "depends_on": null,
+                                "help": "Specify platform storage implementation type, select 'weak' to use you own implementation.",
+                                "id": "component-config-mender-firmware-over-the-air-support-platform-configuration-advanced--mender-platform-storage-implementation-type",
+                                "name": "MENDER_PLATFORM_STORAGE_TYPE",
+                                "title": "Mender platform storage implementation type",
+                                "type": "choice"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": null,
+                                "help": null,
+                                "id": "MENDER_PLATFORM_STORAGE_TYPE",
+                                "name": "MENDER_PLATFORM_STORAGE_TYPE",
+                                "range": null,
+                                "title": null,
+                                "type": "string"
+                            },
+                            {
+                                "children": [
+                                    {
+                                        "children": [],
+                                        "depends_on": "<choice MENDER_PLATFORM_TLS_TYPE>",
+                                        "help": null,
+                                        "id": "MENDER_PLATFORM_TLS_TYPE_MBEDTLS",
+                                        "name": "MENDER_PLATFORM_TLS_TYPE_MBEDTLS",
+                                        "range": null,
+                                        "title": "mbedtls",
+                                        "type": "bool"
+                                    },
+                                    {
+                                        "children": [],
+                                        "depends_on": "<choice MENDER_PLATFORM_TLS_TYPE>",
+                                        "help": null,
+                                        "id": "MENDER_PLATFORM_TLS_TYPE_CRYPTOAUTHLIB",
+                                        "name": "MENDER_PLATFORM_TLS_TYPE_CRYPTOAUTHLIB",
+                                        "range": null,
+                                        "title": "cryptoauthlib",
+                                        "type": "bool"
+                                    },
+                                    {
+                                        "children": [],
+                                        "depends_on": "<choice MENDER_PLATFORM_TLS_TYPE>",
+                                        "help": null,
+                                        "id": "MENDER_PLATFORM_TLS_TYPE_WEAK",
+                                        "name": "MENDER_PLATFORM_TLS_TYPE_WEAK",
+                                        "range": null,
+                                        "title": "weak",
+                                        "type": "bool"
+                                    }
+                                ],
+                                "depends_on": null,
+                                "help": "Specify platform TLS implementation type, select 'weak' to use you own implementation.",
+                                "id": "component-config-mender-firmware-over-the-air-support-platform-configuration-advanced--mender-platform-tls-implementation-type",
+                                "name": "MENDER_PLATFORM_TLS_TYPE",
+                                "title": "Mender platform TLS implementation type",
+                                "type": "choice"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": null,
+                                "help": null,
+                                "id": "MENDER_PLATFORM_TLS_TYPE",
+                                "name": "MENDER_PLATFORM_TLS_TYPE",
+                                "range": null,
+                                "title": null,
+                                "type": "string"
+                            }
+                        ],
+                        "depends_on": null,
+                        "id": "component-config-mender-firmware-over-the-air-support-platform-configuration-advanced-",
+                        "title": "Platform configuration (ADVANCED)",
+                        "type": "menu"
+                    },
+                    {
+                        "children": [
+                            {
+                                "children": [],
+                                "depends_on": "MENDER_CLIENT_ADD_ON_TROUBLESHOOT && MENDER_PLATFORM_NET_TYPE_DEFAULT",
+                                "help": "Mender WebSocket client thread stack size, customize only if you have a deep understanding of the impacts! Default value is suitable for most applications.",
+                                "id": "MENDER_WEBSOCKET_THREAD_STACK_SIZE",
+                                "name": "MENDER_WEBSOCKET_THREAD_STACK_SIZE",
+                                "range": null,
+                                "title": "Mender WebSocket client Thread Stack Size",
+                                "type": "int"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "MENDER_CLIENT_ADD_ON_TROUBLESHOOT && MENDER_PLATFORM_NET_TYPE_DEFAULT",
+                                "help": "Mender WebSocket client thread priority, customize only if you have a deep understanding of the impacts! Default value is suitable for most applications.",
+                                "id": "MENDER_WEBSOCKET_THREAD_PRIORITY",
+                                "name": "MENDER_WEBSOCKET_THREAD_PRIORITY",
+                                "range": null,
+                                "title": "Mender WebSocket client Thread Priority",
+                                "type": "int"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "MENDER_CLIENT_ADD_ON_TROUBLESHOOT && MENDER_PLATFORM_NET_TYPE_DEFAULT",
+                                "help": "Mender WebSocket buffer size, customize only if you have a deep understanding of the impacts! Default value is suitable for most applications.",
+                                "id": "MENDER_WEBSOCKET_BUFFER_SIZE",
+                                "name": "MENDER_WEBSOCKET_BUFFER_SIZE",
+                                "range": null,
+                                "title": "Mender WebSocket Buffer Size",
+                                "type": "int"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "MENDER_CLIENT_ADD_ON_TROUBLESHOOT && MENDER_PLATFORM_NET_TYPE_DEFAULT",
+                                "help": "Mender WebSocket client reconnect timeout. Default value is suitable for most applications.",
+                                "id": "MENDER_WEBSOCKET_RECONNECT_TIMEOUT",
+                                "name": "MENDER_WEBSOCKET_RECONNECT_TIMEOUT",
+                                "range": null,
+                                "title": "Mender WebSocket client reconnect timeout (milliseconds)",
+                                "type": "int"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "MENDER_CLIENT_ADD_ON_TROUBLESHOOT && MENDER_PLATFORM_NET_TYPE_DEFAULT",
+                                "help": "Mender WebSocket client network timeout. Default value is suitable for most applications.",
+                                "id": "MENDER_WEBSOCKET_NETWORK_TIMEOUT",
+                                "name": "MENDER_WEBSOCKET_NETWORK_TIMEOUT",
+                                "range": null,
+                                "title": "Mender WebSocket client network timeout (milliseconds)",
+                                "type": "int"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "MENDER_CLIENT_ADD_ON_TROUBLESHOOT && MENDER_PLATFORM_NET_TYPE_DEFAULT",
+                                "help": "Mender WebSocket client request timeout. Default value is suitable for most applications.",
+                                "id": "MENDER_WEBSOCKET_REQUEST_TIMEOUT",
+                                "name": "MENDER_WEBSOCKET_REQUEST_TIMEOUT",
+                                "range": null,
+                                "title": "Mender WebSocket client request timeout (milliseconds)",
+                                "type": "int"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "MENDER_CLIENT_ADD_ON_TROUBLESHOOT && MENDER_PLATFORM_NET_TYPE_DEFAULT",
+                                "help": "Mender WebSocket client ping interval. Default value is suitable for most applications.",
+                                "id": "MENDER_WEBSOCKET_PING_INTERVAL",
+                                "name": "MENDER_WEBSOCKET_PING_INTERVAL",
+                                "range": null,
+                                "title": "Mender WebSocket client ping interval (seconds)",
+                                "type": "int"
+                            }
+                        ],
+                        "depends_on": "MENDER_PLATFORM_NET_TYPE_DEFAULT",
+                        "id": "component-config-mender-firmware-over-the-air-support-network-options-advanced-",
+                        "title": "Network options (ADVANCED)",
+                        "type": "menu"
+                    },
+                    {
+                        "children": [
+                            {
+                                "children": [],
+                                "depends_on": "MENDER_PLATFORM_SCHEDULER_TYPE_DEFAULT",
+                                "help": "Mender scheduler work queue stack size, customize only if you have a deep understanding of the impacts! Default value is suitable for most applications.\nThe default TLS configuration of ESP-IDF v4.4.x allows to decrease the stack size down to 12kB.\nThe default stack size is 20kB because the default TLS configuration of ESP-IDF V5.x consumes more memory.",
+                                "id": "MENDER_SCHEDULER_WORK_QUEUE_STACK_SIZE",
+                                "name": "MENDER_SCHEDULER_WORK_QUEUE_STACK_SIZE",
+                                "range": [
+                                    0,
+                                    65536
+                                ],
+                                "title": "Mender Scheduler Work Queue Stack Size",
+                                "type": "int"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "MENDER_PLATFORM_SCHEDULER_TYPE_DEFAULT",
+                                "help": "Mender scheduler work queue priority, customize only if you have a deep understanding of the impacts! Default value is suitable for most applications.",
+                                "id": "MENDER_SCHEDULER_WORK_QUEUE_PRIORITY",
+                                "name": "MENDER_SCHEDULER_WORK_QUEUE_PRIORITY",
+                                "range": [
+                                    0,
+                                    24
+                                ],
+                                "title": "Mender Scheduler Work Queue Priority",
+                                "type": "int"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "MENDER_PLATFORM_SCHEDULER_TYPE_DEFAULT",
+                                "help": "Mender scheduler work queue length, customize only if you have a deep understanding of the impacts! Default value is suitable for most applications.",
+                                "id": "MENDER_SCHEDULER_WORK_QUEUE_LENGTH",
+                                "name": "MENDER_SCHEDULER_WORK_QUEUE_LENGTH",
+                                "range": [
+                                    0,
+                                    64
+                                ],
+                                "title": "Mender Scheduler Work Queue Length",
+                                "type": "int"
+                            }
+                        ],
+                        "depends_on": "MENDER_PLATFORM_SCHEDULER_TYPE_DEFAULT",
+                        "id": "component-config-mender-firmware-over-the-air-support-scheduler-options-advanced-",
+                        "title": "Scheduler options (ADVANCED)",
+                        "type": "menu"
+                    },
+                    {
+                        "children": [
+                            {
+                                "children": [
+                                    {
+                                        "children": [],
+                                        "depends_on": "<choice MENDER_PLATFORM_TLS_KEY_TYPE>",
+                                        "help": null,
+                                        "id": "MENDER_PLATFORM_TLS_KEY_TYPE_ECDSA",
+                                        "name": "MENDER_PLATFORM_TLS_KEY_TYPE_ECDSA",
+                                        "range": null,
+                                        "title": "ECDSA-P256",
+                                        "type": "bool"
+                                    },
+                                    {
+                                        "children": [],
+                                        "depends_on": "<choice MENDER_PLATFORM_TLS_KEY_TYPE>",
+                                        "help": null,
+                                        "id": "MENDER_PLATFORM_TLS_KEY_TYPE_RSA",
+                                        "name": "MENDER_PLATFORM_TLS_KEY_TYPE_RSA",
+                                        "range": null,
+                                        "title": "RSA-3072",
+                                        "type": "bool"
+                                    }
+                                ],
+                                "depends_on": "MENDER_PLATFORM_TLS_TYPE_MBEDTLS",
+                                "help": "Specify platform TLS key type.",
+                                "id": "component-config-mender-firmware-over-the-air-support-tls-options-advanced--mender-platform-tls-key-type",
+                                "name": "MENDER_PLATFORM_TLS_KEY_TYPE",
+                                "title": "Mender platform TLS key type",
+                                "type": "choice"
+                            }
+                        ],
+                        "depends_on": "MENDER_PLATFORM_TLS_TYPE_MBEDTLS",
+                        "id": "component-config-mender-firmware-over-the-air-support-tls-options-advanced-",
+                        "title": "TLS options (ADVANCED)",
+                        "type": "menu"
+                    },
+                    {
+                        "children": [
+                            {
+                                "children": [],
+                                "depends_on": "MENDER_PLATFORM_TLS_TYPE_CRYPTOAUTHLIB",
+                                "help": "Cryptoauthlib private key ID.",
+                                "id": "MENDER_TLS_PRIVATE_KEY_ID",
+                                "name": "MENDER_TLS_PRIVATE_KEY_ID",
+                                "range": null,
+                                "title": "Mender TLS cryptoauthlib private key ID",
+                                "type": "int"
+                            }
+                        ],
+                        "depends_on": "MENDER_PLATFORM_TLS_TYPE_CRYPTOAUTHLIB",
+                        "id": "component-config-mender-firmware-over-the-air-support-tls-options-advanced-",
+                        "title": "TLS options (ADVANCED)",
+                        "type": "menu"
+                    }
+                ],
+                "depends_on": null,
+                "id": "component-config-mender-firmware-over-the-air-support",
+                "title": "Mender Firmware Over-the-Air support",
+                "type": "menu"
+            },
+            {
+                "children": [
+                    {
                         "children": [],
                         "depends_on": null,
                         "help": "Select this option to use the older ESP-IDF I2C driver API (driver/i2c.h)\ninstead of the newer driver API (driver/i2c_master.h).\n\nThis is automatically determined by the build system based on your ESP-IDF version.\nFor ESP-IDF versions prior to v5.3, the legacy driver will be used automatically.\nYou can manually override this setting if needed.",

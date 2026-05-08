@@ -582,3 +582,8 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/paula/sed/esp-workspace/auto-irrigation-system/actuator-node/build/esp-idf/main/cmake_install.cmake")
 endif()
 
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/home/paula/sed/esp-workspace/auto-irrigation-system/actuator-node/build/esp-idf/esp-idf/cmake_install.cmake")
+endif()
+

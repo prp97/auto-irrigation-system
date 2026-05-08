@@ -151,6 +151,13 @@
 /home/paula/sed/esp-workspace/auto-irrigation-system/actuator-node/build/esp-idf/esp_bootloader_format/CMakeFiles/install/local.dir
 /home/paula/sed/esp-workspace/auto-irrigation-system/actuator-node/build/esp-idf/esp_bootloader_format/CMakeFiles/install/strip.dir
 /home/paula/sed/esp-workspace/auto-irrigation-system/actuator-node/build/esp-idf/app_update/CMakeFiles/__idf_app_update.dir
+/home/paula/sed/esp-workspace/auto-irrigation-system/actuator-node/build/esp-idf/app_update/CMakeFiles/blank_ota_data.dir
+/home/paula/sed/esp-workspace/auto-irrigation-system/actuator-node/build/esp-idf/app_update/CMakeFiles/read-otadata.dir
+/home/paula/sed/esp-workspace/auto-irrigation-system/actuator-node/build/esp-idf/app_update/CMakeFiles/read_otadata.dir
+/home/paula/sed/esp-workspace/auto-irrigation-system/actuator-node/build/esp-idf/app_update/CMakeFiles/erase-otadata.dir
+/home/paula/sed/esp-workspace/auto-irrigation-system/actuator-node/build/esp-idf/app_update/CMakeFiles/erase_otadata.dir
+/home/paula/sed/esp-workspace/auto-irrigation-system/actuator-node/build/esp-idf/app_update/CMakeFiles/otadata-flash.dir
+/home/paula/sed/esp-workspace/auto-irrigation-system/actuator-node/build/esp-idf/app_update/CMakeFiles/encrypted-otadata-flash.dir
 /home/paula/sed/esp-workspace/auto-irrigation-system/actuator-node/build/esp-idf/app_update/CMakeFiles/edit_cache.dir
 /home/paula/sed/esp-workspace/auto-irrigation-system/actuator-node/build/esp-idf/app_update/CMakeFiles/rebuild_cache.dir
 /home/paula/sed/esp-workspace/auto-irrigation-system/actuator-node/build/esp-idf/app_update/CMakeFiles/list_install_components.dir
@@ -872,3 +879,10 @@
 /home/paula/sed/esp-workspace/auto-irrigation-system/actuator-node/build/esp-idf/main/CMakeFiles/install.dir
 /home/paula/sed/esp-workspace/auto-irrigation-system/actuator-node/build/esp-idf/main/CMakeFiles/install/local.dir
 /home/paula/sed/esp-workspace/auto-irrigation-system/actuator-node/build/esp-idf/main/CMakeFiles/install/strip.dir
+/home/paula/sed/esp-workspace/auto-irrigation-system/actuator-node/build/esp-idf/esp-idf/CMakeFiles/__idf_esp-idf.dir
+/home/paula/sed/esp-workspace/auto-irrigation-system/actuator-node/build/esp-idf/esp-idf/CMakeFiles/edit_cache.dir
+/home/paula/sed/esp-workspace/auto-irrigation-system/actuator-node/build/esp-idf/esp-idf/CMakeFiles/rebuild_cache.dir
+/home/paula/sed/esp-workspace/auto-irrigation-system/actuator-node/build/esp-idf/esp-idf/CMakeFiles/list_install_components.dir
+/home/paula/sed/esp-workspace/auto-irrigation-system/actuator-node/build/esp-idf/esp-idf/CMakeFiles/install.dir
+/home/paula/sed/esp-workspace/auto-irrigation-system/actuator-node/build/esp-idf/esp-idf/CMakeFiles/install/local.dir
+/home/paula/sed/esp-workspace/auto-irrigation-system/actuator-node/build/esp-idf/esp-idf/CMakeFiles/install/strip.dir
