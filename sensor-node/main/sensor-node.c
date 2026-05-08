@@ -54,7 +54,7 @@ void wifi_init_sta(void)
     // Arrancar el WiFi
     ESP_ERROR_CHECK(esp_wifi_start());
 
-    ESP_LOGI("WIFI", "Conectando a %s...", CONFIG_ESP_WIFI_SSID);
+    ESP_LOGI("WIFI", "Connecting to %s...", CONFIG_ESP_WIFI_SSID);
     esp_wifi_connect();
 }
 
@@ -67,14 +67,14 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
     switch ((esp_mqtt_event_id_t)event_id)
     {
     case MQTT_EVENT_CONNECTED:
-        ESP_LOGI(TAG, "Conectado al Broker");
+        ESP_LOGI(TAG, "Sensor node connected to Broker");
         // Publicar mensaje "Online" para coherencia con LWT
         esp_mqtt_client_publish(client, TOPIC_STATUS, "Online", 0, 1, 1);
        
         break;
 
     case MQTT_EVENT_ERROR:
-        ESP_LOGE(TAG, "Error en el stack MQTT");
+        ESP_LOGE(TAG, "Error on MQTT stack");
         break;
 
     default:
@@ -103,7 +103,7 @@ static esp_mqtt_client_handle_t mqtt_app_start(void)
     return client;
 }
 
-void task_lectura(void *pvParameters) {
+void collect_data_task(void *pvParameters) {
   // Recuperamos el cliente MQTT pasado desde app_main
   esp_mqtt_client_handle_t client = (esp_mqtt_client_handle_t) pvParameters;
   char payload[16]; // Buffer para el texto de la temperatura
@@ -173,6 +173,6 @@ void app_main()
 
     
     // Crear tarea de lectura
-    xTaskCreate(task_lectura, "task_lectura", 4096, (void*) client, 5, NULL);
+    xTaskCreate(collect_data_task, "collect_data_task", 4096, (void*) client, 5, NULL);
 
 }

@@ -1,3 +1,8 @@
+#### WiFi credentials
+
+Set Wifi credential and Mosquitto broker in `./main/Kconfig.projbuild` for each node.
+
+
 #### Load environment variables
 
 ```bash
@@ -82,14 +87,14 @@ mosquitto_pub -h broker.hivemq.com -t "sed/G03/actuador/led" -m "ON"
 #### Node Red
 
 ###### Docker install
-`` bash
+```bash
 sudo apt update
 sudo apt install docker.io
 sudo usermod -aG docker $USER
 ```
 
 ###### Create Node Red container
-``` bash
+```bash
 mkdir -p ~/sed/node-red/data
 cd ~/sed/node-red
 docker run -it -p 1880:1880 -v ./data:/data --name mynodered nodered/node-red

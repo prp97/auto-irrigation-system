@@ -1,0 +1,864 @@
+Command: /home/paula/.espressif/python_env/idf5.5_py3.12_env/bin/python /home/paula/sed/esp-idf/tools/idf_monitor.py -p /dev/ttyACM0 -b 115200 --toolchain-prefix riscv32-esp-elf- --target esp32c3 --revision 3 --decode-panic backtrace /home/paula/sed/esp-workspace/auto-irrigation-system/sensor-node/build/sensor-node.elf /home/paula/sed/esp-workspace/auto-irrigation-system/sensor-node/build/bootloader/bootloader.elf -m '/home/paula/.espressif/python_env/idf5.5_py3.12_env/bin/python' '/home/paula/sed/esp-idf/tools/idf.py' '-p' '/dev/ttyACM0'
+[0;32mI (103) esp_image: segment 1: paddr=0002fd8c vaddr=3fc94800 sizeheap_inESP-ROM:esp32c3-api1-20210207[0m
+Build:Feb  7 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0xc (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4004c0d4
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x155c
+load:0x403cbf10,len:0xc84
+load:0x403ce710,len:0x2fa4
+entry 0x403cbf1a
+[0;32mI (24) boot: ESP-IDF v5.5.3 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time May  8 2026 10:05:02[0m
+[0;32mI (25) boot: chip revision: v0.4[0m
+[0;32mI (25) boot: efuse block revision: v1.2[0m
+[0;32mI (28) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (32) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (36) boot.esp32c3: SPI Flash Size : 2MB[0m
+[0;32mI (39) boot: Enabling RNG early entropy source...[0m
+[0;32mI (44) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (53) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (59) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (66) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (72) boot: End of partition table[0m
+[0;32mI (76) esp_image: segment 0: paddr=00010020 vaddr=3c0c0020 size=1fd64h (130404) map[0m
+[0;32mI (103) esp_image: segment 1: paddr=0002fd8c vaddr=3fc94800 size=0028ch (   652) load[0m
+[0;32mI (104) esp_image: segment 2: paddr=00030020 vaddr=42000020 size=b44b0h (738480) map[0m
+[0;32mI (222) esp_image: segment 3: paddr=000e44d8 vaddr=3fc94a8c size=02f08h ( 12040) load[0m
+[0;32mI (225) esp_image: segment 4: paddr=000e73e8 vaddr=40380000 size=14648h ( 83528) load[0m
+[0;32mI (241) esp_image: segment 5: paddr=000fba38 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (247) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (248) boot: Disabling RNG early entropy source...[0m
+[0;32mI (259) cpu_start: Unicore app[0m
+[0;32mI (267) cpu_start: GPIO 20 and 21 are used as console UART I/O pins[0m
+[0;32mI (268) cpu_start: Pro cpu start user code[0m
+[0;32mI (268) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (270) app_init: Application information:[0m
+[0;32mI (273) app_init: Project name:     sensor-node[0m
+[0;32mI (278) app_init: App version:      1[0m
+[0;32mI (281) app_init: Compile time:     May  8 2026 10:04:56[0m
+[0;32mI (286) app_init: ELF file SHA256:  b1ce6124a...[0m
+[0;32mI (290) app_init: ESP-IDF:          v5.5.3[0m
+[0;32mI (294) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (298) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (302) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (306) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (312) heap_init: At 3FC9C320 len 00023CE0 (143 KiB): RAM[0m
+[0;32mI (317) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (323) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (329) heap_init: At 50000020 len 00001FC8 (7 KiB): RTCRAM[0m
+[0;32mI (336) spi_flash: detected chip: generic[0m
+[0;32mI (338) spi_flash: flash io: dio[0m
+[0;33mW (341) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (354) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (360) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (367) main_task: Started on CPU0[0m
+[0;32mI (367) main_task: Calling app_main()[0m
+[0;32mI (377) pp: pp rom version: 9387209[0m
+[0;32mI (377) net80211: net80211 rom version: 9387209[0m
+[0;32mI (387) wifi:wifi driver task: 3fca4f10, prio:23, stack:6656, core=0[0m
+[0;32mI (387) wifi:wifi firmware version: 4df78f2[0m
+[0;32mI (387) wifi:wifi certification version: v7.0[0m
+[0;32mI (387) wifi:config NVS flash: enabled[0m
+[0;32mI (397) wifi:config nano formatting: disabled[0m
+[0;32mI (397) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (407) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (407) wifi:Init management short buffer num: 32[0m
+[0;32mI (407) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (417) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (417) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (427) wifi:Init static rx buffer num: 10[0m
+[0;32mI (427) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (427) wifi_init: rx ba win: 6[0m
+[0;32mI (437) wifi_init: accept mbox: 6[0m
+[0;32mI (437) wifi_init: tcpip mbox: 32[0m
+[0;32mI (437) wifi_init: udp mbox: 6[0m
+[0;32mI (447) wifi_init: tcp mbox: 6[0m
+[0;32mI (447) wifi_init: tcp tx win: 5760[0m
+[0;32mI (447) wifi_init: tcp rx win: 5760[0m
+[0;32mI (447) wifi_init: tcp mss: 1440[0m
+[0;32mI (457) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (457) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (467) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (467) phy_init: phy_version 1232,d493f299,Aug 25 2025,19:01:20[0m
+[0;32mI (507) wifi:mode : sta (34:85:18:02:93:94)[0m
+[0;32mI (507) wifi:enable tsf[0m
+[0;32mI (507) WIFI: Conectando a Paula...[0m
+[0;32mI (527) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (537) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (547) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (557) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (627) wifi:connected with Paula, aid = 2, channel 11, BW20, bssid = 8a:04:de:aa:05:40[0m
+[0;32mI (627) wifi:security: WPA2-PSK, phy: bgn, rssi: -29[0m
+[0;32mI (627) wifi:pm start, type: 1[0m
+
+[0;32mI (627) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (637) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (647) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (657) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (657) wifi:<ba-add>idx:0 (ifx:0, 8a:04:de:aa:05:40), tid:0, ssn:0, winSize:64[0m
+[0;32mI (1687) esp_netif_handlers: sta ip: 10.12.62.250, mask: 255.255.255.0, gw: 10.12.62.234[0m
+[0;32mI (5507) i2cdev: [Port 0] First initialization. Configuring bus with SDA=10, SCL=8 (Pullups SCL:0 SDA:0)[0m
+[0;33mW (5507) i2c.master: Please check pull-up resistances whether be connected properly. Otherwise unexpected behavior would happen. For more detailed information, please read docs[0m
+[0;32mI (5517) i2cdev: [Port 0] Successfully installed I2C master bus (Handle: 0x3fcb0154).[0m
+[0;32mI (5527) i2cdev: [0x40 at 0] Device added successfully (Device Handle: 0x3fcb04e8, Speed: 400000 Hz).[0m
+[0;32mI (5537) main_task: Returned from app_main()[0m
+[0;32mI (5737) sensor-node: Temperature: 22.46 C, Humidity: 47.40 %[0m
+[0;32mI (6017) sensor-node: Conectado al Broker[0m
+[0;32mI (16217) sensor-node: Temperature: 22.42 C, Humidity: 47.21 %[0m
+[0;32mI (26417) sensor-node: Temperature: 22.40 C, Humidity: 47.56 %[0m
+[0;32mI (36617) sensor-node: Temperature: 22.40 C, Humidity: 47.98 %[0m
+[0;32mI (46817) sensor-node: Temperature: 22.40 C, Humidity: 48.16 %[0m
+[0;32mI (57017) sensor-node: Temperature: 22.36 C, Humidity: 48.00 %[0m
+[0;32mI (67217) sensor-node: Temperature: 22.37 C, Humidity: 47.97 %[0m
+[0;32mI (77417) sensor-node: Temperature: 22.37 C, Humidity: 48.36 %[0m
+[0;32mI (87617) sensor-node: Temperature: 22.35 C, Humidity: 48.47 %[0m
+[0;32mI (97817) sensor-node: Temperature: 22.33 C, Humidity: 48.36 %[0m
+[0;32mI (108017) sensor-node: Temperature: 22.33 C, Humidity: 48.10 %[0m
+[0;32mI (118217) sensor-node: Temperature: 22.35 C, Humidity: 47.84 %[0m
+[0;32mI (128417) sensor-node: Temperature: 22.33 C, Humidity: 47.75 %[0m
+[0;32mI (138617) sensor-node: Temperature: 22.32 C, Humidity: 47.70 %[0m
+[0;32mI (148817) sensor-node: Temperature: 22.32 C, Humidity: 47.55 %[0m
+[0;32mI (159017) sensor-node: Temperature: 22.31 C, Humidity: 47.39 %[0m
+[0;32mI (169217) sensor-node: Temperature: 22.29 C, Humidity: 47.30 %[0m
+[0;32mI (179417) sensor-node: Temperature: 22.28 C, Humidity: 47.26 %[0m
+[0;32mI (189617) sensor-node: Temperature: 22.27 C, Humidity: 47.20 %[0m
+[0;32mI (199817) sensor-node: Temperature: 22.27 C, Humidity: 47.12 %[0m
+[0;32mI (210017) sensor-node: Temperature: 22.25 C, Humidity: 47.09 %[0m
+[0;32mI (220217) sensor-node: Temperature: 22.25 C, Humidity: 47.26 %[0m
+[0;32mI (230417) sensor-node: Temperature: 22.25 C, Humidity: 47.29 %[0m
+[0;32mI (240617) sensor-node: Temperature: 22.24 C, Humidity: 47.20 %[0m
+[0;32mI (250817) sensor-node: Temperature: 22.23 C, Humidity: 47.11 %[0m
+[0;32mI (261017) sensor-node: Temperature: 22.20 C, Humidity: 47.06 %[0m
+[0;32mI (271217) sensor-node: Temperature: 22.20 C, Humidity: 47.01 %[0m
+[0;32mI (281417) sensor-node: Temperature: 22.18 C, Humidity: 47.07 %[0m
+[0;32mI (291617) sensor-node: Temperature: 22.20 C, Humidity: 47.29 %[0m
+[0;32mI (301817) sensor-node: Temperature: 22.22 C, Humidity: 47.45 %[0m
+[0;32mI (312017) sensor-node: Temperature: 22.22 C, Humidity: 47.43 %[0m
+[0;32mI (322217) sensor-node: Temperature: 22.23 C, Humidity: 47.39 %[0m
+[0;32mI (332417) sensor-node: Temperature: 22.21 C, Humidity: 47.32 %[0m
+[0;32mI (342617) sensor-node: Temperature: 22.22 C, Humidity: 47.26 %[0m
+[0;32mI (352817) sensor-node: Temperature: 22.23 C, Humidity: 47.27 %[0m
+[0;32mI (363017) sensor-node: Temperature: 22.22 C, Humidity: 47.28 %[0m
+[0;32mI (373217) sensor-node: Temperature: 22.24 C, Humidity: 47.33 %[0m
+[0;32mI (383417) sensor-node: Temperature: 22.24 C, Humidity: 47.44 %[0m
+[0;32mI (393617) sensor-node: Temperature: 22.23 C, Humidity: 47.49 %[0m
+[0;32mI (403817) sensor-node: Temperature: 22.24 C, Humidity: 47.72 %[0m
+[0;32mI (414017) sensor-node: Temperature: 22.24 C, Humidity: 47.97 %[0m
+[0;32mI (424217) sensor-node: Temperature: 22.25 C, Humidity: 47.91 %[0m
+[0;32mI (434417) sensor-node: Temperature: 22.27 C, Humidity: 47.78 %[0m
+[0;32mI (444617) sensor-node: Temperature: 22.25 C, Humidity: 47.74 %[0m
+[0;32mI (454817) sensor-node: Temperature: 22.29 C, Humidity: 48.18 %[0m
+[0;32mI (465017) sensor-node: Temperature: 22.27 C, Humidity: 48.23 %[0m
+[0;32mI (475217) sensor-node: Temperature: 22.31 C, Humidity: 48.47 %[0m
+[0;32mI (485417) sensor-node: Temperature: 22.31 C, Humidity: 48.81 %[0m
+[0;32mI (495617) sensor-node: Temperature: 22.27 C, Humidity: 48.87 %[0m
+[0;32mI (505817) sensor-node: Temperature: 22.31 C, Humidity: 48.71 %[0m
+[0;32mI (516017) sensor-node: Temperature: 22.28 C, Humidity: 48.59 %[0m
+[0;32mI (526217) sensor-node: Temperature: 22.28 C, Humidity: 48.41 %[0m
+[0;32mI (536417) sensor-node: Temperature: 22.31 C, Humidity: 48.26 %[0m
+[0;32mI (546617) sensor-node: Temperature: 22.28 C, Humidity: 48.21 %[0m
+[0;32mI (556817) sensor-node: Temperature: 22.27 C, Humidity: 48.05 %[0m
+[0;32mI (567017) sensor-node: Temperature: 22.29 C, Humidity: 47.78 %[0m
+[0;32mI (577217) sensor-node: Temperature: 22.31 C, Humidity: 48.10 %[0m
+[0;32mI (587417) sensor-node: Temperature: 22.31 C, Humidity: 48.33 %[0m
+[0;32mI (597617) sensor-node: Temperature: 22.33 C, Humidity: 48.30 %[0m
+[0;32mI (607817) sensor-node: Temperature: 22.34 C, Humidity: 48.31 %[0m
+[0;32mI (618017) sensor-node: Temperature: 22.37 C, Humidity: 48.26 %[0m
+[0;32mI (628217) sensor-node: Temperature: 22.37 C, Humidity: 48.15 %[0m
+[0;32mI (638417) sensor-node: Temperature: 22.33 C, Humidity: 48.26 %[0m
+[0;32mI (648617) sensor-node: Temperature: 22.34 C, Humidity: 48.26 %[0m
+[0;32mI (658817) sensor-node: Temperature: 22.35 C, Humidity: 48.35 %[0m
+[0;32mI (669017) sensor-node: Temperature: 22.36 C, Humidity: 48.24 %[0m
+[0;32mI (679217) sensor-node: Temperature: 22.35 C, Humidity: 47.97 %[0m
+[0;32mI (689417) sensor-node: Temperature: 22.35 C, Humidity: 47.69 %[0m
+[0;32mI (699617) sensor-node: Temperature: 22.36 C, Humidity: 47.51 %[0m
+[0;32mI (709817) sensor-node: Temperature: 22.37 C, Humidity: 47.36 %[0m
+[0;32mI (720017) sensor-node: Temperature: 22.37 C, Humidity: 47.30 %[0m
+[0;32mI (730217) sensor-node: Temperature: 22.35 C, Humidity: 47.41 %[0m
+[0;32mI (740417) sensor-node: Temperature: 22.36 C, Humidity: 47.61 %[0m
+[0;32mI (750617) sensor-node: Temperature: 22.36 C, Humidity: 48.38 %[0m
+[0;32mI (760817) sensor-node: Temperature: 22.39 C, Humidity: 49.13 %[0m
+[0;32mI (771017) sensor-node: Temperature: 22.38 C, Humidity: 49.46 %[0m
+[0;32mI (781217) sensor-node: Temperature: 22.40 C, Humidity: 49.58 %[0m
+[0;32mI (791417) sensor-node: Temperature: 22.38 C, Humidity: 49.53 %[0m
+[0;32mI (801617) sensor-node: Temperature: 22.38 C, Humidity: 49.49 %[0m
+[0;32mI (811817) sensor-node: Temperature: 22.41 C, Humidity: 49.63 %[0m
+[0;32mI (822017) sensor-node: Temperature: 22.40 C, Humidity: 49.45 %[0m
+[0;32mI (832217) sensor-node: Temperature: 22.42 C, Humidity: 49.70 %[0m
+[0;32mI (842417) sensor-node: Temperature: 22.40 C, Humidity: 49.76 %[0m
+[0;32mI (852617) sensor-node: Temperature: 22.40 C, Humidity: 49.84 %[0m
+[0;32mI (862817) sensor-node: Temperature: 22.41 C, Humidity: 50.20 %[0m
+[0;32mI (873017) sensor-node: Temperature: 22.42 C, Humidity: 50.30 %[0m
+[0;32mI (883217) sensor-node: Temperature: 22.43 C, Humidity: 50.35 %[0m
+[0;32mI (893417) sensor-node: Temperature: 22.41 C, Humidity: 50.13 %[0m
+[0;32mI (903617) sensor-node: Temperature: 22.42 C, Humidity: 50.04 %[0m
+[0;32mI (913817) sensor-node: Temperature: 22.46 C, Humidity: 50.18 %[0m
+[0;32mI (924017) sensor-node: Temperature: 22.42 C, Humidity: 49.93 %[0m
+[0;32mI (934217) sensor-node: Temperature: 22.44 C, Humidity: 49.82 %[0m
+[0;32mI (944417) sensor-node: Temperature: 22.41 C, Humidity: 49.76 %[0m
+[0;32mI (954617) sensor-node: Temperature: 22.43 C, Humidity: 49.85 %[0m
+[0;32mI (964817) sensor-node: Temperature: 22.44 C, Humidity: 49.57 %[0m
+[0;32mI (975017) sensor-node: Temperature: 22.43 C, Humidity: 49.42 %[0m
+[0;32mI (985217) sensor-node: Temperature: 22.46 C, Humidity: 50.11 %[0m
+[0;32mI (995417) sensor-node: Temperature: 22.44 C, Humidity: 50.39 %[0m
+[0;32mI (1005617) sensor-node: Temperature: 22.42 C, Humidity: 50.34 %[0m
+[0;32mI (1015817) sensor-node: Temperature: 22.41 C, Humidity: 50.11 %[0m
+[0;32mI (1026017) sensor-node: Temperature: 22.40 C, Humidity: 50.15 %[0m
+[0;32mI (1036217) sensor-node: Temperature: 22.43 C, Humidity: 49.82 %[0m
+[0;32mI (1046417) sensor-node: Temperature: 22.41 C, Humidity: 49.59 %[0m
+[0;32mI (1056617) sensor-node: Temperature: 22.41 C, Humidity: 49.41 %[0m
+[0;32mI (1066817) sensor-node: Temperature: 22.41 C, Humidity: 49.21 %[0m
+[0;32mI (1077017) sensor-node: Temperature: 22.44 C, Humidity: 49.23 %[0m
+[0;32mI (1087217) sensor-node: Temperature: 22.46 C, Humidity: 49.52 %[0m
+[0;32mI (1097417) sensor-node: Temperature: 22.42 C, Humidity: 49.39 %[0m
+[0;32mI (1107617) sensor-node: Temperature: 22.41 C, Humidity: 49.35 %[0m
+[0;32mI (1117817) sensor-node: Temperature: 22.41 C, Humidity: 49.09 %[0m
+[0;32mI (1128017) sensor-node: Temperature: 22.42 C, Humidity: 48.74 %[0m
+[0;32mI (1138217) sensor-node: Temperature: 22.42 C, Humidity: 48.50 %[0m
+[0;32mI (1148417) sensor-node: Temperature: 22.43 C, Humidity: 48.35 %[0m
+[0;32mI (1158617) sensor-node: Temperature: 22.42 C, Humidity: 48.13 %[0m
+[0;32mI (1168817) sensor-node: Temperature: 22.44 C, Humidity: 47.90 %[0m
+[0;32mI (1179017) sensor-node: Temperature: 22.41 C, Humidity: 47.76 %[0m
+[0;32mI (1189217) sensor-node: Temperature: 22.41 C, Humidity: 47.81 %[0m
+[0;32mI (1199417) sensor-node: Temperature: 22.41 C, Humidity: 48.02 %[0m
+[0;32mI (1209617) sensor-node: Temperature: 22.41 C, Humidity: 48.16 %[0m
+[0;32mI (1219817) sensor-node: Temperature: 22.43 C, Humidity: 48.13 %[0m
+[0;32mI (1230017) sensor-node: Temperature: 22.43 C, Humidity: 48.34 %[0m
+[0;32mI (1240217) sensor-node: Temperature: 22.44 C, Humidity: 48.60 %[0m
+[0;32mI (1250417) sensor-node: Temperature: 22.46 C, Humidity: 48.85 %[0m
+[0;32mI (1260617) sensor-node: Temperature: 22.46 C, Humidity: 48.78 %[0m
+[0;32mI (1270817) sensor-node: Temperature: 22.46 C, Humidity: 48.44 %[0m
+[0;32mI (1281017) sensor-node: Temperature: 22.47 C, Humidity: 48.39 %[0m
+[0;32mI (1291217) sensor-node: Temperature: 22.48 C, Humidity: 48.48 %[0m
+[0;32mI (1301417) sensor-node: Temperature: 22.48 C, Humidity: 48.71 %[0m
+[0;32mI (1311617) sensor-node: Temperature: 22.46 C, Humidity: 48.69 %[0m
+[0;32mI (1321817) sensor-node: Temperature: 22.46 C, Humidity: 48.51 %[0m
+[0;32mI (1332017) sensor-node: Temperature: 22.47 C, Humidity: 48.43 %[0m
+[0;32mI (1342217) sensor-node: Temperature: 22.47 C, Humidity: 48.33 %[0m
+[0;32mI (1352417) sensor-node: Temperature: 22.48 C, Humidity: 48.50 %[0m
+[0;32mI (1362617) sensor-node: Temperature: 22.48 C, Humidity: 48.78 %[0m
+[0;32mI (1372817) sensor-node: Temperature: 22.48 C, Humidity: 48.83 %[0m
+[0;32mI (1383017) sensor-node: Temperature: 22.48 C, Humidity: 48.84 %[0m
+[0;32mI (1393217) sensor-node: Temperature: 22.49 C, Humidity: 48.84 %[0m
+[0;32mI (1403417) sensor-node: Temperature: 22.50 C, Humidity: 49.14 %[0m
+[0;32mI (1413617) sensor-node: Temperature: 22.51 C, Humidity: 48.91 %[0m
+[0;32mI (1423817) sensor-node: Temperature: 22.51 C, Humidity: 48.56 %[0m
+[0;32mI (1434017) sensor-node: Temperature: 22.53 C, Humidity: 48.39 %[0m
+[0;32mI (1444217) sensor-node: Temperature: 22.52 C, Humidity: 48.12 %[0m
+[0;32mI (1454417) sensor-node: Temperature: 22.54 C, Humidity: 48.00 %[0m
+[0;32mI (1464617) sensor-node: Temperature: 22.50 C, Humidity: 47.86 %[0m
+[0;32mI (1474817) sensor-node: Temperature: 22.51 C, Humidity: 47.81 %[0m
+[0;32mI (1485017) sensor-node: Temperature: 22.52 C, Humidity: 47.71 %[0m
+[0;32mI (1495217) sensor-node: Temperature: 22.54 C, Humidity: 47.87 %[0m
+[0;32mI (1505417) sensor-node: Temperature: 22.55 C, Humidity: 48.01 %[0m
+[0;32mI (1515617) sensor-node: Temperature: 22.54 C, Humidity: 47.82 %[0m
+[0;32mI (1525817) sensor-node: Temperature: 22.53 C, Humidity: 47.56 %[0m
+[0;32mI (1536017) sensor-node: Temperature: 22.54 C, Humidity: 47.44 %[0m
+[0;32mI (1546217) sensor-node: Temperature: 22.53 C, Humidity: 47.53 %[0m
+[0;32mI (1556417) sensor-node: Temperature: 22.54 C, Humidity: 47.49 %[0m
+[0;32mI (1566617) sensor-node: Temperature: 22.54 C, Humidity: 47.36 %[0m
+[0;32mI (1576817) sensor-node: Temperature: 22.55 C, Humidity: 47.20 %[0m
+[0;32mI (1587017) sensor-node: Temperature: 22.54 C, Humidity: 47.07 %[0m
+[0;32mI (1597217) sensor-node: Temperature: 22.54 C, Humidity: 46.97 %[0m
+[0;32mI (1607417) sensor-node: Temperature: 22.55 C, Humidity: 47.13 %[0m
+[0;32mI (1617617) sensor-node: Temperature: 22.57 C, Humidity: 47.74 %[0m
+[0;32mI (1627817) sensor-node: Temperature: 22.57 C, Humidity: 48.27 %[0m
+[0;32mI (1638017) sensor-node: Temperature: 22.57 C, Humidity: 48.58 %[0m
+[0;32mI (1648217) sensor-node: Temperature: 22.58 C, Humidity: 48.45 %[0m
+[0;32mI (1658417) sensor-node: Temperature: 22.58 C, Humidity: 48.11 %[0m
+[0;32mI (1668617) sensor-node: Temperature: 22.61 C, Humidity: 47.81 %[0m
+[0;32mI (1678817) sensor-node: Temperature: 22.58 C, Humidity: 47.58 %[0m
+[0;32mI (1689017) sensor-node: Temperature: 22.56 C, Humidity: 47.40 %[0m
+[0;32mI (1699217) sensor-node: Temperature: 22.60 C, Humidity: 47.21 %[0m
+[0;32mI (1709417) sensor-node: Temperature: 22.60 C, Humidity: 47.04 %[0m
+[0;32mI (1719617) sensor-node: Temperature: 22.61 C, Humidity: 46.93 %[0m
+[0;32mI (1729817) sensor-node: Temperature: 22.60 C, Humidity: 47.02 %[0m
+[0;32mI (1740017) sensor-node: Temperature: 22.62 C, Humidity: 47.23 %[0m
+[0;32mI (1750217) sensor-node: Temperature: 22.61 C, Humidity: 47.13 %[0m
+[0;32mI (1760417) sensor-node: Temperature: 22.61 C, Humidity: 47.00 %[0m
+[0;32mI (1770617) sensor-node: Temperature: 22.60 C, Humidity: 47.52 %[0m
+[0;32mI (1780817) sensor-node: Temperature: 22.57 C, Humidity: 48.25 %[0m
+[0;32mI (1791017) sensor-node: Temperature: 22.56 C, Humidity: 48.81 %[0m
+[0;32mI (1801217) sensor-node: Temperature: 22.54 C, Humidity: 49.17 %[0m
+[0;32mI (1811417) sensor-node: Temperature: 22.56 C, Humidity: 49.12 %[0m
+[0;32mI (1821617) sensor-node: Temperature: 22.61 C, Humidity: 48.74 %[0m
+[0;32mI (1831817) sensor-node: Temperature: 22.58 C, Humidity: 48.36 %[0m
+[0;32mI (1842017) sensor-node: Temperature: 22.63 C, Humidity: 47.98 %[0m
+[0;32mI (1852217) sensor-node: Temperature: 22.63 C, Humidity: 47.72 %[0m
+[0;32mI (1862417) sensor-node: Temperature: 22.62 C, Humidity: 47.81 %[0m
+[0;32mI (1872617) sensor-node: Temperature: 22.64 C, Humidity: 47.64 %[0m
+[0;32mI (1882817) sensor-node: Temperature: 22.61 C, Humidity: 47.35 %[0m
+[0;32mI (1893017) sensor-node: Temperature: 22.61 C, Humidity: 47.12 %[0m
+[0;32mI (1903217) sensor-node: Temperature: 22.61 C, Humidity: 46.97 %[0m
+[0;32mI (1913417) sensor-node: Temperature: 22.62 C, Humidity: 46.93 %[0m
+[0;32mI (1923617) sensor-node: Temperature: 22.62 C, Humidity: 46.88 %[0m
+[0;32mI (1933817) sensor-node: Temperature: 22.65 C, Humidity: 46.97 %[0m
+[0;32mI (1944017) sensor-node: Temperature: 22.64 C, Humidity: 47.21 %[0m
+[0;32mI (1954217) sensor-node: Temperature: 22.66 C, Humidity: 47.21 %[0m
+[0;32mI (1964417) sensor-node: Temperature: 22.70 C, Humidity: 47.07 %[0m
+[0;32mI (1974617) sensor-node: Temperature: 22.67 C, Humidity: 47.00 %[0m
+[0;32mI (1984817) sensor-node: Temperature: 22.62 C, Humidity: 46.98 %[0m
+[0;32mI (1995017) sensor-node: Temperature: 22.61 C, Humidity: 46.91 %[0m
+[0;32mI (2005217) sensor-node: Temperature: 22.58 C, Humidity: 46.86 %[0m
+[0;32mI (2015417) sensor-node: Temperature: 22.56 C, Humidity: 47.27 %[0m
+[0;32mI (2025617) sensor-node: Temperature: 22.56 C, Humidity: 47.59 %[0m
+[0;32mI (2035817) sensor-node: Temperature: 22.56 C, Humidity: 47.55 %[0m
+[0;32mI (2046017) sensor-node: Temperature: 22.55 C, Humidity: 47.72 %[0m
+[0;32mI (2056217) sensor-node: Temperature: 22.58 C, Humidity: 48.07 %[0m
+[0;32mI (2066417) sensor-node: Temperature: 22.62 C, Humidity: 48.94 %[0m
+[0;32mI (2076617) sensor-node: Temperature: 22.64 C, Humidity: 49.04 %[0m
+[0;32mI (2086817) sensor-node: Temperature: 22.61 C, Humidity: 48.61 %[0m
+[0;32mI (2097017) sensor-node: Temperature: 22.64 C, Humidity: 48.17 %[0m
+[0;32mI (2107217) sensor-node: Temperature: 22.67 C, Humidity: 47.97 %[0m
+[0;32mI (2117417) sensor-node: Temperature: 22.67 C, Humidity: 48.20 %[0m
+[0;32mI (2127617) sensor-node: Temperature: 22.65 C, Humidity: 48.71 %[0m
+[0;32mI (2137817) sensor-node: Temperature: 22.64 C, Humidity: 48.74 %[0m
+[0;32mI (2148017) sensor-node: Temperature: 22.64 C, Humidity: 48.48 %[0m
+[0;32mI (2158217) sensor-node: Temperature: 22.63 C, Humidity: 48.30 %[0m
+[0;32mI (2168417) sensor-node: Temperature: 22.64 C, Humidity: 48.08 %[0m
+[0;32mI (2178617) sensor-node: Temperature: 22.64 C, Humidity: 47.76 %[0m
+[0;32mI (2188817) sensor-node: Temperature: 22.64 C, Humidity: 47.84 %[0m
+[0;32mI (2199017) sensor-node: Temperature: 22.67 C, Humidity: 48.05 %[0m
+[0;32mI (2209217) sensor-node: Temperature: 22.65 C, Humidity: 48.36 %[0m
+[0;32mI (2219417) sensor-node: Temperature: 22.65 C, Humidity: 48.62 %[0m
+[0;32mI (2229617) sensor-node: Temperature: 22.65 C, Humidity: 48.42 %[0m
+[0;32mI (2239817) sensor-node: Temperature: 22.64 C, Humidity: 48.06 %[0m
+[0;32mI (2250017) sensor-node: Temperature: 22.63 C, Humidity: 47.93 %[0m
+[0;32mI (2260217) sensor-node: Temperature: 22.65 C, Humidity: 48.11 %[0m
+[0;32mI (2270417) sensor-node: Temperature: 22.64 C, Humidity: 47.94 %[0m
+[0;32mI (2280617) sensor-node: Temperature: 22.63 C, Humidity: 47.52 %[0m
+[0;32mI (2290817) sensor-node: Temperature: 22.63 C, Humidity: 47.14 %[0m
+[0;32mI (2301017) sensor-node: Temperature: 22.64 C, Humidity: 47.06 %[0m
+[0;32mI (2311217) sensor-node: Temperature: 22.64 C, Humidity: 47.08 %[0m
+[0;32mI (2321417) sensor-node: Temperature: 22.63 C, Humidity: 47.02 %[0m
+[0;32mI (2331617) sensor-node: Temperature: 22.65 C, Humidity: 47.04 %[0m
+[0;32mI (2341817) sensor-node: Temperature: 22.64 C, Humidity: 47.45 %[0m
+[0;32mI (2352017) sensor-node: Temperature: 22.62 C, Humidity: 47.72 %[0m
+[0;32mI (2362217) sensor-node: Temperature: 22.66 C, Humidity: 47.84 %[0m
+[0;32mI (2372417) sensor-node: Temperature: 22.62 C, Humidity: 48.23 %[0m
+[0;32mI (2382617) sensor-node: Temperature: 22.65 C, Humidity: 48.18 %[0m
+[0;32mI (2392817) sensor-node: Temperature: 22.65 C, Humidity: 48.15 %[0m
+[0;32mI (2403017) sensor-node: Temperature: 22.66 C, Humidity: 48.27 %[0m
+[0;32mI (2413217) sensor-node: Temperature: 22.64 C, Humidity: 48.52 %[0m
+[0;32mI (2423417) sensor-node: Temperature: 22.64 C, Humidity: 48.56 %[0m
+[0;32mI (2433617) sensor-node: Temperature: 22.68 C, Humidity: 48.74 %[0m
+[0;32mI (2443817) sensor-node: Temperature: 22.68 C, Humidity: 48.92 %[0m
+[0;32mI (2454017) sensor-node: Temperature: 22.65 C, Humidity: 49.17 %[0m
+[0;32mI (2464217) sensor-node: Temperature: 22.66 C, Humidity: 49.10 %[0m
+[0;32mI (2474417) sensor-node: Temperature: 22.65 C, Humidity: 49.13 %[0m
+[0;32mI (2484617) sensor-node: Temperature: 22.66 C, Humidity: 49.13 %[0m
+[0;32mI (2494817) sensor-node: Temperature: 22.67 C, Humidity: 49.10 %[0m
+[0;32mI (2505017) sensor-node: Temperature: 22.65 C, Humidity: 49.26 %[0m
+[0;32mI (2515217) sensor-node: Temperature: 22.67 C, Humidity: 49.44 %[0m
+[0;32mI (2525417) sensor-node: Temperature: 22.68 C, Humidity: 49.61 %[0m
+[0;32mI (2535617) sensor-node: Temperature: 22.67 C, Humidity: 49.47 %[0m
+[0;32mI (2545817) sensor-node: Temperature: 22.68 C, Humidity: 49.18 %[0m
+[0;32mI (2556017) sensor-node: Temperature: 22.65 C, Humidity: 49.42 %[0m
+[0;32mI (2566217) sensor-node: Temperature: 22.61 C, Humidity: 49.70 %[0m
+[0;32mI (2576417) sensor-node: Temperature: 22.63 C, Humidity: 49.49 %[0m
+[0;32mI (2586617) sensor-node: Temperature: 22.64 C, Humidity: 49.47 %[0m
+[0;32mI (2596817) sensor-node: Temperature: 22.65 C, Humidity: 49.26 %[0m
+[0;32mI (2607017) sensor-node: Temperature: 22.66 C, Humidity: 48.83 %[0m
+[0;32mI (2617217) sensor-node: Temperature: 22.69 C, Humidity: 48.39 %[0m
+[0;32mI (2627417) sensor-node: Temperature: 22.68 C, Humidity: 48.00 %[0m
+[0;32mI (2637617) sensor-node: Temperature: 22.68 C, Humidity: 47.84 %[0m
+[0;32mI (2647817) sensor-node: Temperature: 22.66 C, Humidity: 47.91 %[0m
+[0;32mI (2658017) sensor-node: Temperature: 22.68 C, Humidity: 47.78 %[0m
+[0;32mI (2668217) sensor-node: Temperature: 22.70 C, Humidity: 47.62 %[0m
+[0;32mI (2678417) sensor-node: Temperature: 22.70 C, Humidity: 47.47 %[0m
+[0;32mI (2688617) sensor-node: Temperature: 22.68 C, Humidity: 47.37 %[0m
+[0;32mI (2698817) sensor-node: Temperature: 22.70 C, Humidity: 47.28 %[0m
+[0;32mI (2709017) sensor-node: Temperature: 22.70 C, Humidity: 47.20 %[0m
+[0;32mI (2719217) sensor-node: Temperature: 22.70 C, Humidity: 47.37 %[0m
+[0;32mI (2729417) sensor-node: Temperature: 22.73 C, Humidity: 47.62 %[0m
+[0;32mI (2739617) sensor-node: Temperature: 22.71 C, Humidity: 47.81 %[0m
+[0;32mI (2749817) sensor-node: Temperature: 22.70 C, Humidity: 48.10 %[0m
+[0;32mI (2760017) sensor-node: Temperature: 22.73 C, Humidity: 48.07 %[0m
+[0;32mI (2770217) sensor-node: Temperature: 22.73 C, Humidity: 48.29 %[0m
+[0;32mI (2780417) sensor-node: Temperature: 22.75 C, Humidity: 48.26 %[0m
+[0;32mI (2790617) sensor-node: Temperature: 22.77 C, Humidity: 48.48 %[0m
+[0;32mI (2800817) sensor-node: Temperature: 22.78 C, Humidity: 48.38 %[0m
+[0;32mI (2811017) sensor-node: Temperature: 22.79 C, Humidity: 48.20 %[0m
+[0;32mI (2821217) sensor-node: Temperature: 22.80 C, Humidity: 47.83 %[0m
+[0;32mI (2831417) sensor-node: Temperature: 22.79 C, Humidity: 47.54 %[0m
+[0;32mI (2841617) sensor-node: Temperature: 22.78 C, Humidity: 47.46 %[0m
+[0;32mI (2851817) sensor-node: Temperature: 22.77 C, Humidity: 47.38 %[0m
+[0;32mI (2862017) sensor-node: Temperature: 22.76 C, Humidity: 47.56 %[0m
+[0;32mI (2872217) sensor-node: Temperature: 22.76 C, Humidity: 47.65 %[0m
+[0;32mI (2882417) sensor-node: Temperature: 22.77 C, Humidity: 47.58 %[0m
+[0;32mI (2892617) sensor-node: Temperature: 22.75 C, Humidity: 47.60 %[0m
+[0;32mI (2902817) sensor-node: Temperature: 22.75 C, Humidity: 48.05 %[0m
+[0;32mI (2913017) sensor-node: Temperature: 22.77 C, Humidity: 48.39 %[0m
+[0;32mI (2923217) sensor-node: Temperature: 22.77 C, Humidity: 48.39 %[0m
+[0;32mI (2933417) sensor-node: Temperature: 22.81 C, Humidity: 48.14 %[0m
+[0;32mI (2943617) sensor-node: Temperature: 22.84 C, Humidity: 48.08 %[0m
+[0;32mI (2953817) sensor-node: Temperature: 22.87 C, Humidity: 47.99 %[0m
+[0;32mI (2964017) sensor-node: Temperature: 22.87 C, Humidity: 48.07 %[0m
+[0;32mI (2974217) sensor-node: Temperature: 22.85 C, Humidity: 47.83 %[0m
+[0;32mI (2984417) sensor-node: Temperature: 22.88 C, Humidity: 47.65 %[0m
+[0;32mI (2994617) sensor-node: Temperature: 22.90 C, Humidity: 47.56 %[0m
+[0;32mI (3004817) sensor-node: Temperature: 22.87 C, Humidity: 47.27 %[0m
+[0;32mI (3015017) sensor-node: Temperature: 22.87 C, Humidity: 47.01 %[0m
+[0;32mI (3025217) sensor-node: Temperature: 22.87 C, Humidity: 46.97 %[0m
+[0;32mI (3035417) sensor-node: Temperature: 22.86 C, Humidity: 47.07 %[0m
+[0;32mI (3045617) sensor-node: Temperature: 22.83 C, Humidity: 47.30 %[0m
+[0;32mI (3055817) sensor-node: Temperature: 22.79 C, Humidity: 47.88 %[0m
+[0;32mI (3066017) sensor-node: Temperature: 22.81 C, Humidity: 48.06 %[0m
+[0;32mI (3076217) sensor-node: Temperature: 22.80 C, Humidity: 48.36 %[0m
+[0;32mI (3086417) sensor-node: Temperature: 22.78 C, Humidity: 48.61 %[0m
+[0;32mI (3096617) sensor-node: Temperature: 22.77 C, Humidity: 48.73 %[0m
+[0;32mI (3106817) sensor-node: Temperature: 22.75 C, Humidity: 48.94 %[0m
+[0;32mI (3117017) sensor-node: Temperature: 22.72 C, Humidity: 49.26 %[0m
+[0;32mI (3127217) sensor-node: Temperature: 22.72 C, Humidity: 49.46 %[0m
+[0;32mI (3137417) sensor-node: Temperature: 22.72 C, Humidity: 49.48 %[0m
+[0;32mI (3147617) sensor-node: Temperature: 22.72 C, Humidity: 49.61 %[0m
+[0;32mI (3157817) sensor-node: Temperature: 22.75 C, Humidity: 49.53 %[0m
+[0;32mI (3168017) sensor-node: Temperature: 22.69 C, Humidity: 49.47 %[0m
+[0;32mI (3178217) sensor-node: Temperature: 22.69 C, Humidity: 49.55 %[0m
+[0;32mI (3188417) sensor-node: Temperature: 22.69 C, Humidity: 49.74 %[0m
+[0;32mI (3198617) sensor-node: Temperature: 22.69 C, Humidity: 49.68 %[0m
+[0;32mI (3208817) sensor-node: Temperature: 22.68 C, Humidity: 49.71 %[0m
+[0;32mI (3219017) sensor-node: Temperature: 22.65 C, Humidity: 49.70 %[0m
+[0;32mI (3229217) sensor-node: Temperature: 22.65 C, Humidity: 49.74 %[0m
+[0;32mI (3239417) sensor-node: Temperature: 22.66 C, Humidity: 49.66 %[0m
+[0;32mI (3249617) sensor-node: Temperature: 22.68 C, Humidity: 49.67 %[0m
+[0;32mI (3259817) sensor-node: Temperature: 22.68 C, Humidity: 49.30 %[0m
+[0;32mI (3270017) sensor-node: Temperature: 22.67 C, Humidity: 49.10 %[0m
+[0;32mI (3280217) sensor-node: Temperature: 22.68 C, Humidity: 48.99 %[0m
+[0;32mI (3290417) sensor-node: Temperature: 22.71 C, Humidity: 48.62 %[0m
+[0;32mI (3300617) sensor-node: Temperature: 22.71 C, Humidity: 48.73 %[0m
+[0;32mI (3310817) sensor-node: Temperature: 22.71 C, Humidity: 48.72 %[0m
+[0;32mI (3321017) sensor-node: Temperature: 22.72 C, Humidity: 48.74 %[0m
+[0;32mI (3331217) sensor-node: Temperature: 22.75 C, Humidity: 48.87 %[0m
+[0;32mI (3341417) sensor-node: Temperature: 22.73 C, Humidity: 48.91 %[0m
+[0;32mI (3351617) sensor-node: Temperature: 22.73 C, Humidity: 49.19 %[0m
+[0;32mI (3361817) sensor-node: Temperature: 22.75 C, Humidity: 49.31 %[0m
+[0;32mI (3372017) sensor-node: Temperature: 22.71 C, Humidity: 49.48 %[0m
+[0;32mI (3382217) sensor-node: Temperature: 22.70 C, Humidity: 49.67 %[0m
+[0;32mI (3392417) sensor-node: Temperature: 22.69 C, Humidity: 49.61 %[0m
+[0;32mI (3402617) sensor-node: Temperature: 22.73 C, Humidity: 49.30 %[0m
+[0;32mI (3412817) sensor-node: Temperature: 22.71 C, Humidity: 49.10 %[0m
+[0;32mI (3423017) sensor-node: Temperature: 22.68 C, Humidity: 48.98 %[0m
+[0;32mI (3433217) sensor-node: Temperature: 22.68 C, Humidity: 49.21 %[0m
+[0;32mI (3443417) sensor-node: Temperature: 22.66 C, Humidity: 49.16 %[0m
+[0;32mI (3453617) sensor-node: Temperature: 22.69 C, Humidity: 49.19 %[0m
+[0;32mI (3463817) sensor-node: Temperature: 22.69 C, Humidity: 49.48 %[0m
+[0;32mI (3474017) sensor-node: Temperature: 22.67 C, Humidity: 49.61 %[0m
+[0;32mI (3484217) sensor-node: Temperature: 22.69 C, Humidity: 49.70 %[0m
+[0;32mI (3494417) sensor-node: Temperature: 22.68 C, Humidity: 49.93 %[0m
+[0;32mI (3504617) sensor-node: Temperature: 22.68 C, Humidity: 49.91 %[0m
+[0;32mI (3514817) sensor-node: Temperature: 22.68 C, Humidity: 49.92 %[0m
+[0;32mI (3525017) sensor-node: Temperature: 22.68 C, Humidity: 49.82 %[0m
+[0;32mI (3535217) sensor-node: Temperature: 22.67 C, Humidity: 49.77 %[0m
+[0;32mI (3545417) sensor-node: Temperature: 22.68 C, Humidity: 49.58 %[0m
+[0;32mI (3555617) sensor-node: Temperature: 22.72 C, Humidity: 49.21 %[0m
+[0;32mI (3565817) sensor-node: Temperature: 22.71 C, Humidity: 48.92 %[0m
+[0;32mI (3576017) sensor-node: Temperature: 22.73 C, Humidity: 48.65 %[0m
+[0;32mI (3586217) sensor-node: Temperature: 22.75 C, Humidity: 48.35 %[0m
+[0;32mI (3596417) sensor-node: Temperature: 22.79 C, Humidity: 48.39 %[0m
+[0;32mI (3606617) sensor-node: Temperature: 22.80 C, Humidity: 48.43 %[0m
+[0;32mI (3616817) sensor-node: Temperature: 22.81 C, Humidity: 48.36 %[0m
+[0;32mI (3627017) sensor-node: Temperature: 22.78 C, Humidity: 48.65 %[0m
+[0;32mI (3637217) sensor-node: Temperature: 22.77 C, Humidity: 48.84 %[0m
+[0;32mI (3647417) sensor-node: Temperature: 22.78 C, Humidity: 49.07 %[0m
+[0;32mI (3657617) sensor-node: Temperature: 22.81 C, Humidity: 49.07 %[0m
+[0;32mI (3667817) sensor-node: Temperature: 22.79 C, Humidity: 49.15 %[0m
+[0;32mI (3678017) sensor-node: Temperature: 22.77 C, Humidity: 49.23 %[0m
+[0;32mI (3688217) sensor-node: Temperature: 22.79 C, Humidity: 49.22 %[0m
+[0;32mI (3698417) sensor-node: Temperature: 22.79 C, Humidity: 49.25 %[0m
+[0;32mI (3708617) sensor-node: Temperature: 22.78 C, Humidity: 49.61 %[0m
+[0;32mI (3718817) sensor-node: Temperature: 22.81 C, Humidity: 49.89 %[0m
+[0;32mI (3729017) sensor-node: Temperature: 22.81 C, Humidity: 50.13 %[0m
+[0;32mI (3739217) sensor-node: Temperature: 22.81 C, Humidity: 49.97 %[0m
+[0;32mI (3749417) sensor-node: Temperature: 22.84 C, Humidity: 49.67 %[0m
+[0;32mI (3759617) sensor-node: Temperature: 22.83 C, Humidity: 49.33 %[0m
+[0;32mI (3769817) sensor-node: Temperature: 22.86 C, Humidity: 49.45 %[0m
+[0;32mI (3780017) sensor-node: Temperature: 22.86 C, Humidity: 49.79 %[0m
+[0;32mI (3790217) sensor-node: Temperature: 22.87 C, Humidity: 49.93 %[0m
+[0;32mI (3800417) sensor-node: Temperature: 22.87 C, Humidity: 49.87 %[0m
+[0;32mI (3810617) sensor-node: Temperature: 22.86 C, Humidity: 49.45 %[0m
+[0;32mI (3820817) sensor-node: Temperature: 22.83 C, Humidity: 48.89 %[0m
+[0;32mI (3831017) sensor-node: Temperature: 22.80 C, Humidity: 48.42 %[0m
+[0;32mI (3841217) sensor-node: Temperature: 22.80 C, Humidity: 48.07 %[0m
+[0;32mI (3851417) sensor-node: Temperature: 22.77 C, Humidity: 47.79 %[0m
+[0;32mI (3861617) sensor-node: Temperature: 22.75 C, Humidity: 47.63 %[0m
+[0;32mI (3871817) sensor-node: Temperature: 22.76 C, Humidity: 47.52 %[0m
+[0;32mI (3882017) sensor-node: Temperature: 22.71 C, Humidity: 47.37 %[0m
+[0;32mI (3892217) sensor-node: Temperature: 22.75 C, Humidity: 47.26 %[0m
+[0;32mI (3902417) sensor-node: Temperature: 22.75 C, Humidity: 47.18 %[0m
+[0;32mI (3912617) sensor-node: Temperature: 22.73 C, Humidity: 47.08 %[0m
+[0;32mI (3922817) sensor-node: Temperature: 22.77 C, Humidity: 47.07 %[0m
+[0;32mI (3933017) sensor-node: Temperature: 22.73 C, Humidity: 47.10 %[0m
+[0;32mI (3943217) sensor-node: Temperature: 22.77 C, Humidity: 47.06 %[0m
+[0;32mI (3953417) sensor-node: Temperature: 22.75 C, Humidity: 47.06 %[0m
+[0;32mI (3963617) sensor-node: Temperature: 22.75 C, Humidity: 46.98 %[0m
+[0;32mI (3973817) sensor-node: Temperature: 22.71 C, Humidity: 46.91 %[0m
+[0;32mI (3984017) sensor-node: Temperature: 22.75 C, Humidity: 46.82 %[0m
+[0;32mI (3994217) sensor-node: Temperature: 22.72 C, Humidity: 46.75 %[0m
+[0;32mI (4004417) sensor-node: Temperature: 22.71 C, Humidity: 46.68 %[0m
+[0;32mI (4014617) sensor-node: Temperature: 22.73 C, Humidity: 46.62 %[0m
+[0;32mI (4024817) sensor-node: Temperature: 22.73 C, Humidity: 46.57 %[0m
+[0;32mI (4035017) sensor-node: Temperature: 22.75 C, Humidity: 46.59 %[0m
+[0;32mI (4045217) sensor-node: Temperature: 22.73 C, Humidity: 46.58 %[0m
+[0;32mI (4055417) sensor-node: Temperature: 22.78 C, Humidity: 46.56 %[0m
+[0;32mI (4065617) sensor-node: Temperature: 22.79 C, Humidity: 46.51 %[0m
+[0;32mI (4075817) sensor-node: Temperature: 22.76 C, Humidity: 46.49 %[0m
+[0;32mI (4086017) sensor-node: Temperature: 22.82 C, Humidity: 46.47 %[0m
+[0;32mI (4096217) sensor-node: Temperature: 22.80 C, Humidity: 46.60 %[0m
+[0;32mI (4106417) sensor-node: Temperature: 22.77 C, Humidity: 46.63 %[0m
+[0;32mI (4116617) sensor-node: Temperature: 22.81 C, Humidity: 46.75 %[0m
+[0;32mI (4126817) sensor-node: Temperature: 22.79 C, Humidity: 46.75 %[0m
+[0;32mI (4137017) sensor-node: Temperature: 22.81 C, Humidity: 47.15 %[0m
+[0;32mI (4147217) sensor-node: Temperature: 22.83 C, Humidity: 47.34 %[0m
+[0;32mI (4157417) sensor-node: Temperature: 22.87 C, Humidity: 47.27 %[0m
+[0;32mI (4167617) sensor-node: Temperature: 22.86 C, Humidity: 47.17 %[0m
+[0;32mI (4177817) sensor-node: Temperature: 22.87 C, Humidity: 47.04 %[0m
+[0;32mI (4188017) sensor-node: Temperature: 22.85 C, Humidity: 46.94 %[0m
+[0;32mI (4198217) sensor-node: Temperature: 22.87 C, Humidity: 46.88 %[0m
+[0;32mI (4208417) sensor-node: Temperature: 22.85 C, Humidity: 46.84 %[0m
+[0;32mI (4218617) sensor-node: Temperature: 22.81 C, Humidity: 46.98 %[0m
+[0;32mI (4228817) sensor-node: Temperature: 22.81 C, Humidity: 47.30 %[0m
+[0;32mI (4239017) sensor-node: Temperature: 22.82 C, Humidity: 47.26 %[0m
+[0;32mI (4249217) sensor-node: Temperature: 22.84 C, Humidity: 47.13 %[0m
+[0;32mI (4259417) sensor-node: Temperature: 22.85 C, Humidity: 47.18 %[0m
+[0;32mI (4269617) sensor-node: Temperature: 22.86 C, Humidity: 47.09 %[0m
+[0;32mI (4279817) sensor-node: Temperature: 22.86 C, Humidity: 47.34 %[0m
+[0;32mI (4290017) sensor-node: Temperature: 22.83 C, Humidity: 47.67 %[0m
+[0;32mI (4300217) sensor-node: Temperature: 22.84 C, Humidity: 47.83 %[0m
+[0;32mI (4310417) sensor-node: Temperature: 22.84 C, Humidity: 48.13 %[0m
+[0;32mI (4320617) sensor-node: Temperature: 22.84 C, Humidity: 48.24 %[0m
+[0;32mI (4330817) sensor-node: Temperature: 22.91 C, Humidity: 48.07 %[0m
+[0;32mI (4341017) sensor-node: Temperature: 22.88 C, Humidity: 47.97 %[0m
+[0;32mI (4351217) sensor-node: Temperature: 22.91 C, Humidity: 47.95 %[0m
+[0;32mI (4361417) sensor-node: Temperature: 22.91 C, Humidity: 47.94 %[0m
+[0;32mI (4371617) sensor-node: Temperature: 22.86 C, Humidity: 48.27 %[0m
+[0;32mI (4381817) sensor-node: Temperature: 22.85 C, Humidity: 48.48 %[0m
+[0;32mI (4392017) sensor-node: Temperature: 22.90 C, Humidity: 48.40 %[0m
+[0;32mI (4402217) sensor-node: Temperature: 22.92 C, Humidity: 48.28 %[0m
+[0;32mI (4412417) sensor-node: Temperature: 22.91 C, Humidity: 48.24 %[0m
+[0;32mI (4422617) sensor-node: Temperature: 22.94 C, Humidity: 48.16 %[0m
+[0;32mI (4432817) sensor-node: Temperature: 22.97 C, Humidity: 48.07 %[0m
+[0;32mI (4443017) sensor-node: Temperature: 23.00 C, Humidity: 47.81 %[0m
+[0;32mI (4453217) sensor-node: Temperature: 23.01 C, Humidity: 47.53 %[0m
+[0;32mI (4463417) sensor-node: Temperature: 23.00 C, Humidity: 47.30 %[0m
+[0;32mI (4473617) sensor-node: Temperature: 22.97 C, Humidity: 47.42 %[0m
+[0;32mI (4483817) sensor-node: Temperature: 22.95 C, Humidity: 47.69 %[0m
+[0;32mI (4494017) sensor-node: Temperature: 22.91 C, Humidity: 48.01 %[0m
+[0;32mI (4504217) sensor-node: Temperature: 22.92 C, Humidity: 48.23 %[0m
+[0;32mI (4514417) sensor-node: Temperature: 22.91 C, Humidity: 48.55 %[0m
+[0;32mI (4524617) sensor-node: Temperature: 22.88 C, Humidity: 48.96 %[0m
+[0;32mI (4534817) sensor-node: Temperature: 22.86 C, Humidity: 48.73 %[0m
+[0;32mI (4545017) sensor-node: Temperature: 22.91 C, Humidity: 48.28 %[0m
+[0;32mI (4555217) sensor-node: Temperature: 22.91 C, Humidity: 47.84 %[0m
+[0;32mI (4565417) sensor-node: Temperature: 22.92 C, Humidity: 47.46 %[0m
+[0;32mI (4575617) sensor-node: Temperature: 22.92 C, Humidity: 47.29 %[0m
+[0;32mI (4585817) sensor-node: Temperature: 22.94 C, Humidity: 47.57 %[0m
+[0;32mI (4596017) sensor-node: Temperature: 22.97 C, Humidity: 47.93 %[0m
+[0;32mI (4606217) sensor-node: Temperature: 22.97 C, Humidity: 47.72 %[0m
+[0;32mI (4616417) sensor-node: Temperature: 22.97 C, Humidity: 47.52 %[0m
+[0;32mI (4626617) sensor-node: Temperature: 22.97 C, Humidity: 47.60 %[0m
+[0;32mI (4636817) sensor-node: Temperature: 22.95 C, Humidity: 48.05 %[0m
+[0;32mI (4647017) sensor-node: Temperature: 22.92 C, Humidity: 48.55 %[0m
+[0;32mI (4657217) sensor-node: Temperature: 22.90 C, Humidity: 48.91 %[0m
+[0;32mI (4667417) sensor-node: Temperature: 22.90 C, Humidity: 48.69 %[0m
+[0;32mI (4677617) sensor-node: Temperature: 22.91 C, Humidity: 48.29 %[0m
+[0;32mI (4687817) sensor-node: Temperature: 22.90 C, Humidity: 48.08 %[0m
+[0;32mI (4698017) sensor-node: Temperature: 22.85 C, Humidity: 48.01 %[0m
+[0;32mI (4708217) sensor-node: Temperature: 22.87 C, Humidity: 47.78 %[0m
+[0;32mI (4718417) sensor-node: Temperature: 22.90 C, Humidity: 47.51 %[0m
+[0;32mI (4728617) sensor-node: Temperature: 22.86 C, Humidity: 47.26 %[0m
+[0;32mI (4738817) sensor-node: Temperature: 22.86 C, Humidity: 47.07 %[0m
+[0;32mI (4749017) sensor-node: Temperature: 22.87 C, Humidity: 46.95 %[0m
+[0;32mI (4759217) sensor-node: Temperature: 22.91 C, Humidity: 46.88 %[0m
+[0;32mI (4769417) sensor-node: Temperature: 22.90 C, Humidity: 46.87 %[0m
+[0;32mI (4779617) sensor-node: Temperature: 22.82 C, Humidity: 46.84 %[0m
+[0;32mI (4789817) sensor-node: Temperature: 22.81 C, Humidity: 46.82 %[0m
+[0;32mI (4800017) sensor-node: Temperature: 22.77 C, Humidity: 46.84 %[0m
+[0;32mI (4810217) sensor-node: Temperature: 22.77 C, Humidity: 46.91 %[0m
+[0;32mI (4820417) sensor-node: Temperature: 22.78 C, Humidity: 46.91 %[0m
+[0;32mI (4830617) sensor-node: Temperature: 22.76 C, Humidity: 46.88 %[0m
+[0;32mI (4840817) sensor-node: Temperature: 22.79 C, Humidity: 46.85 %[0m
+[0;32mI (4851017) sensor-node: Temperature: 22.78 C, Humidity: 46.81 %[0m
+[0;32mI (4861217) sensor-node: Temperature: 22.79 C, Humidity: 46.83 %[0m
+[0;32mI (4871417) sensor-node: Temperature: 22.79 C, Humidity: 47.07 %[0m
+[0;32mI (4881617) sensor-node: Temperature: 22.79 C, Humidity: 47.26 %[0m
+[0;32mI (4891817) sensor-node: Temperature: 22.77 C, Humidity: 47.20 %[0m
+[0;32mI (4902017) sensor-node: Temperature: 22.77 C, Humidity: 47.11 %[0m
+[0;32mI (4912217) sensor-node: Temperature: 22.81 C, Humidity: 47.05 %[0m
+[0;32mI (4922417) sensor-node: Temperature: 22.83 C, Humidity: 47.04 %[0m
+[0;32mI (4932617) sensor-node: Temperature: 22.88 C, Humidity: 47.01 %[0m
+[0;32mI (4942817) sensor-node: Temperature: 22.87 C, Humidity: 47.62 %[0m
+[0;32mI (4953017) sensor-node: Temperature: 22.87 C, Humidity: 47.84 %[0m
+[0;32mI (4963217) sensor-node: Temperature: 22.90 C, Humidity: 47.65 %[0m
+[0;32mI (4973417) sensor-node: Temperature: 22.87 C, Humidity: 47.65 %[0m
+[0;32mI (4983617) sensor-node: Temperature: 22.91 C, Humidity: 47.71 %[0m
+[0;32mI (4993817) sensor-node: Temperature: 22.94 C, Humidity: 47.59 %[0m
+[0;32mI (5004017) sensor-node: Temperature: 22.94 C, Humidity: 47.41 %[0m
+[0;32mI (5014217) sensor-node: Temperature: 22.92 C, Humidity: 47.25 %[0m
+[0;32mI (5024417) sensor-node: Temperature: 22.95 C, Humidity: 47.13 %[0m
+[0;32mI (5034617) sensor-node: Temperature: 22.95 C, Humidity: 47.01 %[0m
+[0;32mI (5044817) sensor-node: Temperature: 22.94 C, Humidity: 46.92 %[0m
+[0;32mI (5055017) sensor-node: Temperature: 22.95 C, Humidity: 46.86 %[0m
+[0;32mI (5065217) sensor-node: Temperature: 22.94 C, Humidity: 46.86 %[0m
+[0;32mI (5075417) sensor-node: Temperature: 22.91 C, Humidity: 46.89 %[0m
+[0;32mI (5085617) sensor-node: Temperature: 22.94 C, Humidity: 46.88 %[0m
+[0;32mI (5095817) sensor-node: Temperature: 22.95 C, Humidity: 46.85 %[0m
+[0;32mI (5106017) sensor-node: Temperature: 23.01 C, Humidity: 46.79 %[0m
+[0;32mI (5116217) sensor-node: Temperature: 23.00 C, Humidity: 46.82 %[0m
+[0;32mI (5126417) sensor-node: Temperature: 22.98 C, Humidity: 46.97 %[0m
+[0;32mI (5136617) sensor-node: Temperature: 22.96 C, Humidity: 47.10 %[0m
+[0;32mI (5146817) sensor-node: Temperature: 22.99 C, Humidity: 47.04 %[0m
+[0;32mI (5157017) sensor-node: Temperature: 22.98 C, Humidity: 47.14 %[0m
+[0;32mI (5167217) sensor-node: Temperature: 22.99 C, Humidity: 47.13 %[0m
+[0;32mI (5177417) sensor-node: Temperature: 22.99 C, Humidity: 47.00 %[0m
+[0;32mI (5187617) sensor-node: Temperature: 22.98 C, Humidity: 47.20 %[0m
+[0;32mI (5197817) sensor-node: Temperature: 22.98 C, Humidity: 47.89 %[0m
+[0;32mI (5208017) sensor-node: Temperature: 22.95 C, Humidity: 48.26 %[0m
+[0;32mI (5218217) sensor-node: Temperature: 22.88 C, Humidity: 48.00 %[0m
+[0;32mI (5228417) sensor-node: Temperature: 22.87 C, Humidity: 47.70 %[0m
+[0;32mI (5238617) sensor-node: Temperature: 22.83 C, Humidity: 47.72 %[0m
+[0;32mI (5248817) sensor-node: Temperature: 22.83 C, Humidity: 47.68 %[0m
+[0;32mI (5259017) sensor-node: Temperature: 22.83 C, Humidity: 47.49 %[0m
+[0;32mI (5269217) sensor-node: Temperature: 22.84 C, Humidity: 47.36 %[0m
+[0;32mI (5279417) sensor-node: Temperature: 22.86 C, Humidity: 47.26 %[0m
+[0;32mI (5289617) sensor-node: Temperature: 22.88 C, Humidity: 47.16 %[0m
+[0;32mI (5299817) sensor-node: Temperature: 22.85 C, Humidity: 47.04 %[0m
+[0;32mI (5310017) sensor-node: Temperature: 22.85 C, Humidity: 46.97 %[0m
+[0;32mI (5320217) sensor-node: Temperature: 22.85 C, Humidity: 46.93 %[0m
+[0;32mI (5330417) sensor-node: Temperature: 22.87 C, Humidity: 46.88 %[0m
+[0;32mI (5340617) sensor-node: Temperature: 22.86 C, Humidity: 46.80 %[0m
+[0;32mI (5350817) sensor-node: Temperature: 22.85 C, Humidity: 46.76 %[0m
+[0;32mI (5361017) sensor-node: Temperature: 22.88 C, Humidity: 46.76 %[0m
+[0;32mI (5371217) sensor-node: Temperature: 22.90 C, Humidity: 46.75 %[0m
+[0;32mI (5381417) sensor-node: Temperature: 22.95 C, Humidity: 46.74 %[0m
+[0;32mI (5391617) sensor-node: Temperature: 22.96 C, Humidity: 46.74 %[0m
+[0;32mI (5401817) sensor-node: Temperature: 22.97 C, Humidity: 46.75 %[0m
+[0;32mI (5412017) sensor-node: Temperature: 22.94 C, Humidity: 46.72 %[0m
+[0;32mI (5422217) sensor-node: Temperature: 22.94 C, Humidity: 46.71 %[0m
+[0;32mI (5432417) sensor-node: Temperature: 22.94 C, Humidity: 46.76 %[0m
+[0;32mI (5442617) sensor-node: Temperature: 22.92 C, Humidity: 46.95 %[0m
+[0;32mI (5452817) sensor-node: Temperature: 22.87 C, Humidity: 46.99 %[0m
+[0;32mI (5463017) sensor-node: Temperature: 22.86 C, Humidity: 47.03 %[0m
+[0;32mI (5473217) sensor-node: Temperature: 22.86 C, Humidity: 46.96 %[0m
+[0;32mI (5483417) sensor-node: Temperature: 22.81 C, Humidity: 46.88 %[0m
+[0;32mI (5493617) sensor-node: Temperature: 22.81 C, Humidity: 47.13 %[0m
+[0;32mI (5503817) sensor-node: Temperature: 22.84 C, Humidity: 47.37 %[0m
+[0;32mI (5514017) sensor-node: Temperature: 22.85 C, Humidity: 47.78 %[0m
+[0;32mI (5524217) sensor-node: Temperature: 22.81 C, Humidity: 47.79 %[0m
+[0;32mI (5534417) sensor-node: Temperature: 22.83 C, Humidity: 47.59 %[0m
+[0;32mI (5544617) sensor-node: Temperature: 22.84 C, Humidity: 47.40 %[0m
+[0;32mI (5554817) sensor-node: Temperature: 22.82 C, Humidity: 47.23 %[0m
+[0;32mI (5565017) sensor-node: Temperature: 22.81 C, Humidity: 47.10 %[0m
+[0;32mI (5575217) sensor-node: Temperature: 22.83 C, Humidity: 47.15 %[0m
+[0;32mI (5585417) sensor-node: Temperature: 22.84 C, Humidity: 47.40 %[0m
+[0;32mI (5595617) sensor-node: Temperature: 22.84 C, Humidity: 47.59 %[0m
+[0;32mI (5605817) sensor-node: Temperature: 22.83 C, Humidity: 47.83 %[0m
+[0;32mI (5616017) sensor-node: Temperature: 22.82 C, Humidity: 48.20 %[0m
+[0;32mI (5626217) sensor-node: Temperature: 22.86 C, Humidity: 48.49 %[0m
+[0;32mI (5636417) sensor-node: Temperature: 22.85 C, Humidity: 48.33 %[0m
+[0;32mI (5646617) sensor-node: Temperature: 22.87 C, Humidity: 48.21 %[0m
+[0;32mI (5656817) sensor-node: Temperature: 22.90 C, Humidity: 48.46 %[0m
+[0;32mI (5667017) sensor-node: Temperature: 22.85 C, Humidity: 48.82 %[0m
+[0;32mI (5677217) sensor-node: Temperature: 22.90 C, Humidity: 48.93 %[0m
+[0;32mI (5687417) sensor-node: Temperature: 22.87 C, Humidity: 49.00 %[0m
+[0;32mI (5697617) sensor-node: Temperature: 22.88 C, Humidity: 48.72 %[0m
+[0;32mI (5707817) sensor-node: Temperature: 22.93 C, Humidity: 48.26 %[0m
+[0;32mI (5718017) sensor-node: Temperature: 22.88 C, Humidity: 47.85 %[0m
+[0;32mI (5728217) sensor-node: Temperature: 22.90 C, Humidity: 47.51 %[0m
+[0;32mI (5738417) sensor-node: Temperature: 22.91 C, Humidity: 47.29 %[0m
+[0;32mI (5748617) sensor-node: Temperature: 22.87 C, Humidity: 47.10 %[0m
+[0;32mI (5758817) sensor-node: Temperature: 22.85 C, Humidity: 46.94 %[0m
+[0;32mI (5769017) sensor-node: Temperature: 22.88 C, Humidity: 46.85 %[0m
+[0;32mI (5779217) sensor-node: Temperature: 22.86 C, Humidity: 46.78 %[0m
+[0;32mI (5789417) sensor-node: Temperature: 22.87 C, Humidity: 46.72 %[0m
+[0;32mI (5799617) sensor-node: Temperature: 22.91 C, Humidity: 46.72 %[0m
+[0;32mI (5809817) sensor-node: Temperature: 22.87 C, Humidity: 46.80 %[0m
+[0;32mI (5820017) sensor-node: Temperature: 22.86 C, Humidity: 46.86 %[0m
+[0;32mI (5830217) sensor-node: Temperature: 22.83 C, Humidity: 46.81 %[0m
+[0;32mI (5840417) sensor-node: Temperature: 22.84 C, Humidity: 46.77 %[0m
+[0;32mI (5850617) sensor-node: Temperature: 22.83 C, Humidity: 46.75 %[0m
+[0;32mI (5860817) sensor-node: Temperature: 22.85 C, Humidity: 46.76 %[0m
+[0;32mI (5871017) sensor-node: Temperature: 22.86 C, Humidity: 46.73 %[0m
+[0;32mI (5881217) sensor-node: Temperature: 22.87 C, Humidity: 46.75 %[0m
+[0;32mI (5891417) sensor-node: Temperature: 22.90 C, Humidity: 46.72 %[0m
+[0;32mI (5901617) sensor-node: Temperature: 22.86 C, Humidity: 46.66 %[0m
+[0;32mI (5911817) sensor-node: Temperature: 22.85 C, Humidity: 46.60 %[0m
+[0;32mI (5922017) sensor-node: Temperature: 22.85 C, Humidity: 46.57 %[0m
+[0;32mI (5932217) sensor-node: Temperature: 22.84 C, Humidity: 46.57 %[0m
+[0;32mI (5942417) sensor-node: Temperature: 22.83 C, Humidity: 46.59 %[0m
+[0;32mI (5952617) sensor-node: Temperature: 22.82 C, Humidity: 46.72 %[0m
+[0;32mI (5962817) sensor-node: Temperature: 22.82 C, Humidity: 46.83 %[0m
+[0;32mI (5973017) sensor-node: Temperature: 22.81 C, Humidity: 47.01 %[0m
+[0;32mI (5983217) sensor-node: Temperature: 22.83 C, Humidity: 47.08 %[0m
+[0;32mI (5993417) sensor-node: Temperature: 22.84 C, Humidity: 47.27 %[0m
+[0;32mI (6003617) sensor-node: Temperature: 22.87 C, Humidity: 47.53 %[0m
+[0;32mI (6013817) sensor-node: Temperature: 22.88 C, Humidity: 47.78 %[0m
+[0;32mI (6024017) sensor-node: Temperature: 22.93 C, Humidity: 47.92 %[0m
+[0;32mI (6034217) sensor-node: Temperature: 22.91 C, Humidity: 48.23 %[0m
+[0;32mI (6044417) sensor-node: Temperature: 22.92 C, Humidity: 48.36 %[0m
+[0;32mI (6054617) sensor-node: Temperature: 22.87 C, Humidity: 48.45 %[0m
+[0;32mI (6064817) sensor-node: Temperature: 22.91 C, Humidity: 48.29 %[0m
+[0;32mI (6075017) sensor-node: Temperature: 22.93 C, Humidity: 48.16 %[0m
+[0;32mI (6085217) sensor-node: Temperature: 22.95 C, Humidity: 48.26 %[0m
+[0;32mI (6095417) sensor-node: Temperature: 22.92 C, Humidity: 48.21 %[0m
+[0;32mI (6105617) sensor-node: Temperature: 22.91 C, Humidity: 48.15 %[0m
+[0;32mI (6115817) sensor-node: Temperature: 22.92 C, Humidity: 48.23 %[0m
+[0;32mI (6126017) sensor-node: Temperature: 22.94 C, Humidity: 48.44 %[0m
+[0;32mI (6136217) sensor-node: Temperature: 22.98 C, Humidity: 48.63 %[0m
+[0;32mI (6146417) sensor-node: Temperature: 23.06 C, Humidity: 48.99 %[0m
+[0;32mI (6156617) sensor-node: Temperature: 23.05 C, Humidity: 49.23 %[0m
+[0;32mI (6166817) sensor-node: Temperature: 23.06 C, Humidity: 49.07 %[0m
+[0;32mI (6177017) sensor-node: Temperature: 23.06 C, Humidity: 48.64 %[0m
+[0;32mI (6187217) sensor-node: Temperature: 23.00 C, Humidity: 48.14 %[0m
+[0;32mI (6197417) sensor-node: Temperature: 23.06 C, Humidity: 47.75 %[0m
+[0;32mI (6207617) sensor-node: Temperature: 23.03 C, Humidity: 47.45 %[0m
+[0;32mI (6217817) sensor-node: Temperature: 23.02 C, Humidity: 47.35 %[0m
+[0;32mI (6228017) sensor-node: Temperature: 23.01 C, Humidity: 47.19 %[0m
+[0;32mI (6238217) sensor-node: Temperature: 23.01 C, Humidity: 47.04 %[0m
+[0;32mI (6248417) sensor-node: Temperature: 23.05 C, Humidity: 47.20 %[0m
+[0;32mI (6258617) sensor-node: Temperature: 23.05 C, Humidity: 47.45 %[0m
+[0;32mI (6268817) sensor-node: Temperature: 23.09 C, Humidity: 47.51 %[0m
+[0;32mI (6279017) sensor-node: Temperature: 23.09 C, Humidity: 47.43 %[0m
+[0;32mI (6289217) sensor-node: Temperature: 23.12 C, Humidity: 47.33 %[0m
+[0;32mI (6299417) sensor-node: Temperature: 23.12 C, Humidity: 47.19 %[0m
+[0;32mI (6309617) sensor-node: Temperature: 23.11 C, Humidity: 47.36 %[0m
+[0;32mI (6319817) sensor-node: Temperature: 23.10 C, Humidity: 47.81 %[0m
+[0;32mI (6330017) sensor-node: Temperature: 23.12 C, Humidity: 47.90 %[0m
+[0;32mI (6340217) sensor-node: Temperature: 23.11 C, Humidity: 47.58 %[0m
+[0;32mI (6350417) sensor-node: Temperature: 23.11 C, Humidity: 47.30 %[0m
+[0;32mI (6360617) sensor-node: Temperature: 23.16 C, Humidity: 47.11 %[0m
+[0;32mI (6370817) sensor-node: Temperature: 23.20 C, Humidity: 46.93 %[0m
+[0;32mI (6381017) sensor-node: Temperature: 23.18 C, Humidity: 46.78 %[0m
+[0;32mI (6391217) sensor-node: Temperature: 23.18 C, Humidity: 46.65 %[0m
+[0;32mI (6401417) sensor-node: Temperature: 23.17 C, Humidity: 46.57 %[0m
+[0;32mI (6411617) sensor-node: Temperature: 23.14 C, Humidity: 46.68 %[0m
+[0;32mI (6421817) sensor-node: Temperature: 23.14 C, Humidity: 46.61 %[0m
+[0;32mI (6432017) sensor-node: Temperature: 23.13 C, Humidity: 46.53 %[0m
+[0;32mI (6442217) sensor-node: Temperature: 23.11 C, Humidity: 46.55 %[0m
+[0;32mI (6452417) sensor-node: Temperature: 23.09 C, Humidity: 46.66 %[0m
+[0;32mI (6462617) sensor-node: Temperature: 23.06 C, Humidity: 47.19 %[0m
+[0;32mI (6472817) sensor-node: Temperature: 23.05 C, Humidity: 47.23 %[0m
+[0;32mI (6483017) sensor-node: Temperature: 23.02 C, Humidity: 47.03 %[0m
+[0;32mI (6493217) sensor-node: Temperature: 22.97 C, Humidity: 46.87 %[0m
+[0;32mI (6503417) sensor-node: Temperature: 22.97 C, Humidity: 46.80 %[0m
+[0;32mI (6513617) sensor-node: Temperature: 22.97 C, Humidity: 46.78 %[0m
+[0;32mI (6523817) sensor-node: Temperature: 22.97 C, Humidity: 46.72 %[0m
+[0;32mI (6534017) sensor-node: Temperature: 22.98 C, Humidity: 46.68 %[0m
+[0;32mI (6544217) sensor-node: Temperature: 22.99 C, Humidity: 46.65 %[0m
+[0;32mI (6554417) sensor-node: Temperature: 23.00 C, Humidity: 46.65 %[0m
+[0;32mI (6564617) sensor-node: Temperature: 23.03 C, Humidity: 46.60 %[0m
+[0;32mI (6574817) sensor-node: Temperature: 23.02 C, Humidity: 46.57 %[0m
+[0;32mI (6585017) sensor-node: Temperature: 23.05 C, Humidity: 46.55 %[0m
+[0;32mI (6595217) sensor-node: Temperature: 23.02 C, Humidity: 46.52 %[0m
+[0;32mI (6605417) sensor-node: Temperature: 23.02 C, Humidity: 46.52 %[0m
+[0;32mI (6615617) sensor-node: Temperature: 23.05 C, Humidity: 46.47 %[0m
+[0;32mI (6625817) sensor-node: Temperature: 23.06 C, Humidity: 46.48 %[0m
+[0;32mI (6636017) sensor-node: Temperature: 23.06 C, Humidity: 46.49 %[0m
+[0;32mI (6646217) sensor-node: Temperature: 23.10 C, Humidity: 46.52 %[0m
+[0;32mI (6656417) sensor-node: Temperature: 23.13 C, Humidity: 46.57 %[0m
+[0;32mI (6666617) sensor-node: Temperature: 23.13 C, Humidity: 46.59 %[0m
+[0;32mI (6676817) sensor-node: Temperature: 23.14 C, Humidity: 46.62 %[0m
+[0;32mI (6687017) sensor-node: Temperature: 23.16 C, Humidity: 46.62 %[0m
+[0;32mI (6697217) sensor-node: Temperature: 23.14 C, Humidity: 46.78 %[0m
+[0;32mI (6707417) sensor-node: Temperature: 23.11 C, Humidity: 46.72 %[0m
+[0;32mI (6717617) sensor-node: Temperature: 23.09 C, Humidity: 46.67 %[0m
+[0;32mI (6727817) sensor-node: Temperature: 23.07 C, Humidity: 46.59 %[0m
+[0;32mI (6738017) sensor-node: Temperature: 23.03 C, Humidity: 46.52 %[0m
+[0;32mI (6748217) sensor-node: Temperature: 23.03 C, Humidity: 46.49 %[0m
+[0;32mI (6758417) sensor-node: Temperature: 23.03 C, Humidity: 46.52 %[0m
+[0;32mI (6768617) sensor-node: Temperature: 23.00 C, Humidity: 46.52 %[0m
+[0;32mI (6778817) sensor-node: Temperature: 23.01 C, Humidity: 46.56 %[0m
+[0;32mI (6789017) sensor-node: Temperature: 23.07 C, Humidity: 46.54 %[0m
+[0;32mI (6799217) sensor-node: Temperature: 23.05 C, Humidity: 46.56 %[0m
+[0;32mI (6809417) sensor-node: Temperature: 23.08 C, Humidity: 46.62 %[0m
+[0;32mI (6819617) sensor-node: Temperature: 23.06 C, Humidity: 46.63 %[0m
+[0;32mI (6829817) sensor-node: Temperature: 23.06 C, Humidity: 46.62 %[0m
+[0;32mI (6840017) sensor-node: Temperature: 23.08 C, Humidity: 46.61 %[0m
+[0;32mI (6850217) sensor-node: Temperature: 23.10 C, Humidity: 46.62 %[0m
+[0;32mI (6860417) sensor-node: Temperature: 23.07 C, Humidity: 46.56 %[0m
+[0;32mI (6870617) sensor-node: Temperature: 23.03 C, Humidity: 46.47 %[0m
+[0;32mI (6880817) sensor-node: Temperature: 23.07 C, Humidity: 46.43 %[0m
+[0;32mI (6891017) sensor-node: Temperature: 23.08 C, Humidity: 46.42 %[0m
+[0;32mI (6901217) sensor-node: Temperature: 23.06 C, Humidity: 46.40 %[0m
+[0;32mI (6911417) sensor-node: Temperature: 23.09 C, Humidity: 46.41 %[0m
+[0;32mI (6921617) sensor-node: Temperature: 23.06 C, Humidity: 46.41 %[0m
+[0;32mI (6931817) sensor-node: Temperature: 23.09 C, Humidity: 46.52 %[0m
+[0;32mI (6942017) sensor-node: Temperature: 23.12 C, Humidity: 46.81 %[0m
+[0;32mI (6952217) sensor-node: Temperature: 23.11 C, Humidity: 47.00 %[0m
+[0;32mI (6962417) sensor-node: Temperature: 23.09 C, Humidity: 46.92 %[0m
+[0;32mI (6972617) sensor-node: Temperature: 23.10 C, Humidity: 46.80 %[0m
+[0;32mI (6982817) sensor-node: Temperature: 23.05 C, Humidity: 46.72 %[0m
+[0;32mI (6993017) sensor-node: Temperature: 23.02 C, Humidity: 46.65 %[0m
+[0;32mI (7003217) sensor-node: Temperature: 22.98 C, Humidity: 46.62 %[0m
+[0;32mI (7013417) sensor-node: Temperature: 22.97 C, Humidity: 46.64 %[0m
+[0;32mI (7023617) sensor-node: Temperature: 22.90 C, Humidity: 46.68 %[0m
+[0;32mI (7033817) sensor-node: Temperature: 22.88 C, Humidity: 46.70 %[0m
+[0;32mI (7044017) sensor-node: Temperature: 22.86 C, Humidity: 46.72 %[0m
+[0;32mI (7054217) sensor-node: Temperature: 22.86 C, Humidity: 46.77 %[0m
+[0;32mI (7064417) sensor-node: Temperature: 22.87 C, Humidity: 46.82 %[0m
+[0;32mI (7074617) sensor-node: Temperature: 22.90 C, Humidity: 46.91 %[0m
+[0;32mI (7084817) sensor-node: Temperature: 22.92 C, Humidity: 46.94 %[0m
+[0;32mI (7095017) sensor-node: Temperature: 22.94 C, Humidity: 46.90 %[0m
+[0;32mI (7105217) sensor-node: Temperature: 22.95 C, Humidity: 46.87 %[0m
+[0;32mI (7115417) sensor-node: Temperature: 22.97 C, Humidity: 46.79 %[0m
+[0;32mI (7125617) sensor-node: Temperature: 22.96 C, Humidity: 46.76 %[0m
+[0;32mI (7135817) sensor-node: Temperature: 22.93 C, Humidity: 46.90 %[0m
+[0;32mI (7146017) sensor-node: Temperature: 22.91 C, Humidity: 47.12 %[0m
+[0;32mI (7156217) sensor-node: Temperature: 22.86 C, Humidity: 47.15 %[0m
+[0;32mI (7166417) sensor-node: Temperature: 22.84 C, Humidity: 47.10 %[0m
+[0;32mI (7176617) sensor-node: Temperature: 22.85 C, Humidity: 47.26 %[0m
+[0;32mI (7186817) sensor-node: Temperature: 22.82 C, Humidity: 47.35 %[0m
+[0;32mI (7197017) sensor-node: Temperature: 22.80 C, Humidity: 47.39 %[0m
+[0;32mI (7207217) sensor-node: Temperature: 22.79 C, Humidity: 47.69 %[0m
+[0;32mI (7217417) sensor-node: Temperature: 22.78 C, Humidity: 48.07 %[0m
+[0;32mI (7227617) sensor-node: Temperature: 22.80 C, Humidity: 48.29 %[0m
+[0;32mI (7237817) sensor-node: Temperature: 22.79 C, Humidity: 48.12 %[0m
+[0;32mI (7248017) sensor-node: Temperature: 22.81 C, Humidity: 47.90 %[0m
+[0;32mI (7258217) sensor-node: Temperature: 22.83 C, Humidity: 47.70 %[0m
+[0;32mI (7268417) sensor-node: Temperature: 22.80 C, Humidity: 47.49 %[0m
+[0;32mI (7278617) sensor-node: Temperature: 22.82 C, Humidity: 47.33 %[0m
+[0;32mI (7288817) sensor-node: Temperature: 22.83 C, Humidity: 47.24 %[0m
+[0;32mI (7299017) sensor-node: Temperature: 22.81 C, Humidity: 47.14 %[0m
+[0;32mI (7309217) sensor-node: Temperature: 22.81 C, Humidity: 47.11 %[0m
+[0;32mI (7319417) sensor-node: Temperature: 22.79 C, Humidity: 47.07 %[0m
+[0;32mI (7329617) sensor-node: Temperature: 22.78 C, Humidity: 47.04 %[0m
+[0;32mI (7339817) sensor-node: Temperature: 22.77 C, Humidity: 47.01 %[0m
+[0;32mI (7350017) sensor-node: Temperature: 22.78 C, Humidity: 46.96 %[0m
+[0;32mI (7360217) sensor-node: Temperature: 22.77 C, Humidity: 46.95 %[0m
+[0;32mI (7370417) sensor-node: Temperature: 22.75 C, Humidity: 46.92 %[0m
+[0;32mI (7380617) sensor-node: Temperature: 22.77 C, Humidity: 46.93 %[0m
+[0;32mI (7390817) sensor-node: Temperature: 22.76 C, Humidity: 46.97 %[0m
+[0;32mI (7401017) sensor-node: Temperature: 22.76 C, Humidity: 46.97 %[0m
+[0;32mI (7411217) sensor-node: Temperature: 22.75 C, Humidity: 46.99 %[0m
+[0;32mI (7421417) sensor-node: Temperature: 22.76 C, Humidity: 46.97 %[0m
+[0;32mI (7431617) sensor-node: Temperature: 22.77 C, Humidity: 47.04 %[0m
+[0;32mI (7441817) sensor-node: Temperature: 22.77 C, Humidity: 47.16 %[0m
+[0;32mI (7452017) sensor-node: Temperature: 22.79 C, Humidity: 47.18 %[0m
+[0;32mI (7462217) sensor-node: Temperature: 22.81 C, Humidity: 47.34 %[0m
+[0;32mI (7472417) sensor-node: Temperature: 22.83 C, Humidity: 47.61 %[0m
+[0;32mI (7482617) sensor-node: Temperature: 22.83 C, Humidity: 47.78 %[0m
+[0;32mI (7492817) sensor-node: Temperature: 22.83 C, Humidity: 47.92 %[0m
+[0;32mI (7503017) sensor-node: Temperature: 22.78 C, Humidity: 47.94 %[0m
+[0;32mI (7513217) sensor-node: Temperature: 22.76 C, Humidity: 47.78 %[0m
+[0;32mI (7523417) sensor-node: Temperature: 22.72 C, Humidity: 47.65 %[0m
+[0;32mI (7533617) sensor-node: Temperature: 22.73 C, Humidity: 47.56 %[0m
+[0;32mI (7543817) sensor-node: Temperature: 22.75 C, Humidity: 47.49 %[0m
+[0;32mI (7554017) sensor-node: Temperature: 22.78 C, Humidity: 47.41 %[0m
+[0;32mI (7564217) sensor-node: Temperature: 22.75 C, Humidity: 47.35 %[0m
+[0;32mI (7574417) sensor-node: Temperature: 22.75 C, Humidity: 47.33 %[0m
+[0;32mI (7584617) sensor-node: Temperature: 22.75 C, Humidity: 47.38 %[0m
+[0;32mI (7594817) sensor-node: Temperature: 22.72 C, Humidity: 47.63 %[0m
+[0;32mI (7605017) sensor-node: Temperature: 22.77 C, Humidity: 48.13 %[0m
+[0;32mI (7615217) sensor-node: Temperature: 22.73 C, Humidity: 48.17 %[0m
+[0;32mI (7625417) sensor-node: Temperature: 22.78 C, Humidity: 48.09 %[0m
+[0;32mI (7635617) sensor-node: Temperature: 22.78 C, Humidity: 47.88 %[0m
+[0;32mI (7645817) sensor-node: Temperature: 22.83 C, Humidity: 47.88 %[0m
+[0;32mI (7656017) sensor-node: Temperature: 22.85 C, Humidity: 47.81 %[0m
+[0;32mI (7666217) sensor-node: Temperature: 22.88 C, Humidity: 47.58 %[0m
+[0;32mI (7676417) sensor-node: Temperature: 22.87 C, Humidity: 47.37 %[0m
+[0;32mI (7686617) sensor-node: Temperature: 22.83 C, Humidity: 47.22 %[0m
+[0;32mI (7696817) sensor-node: Temperature: 22.82 C, Humidity: 47.10 %[0m
+[0;32mI (7707017) se

@@ -2,7 +2,7 @@
     {
         "id": "ae24bd40258cc00e",
         "type": "tab",
-        "label": "Ejercicio 3.3.5",
+        "label": "Auto Irrigation System",
         "disabled": false,
         "info": "",
         "env": []
@@ -582,6 +582,309 @@
         "wires": []
     },
     {
+        "id": "e59b967d370c2f7c",
+        "type": "mqtt in",
+        "z": "ae24bd40258cc00e",
+        "name": "mqtt-in",
+        "topic": "sed/G03/auto-irrigation-system/actuator/action",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "eb2ebfb0aa601aed",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 70,
+        "y": 1000,
+        "wires": [
+            [
+                "59d223d95d2709ce"
+            ]
+        ]
+    },
+    {
+        "id": "59d223d95d2709ce",
+        "type": "json",
+        "z": "ae24bd40258cc00e",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 230,
+        "y": 1000,
+        "wires": [
+            [
+                "40204e8db830f6ef",
+                "a4c3918d4471cd20",
+                "d53aba52a89df8cd"
+            ]
+        ]
+    },
+    {
+        "id": "40204e8db830f6ef",
+        "type": "switch",
+        "z": "ae24bd40258cc00e",
+        "name": "switch",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 230,
+        "y": 1120,
+        "wires": [
+            [
+                "021d49b45f6f4826"
+            ],
+            [
+                "68a3cdcffbcb9514"
+            ]
+        ]
+    },
+    {
+        "id": "0e3f329e792a8526",
+        "type": "debug",
+        "z": "ae24bd40258cc00e",
+        "name": "debug",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 570,
+        "y": 1080,
+        "wires": []
+    },
+    {
+        "id": "021d49b45f6f4826",
+        "type": "change",
+        "z": "ae24bd40258cc00e",
+        "name": "change",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "ACTIVE Irrigation",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 420,
+        "y": 1080,
+        "wires": [
+            [
+                "0e3f329e792a8526"
+            ]
+        ]
+    },
+    {
+        "id": "464ce70e10f2276b",
+        "type": "mqtt out",
+        "z": "ae24bd40258cc00e",
+        "d": true,
+        "name": "mqtt-out",
+        "topic": "sed/G03/auto-irrigation-system/actuator/action",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "eb2ebfb0aa601aed",
+        "x": 460,
+        "y": 1260,
+        "wires": []
+    },
+    {
+        "id": "0af0ed7dbd8d7265",
+        "type": "comment",
+        "z": "ae24bd40258cc00e",
+        "name": "Actuator Action Log",
+        "info": "Receives the action status of the actuator node\n",
+        "x": 110,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "68a3cdcffbcb9514",
+        "type": "change",
+        "z": "ae24bd40258cc00e",
+        "name": "change",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "UNACTIVE Irrigation",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 420,
+        "y": 1160,
+        "wires": [
+            [
+                "d0ce2c38499445e1"
+            ]
+        ]
+    },
+    {
+        "id": "d0ce2c38499445e1",
+        "type": "debug",
+        "z": "ae24bd40258cc00e",
+        "name": "debug",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 570,
+        "y": 1160,
+        "wires": []
+    },
+    {
+        "id": "34fd56e134cf2d17",
+        "type": "ui-switch",
+        "z": "ae24bd40258cc00e",
+        "d": true,
+        "name": "active-irrigation",
+        "label": "Set Irrigation Status",
+        "group": "99994baf6e20da2f",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "decouple": false,
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "className": "",
+        "layout": "row-spread",
+        "clickableArea": "switch",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "x": 280,
+        "y": 1260,
+        "wires": [
+            [
+                "464ce70e10f2276b"
+            ]
+        ]
+    },
+    {
+        "id": "d53aba52a89df8cd",
+        "type": "ui-gauge",
+        "z": "ae24bd40258cc00e",
+        "d": true,
+        "name": "Irrigation Status",
+        "group": "99994baf6e20da2f",
+        "order": 2,
+        "value": "payload",
+        "valueType": "msg",
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-tile",
+        "gstyle": "rounded",
+        "title": "gauge",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "units",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#ea5353",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "0.5",
+                "color": "#5cd65c",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "1",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 480,
+        "y": 1000,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a4c3918d4471cd20",
+        "type": "ui-radio-group",
+        "z": "ae24bd40258cc00e",
+        "d": true,
+        "group": "99994baf6e20da2f",
+        "name": "",
+        "label": "Select Option:",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "columns": 1,
+        "passthru": false,
+        "options": [
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 480,
+        "y": 940,
+        "wires": [
+            []
+        ]
+    },
+    {
         "id": "eb2ebfb0aa601aed",
         "type": "mqtt-broker",
         "name": "SED",
@@ -630,6 +933,20 @@
         "id": "4cdc0bc330136f41",
         "type": "ui-group",
         "name": "Temperature",
+        "page": "7b81cd1d0fbff4b2",
+        "width": 6,
+        "height": 1,
+        "order": -1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "99994baf6e20da2f",
+        "type": "ui-group",
+        "name": "Irrigation Status",
         "page": "7b81cd1d0fbff4b2",
         "width": 6,
         "height": 1,
@@ -716,7 +1033,7 @@
         }
     },
     {
-        "id": "072c340d693b4d40",
+        "id": "c8e873e40b8cf806",
         "type": "global-config",
         "env": [],
         "modules": {

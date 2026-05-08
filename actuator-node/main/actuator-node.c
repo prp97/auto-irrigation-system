@@ -21,9 +21,11 @@
 static const char *TAG = "actuator-node";
 
 #define ACTUATOR_GPIO 2
+#define ACTUATOR_ACTIVE_LOW true 
 #define TOPIC_STATUS "sed/G03/auto-irrigation-system/status"
 #define TOPIC_TEMP "sed/G03/auto-irrigation-system/sensor/temp"
 #define TOPIC_HUM "sed/G03/auto-irrigation-system/sensor/hum"
+#define TOPIC_ACTION "sed/G03/auto-irrigation-system/actuator/action"
 
 // Set thresholsd values remotly from NodeRed dashboard
 #define TOPIC_SET_TEMP "sed/G03/auto-irrigation-system/actuator/temp"
@@ -32,7 +34,7 @@ static const char *TAG = "actuator-node";
 
 // Thresholds for decision making
 #define TEMP_THRESHOLD 22.0f
-#define HUM_THRESHOLD 40.0f
+#define HUM_THRESHOLD 50.0f
 
 static float temp_threshold = TEMP_THRESHOLD;
 static float hum_threshold = HUM_THRESHOLD;
@@ -41,6 +43,8 @@ static float g_last_temp = 0.0f;
 static float g_last_hum = 0.0f;
 static bool g_have_temp = false;
 static bool g_have_hum = false;
+
+bool turn_on = false;
 
 void wifi_init_sta(void)
 {
@@ -67,7 +71,7 @@ void wifi_init_sta(void)
     // Arrancar el WiFi
     ESP_ERROR_CHECK(esp_wifi_start());
 
-    ESP_LOGI("WIFI", "Conectando a %s...", CONFIG_ESP_WIFI_SSID);
+    ESP_LOGI("WIFI", "Connecting to %s...", CONFIG_ESP_WIFI_SSID);
     esp_wifi_connect();
 }
 
@@ -132,11 +136,6 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
             hum_threshold = value;
             ESP_LOGI(TAG, "Humidity threshold set to: %.2f", hum_threshold);
         }
-        else if (event->topic_len == (int)strlen(TOPIC_SET_HUM) && strncmp(event->topic, TOPIC_SET_HUM, event->topic_len) == 0)
-        {
-            hum_threshold = value;
-            ESP_LOGI(TAG, "Humidity threshold set to: %.2f", hum_threshold);
-        }
         else if (event->topic_len == (int)strlen(TOPIC_SET_TEMP) && strncmp(event->topic, TOPIC_SET_TEMP, event->topic_len) == 0)
         {
             temp_threshold = value;
@@ -156,7 +155,6 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
             but temperature is above 22.0°C
             turn on the actuator
         */
-        bool turn_on = false;
 
         // Turn on when humidity below 40.0
         if (g_have_hum)
@@ -164,6 +162,10 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
             if (g_last_hum < hum_threshold)
             {
                 turn_on = true;
+            }
+            else
+            {
+                turn_on = false;
             }
         }
         // If humidity is not available check temperature
@@ -173,14 +175,16 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
             {
                 turn_on = true;
             }
+            else
+            {
+                turn_on = false;
+            }
         }
 
-        gpio_set_level(ACTUATOR_GPIO, turn_on ? 1 : 0);
-        ESP_LOGI(TAG, "Actuator %s (temp=%.2f, hum=%.2f)", turn_on ? "ON" : "OFF", g_have_temp ? g_last_temp : -1.0f, g_have_hum ? g_last_hum : -1.0f);
         break;
 
     case MQTT_EVENT_ERROR:
-        ESP_LOGE(TAG, "Error en el stack MQTT");
+        ESP_LOGE(TAG, "Error on MQTT stack");
         break;
 
     default:
@@ -209,12 +213,39 @@ static esp_mqtt_client_handle_t mqtt_app_start(void)
     return client;
 }
 
+void action_relay_task(void *pvParameters)
+{
+    esp_mqtt_client_handle_t client = (esp_mqtt_client_handle_t) pvParameters;
+    char payload[16];
+
+    while (1)
+    {
+        gpio_set_level(ACTUATOR_GPIO, turn_on ? 1 : 0);
+        ESP_LOGI(TAG, "Actuator %s (temp=%.2f, hum=%.2f)", turn_on ? "ON" : "OFF", g_have_temp ? g_last_temp : -1.0f, g_have_hum ? g_last_hum : -1.0f);
+        
+        if (turn_on)
+        {
+            snprintf(payload, sizeof(payload), "%.2f", turn_on ? 1.0 : 0.0);
+        }
+        else
+        {
+            snprintf(payload, sizeof(payload), "%.2f", turn_on ? 1.0 : 0.0);
+        }
+        // Publish action
+        if (client != NULL) {
+            esp_mqtt_client_publish(client, TOPIC_ACTION, payload, 0, 1, 0);
+        }
+
+        vTaskDelay(pdMS_TO_TICKS(10000)); // Wait 10 seconds before checking again (or reacting to new data) to avoid rapid toggling
+    }
+}
+
 void app_main(void)
 {
     // Configurar GPIO
     gpio_reset_pin(ACTUATOR_GPIO);
     gpio_set_direction(ACTUATOR_GPIO, GPIO_MODE_OUTPUT);
-    gpio_set_level(ACTUATOR_GPIO, 0);
+    gpio_set_level(ACTUATOR_GPIO, 0); //
 
     // Iniciar WiFi
     esp_err_t ret = nvs_flash_init();
@@ -231,8 +262,10 @@ void app_main(void)
     esp_mqtt_client_handle_t client = mqtt_app_start();
 
     // Dejar la app corriendo
-    while (1)
-    {
-        vTaskDelay(pdMS_TO_TICKS(10000));
-    }
+    // while (1)
+    // {
+    //     vTaskDelay(pdMS_TO_TICKS(10000));
+    // }
+
+    xTaskCreate(action_relay_task, "action_relay_task", 4096, (void*) client, 5, NULL);
 }

@@ -1,0 +1,601 @@
+Command: /home/paula/.espressif/python_env/idf5.5_py3.12_env/bin/python /home/paula/sed/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/paula/sed/esp-workspace/auto-irrigation-system/actuator-node/build/actuator-node.elf /home/paula/sed/esp-workspace/auto-irrigation-system/actuator-node/build/bootloader/bootloader.elf -m '/home/paula/.espressif/python_env/idf5.5_py3.12_env/bin/python' '/home/paula/sed/esp-idf/tools/idf.py' '-p' '/dev/ttyUSB0'
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6280
+load:0x40078000,len:15864
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (27) boot: ESP-IDF v5.5.3 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time May  8 2026 09:49:54[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v3.0[0m
+[0;32mI (32) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (35) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (42) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (62) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (75) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=1dfc0h (122816) map[0m
+[0;32mI (128) esp_image: segment 1: paddr=0002dfe8 vaddr=3ffb0000 size=02030h (  8240) load[0m
+[0;32mI (131) esp_image: segment 2: paddr=00030020 vaddr=400d0020 size=9da04h (645636) map[0m
+[0;32mI (353) esp_image: segment 3: paddr=000cda2c vaddr=3ffb2030 size=02328h (  9000) load[0m
+[0;32mI (356) esp_image: segment 4: paddr=000cfd5c vaddr=40080000 size=18188h ( 98696) load[0m
+[0;32mI (395) esp_image: segment 5: paddr=000e7eec vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (407) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (407) boot: Disabling RNG early entropy source...[0m
+[0;32mI (417) cpu_start: Multicore app[0m
+[0;32mI (426) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (426) cpu_start: Pro cpu start user code[0m
+[0;32mI (426) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (428) app_init: Application information:[0m
+[0;32mI (432) app_init: Project name:     actuator-node[0m
+[0;32mI (436) app_init: App version:      1[0m
+[0;32mI (439) app_init: Compile time:     May  8 2026 09:49:47[0m
+[0;32mI (445) app_init: ELF file SHA256:  9f86d1551...[0m
+[0;32mI (449) app_init: ESP-IDF:          v5.5.3[0m
+[0;32mI (453) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (457) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (460) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (465) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (471) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (476) heap_init: At 3FFB8C68 len 00027398 (156 KiB): DRAM[0m
+[0;32mI (481) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (486) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (492) heap_init: At 40098188 len 00007E78 (31 KiB): IRAM[0m
+[0;32mI (499) spi_flash: detected chip: generic[0m
+[0;32mI (501) spi_flash: flash io: dio[0m
+[0;33mW (504) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (517) main_task: Started on CPU0[0m
+[0;32mI (527) main_task: Calling app_main()[0m
+[0;32mI (557) wifi:wifi driver task: 3ffc0c4c, prio:23, stack:6656, core=0[0m
+[0;32mI (567) wifi:wifi firmware version: 4df78f2[0m
+[0;32mI (567) wifi:wifi certification version: v7.0[0m
+[0;32mI (567) wifi:config NVS flash: enabled[0m
+[0;32mI (567) wifi:config nano formatting: disabled[0m
+[0;32mI (577) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (577) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (577) wifi:Init management short buffer num: 32[0m
+[0;32mI (587) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (587) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (597) wifi:Init static rx buffer num: 10[0m
+[0;32mI (597) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (607) wifi_init: rx ba win: 6[0m
+[0;32mI (607) wifi_init: accept mbox: 6[0m
+[0;32mI (607) wifi_init: tcpip mbox: 32[0m
+[0;32mI (607) wifi_init: udp mbox: 6[0m
+[0;32mI (617) wifi_init: tcp mbox: 6[0m
+[0;32mI (617) wifi_init: tcp tx win: 5760[0m
+[0;32mI (617) wifi_init: tcp rx win: 5760[0m
+[0;32mI (617) wifi_init: tcp mss: 1440[0m
+[0;32mI (627) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (627) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (637) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (637) phy_init: phy_version 4863,a3a4459,Oct 28 2025,14:30:06[0m
+[0;32mI (717) wifi:mode : sta (94:3c:c6:cd:c5:cc)[0m
+[0;32mI (717) wifi:enable tsf[0m
+[0;32mI (727) WIFI: Connecting to Paula...[0m
+[0;32mI (737) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (737) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (747) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (767) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (787) wifi:connected with Paula, aid = 3, channel 11, BW20, bssid = 8a:04:de:aa:05:40[0m
+[0;32mI (797) wifi:security: WPA2-PSK, phy: bgn, rssi: -32[0m
+[0;32mI (797) wifi:pm start, type: 1[0m
+
+[0;32mI (797) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (807) wifi:<ba-add>idx:0 (ifx:0, 8a:04:de:aa:05:40), tid:0, ssn:0, winSize:64[0m
+[0;32mI (877) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (877) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (1857) esp_netif_handlers: sta ip: 10.12.62.244, mask: 255.255.255.0, gw: 10.12.62.234[0m
+[0;32mI (5727) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (5727) main_task: Returned from app_main()[0m
+[0;32mI (6257) actuator-node: Actuator node connected to Broker[0m
+[0;32mI (9797) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (9797) actuator-node: Humidity received: 47.76[0m
+[0;32mI (9867) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (9867) actuator-node: Temperature received: 22.64[0m
+[0;32mI (16267) actuator-node: Actuator ON (temp=22.64, hum=47.76)[0m
+[0;32mI (21057) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (21057) actuator-node: Temperature received: 22.64[0m
+[0;32mI (21267) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (21267) actuator-node: Humidity received: 47.84[0m
+[0;32mI (26267) actuator-node: Actuator ON (temp=22.64, hum=47.84)[0m
+[0;32mI (30077) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (30077) actuator-node: Humidity received: 48.05[0m
+[0;32mI (30127) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (30127) actuator-node: Temperature received: 22.67[0m
+[0;32mI (36267) actuator-node: Actuator ON (temp=22.67, hum=48.05)[0m
+[0;32mI (40207) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (40207) actuator-node: Humidity received: 48.36[0m
+[0;32mI (40267) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (40267) actuator-node: Temperature received: 22.65[0m
+[0;32mI (46267) actuator-node: Actuator ON (temp=22.65, hum=48.36)[0m
+[0;32mI (50547) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (50547) actuator-node: Humidity received: 48.62[0m
+[0;32mI (50617) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (50627) actuator-node: Temperature received: 22.65[0m
+[0;32mI (56267) actuator-node: Actuator ON (temp=22.65, hum=48.62)[0m
+[0;32mI (60727) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (60727) actuator-node: Humidity received: 48.42[0m
+[0;32mI (61007) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (61007) actuator-node: Temperature received: 22.65[0m
+[0;32mI (66267) actuator-node: Actuator ON (temp=22.65, hum=48.42)[0m
+[0;32mI (71037) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (71037) actuator-node: Humidity received: 48.06[0m
+[0;32mI (71107) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (71107) actuator-node: Temperature received: 22.64[0m
+[0;32mI (76267) actuator-node: Actuator ON (temp=22.64, hum=48.06)[0m
+[0;32mI (81077) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (81087) actuator-node: Humidity received: 47.93[0m
+[0;32mI (81147) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (81147) actuator-node: Temperature received: 22.63[0m
+[0;32mI (86267) actuator-node: Actuator ON (temp=22.63, hum=47.93)[0m
+[0;32mI (91307) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (91307) actuator-node: Humidity received: 48.11[0m
+[0;32mI (91507) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (91507) actuator-node: Temperature received: 22.65[0m
+[0;32mI (96267) actuator-node: Actuator ON (temp=22.65, hum=48.11)[0m
+[0;32mI (101547) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (101547) actuator-node: Humidity received: 47.94[0m
+[0;32mI (101757) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (101757) actuator-node: Temperature received: 22.64[0m
+[0;32mI (106267) actuator-node: Actuator ON (temp=22.64, hum=47.94)[0m
+[0;32mI (111787) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (111797) actuator-node: Humidity received: 47.52[0m
+[0;32mI (111857) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (111857) actuator-node: Temperature received: 22.63[0m
+[0;32mI (116267) actuator-node: Actuator ON (temp=22.63, hum=47.52)[0m
+[0;32mI (122027) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (122027) actuator-node: Humidity received: 47.14[0m
+[0;32mI (122227) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (122227) actuator-node: Temperature received: 22.63[0m
+[0;32mI (125547) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/actuator/hum[0m
+[0;32mI (125547) actuator-node: Humidity threshold set to: 91.00[0m
+[0;32mI (125917) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/actuator/hum[0m
+[0;32mI (125917) actuator-node: Humidity threshold set to: 93.00[0m
+[0;32mI (125927) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/actuator/hum[0m
+[0;32mI (125927) actuator-node: Humidity threshold set to: 95.00[0m
+[0;32mI (125937) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/actuator/hum[0m
+[0;32mI (125947) actuator-node: Humidity threshold set to: 96.00[0m
+[0;32mI (125957) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/actuator/hum[0m
+[0;32mI (125957) actuator-node: Humidity threshold set to: 98.00[0m
+[0;32mI (125967) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/actuator/hum[0m
+[0;32mI (125977) actuator-node: Humidity threshold set to: 100.00[0m
+[0;32mI (126267) actuator-node: Actuator ON (temp=22.63, hum=47.14)[0m
+[0;32mI (126537) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/actuator/hum[0m
+[0;32mI (126537) actuator-node: Humidity threshold set to: 98.00[0m
+[0;32mI (126587) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/actuator/hum[0m
+[0;32mI (126587) actuator-node: Humidity threshold set to: 93.00[0m
+[0;32mI (126597) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/actuator/hum[0m
+[0;32mI (126597) actuator-node: Humidity threshold set to: 90.00[0m
+[0;32mI (126607) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/actuator/hum[0m
+[0;32mI (126617) actuator-node: Humidity threshold set to: 87.00[0m
+[0;32mI (126617) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/actuator/hum[0m
+[0;32mI (126627) actuator-node: Humidity threshold set to: 83.00[0m
+[0;32mI (126637) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/actuator/hum[0m
+[0;32mI (126637) actuator-node: Humidity threshold set to: 81.00[0m
+[0;32mI (126647) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/actuator/hum[0m
+[0;32mI (126657) actuator-node: Humidity threshold set to: 78.00[0m
+[0;32mI (126667) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/actuator/hum[0m
+[0;32mI (126667) actuator-node: Humidity threshold set to: 76.00[0m
+[0;32mI (126677) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/actuator/hum[0m
+[0;32mI (126677) actuator-node: Humidity threshold set to: 75.00[0m
+[0;32mI (126687) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/actuator/hum[0m
+[0;32mI (126697) actuator-node: Humidity threshold set to: 74.00[0m
+[0;32mI (126707) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/actuator/hum[0m
+[0;32mI (126707) actuator-node: Humidity threshold set to: 73.00[0m
+[0;32mI (126717) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/actuator/hum[0m
+[0;32mI (126727) actuator-node: Humidity threshold set to: 72.00[0m
+[0;32mI (132057) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (132057) actuator-node: Humidity received: 47.06[0m
+[0;32mI (132127) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (132127) actuator-node: Temperature received: 22.64[0m
+[0;32mI (135137) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/actuator/hum[0m
+[0;32mI (135137) actuator-node: Humidity threshold set to: 71.00[0m
+[0;32mI (135347) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/actuator/hum[0m
+[0;32mI (135347) actuator-node: Humidity threshold set to: 67.00[0m
+[0;32mI (135347) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/actuator/hum[0m
+[0;32mI (135357) actuator-node: Humidity threshold set to: 62.00[0m
+[0;32mI (135367) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/actuator/hum[0m
+[0;32mI (135367) actuator-node: Humidity threshold set to: 55.00[0m
+[0;32mI (135377) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/actuator/hum[0m
+[0;32mI (135377) actuator-node: Humidity threshold set to: 46.00[0m
+[0;32mI (135387) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/actuator/hum[0m
+[0;32mI (135397) actuator-node: Humidity threshold set to: 41.00[0m
+[0;32mI (135407) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/actuator/hum[0m
+[0;32mI (135407) actuator-node: Humidity threshold set to: 38.00[0m
+[0;32mI (135417) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/actuator/hum[0m
+[0;32mI (135427) actuator-node: Humidity threshold set to: 34.00[0m
+[0;32mI (135437) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/actuator/hum[0m
+[0;32mI (135437) actuator-node: Humidity threshold set to: 32.00[0m
+[0;32mI (135447) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/actuator/hum[0m
+[0;32mI (135447) actuator-node: Humidity threshold set to: 31.00[0m
+[0;32mI (135467) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/actuator/hum[0m
+[0;32mI (135467) actuator-node: Humidity threshold set to: 30.00[0m
+[0;32mI (135477) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/actuator/hum[0m
+[0;32mI (135477) actuator-node: Humidity threshold set to: 29.00[0m
+[0;32mI (135487) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/actuator/hum[0m
+[0;32mI (135487) actuator-node: Humidity threshold set to: 28.00[0m
+[0;32mI (136267) actuator-node: Actuator OFF (temp=22.64, hum=47.06)[0m
+[0;32mI (142297) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (142297) actuator-node: Humidity received: 47.08[0m
+[0;32mI (142507) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (142507) actuator-node: Temperature received: 22.64[0m
+[0;32mI (146267) actuator-node: Actuator OFF (temp=22.64, hum=47.08)[0m
+[0;32mI (154187) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (154187) actuator-node: Humidity received: 47.02[0m
+[0;32mI (154247) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (154247) actuator-node: Temperature received: 22.63[0m
+[0;32mI (156267) actuator-node: Actuator OFF (temp=22.63, hum=47.02)[0m
+[0;32mI (162797) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (162797) actuator-node: Humidity received: 47.04[0m
+[0;32mI (162857) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (162857) actuator-node: Temperature received: 22.65[0m
+[0;32mI (166267) actuator-node: Actuator OFF (temp=22.65, hum=47.04)[0m
+[0;32mI (173027) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (173027) actuator-node: Humidity received: 47.45[0m
+[0;32mI (173097) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (173097) actuator-node: Temperature received: 22.64[0m
+[0;32mI (176267) actuator-node: Actuator OFF (temp=22.64, hum=47.45)[0m
+[0;32mI (183057) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (183057) actuator-node: Humidity received: 47.72[0m
+[0;32mI (183467) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (183467) actuator-node: Temperature received: 22.62[0m
+[0;32mI (186267) actuator-node: Actuator OFF (temp=22.62, hum=47.72)[0m
+[0;32mI (193197) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (193197) actuator-node: Humidity received: 47.84[0m
+[0;32mI (193497) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (193497) actuator-node: Temperature received: 22.66[0m
+[0;32mI (196267) actuator-node: Actuator OFF (temp=22.66, hum=47.84)[0m
+[0;32mI (203697) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (203697) actuator-node: Humidity received: 48.23[0m
+[0;32mI (203797) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (203797) actuator-node: Temperature received: 22.62[0m
+[0;32mI (206267) actuator-node: Actuator OFF (temp=22.62, hum=48.23)[0m
+[0;32mI (213787) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (213787) actuator-node: Humidity received: 48.18[0m
+[0;32mI (213987) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (213987) actuator-node: Temperature received: 22.65[0m
+[0;32mI (216267) actuator-node: Actuator OFF (temp=22.65, hum=48.18)[0m
+[0;32mI (224017) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (224017) actuator-node: Humidity received: 48.15[0m
+[0;32mI (224237) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (224237) actuator-node: Temperature received: 22.65[0m
+[0;32mI (226267) actuator-node: Actuator OFF (temp=22.65, hum=48.15)[0m
+[0;32mI (234047) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (234057) actuator-node: Humidity received: 48.27[0m
+[0;32mI (234137) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (234137) actuator-node: Temperature received: 22.66[0m
+[0;32mI (236267) actuator-node: Actuator OFF (temp=22.66, hum=48.27)[0m
+[0;32mI (244287) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (244287) actuator-node: Humidity received: 48.52[0m
+[0;32mI (244497) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (244497) actuator-node: Temperature received: 22.64[0m
+[0;32mI (246267) actuator-node: Actuator OFF (temp=22.64, hum=48.52)[0m
+[0;32mI (254537) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (254537) actuator-node: Humidity received: 48.56[0m
+[0;32mI (254607) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (254607) actuator-node: Temperature received: 22.64[0m
+[0;32mI (256267) actuator-node: Actuator OFF (temp=22.64, hum=48.56)[0m
+[0;32mI (264727) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (264727) actuator-node: Humidity received: 48.74[0m
+[0;32mI (264827) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (264827) actuator-node: Temperature received: 22.68[0m
+[0;32mI (266267) actuator-node: Actuator OFF (temp=22.68, hum=48.74)[0m
+[0;32mI (275017) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (275017) actuator-node: Humidity received: 48.92[0m
+[0;32mI (275207) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (275207) actuator-node: Temperature received: 22.68[0m
+[0;32mI (276267) actuator-node: Actuator OFF (temp=22.68, hum=48.92)[0m
+[0;32mI (285257) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (285257) actuator-node: Humidity received: 49.17[0m
+[0;32mI (285457) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (285457) actuator-node: Temperature received: 22.65[0m
+[0;32mI (286267) actuator-node: Actuator OFF (temp=22.65, hum=49.17)[0m
+[0;32mI (295277) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (295277) actuator-node: Humidity received: 49.10[0m
+[0;32mI (295497) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (295497) actuator-node: Temperature received: 22.66[0m
+[0;32mI (296267) actuator-node: Actuator OFF (temp=22.66, hum=49.10)[0m
+[0;32mI (305537) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (305537) actuator-node: Humidity received: 49.13[0m
+[0;32mI (305597) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (305597) actuator-node: Temperature received: 22.65[0m
+[0;32mI (306267) actuator-node: Actuator OFF (temp=22.65, hum=49.13)[0m
+[0;32mI (315757) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (315757) actuator-node: Humidity received: 49.13[0m
+[0;32mI (315837) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (315837) actuator-node: Temperature received: 22.66[0m
+[0;32mI (316267) actuator-node: Actuator OFF (temp=22.66, hum=49.13)[0m
+[0;32mI (325997) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (325997) actuator-node: Humidity received: 49.10[0m
+[0;32mI (326067) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (326067) actuator-node: Temperature received: 22.67[0m
+[0;32mI (326267) actuator-node: Actuator OFF (temp=22.67, hum=49.10)[0m
+[0;32mI (336047) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (336047) actuator-node: Humidity received: 49.26[0m
+[0;32mI (336267) actuator-node: Actuator OFF (temp=22.67, hum=49.26)[0m
+[0;32mI (336317) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (336317) actuator-node: Temperature received: 22.65[0m
+[0;32mI (346267) actuator-node: Actuator OFF (temp=22.65, hum=49.26)[0m
+[0;32mI (346287) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (346287) actuator-node: Humidity received: 49.44[0m
+[0;32mI (346387) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (346387) actuator-node: Temperature received: 22.67[0m
+[0;32mI (356267) actuator-node: Actuator OFF (temp=22.67, hum=49.44)[0m
+[0;32mI (356407) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (356407) actuator-node: Humidity received: 49.61[0m
+[0;32mI (356477) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (356477) actuator-node: Temperature received: 22.68[0m
+[0;32mI (366267) actuator-node: Actuator OFF (temp=22.68, hum=49.61)[0m
+[0;32mI (366597) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (366597) actuator-node: Humidity received: 49.47[0m
+[0;32mI (366817) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (366817) actuator-node: Temperature received: 22.67[0m
+[0;32mI (376267) actuator-node: Actuator OFF (temp=22.67, hum=49.47)[0m
+[0;32mI (376997) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (376997) actuator-node: Humidity received: 49.18[0m
+[0;32mI (377197) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (377197) actuator-node: Temperature received: 22.68[0m
+[0;32mI (386267) actuator-node: Actuator OFF (temp=22.68, hum=49.18)[0m
+[0;32mI (387047) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (387047) actuator-node: Humidity received: 49.42[0m
+[0;32mI (387107) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (387107) actuator-node: Temperature received: 22.65[0m
+[0;32mI (396267) actuator-node: Actuator OFF (temp=22.65, hum=49.42)[0m
+[0;32mI (397267) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (397267) actuator-node: Humidity received: 49.70[0m
+[0;32mI (397377) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (397377) actuator-node: Temperature received: 22.61[0m
+[0;32mI (406267) actuator-node: Actuator OFF (temp=22.61, hum=49.70)[0m
+[0;32mI (407527) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (407527) actuator-node: Humidity received: 49.49[0m
+[0;32mI (407587) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (407587) actuator-node: Temperature received: 22.63[0m
+[0;32mI (416267) actuator-node: Actuator OFF (temp=22.63, hum=49.49)[0m
+[0;32mI (417747) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (417747) actuator-node: Humidity received: 49.47[0m
+[0;32mI (417967) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (417967) actuator-node: Temperature received: 22.64[0m
+[0;32mI (426267) actuator-node: Actuator OFF (temp=22.64, hum=49.47)[0m
+[0;32mI (427987) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (427987) actuator-node: Humidity received: 49.26[0m
+[0;32mI (428207) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (428207) actuator-node: Temperature received: 22.65[0m
+[0;32mI (436267) actuator-node: Actuator OFF (temp=22.65, hum=49.26)[0m
+[0;32mI (438227) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (438227) actuator-node: Humidity received: 48.83[0m
+[0;32mI (438447) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (438447) actuator-node: Temperature received: 22.66[0m
+[0;32mI (446267) actuator-node: Actuator OFF (temp=22.66, hum=48.83)[0m
+[1;31mE (447467) transport_base: tcp_read error, errno=Connection reset by peer[0m
+[1;31mE (447467) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=104[0m
+[1;31mE (447467) actuator-node: Error on MQTT stack[0m
+[1;31mE (447477) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;32mI (456267) actuator-node: Actuator OFF (temp=22.66, hum=48.83)[0m
+[0;32mI (462757) actuator-node: Actuator node connected to Broker[0m
+[0;32mI (466267) actuator-node: Actuator OFF (temp=22.66, hum=48.83)[0m
+[0;32mI (468607) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (468607) actuator-node: Humidity received: 47.84[0m
+[0;32mI (468677) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (468677) actuator-node: Temperature received: 22.68[0m
+[0;32mI (476267) actuator-node: Actuator OFF (temp=22.68, hum=47.84)[0m
+[0;32mI (478987) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (478987) actuator-node: Humidity received: 47.91[0m
+[0;32mI (479077) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (479077) actuator-node: Temperature received: 22.66[0m
+[0;32mI (486267) actuator-node: Actuator OFF (temp=22.66, hum=47.91)[0m
+[0;32mI (489227) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (489227) actuator-node: Humidity received: 47.78[0m
+[0;32mI (489307) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (489307) actuator-node: Temperature received: 22.68[0m
+[0;32mI (496267) actuator-node: Actuator OFF (temp=22.68, hum=47.78)[0m
+[0;32mI (499257) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (499257) actuator-node: Humidity received: 47.62[0m
+[0;32mI (499347) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (499357) actuator-node: Temperature received: 22.70[0m
+[0;32mI (506267) actuator-node: Actuator OFF (temp=22.70, hum=47.62)[0m
+[0;32mI (509497) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (509497) actuator-node: Humidity received: 47.47[0m
+[0;32mI (509557) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (509567) actuator-node: Temperature received: 22.70[0m
+[0;32mI (516267) actuator-node: Actuator OFF (temp=22.70, hum=47.47)[0m
+[0;32mI (519747) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (519747) actuator-node: Humidity received: 47.37[0m
+[0;32mI (519857) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (519857) actuator-node: Temperature received: 22.68[0m
+[0;32mI (526267) actuator-node: Actuator OFF (temp=22.68, hum=47.37)[0m
+[0;32mI (529797) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (529797) actuator-node: Humidity received: 47.28[0m
+[0;32mI (530047) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (530047) actuator-node: Temperature received: 22.70[0m
+[0;32mI (536267) actuator-node: Actuator OFF (temp=22.70, hum=47.28)[0m
+[0;32mI (540217) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (540217) actuator-node: Humidity received: 47.20[0m
+[0;32mI (540437) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (540437) actuator-node: Temperature received: 22.70[0m
+[0;32mI (546267) actuator-node: Actuator OFF (temp=22.70, hum=47.20)[0m
+[0;32mI (550467) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (550467) actuator-node: Humidity received: 47.37[0m
+[0;32mI (550677) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (550677) actuator-node: Temperature received: 22.70[0m
+[0;32mI (556267) actuator-node: Actuator OFF (temp=22.70, hum=47.37)[0m
+[0;32mI (560497) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (560497) actuator-node: Humidity received: 47.62[0m
+[0;32mI (560577) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (560577) actuator-node: Temperature received: 22.73[0m
+[0;32mI (566267) actuator-node: Actuator OFF (temp=22.73, hum=47.62)[0m
+[0;32mI (570737) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (570737) actuator-node: Humidity received: 47.81[0m
+[0;32mI (570957) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (570957) actuator-node: Temperature received: 22.71[0m
+[0;32mI (576267) actuator-node: Actuator OFF (temp=22.71, hum=47.81)[0m
+[0;32mI (580857) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (580857) actuator-node: Humidity received: 48.10[0m
+[0;32mI (581207) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (581207) actuator-node: Temperature received: 22.70[0m
+[0;32mI (586267) actuator-node: Actuator OFF (temp=22.70, hum=48.10)[0m
+[0;32mI (591227) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (591227) actuator-node: Humidity received: 48.07[0m
+[0;32mI (591297) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (591297) actuator-node: Temperature received: 22.73[0m
+[0;32mI (596267) actuator-node: Actuator OFF (temp=22.73, hum=48.07)[0m
+[0;32mI (601257) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (601257) actuator-node: Humidity received: 48.29[0m
+[0;32mI (601467) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (601467) actuator-node: Temperature received: 22.73[0m
+[0;32mI (606267) actuator-node: Actuator OFF (temp=22.73, hum=48.29)[0m
+[0;32mI (611447) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (611447) actuator-node: Humidity received: 48.26[0m
+[0;32mI (611697) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (611697) actuator-node: Temperature received: 22.75[0m
+[0;32mI (616267) actuator-node: Actuator OFF (temp=22.75, hum=48.26)[0m
+[0;32mI (621737) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (621737) actuator-node: Humidity received: 48.48[0m
+[0;32mI (621787) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (621797) actuator-node: Temperature received: 22.77[0m
+[0;32mI (626267) actuator-node: Actuator OFF (temp=22.77, hum=48.48)[0m
+[0;32mI (631967) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (631967) actuator-node: Humidity received: 48.38[0m
+[0;32mI (632177) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (632177) actuator-node: Temperature received: 22.78[0m
+[0;32mI (636267) actuator-node: Actuator OFF (temp=22.78, hum=48.38)[0m
+[0;32mI (642207) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (642207) actuator-node: Humidity received: 48.20[0m
+[0;32mI (642417) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (642417) actuator-node: Temperature received: 22.79[0m
+[0;32mI (646267) actuator-node: Actuator OFF (temp=22.79, hum=48.20)[0m
+[0;32mI (652247) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (652247) actuator-node: Humidity received: 47.83[0m
+[0;32mI (652307) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (652307) actuator-node: Temperature received: 22.80[0m
+[0;32mI (656267) actuator-node: Actuator OFF (temp=22.80, hum=47.83)[0m
+[0;32mI (662487) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (662487) actuator-node: Humidity received: 47.54[0m
+[0;32mI (662557) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (662557) actuator-node: Temperature received: 22.79[0m
+[0;32mI (666267) actuator-node: Actuator OFF (temp=22.79, hum=47.54)[0m
+[0;32mI (672737) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (672737) actuator-node: Humidity received: 47.46[0m
+[0;32mI (672937) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (672937) actuator-node: Temperature received: 22.78[0m
+[0;32mI (676267) actuator-node: Actuator OFF (temp=22.78, hum=47.46)[0m
+[0;32mI (682967) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (682967) actuator-node: Humidity received: 47.38[0m
+[0;32mI (683177) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (683177) actuator-node: Temperature received: 22.77[0m
+[0;32mI (686267) actuator-node: Actuator OFF (temp=22.77, hum=47.38)[0m
+[0;32mI (693207) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (693207) actuator-node: Humidity received: 47.56[0m
+[0;32mI (693417) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (693417) actuator-node: Temperature received: 22.76[0m
+[0;32mI (696267) actuator-node: Actuator OFF (temp=22.76, hum=47.56)[0m
+[0;32mI (703237) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (703237) actuator-node: Humidity received: 47.65[0m
+[0;32mI (703307) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (703307) actuator-node: Temperature received: 22.76[0m
+[0;32mI (706267) actuator-node: Actuator OFF (temp=22.76, hum=47.65)[0m
+[0;32mI (713477) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (713477) actuator-node: Humidity received: 47.58[0m
+[0;32mI (713547) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (713547) actuator-node: Temperature received: 22.77[0m
+[0;32mI (716267) actuator-node: Actuator OFF (temp=22.77, hum=47.58)[0m
+[0;32mI (723727) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (723727) actuator-node: Humidity received: 47.60[0m
+[0;32mI (723797) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (723797) actuator-node: Temperature received: 22.75[0m
+[0;32mI (726267) actuator-node: Actuator OFF (temp=22.75, hum=47.60)[0m
+[0;32mI (733957) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (733957) actuator-node: Humidity received: 48.05[0m
+[0;32mI (734167) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (734167) actuator-node: Temperature received: 22.75[0m
+[0;32mI (736267) actuator-node: Actuator OFF (temp=22.75, hum=48.05)[0m
+[0;32mI (739497) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/actuator/temp[0m
+[0;32mI (739497) actuator-node: Temperature threshold set to: 12.00[0m
+[0;32mI (744197) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (744197) actuator-node: Humidity received: 48.39[0m
+[0;32mI (744257) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (744257) actuator-node: Temperature received: 22.77[0m
+[0;32mI (746267) actuator-node: Actuator OFF (temp=22.77, hum=48.39)[0m
+[0;32mI (754437) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (754437) actuator-node: Humidity received: 48.39[0m
+[0;32mI (754647) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (754647) actuator-node: Temperature received: 22.77[0m
+[0;32mI (756267) actuator-node: Actuator OFF (temp=22.77, hum=48.39)[0m
+[0;32mI (764477) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (764477) actuator-node: Humidity received: 48.14[0m
+[0;32mI (764527) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (764527) actuator-node: Temperature received: 22.81[0m
+[0;32mI (766267) actuator-node: Actuator OFF (temp=22.81, hum=48.14)[0m
+[0;32mI (774727) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (774727) actuator-node: Humidity received: 48.08[0m
+[0;32mI (774917) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (774917) actuator-node: Temperature received: 22.84[0m
+[0;32mI (776267) actuator-node: Actuator OFF (temp=22.84, hum=48.08)[0m
+[0;32mI (784747) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/actuator/temp[0m
+[0;32mI (784747) actuator-node: Temperature threshold set to: 13.00[0m
+[0;32mI (784867) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/actuator/temp[0m
+[0;32mI (784877) actuator-node: Temperature threshold set to: 15.00[0m
+[0;32mI (784877) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/actuator/temp[0m
+[0;32mI (784887) actuator-node: Temperature threshold set to: 16.00[0m
+[0;32mI (784897) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/actuator/temp[0m
+[0;32mI (784897) actuator-node: Temperature threshold set to: 18.00[0m
+[0;32mI (784907) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/actuator/temp[0m
+[0;32mI (784917) actuator-node: Temperature threshold set to: 20.00[0m
+[0;32mI (784917) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/actuator/temp[0m
+[0;32mI (784927) actuator-node: Temperature threshold set to: 21.00[0m
+[0;32mI (784937) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/actuator/temp[0m
+[0;32mI (784937) actuator-node: Temperature threshold set to: 22.00[0m
+[0;32mI (785117) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (785127) actuator-node: Humidity received: 47.99[0m
+[0;32mI (785367) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (785367) actuator-node: Temperature received: 22.87[0m
+[0;32mI (786267) actuator-node: Actuator OFF (temp=22.87, hum=47.99)[0m
+[0;32mI (795197) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (795197) actuator-node: Humidity received: 48.07[0m
+[0;32mI (795267) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (795277) actuator-node: Temperature received: 22.87[0m
+[0;32mI (796267) actuator-node: Actuator OFF (temp=22.87, hum=48.07)[0m
+[0;32mI (805237) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (805237) actuator-node: Humidity received: 47.83[0m
+[0;32mI (805287) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (805297) actuator-node: Temperature received: 22.85[0m
+[0;32mI (805697) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/actuator/temp[0m
+[0;32mI (805697) actuator-node: Temperature threshold set to: 24.00[0m
+[0;32mI (805697) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/actuator/temp[0m
+[0;32mI (805707) actuator-node: Temperature threshold set to: 25.00[0m
+[0;32mI (805717) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/actuator/temp[0m
+[0;32mI (805717) actuator-node: Temperature threshold set to: 26.00[0m
+[0;32mI (805727) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/actuator/temp[0m
+[0;32mI (805737) actuator-node: Temperature threshold set to: 27.00[0m
+[0;32mI (805747) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/actuator/temp[0m
+[0;32mI (805747) actuator-node: Temperature threshold set to: 28.00[0m
+[0;32mI (806267) actuator-node: Actuator OFF (temp=22.85, hum=47.83)[0m
+[0;32mI (815477) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (815477) actuator-node: Humidity received: 47.65[0m
+[0;32mI (815677) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (815677) actuator-node: Temperature received: 22.88[0m
+[0;32mI (816267) actuator-node: Actuator OFF (temp=22.88, hum=47.65)[0m
+[0;32mI (825707) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (825707) actuator-node: Humidity received: 47.56[0m
+[0;32mI (825927) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (825927) actuator-node: Temperature received: 22.90[0m
+[0;32mI (826267) actuator-node: Actuator OFF (temp=22.90, hum=47.56)[0m
+[0;32mI (835947) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (835947) actuator-node: Humidity received: 47.27[0m
+[0;32mI (836157) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (836157) actuator-node: Temperature received: 22.87[0m
+[0;32mI (836267) actuator-node: Actuator OFF (temp=22.87, hum=47.27)[0m
+[0;32mI (846187) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (846187) actuator-node: Humidity received: 47.01[0m
+[0;32mI (846267) actuator-node: Actuator OFF (temp=22.87, hum=47.01)[0m
+[0;32mI (846397) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (846407) actuator-node: Temperature received: 22.87[0m
