@@ -108,7 +108,80 @@ docker start mynodered
 docker logs --tail=100 -f mynodered
 ```
 
+###### Dashboard and flow
+
 URL: http://127.0.0.1:1880/
 
 Dashboard: http://127.0.0.1:1880/dashboard/page2 
 
+
+##### Over-The-Air Update with Mender
+
+```bash
+sudo apt install mender-artifact docker-compose-v2
+
+mkdir -p external/mender-mcu-client
+
+```
+
+Descargamos el repositorio: 
+```bash
+git clone --branch 0.12.3 --recursive https://github.com/joelguittet/mender-mcu-client.git external/mender-mcu-client/
+```
+
+Editamos el CMakeList.txt raíz incluyendo la orden list:
+```bash 
+...
+cmake_minimum_required(...)
+list(APPEND EXTRA_COMPONENT_DIRS "external/mender-mcu-client/esp-idf")
+```
+
+###### idf.py menuconfig 
+
+En el menuconfig, Component Config, Mender Firmware ..., General
+Configuration, hacemos:
+Mender Server Host URL: https://eu.hosted.mender.io
+Mender Servar Tenant Token: el que hemos obtenido anteriormente.
+
+```
+Bootloader config -> Application Rollback -> Activar Enable app rollback support.
+• Serial Flasher Config -> Flash size -> 4 MB
+• Partition Table -> Partition Table -> (X) Custom
+• Partition Table -> Custom partition ... -> partitions.csv
+``` 
+
+Navega a Component config → ESP-TLS.
+3. Marca la opción [*] Allow potentially insecure options.
+4. Justo debajo, marca [*] Skip server certificate verification by default
+
+####### Create `partitions.csv` in the project root with the following content:
+
+#Name,    Type,  SubType, Offset, Size,    Flags
+nvs,      data,  nvs,           , 0x4000,
+otadata,  data,  ota,           , 0x2000,
+phy_init, data,  phy,           , 0x1000,
+ota_0,    app,   ota_0,         , 1500K,
+ota_1,    app,   ota_1,         , 1500K,  
+
+
+####### Mender Artifact creation
+
+######## Actuator node
+```bash
+mender-artifact write rootfs-image \
+--compression none \
+--device-type esp32 \
+--artifact-name a_1.0.1 \
+--file build/actuator-node.bin \
+--output-path a_1.0.1.mender
+```
+
+######## Sensor node
+```bash
+mender-artifact write rootfs-image \
+--compression none \
+--device-type esp32c3 \
+--artifact-name s_1.0.1 \
+--file build/sensor-node.bin \
+--output-path s_1.0.1.mender
+```

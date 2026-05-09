@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <freertos/FreeRTOS.h>
 #include <freertos/task.h>
-#include <esp_timer.h> 
+#include <esp_timer.h>
 #include <esp_log.h>
 #include <si7021.h>
 #include <i2cdev.h>
@@ -29,7 +29,7 @@
 
 static const char *TAG = "sensor-node";
 
-#define VERSION "1.0.0"
+#define VERSION "s_1.0.1"
 
 #define LED_GPIO 2
 
@@ -82,7 +82,7 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
         ESP_LOGI(TAG, "Sensor node connected to Broker");
         // Publish "Online" message for consistency with LWT
         esp_mqtt_client_publish(client, TOPIC_STATUS, "Online", 0, 1, 1);
-       
+
         break;
 
     case MQTT_EVENT_ERROR:
@@ -116,42 +116,48 @@ static esp_mqtt_client_handle_t mqtt_app_start(void)
 }
 
 // --- Data collection task and MQTT publishing of sensor data
-void collect_data_task(void *pvParameters) {
-  // Take MQTT client handle from app_main
-  esp_mqtt_client_handle_t client = (esp_mqtt_client_handle_t) pvParameters;
-  char payload[16]; // Buffer for temperature and humidity strings
-   
-  float temperature = 25.0;
-  float humidity = 50.0;
-  esp_err_t res1 = ESP_OK;
-  esp_err_t res2 = ESP_OK;
+void collect_data_task(void *pvParameters)
+{
+    // Take MQTT client handle from app_main
+    esp_mqtt_client_handle_t client = (esp_mqtt_client_handle_t)pvParameters;
+    char payload[16]; // Buffer for temperature and humidity strings
 
-  while (1) {
-    // Reading sensor data: temperature and humidity
-    res1 = si7021_measure_temperature(&dev, &temperature);
-    res2 = si7021_measure_humidity(&dev, &humidity);
+    float temperature = 25.0;
+    float humidity = 50.0;
+    esp_err_t res1 = ESP_OK;
+    esp_err_t res2 = ESP_OK;
 
-    if (res1 == ESP_OK && res2 == ESP_OK) {
-      ESP_LOGI(TAG, "Temperature: %.2f C, Humidity: %.2f %%", temperature, humidity);
-      
-      // Publish humidity
-      snprintf(payload, sizeof(payload), "%.2f", humidity);
-      if (client != NULL) {
-          esp_mqtt_client_publish(client, TOPIC_HUM, payload, 0, 1, 0);
-      }
-      // Publish temperature
-      snprintf(payload, sizeof(payload), "%.2f", temperature);
-      if (client != NULL) {
-          esp_mqtt_client_publish(client, TOPIC_TEMP, payload, 0, 1, 0);
-      }
-    } 
-    else {
-      ESP_LOGE(TAG, "Error reading temperature: %d (%s)", res1, esp_err_to_name(res1));
-      ESP_LOGE(TAG, "Error reading humidity: %d (%s)", res2, esp_err_to_name(res2));
+    while (1)
+    {
+        // Reading sensor data: temperature and humidity
+        res1 = si7021_measure_temperature(&dev, &temperature);
+        res2 = si7021_measure_humidity(&dev, &humidity);
+
+        if (res1 == ESP_OK && res2 == ESP_OK)
+        {
+            ESP_LOGI(TAG, "Temperature: %.2f C, Humidity: %.2f %%", temperature, humidity);
+
+            // Publish humidity
+            snprintf(payload, sizeof(payload), "%.2f", humidity);
+            if (client != NULL)
+            {
+                esp_mqtt_client_publish(client, TOPIC_HUM, payload, 0, 1, 0);
+            }
+            // Publish temperature
+            snprintf(payload, sizeof(payload), "%.2f", temperature);
+            if (client != NULL)
+            {
+                esp_mqtt_client_publish(client, TOPIC_TEMP, payload, 0, 1, 0);
+            }
+        }
+        else
+        {
+            ESP_LOGE(TAG, "Error reading temperature: %d (%s)", res1, esp_err_to_name(res1));
+            ESP_LOGE(TAG, "Error reading humidity: %d (%s)", res2, esp_err_to_name(res2));
+        }
+        // Wait 10 seconds
+        vTaskDelay(pdMS_TO_TICKS(10000));
     }
-    // Wait 10 seconds
-    vTaskDelay(pdMS_TO_TICKS(10000));
-  }
 }
 
 // Mender congiguration and callbacks
@@ -175,8 +181,8 @@ static mender_err_t mender_auth_success_cb(void)
 {
     ESP_LOGI("MENDER", "Authentication successful with the server");
     // This is VITAL: it tells the ESP32 that the firmware works and should not revert to the previous version
-    // return mender_flash_confirm_image();
-    return MENDER_OK;
+    return mender_flash_confirm_image();
+    // return MENDER_OK;
 }
 
 static mender_err_t mender_restart_cb(void)
@@ -231,6 +237,13 @@ void app_main()
     ESP_ERROR_CHECK(i2cdev_init());
     ESP_ERROR_CHECK(si7021_init_desc(&dev, 0, 10, 8));
 
+    // Configure partition and version
+    const esp_partition_t *running = esp_ota_get_running_partition();
+    printf("--- SYSTEM STARTED ---\n");
+    printf("Firmware Version: %s\n", VERSION);
+    printf("Running from partition: %s\n", running->label);
+    printf("Offset Address: 0x%08" PRIx32 "\n", running->address);
+
     // Initialize WiFi
     esp_err_t ret = nvs_flash_init();
     if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND)
@@ -284,13 +297,6 @@ void app_main()
     }
     // --- END MENDER CONFIGURATION ---
 
-    // Configure partition and version
-    const esp_partition_t *running = esp_ota_get_running_partition();
-    printf("--- SYSTEM STARTED ---\n");
-    printf("Firmware Version: %s\n", VERSION);
-    printf("Running from partition: %s\n", running->label);
-    printf("Offset Address: 0x%08" PRIx32 "\n", running->address);
-
     // Start MQTT
     // Wait a bit before starting MQTT or use Event Groups
     // A simple solution for the lab is a small delay,
@@ -298,8 +304,6 @@ void app_main()
     vTaskDelay(pdMS_TO_TICKS(5000));
     esp_mqtt_client_handle_t client = mqtt_app_start();
 
-    
     // Create reading task
-    xTaskCreate(collect_data_task, "collect_data_task", 4096, (void*) client, 5, NULL);
-
+    xTaskCreate(collect_data_task, "collect_data_task", 4096, (void *)client, 5, NULL);
 }

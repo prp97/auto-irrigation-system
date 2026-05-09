@@ -28,7 +28,7 @@
 
 static const char *TAG = "actuator-node";
 
-#define VERSION "1.0.1"
+#define VERSION "a_1.0.8"
 
 #define ACTUATOR_GPIO 2
 #define ACTUATOR_ACTIVE_LOW true 
@@ -273,8 +273,8 @@ static mender_err_t mender_auth_success_cb(void)
 {
     ESP_LOGI("MENDER", "Authentication successful with the server");
     // This is VITAL: it tells the ESP32 that the firmware works and should not revert to the previous version
-    // return mender_flash_confirm_image();
-    return MENDER_OK;
+    return mender_flash_confirm_image();
+    // return MENDER_OK;
 }
 
 static mender_err_t mender_restart_cb(void)
@@ -325,12 +325,20 @@ void check_and_commit_ota()
 // MAIN
 void app_main(void)
 {
-    // Configurar GPIO
+    // Configure GPIO
     gpio_reset_pin(ACTUATOR_GPIO);
     gpio_set_direction(ACTUATOR_GPIO, GPIO_MODE_OUTPUT);
     gpio_set_level(ACTUATOR_GPIO, 0); //
 
-    // Iniciar WiFi
+    // Configure partition and version
+    const esp_partition_t *running = esp_ota_get_running_partition();
+    printf("--- SYSTEM STARTED ---\n");
+    printf("Firmware Version: %s\n", VERSION);
+    printf("Running from partition: %s\n", running->label);
+    printf("Offset Address: 0x%08" PRIx32 "\n", running->address);
+
+
+    // Initialize WiFi
     esp_err_t ret = nvs_flash_init();
     if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND)
     {
@@ -338,7 +346,7 @@ void app_main(void)
         ret = nvs_flash_init();
     }
     ESP_ERROR_CHECK(ret);
-    wifi_init_sta(); // Conectamos a la red SED
+    wifi_init_sta(); // Connect to network
 
     vTaskDelay(pdMS_TO_TICKS(10000)); // Wait a bit for WiFi to connect before starting Mender or use Event Groups
 
@@ -382,14 +390,6 @@ void app_main(void)
         ESP_LOGE("MENDER", "Failed to initialize Mender");
     }
     // --- END MENDER CONFIGURATION ---
-
-    // Configure partition and version
-    const esp_partition_t *running = esp_ota_get_running_partition();
-    printf("--- SYSTEM STARTED ---\n");
-    printf("Firmware Version: %s\n", VERSION);
-    printf("Running from partition: %s\n", running->label);
-    printf("Offset Address: 0x%08" PRIx32 "\n", running->address);
-
 
     // Init MQTT
     vTaskDelay(pdMS_TO_TICKS(5000));

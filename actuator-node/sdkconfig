@@ -435,8 +435,8 @@ CONFIG_PARTITION_TABLE_MD5=y
 #
 # Example Configuration
 #
-CONFIG_ESP_WIFI_SSID="MOVISTAR-WIFI7-8830"
-CONFIG_ESP_WIFI_PASSWORD="qVKfzU29qDoACrzBroNi"
+CONFIG_ESP_WIFI_SSID="Paula"
+CONFIG_ESP_WIFI_PASSWORD="wkmh4687"
 CONFIG_BROKER_URL="mqtt://broker.hivemq.com"
 # end of Example Configuration
 
