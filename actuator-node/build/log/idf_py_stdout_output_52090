@@ -1,0 +1,355 @@
+Command: /home/paula/.espressif/python_env/idf5.5_py3.12_env/bin/python /home/paula/sed/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/paula/sed/esp-workspace/auto-irrigation-system/actuator-node/build/actuator-node.elf /home/paula/sed/esp-workspace/auto-irrigation-system/actuator-node/build/bootloader/bootloader.elf -m '/home/paula/.espressif/python_env/idf5.5_py3.12_env/bin/python' '/home/paula/sed/esp-idf/tools/idf.py' '-p' '/dev/ttyUSB0'
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6280
+load:0x40078000,len:15944
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (27) boot: ESP-IDF v5.5.3 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time May 12 2026 11:58:09[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v3.0[0m
+[0;32mI (32) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (35) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (42) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00004000[0m
+[0;32mI (62) boot:  1 otadata          OTA data         01 00 0000d000 00002000[0m
+[0;32mI (69) boot:  2 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (75) boot:  3 ota_0            OTA app          00 10 00010000 00177000[0m
+[0;32mI (82) boot:  4 ota_1            OTA app          00 11 00190000 00177000[0m
+[0;32mI (88) boot: End of partition table[0m
+[0;32mI (92) boot: No factory image, trying OTA 0[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=264f8h (156920) map[0m
+[0;32mI (157) esp_image: segment 1: paddr=00036520 vaddr=3ffb0000 size=04378h ( 17272) load[0m
+[0;32mI (163) esp_image: segment 2: paddr=0003a8a0 vaddr=40080000 size=05778h ( 22392) load[0m
+[0;32mI (172) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=ae5c0h (714176) map[0m
+[0;32mI (417) esp_image: segment 4: paddr=000ee5e8 vaddr=40085778 size=13060h ( 77920) load[0m
+[0;32mI (447) esp_image: segment 5: paddr=00101650 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (459) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (513) boot: Set actual ota_seq=1 in otadata[0][0m
+[0;32mI (513) boot: Disabling RNG early entropy source...[0m
+[0;32mI (522) cpu_start: Multicore app[0m
+[0;32mI (531) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (531) cpu_start: Pro cpu start user code[0m
+[0;32mI (531) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (533) app_init: Application information:[0m
+[0;32mI (537) app_init: Project name:     actuator-node[0m
+[0;32mI (541) app_init: App version:      539746c-dirty[0m
+[0;32mI (546) app_init: Compile time:     May 12 2026 11:58:03[0m
+[0;32mI (551) app_init: ELF file SHA256:  d352eee9e...[0m
+[0;32mI (555) app_init: ESP-IDF:          v5.5.3[0m
+[0;32mI (559) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (563) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (567) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (571) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (577) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (582) heap_init: At 3FFB8ED0 len 00027130 (156 KiB): DRAM[0m
+[0;32mI (587) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (592) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (598) heap_init: At 400987D8 len 00007828 (30 KiB): IRAM[0m
+[0;32mI (605) spi_flash: detected chip: generic[0m
+[0;32mI (607) spi_flash: flash io: dio[0m
+[0;32mI (611) main_task: Started on CPU0[0m
+[0;32mI (621) main_task: Calling app_main()[0m
+--- SYSTEM STARTED ---
+Firmware Version: a_1.0.8
+Running from partition: ota_0
+Offset Address: 0x00010000
+[0;32mI (661) wifi:wifi driver task: 3ffc1760, prio:23, stack:6656, core=0[0m
+[0;32mI (671) wifi:wifi firmware version: 4df78f2[0m
+[0;32mI (671) wifi:wifi certification version: v7.0[0m
+[0;32mI (671) wifi:config NVS flash: enabled[0m
+[0;32mI (671) wifi:config nano formatting: disabled[0m
+[0;32mI (671) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (681) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (681) wifi:Init management short buffer num: 32[0m
+[0;32mI (691) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (691) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (701) wifi:Init static rx buffer num: 10[0m
+[0;32mI (701) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (711) wifi_init: rx ba win: 6[0m
+[0;32mI (711) wifi_init: accept mbox: 6[0m
+[0;32mI (711) wifi_init: tcpip mbox: 32[0m
+[0;32mI (711) wifi_init: udp mbox: 6[0m
+[0;32mI (721) wifi_init: tcp mbox: 6[0m
+[0;32mI (721) wifi_init: tcp tx win: 5760[0m
+[0;32mI (721) wifi_init: tcp rx win: 5760[0m
+[0;32mI (721) wifi_init: tcp mss: 1440[0m
+[0;32mI (731) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (731) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (741) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (741) phy_init: phy_version 4863,a3a4459,Oct 28 2025,14:30:06[0m
+[0;32mI (821) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (841) wifi:mode : sta (94:3c:c6:cd:c5:cc)[0m
+[0;32mI (841) wifi:enable tsf[0m
+[0;32mI (841) WIFI: Connecting to Paula...[0m
+[0;32mI (861) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (861) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (871) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (881) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (901) wifi:connected with Paula, aid = 2, channel 11, BW20, bssid = 8a:04:de:aa:05:40[0m
+[0;32mI (901) wifi:security: WPA2-PSK, phy: bgn, rssi: -27[0m
+[0;32mI (911) wifi:pm start, type: 1[0m
+
+[0;32mI (911) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (921) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (921) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (931) wifi:<ba-add>idx:0 (ifx:0, 8a:04:de:aa:05:40), tid:0, ssn:0, winSize:64[0m
+[0;32mI (1961) esp_netif_handlers: sta ip: 10.12.62.244, mask: 255.255.255.0, gw: 10.12.62.234[0m
+[0;32mI (10851) MENDER: Starting Mender client with MAC: 94:3c:c6:cd:c5:cc[0m
+[0;32mI (10851) mender: ./external/mender-mcu-client/platform/storage/esp-idf/nvs/src/mender-storage.c (157): Deployment data not available[0m
+[0;32mI (13331) MENDER: Authentication successful with the server[0m
+[0;32mI (13331) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (14351) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (15851) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (15851) main_task: Returned from app_main()[0m
+[0;32mI (20271) actuator-node: Actuator node connected to Broker[0m
+[0;32mI (30281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (40281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (50281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (60021) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (60021) actuator-node: Temperature received: 20.63[0m
+[0;32mI (60071) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (60081) actuator-node: Humidity received: 52.29[0m
+[0;32mI (60281) actuator-node: Actuator OFF (temp=20.63, hum=52.29)[0m
+[0;32mI (70061) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (70061) actuator-node: Humidity received: 52.28[0m
+[0;32mI (70251) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (70251) actuator-node: Temperature received: 20.62[0m
+[0;32mI (70281) actuator-node: Actuator OFF (temp=20.62, hum=52.28)[0m
+[0;32mI (73331) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (74971) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (80281) actuator-node: Actuator OFF (temp=20.62, hum=52.28)[0m
+[0;32mI (80291) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (80291) actuator-node: Humidity received: 52.25[0m
+[0;32mI (81961) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (81961) actuator-node: Temperature received: 20.64[0m
+[0;32mI (90281) actuator-node: Actuator OFF (temp=20.64, hum=52.25)[0m
+[0;32mI (90301) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (90311) actuator-node: Humidity received: 52.25[0m
+[0;32mI (90521) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (90521) actuator-node: Temperature received: 20.63[0m
+[0;32mI (100281) actuator-node: Actuator OFF (temp=20.63, hum=52.25)[0m
+[0;32mI (100571) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (100571) actuator-node: Humidity received: 52.25[0m
+[0;32mI (100771) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (100771) actuator-node: Temperature received: 20.63[0m
+[0;32mI (110281) actuator-node: Actuator OFF (temp=20.63, hum=52.25)[0m
+[0;32mI (110741) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (110741) actuator-node: Humidity received: 52.24[0m
+[0;32mI (111011) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (111011) actuator-node: Temperature received: 20.63[0m
+[0;32mI (120281) actuator-node: Actuator OFF (temp=20.63, hum=52.24)[0m
+[0;32mI (130281) actuator-node: Actuator OFF (temp=20.63, hum=52.24)[0m
+[0;32mI (133331) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (134981) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (140281) actuator-node: Actuator OFF (temp=20.63, hum=52.24)[0m
+[0;33mW (145851) actuator-node: Sensor data expired (no data for 34 sec) - invalidating values[0m
+[0;32mI (150281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (160281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (170281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (180281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (190281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (193331) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (194771) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (200281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (210281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (220281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (230281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (240281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (250281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (253331) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (254781) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (260281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (270281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (280281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (290281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (300281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (310281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (313331) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (314541) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (320281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (330281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (340281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (350281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (360281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (370281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (373331) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (374581) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (380281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (390281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (400281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (410281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (420281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (430281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (433331) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (435011) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (440281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (450281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (460281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (470281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (480281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (490281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (493331) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (495221) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (500281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (510281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (520281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (530281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (540281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (550281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (553331) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (554601) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (560281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (570281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (580281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (590281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (600281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (610281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (613331) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (614411) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (620281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (630281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (640281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (650281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (660281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (670281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (673331) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (674821) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (680281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (690281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (700281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (710281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (720281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (730281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (733331) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (734621) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (740281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (750281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (760281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (770281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (780281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (790281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (793331) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (795041) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (800281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (810281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (820281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (830281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (840281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (850281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (853331) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (854841) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (860281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (870281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (880281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (890281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (900281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (910281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (913331) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (914661) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (920281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (930281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (940281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (950281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (960281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (970281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (973331) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (974651) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (980281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (990281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1000281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1010281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1020281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1030281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1033331) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (1034531) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (1040281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1050281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1060281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1070281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1080281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1090281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1093331) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (1094861) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (1100281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1110281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1120281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1130281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1140281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1150281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1153331) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (1155071) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (1160281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1170281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1180281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1190281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1200281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1210281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1213331) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (1215081) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (1220281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1230281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1240281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1250281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1260281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1270281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1273331) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (1274471) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (1280281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1290281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1300281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1310281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1320281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1330281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1333331) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (1334701) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (1340281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1350281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1360281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1370281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1380281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1390281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1393331) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (1394691) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (1400281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1410281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1420281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1430281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1440281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1450281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1453331) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (1454901) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (1460281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1470281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1480281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1490281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1500281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1510281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1513331) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (1514711) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (1520281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1530281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1540281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1550281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1560281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1570281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1573331) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (1574461) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (1580281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1590281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1600281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1610281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1620281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1630281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1633331) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (1634961) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (1640281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1650281) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m

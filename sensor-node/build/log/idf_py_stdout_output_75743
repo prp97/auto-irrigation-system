@@ -1,0 +1,602 @@
+Command: /home/paula/.espressif/python_env/idf5.5_py3.12_env/bin/python /home/paula/sed/esp-idf/tools/idf_monitor.py -p /dev/ttyACM0 -b 115200 --toolchain-prefix riscv32-esp-elf- --target esp32c3 --revision 3 --decode-panic backtrace /home/paula/sed/esp-workspace/auto-irrigation-system/sensor-node/build/sensor-node.elf /home/paula/sed/esp-workspace/auto-irrigation-system/sensor-node/build/bootloader/bootloader.elf -m '/home/paula/.espressif/python_env/idf5.5_py3.12_env/bin/python' '/home/paula/sed/esp-idf/tools/idf.py' '-p' '/dev/ttyACM0'
+[0;32mI (126) esp_image: segment 1: paddr=00038378 vaddr=3fc95000 sizeESP-ROM:esp32c3-api1-20210207[0m
+Build:Feb  7 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0xc (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4004d2c2
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x155c
+load:0x403cbf10,len:0xc84
+load:0x403ce710,len:0x3034
+entry 0x403cbf1a
+[0;32mI (24) boot: ESP-IDF v5.5.3 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time May 12 2026 12:01:25[0m
+[0;32mI (25) boot: chip revision: v0.4[0m
+[0;32mI (25) boot: efuse block revision: v1.2[0m
+[0;32mI (28) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (32) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (36) boot.esp32c3: SPI Flash Size : 4MB[0m
+[0;32mI (39) boot: Enabling RNG early entropy source...[0m
+[0;32mI (44) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (53) boot:  0 nvs              WiFi data        01 02 00009000 00004000[0m
+[0;32mI (59) boot:  1 otadata          OTA data         01 00 0000d000 00002000[0m
+[0;32mI (66) boot:  2 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  3 ota_0            OTA app          00 10 00010000 00177000[0m
+[0;32mI (79) boot:  4 ota_1            OTA app          00 11 00190000 00177000[0m
+[0;32mI (85) boot: End of partition table[0m
+[0;32mI (89) boot: No factory image, trying OTA 0[0m
+[0;32mI (93) esp_image: segment 0: paddr=00010020 vaddr=3c0d0020 size=28350h (164688) map[0m
+[0;32mI (126) esp_image: segment 1: paddr=00038378 vaddr=3fc95000 size=031a4h ( 12708) load[0m
+[0;32mI (128) esp_image: segment 2: paddr=0003b524 vaddr=40380000 size=04af4h ( 19188) load[0m
+[0;32mI (133) esp_image: segment 3: paddr=00040020 vaddr=42000020 size=c9880h (825472) map[0m
+[0;32mI (266) esp_image: segment 4: paddr=001098a8 vaddr=40384af4 size=1036ch ( 66412) load[0m
+[0;32mI (278) esp_image: segment 5: paddr=00119c1c vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (285) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (328) boot: Set actual ota_seq=1 in otadata[0][0m
+[0;32mI (328) boot: Disabling RNG early entropy source...[0m
+[0;32mI (337) cpu_start: Unicore app[0m
+[0;32mI (346) cpu_start: GPIO 20 and 21 are used as console UART I/O pins[0m
+[0;32mI (346) cpu_start: Pro cpu start user code[0m
+[0;32mI (346) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (348) app_init: Application information:[0m
+[0;32mI (352) app_init: Project name:     sensor-node[0m
+[0;32mI (356) app_init: App version:      539746c-dirty[0m
+[0;32mI (361) app_init: Compile time:     May 12 2026 12:01:19[0m
+[0;32mI (366) app_init: ELF file SHA256:  3d087b635...[0m
+[0;32mI (370) app_init: ESP-IDF:          v5.5.3[0m
+[0;32mI (374) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (378) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (382) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (386) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (392) heap_init: At 3FC9CD80 len 00023280 (140 KiB): RAM[0m
+[0;32mI (397) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (403) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (409) heap_init: At 50000020 len 00001FC8 (7 KiB): RTCRAM[0m
+[0;32mI (415) spi_flash: detected chip: generic[0m
+[0;32mI (418) spi_flash: flash io: dio[0m
+[0;32mI (422) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (427) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (434) main_task: Started on CPU0[0m
+[0;32mI (434) main_task: Calling app_main()[0m
+--- SYSTEM STARTED ---
+Firmware Version: s_1.0.1
+Running from partition: ota_0
+Offset Address: 0x00010000
+[0;32mI (454) pp: pp rom version: 9387209[0m
+[0;32mI (454) net80211: net80211 rom version: 9387209[0m
+[0;32mI (464) wifi:wifi driver task: 3fca61b4, prio:23, stack:6656, core=0[0m
+[0;32mI (464) wifi:wifi firmware version: 4df78f2[0m
+[0;32mI (464) wifi:wifi certification version: v7.0[0m
+[0;32mI (464) wifi:config NVS flash: enabled[0m
+[0;32mI (474) wifi:config nano formatting: disabled[0m
+[0;32mI (474) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (474) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (484) wifi:Init management short buffer num: 32[0m
+[0;32mI (484) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (494) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (494) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (504) wifi:Init static rx buffer num: 10[0m
+[0;32mI (504) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (504) wifi_init: rx ba win: 6[0m
+[0;32mI (514) wifi_init: accept mbox: 6[0m
+[0;32mI (514) wifi_init: tcpip mbox: 32[0m
+[0;32mI (514) wifi_init: udp mbox: 6[0m
+[0;32mI (514) wifi_init: tcp mbox: 6[0m
+[0;32mI (524) wifi_init: tcp tx win: 5760[0m
+[0;32mI (524) wifi_init: tcp rx win: 5760[0m
+[0;32mI (524) wifi_init: tcp mss: 1440[0m
+[0;32mI (534) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (534) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (534) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (544) phy_init: phy_version 1232,d493f299,Aug 25 2025,19:01:20[0m
+[0;32mI (584) wifi:mode : sta (34:85:18:02:93:94)[0m
+[0;32mI (584) wifi:enable tsf[0m
+[0;32mI (584) WIFI: Connecting to Paula...[0m
+[0;32mI (584) sensor-node: Waiting for WiFi connection...[0m
+[0;32mI (594) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (594) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (604) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (614) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (634) wifi:connected with Paula, aid = 3, channel 11, BW20, bssid = 8a:04:de:aa:05:40[0m
+[0;32mI (634) wifi:security: WPA2-PSK, phy: bgn, rssi: -36[0m
+[0;32mI (644) wifi:pm start, type: 1[0m
+
+[0;32mI (644) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (654) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (664) wifi:<ba-add>idx:0 (ifx:0, 8a:04:de:aa:05:40), tid:0, ssn:0, winSize:64[0m
+[0;32mI (694) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (694) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (1704) esp_netif_handlers: sta ip: 10.12.62.250, mask: 255.255.255.0, gw: 10.12.62.234[0m
+[0;32mI (10584) MENDER: Starting Mender client with MAC: 34:85:18:02:93:94[0m
+[0;32mI (10584) mender: ./external/mender-mcu-client/platform/storage/esp-idf/nvs/src/mender-storage.c (157): Deployment data not available[0m
+[0;32mI (12684) MENDER: Authentication successful with the server[0m
+[0;32mI (12684) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (14314) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (15754) i2cdev: [Port 0] First initialization. Configuring bus with SDA=10, SCL=8 (Pullups SCL:0 SDA:0)[0m
+[0;33mW (15754) i2c.master: Please check pull-up resistances whether be connected properly. Otherwise unexpected behavior would happen. For more detailed information, please read docs[0m
+[0;32mI (15764) i2cdev: [Port 0] Successfully installed I2C master bus (Handle: 0x3fcb0508).[0m
+[0;32mI (15774) i2cdev: [0x40 at 0] Device added successfully (Device Handle: 0x3fcb0894, Speed: 400000 Hz).[0m
+[0;32mI (15784) main_task: Returned from app_main()[0m
+[0;32mI (15984) sensor-node: Temperature: 20.33 C, Humidity: 51.44 %[0m
+[0;32mI (22914) sensor-node: Sensor node connected to Broker[0m
+[0;32mI (33124) sensor-node: Temperature: 20.33 C, Humidity: 51.18 %[0m
+[0;32mI (43324) sensor-node: Temperature: 20.33 C, Humidity: 51.13 %[0m
+[0;32mI (53524) sensor-node: Temperature: 20.33 C, Humidity: 51.06 %[0m
+[0;32mI (63724) sensor-node: Temperature: 20.36 C, Humidity: 51.01 %[0m
+[0;32mI (72694) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (73914) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (73924) sensor-node: Temperature: 20.35 C, Humidity: 50.95 %[0m
+[0;32mI (84124) sensor-node: Temperature: 20.33 C, Humidity: 50.93 %[0m
+[0;32mI (280) esp_image: segment 5: paddr=00119c1c vaddr=50000000 sizeI (570) wifi:mode : sta (34:85:18:02:93:94)[0m
+[0;32mI (570) wifi:enable tsf[0m
+[0;32mI (570) WIFI: Connecting to Paula...[0m
+[0;32mI (570) sensor-node: Waiting for WiFi connection...[0m
+[0;32mI (580) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (580) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (590) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (590) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (630) wifi:connected with Paula, aid = 3, channel 11, BW20, bssid = 8a:04:de:aa:05:40[0m
+[0;32mI (630) wifi:security: WPA2-PSK, phy: bgn, rssi: -42[0m
+[0;32mI (630) wifi:pm start, type: 1[0m
+
+[0;32mI (640) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (640) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (650) wifi:<ba-add>idx:0 (ifx:0, 8a:04:de:aa:05:40), tid:0, ssn:0, winSize:64[0m
+[0;32mI (730) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (730) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (1680) esp_netif_handlers: sta ip: 10.12.62.250, mask: 255.255.255.0, gw: 10.12.62.234[0m
+[0;32mI (10570) MENDER: Starting Mender client with MAC: 34:85:18:02:93:94[0m
+[0;32mI (10570) mender: ./external/mender-mcu-client/platform/storage/esp-idf/nvs/src/mender-storage.c (157): Deployment data not available[0m
+[0;32mI (12610) MENDER: Authentication successful with the server[0m
+[0;32mI (12610) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (13630) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (15740) i2cdev: [Port 0] First initialization. Configuring bus with SDA=10, SCL=8 (Pullups SCL:0 SDA:0)[0m
+[0;33mW (15740) i2c.master: Please check pull-up resistances whether be connected properly. Otherwise unexpected behavior would happen. For more detailed information, please read docs[0m
+[0;32mI (15750) i2cdev: [Port 0] Successfully installed I2C master bus (Handle: 0x3fcb08a4).[0m
+[0;32mI (15760) i2cdev: [0x40 at 0] Device added successfully (Device Handle: 0x3fcb0c30, Speed: 400000 Hz).[0m
+[0;32mI (15770) main_task: Returned from app_main()[0m
+[0;32mI (15970) sensor-node: Temperature: 20.36 C, Humidity: 51.61 %[0m
+[0;32mI (22850) sensor-node: Sensor node connected to Broker[0m
+ation
+[0;32mI (400) main_task: Started on CPU0[0m
+[0;32mI (400) main_task: Calling app_main()[0m
+--- SYSTEM STARTED ---
+Firmware Version: s_1.0.1
+Running from partition: ota_0
+Offset Address: 0x00010000
+[0;32mI (420) pp: pp rom version: 9387209[0m
+[0;32mI (420) net80211: net80211 rom version: 9387209[0m
+[0;32mI (430) wifi:wifi driver task: 3fca61b4, prio:23, stack:6656, core=0[0m
+[0;32mI (430) wifi:wifi firmware version: 4df78f2[0m
+[0;32mI (430) wifi:wifi certification version: v7.0[0m
+[0;32mI (430) wifi:config NVS flash: enabled[0m
+[0;32mI (440) wifi:config nano formatting: disabled[0m
+[0;32mI (440) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (440) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (450) wifi:Init management short buffer num: 32[0m
+[0;32mI (450) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (460) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (460) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (470) wifi:Init static rx buffer num: 10[0m
+[0;32mI (470) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (470) wifi_init: rx ba win: 6[0m
+[0;32mI (480) wifi_init: accept mbox: 6[0m
+[0;32mI (480) wifi_init: tcpip mbox: 32[0m
+[0;32mI (480) wifi_init: udp mbox: 6[0m
+[0;32mI (480) wifi_init: tcp mbox: 6[0m
+[0;32mI (490) wifi_init: tcp tx win: 5760[0m
+[0;32mI (490) wifi_init: tcp rx win: 5760[0m
+[0;32mI (490) wifi_init: tcp mss: 1440[0m
+[0;32mI (500) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (500) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (500) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (510) phy_init: phy_version 1232,d493f299,Aug 25 2025,19:01:20[0m
+[0;32mI (550) wifi:mode : sta (34:85:18:02:93:94)[0m
+[0;32mI (550) wifi:enable tsf[0m
+[0;32mI (550) WIFI: Connecting to Paula...[0m
+[0;32mI (550) sensor-node: Waiting for WiFi connection...[0m
+[0;32mI (560) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (560) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (570) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (580) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (600) wifi:connected with Paula, aid = 3, channel 11, BW20, bssid = 8a:04:de:aa:05:40[0m
+[0;32mI (600) wifi:security: WPA2-PSK, phy: bgn, rssi: -34[0m
+[0;32mI (600) wifi:pm start, type: 1[0m
+
+[0;32mI (600) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (610) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (620) wifi:<ba-add>idx:0 (ifx:0, 8a:04:de:aa:05:40), tid:0, ssn:0, winSize:64[0m
+[0;32mI (620) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (630) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (1660) esp_netif_handlers: sta ip: 10.12.62.250, mask: 255.255.255.0, gw: 10.12.62.234[0m
+[0;32mI (10550) MENDER: Starting Mender client with MAC: 34:85:18:02:93:94[0m
+[0;32mI (10550) mender: ./external/mender-mcu-client/platform/storage/esp-idf/nvs/src/mender-storage.c (157): Deployment data not available[0m
+[0;32mI (12000) MENDER: Authentication successful with the server[0m
+[0;32mI (12000) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (13020) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (15720) i2cdev: [Port 0] First initialization. Configuring bus with SDA=10, SCL=8 (Pullups SCL:0 SDA:0)[0m
+[0;33mW (15720) i2c.master: Please check pull-up resistances whether be connected properly. Otherwise unexpected behavior would happen. For more detailed information, please read docs[0m
+[0;32mI (15730) i2cdev: [Port 0] Successfully installed I2C master bus (Handle: 0x3fcb0554).[0m
+[0;32mI (15740) i2cdev: [0x40 at 0] Device added successfully (Device Handle: 0x3fcb08e0, Speed: 400000 Hz).[0m
+[0;32mI (15750) main_task: Returned from app_main()[0m
+[0;32mI (15950) sensor-node: Temperature: 20.41 C, Humidity: 51.07 %[0m
+[0;32mI (22230) sensor-node: Sensor node connected to Broker[0m
+[0;32mI (32440) sensor-node: Temperature: 20.40 C, Humidity: 51.31 %[0m
+[0;32mI (42640) sensor-node: Temperature: 20.41 C, Humidity: 51.22 %[0m
+[0;32mI (52840) sensor-node: Temperature: 20.41 C, Humidity: 51.12 %[0m
+[0;32mI (63040) sensor-node: Temperature: 20.39 C, Humidity: 51.00 %[0m
+[0;32mI (72010) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (72940) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (73240) sensor-node: Temperature: 20.39 C, Humidity: 50.95 %[0m
+[0;32mI (83440) sensor-node: Temperature: 20.41 C, Humidity: 50.92 %[0m
+[0;32mI (93640) sensor-node: Temperature: 20.39 C, Humidity: 50.93 %[0m
+[0;32mI (103840) sensor-node: Temperature: 20.40 C, Humidity: 50.94 %[0m
+[0;32mI (114040) sensor-node: Temperature: 20.41 C, Humidity: 51.00 %[0m
+[0;32mI (124240) sensor-node: Temperature: 20.42 C, Humidity: 51.22 %[0m
+[0;32mI (132010) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (133440) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (134440) sensor-node: Temperature: 20.43 C, Humidity: 51.38 %[0m
+[0;32mI (144640) sensor-node: Temperature: 20.42 C, Humidity: 51.61 %[0m
+[0;32mI (154840) sensor-node: Temperature: 20.43 C, Humidity: 52.00 %[0m
+[0;32mI (165040) sensor-node: Temperature: 20.44 C, Humidity: 52.19 %[0m
+[0;32mI (175240) sensor-node: Temperature: 20.44 C, Humidity: 52.12 %[0m
+[0;32mI (185440) sensor-node: Temperature: 20.44 C, Humidity: 52.27 %[0m
+[0;32mI (192010) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (193250) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (195640) sensor-node: Temperature: 20.46 C, Humidity: 52.40 %[0m
+[0;32mI (205840) sensor-node: Temperature: 20.47 C, Humidity: 52.41 %[0m
+[0;32mI (216040) sensor-node: Temperature: 20.48 C, Humidity: 52.16 %[0m
+[0;32mI (226240) sensor-node: Temperature: 20.46 C, Humidity: 51.92 %[0m
+[0;32mI (236440) sensor-node: Temperature: 20.47 C, Humidity: 51.70 %[0m
+[0;32mI (246640) sensor-node: Temperature: 20.46 C, Humidity: 51.45 %[0m
+[0;32mI (252010) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (253460) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (256840) sensor-node: Temperature: 20.46 C, Humidity: 51.23 %[0m
+[0;32mI (267040) sensor-node: Temperature: 20.47 C, Humidity: 51.20 %[0m
+[0;32mI (277240) sensor-node: Temperature: 20.46 C, Humidity: 51.29 %[0m
+[0;32mI (287440) sensor-node: Temperature: 20.46 C, Humidity: 51.22 %[0m
+[0;32mI (297640) sensor-node: Temperature: 20.46 C, Humidity: 51.12 %[0m
+[0;32mI (307840) sensor-node: Temperature: 20.46 C, Humidity: 51.35 %[0m
+[0;32mI (312010) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (313260) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (318040) sensor-node: Temperature: 20.48 C, Humidity: 51.48 %[0m
+[0;32mI (328240) sensor-node: Temperature: 20.47 C, Humidity: 51.34 %[0m
+[0;32mI (338440) sensor-node: Temperature: 20.48 C, Humidity: 51.21 %[0m
+[0;32mI (348640) sensor-node: Temperature: 20.50 C, Humidity: 51.63 %[0m
+[0;32mI (358840) sensor-node: Temperature: 20.51 C, Humidity: 51.96 %[0m
+[0;32mI (369040) sensor-node: Temperature: 20.50 C, Humidity: 52.38 %[0m
+[0;32mI (372010) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (373470) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (379240) sensor-node: Temperature: 20.53 C, Humidity: 52.55 %[0m
+[0;32mI (389440) sensor-node: Temperature: 20.54 C, Humidity: 52.38 %[0m
+[0;32mI (399640) sensor-node: Temperature: 20.51 C, Humidity: 52.05 %[0m
+[0;32mI (409840) sensor-node: Temperature: 20.50 C, Humidity: 51.76 %[0m
+[0;32mI (420040) sensor-node: Temperature: 20.51 C, Humidity: 51.55 %[0m
+[0;32mI (430240) sensor-node: Temperature: 20.50 C, Humidity: 51.39 %[0m
+[0;32mI (432010) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (433680) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (440440) sensor-node: Temperature: 20.50 C, Humidity: 51.28 %[0m
+[0;32mI (450640) sensor-node: Temperature: 20.51 C, Humidity: 51.25 %[0m
+[0;32mI (460840) sensor-node: Temperature: 20.51 C, Humidity: 51.22 %[0m
+[0;32mI (471040) sensor-node: Temperature: 20.51 C, Humidity: 51.20 %[0m
+[0;32mI (481240) sensor-node: Temperature: 20.50 C, Humidity: 51.18 %[0m
+[0;32mI (491440) sensor-node: Temperature: 20.51 C, Humidity: 51.15 %[0m
+[0;32mI (492010) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (493100) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (501640) sensor-node: Temperature: 20.53 C, Humidity: 51.07 %[0m
+[0;32mI (511840) sensor-node: Temperature: 20.49 C, Humidity: 50.97 %[0m
+[0;32mI (522040) sensor-node: Temperature: 20.51 C, Humidity: 50.91 %[0m
+[0;32mI (532240) sensor-node: Temperature: 20.49 C, Humidity: 50.86 %[0m
+[0;32mI (542440) sensor-node: Temperature: 20.54 C, Humidity: 50.87 %[0m
+[0;32mI (552010) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (552650) sensor-node: Temperature: 20.50 C, Humidity: 50.86 %[0m
+[0;32mI (553480) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (562860) sensor-node: Temperature: 20.54 C, Humidity: 50.87 %[0m
+[0;32mI (573060) sensor-node: Temperature: 20.54 C, Humidity: 50.86 %[0m
+[0;32mI (583260) sensor-node: Temperature: 20.51 C, Humidity: 50.81 %[0m
+[0;32mI (593460) sensor-node: Temperature: 20.51 C, Humidity: 50.76 %[0m
+[0;32mI (603660) sensor-node: Temperature: 20.51 C, Humidity: 50.71 %[0m
+[0;32mI (612010) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (613280) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (613860) sensor-node: Temperature: 20.51 C, Humidity: 50.67 %[0m
+[0;32mI (624060) sensor-node: Temperature: 20.51 C, Humidity: 50.62 %[0m
+[0;32mI (634260) sensor-node: Temperature: 20.50 C, Humidity: 50.60 %[0m
+[0;32mI (644460) sensor-node: Temperature: 20.50 C, Humidity: 50.58 %[0m
+[0;32mI (654660) sensor-node: Temperature: 20.49 C, Humidity: 50.58 %[0m
+[0;32mI (664860) sensor-node: Temperature: 20.51 C, Humidity: 50.58 %[0m
+[0;32mI (672010) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (673700) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (675060) sensor-node: Temperature: 20.50 C, Humidity: 50.61 %[0m
+[0;32mI (685260) sensor-node: Temperature: 20.51 C, Humidity: 50.59 %[0m
+[0;32mI (695460) sensor-node: Temperature: 20.51 C, Humidity: 50.49 %[0m
+[0;32mI (705660) sensor-node: Temperature: 20.51 C, Humidity: 50.45 %[0m
+[0;32mI (715860) sensor-node: Temperature: 20.51 C, Humidity: 50.45 %[0m
+[0;32mI (726060) sensor-node: Temperature: 20.49 C, Humidity: 50.48 %[0m
+[0;32mI (732010) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (733920) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (736260) sensor-node: Temperature: 20.53 C, Humidity: 50.53 %[0m
+[0;32mI (746460) sensor-node: Temperature: 20.51 C, Humidity: 50.58 %[0m
+[0;32mI (756660) sensor-node: Temperature: 20.53 C, Humidity: 50.55 %[0m
+[0;32mI (766860) sensor-node: Temperature: 20.53 C, Humidity: 50.53 %[0m
+[0;32mI (777060) sensor-node: Temperature: 20.56 C, Humidity: 50.85 %[0m
+[0;32mI (787260) sensor-node: Temperature: 20.56 C, Humidity: 51.16 %[0m
+[0;32mI (792010) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (793310) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (797460) sensor-node: Temperature: 20.57 C, Humidity: 51.24 %[0m
+[0;32mI (807660) sensor-node: Temperature: 20.56 C, Humidity: 51.17 %[0m
+[0;32mI (817860) sensor-node: Temperature: 20.56 C, Humidity: 51.07 %[0m
+[0;32mI (828060) sensor-node: Temperature: 20.55 C, Humidity: 51.12 %[0m
+[0;32mI (838260) sensor-node: Temperature: 20.58 C, Humidity: 51.15 %[0m
+[0;32mI (848460) sensor-node: Temperature: 20.57 C, Humidity: 51.26 %[0m
+[0;32mI (852010) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (853100) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (858660) sensor-node: Temperature: 20.61 C, Humidity: 51.48 %[0m
+[0;32mI (868860) sensor-node: Temperature: 20.60 C, Humidity: 51.52 %[0m
+[0;32mI (879060) sensor-node: Temperature: 20.60 C, Humidity: 51.40 %[0m
+[0;32mI (889260) sensor-node: Temperature: 20.59 C, Humidity: 51.19 %[0m
+[0;32mI (899460) sensor-node: Temperature: 20.61 C, Humidity: 51.06 %[0m
+[0;32mI (909660) sensor-node: Temperature: 20.61 C, Humidity: 51.02 %[0m
+[0;32mI (912010) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (913110) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (919860) sensor-node: Temperature: 20.62 C, Humidity: 50.97 %[0m
+[0;32mI (930060) sensor-node: Temperature: 20.59 C, Humidity: 50.87 %[0m
+[0;32mI (940260) sensor-node: Temperature: 20.57 C, Humidity: 50.74 %[0m
+[0;32mI (950460) sensor-node: Temperature: 20.59 C, Humidity: 50.63 %[0m
+[0;32mI (960660) sensor-node: Temperature: 20.59 C, Humidity: 50.58 %[0m
+[0;32mI (970860) sensor-node: Temperature: 20.58 C, Humidity: 50.57 %[0m
+[0;32mI (972010) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (973530) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (981060) sensor-node: Temperature: 20.56 C, Humidity: 50.53 %[0m
+[0;32mI (991260) sensor-node: Temperature: 20.56 C, Humidity: 50.51 %[0m
+[0;32mI (1001460) sensor-node: Temperature: 20.56 C, Humidity: 50.48 %[0m
+[0;32mI (1011660) sensor-node: Temperature: 20.55 C, Humidity: 50.52 %[0m
+[0;32mI (1021860) sensor-node: Temperature: 20.54 C, Humidity: 50.52 %[0m
+[0;32mI (1032010) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (1032060) sensor-node: Temperature: 20.54 C, Humidity: 50.49 %[0m
+[0;32mI (1033330) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (1042260) sensor-node: Temperature: 20.53 C, Humidity: 50.48 %[0m
+[0;32mI (1052460) sensor-node: Temperature: 20.51 C, Humidity: 50.42 %[0m
+[0;32mI (1062660) sensor-node: Temperature: 20.50 C, Humidity: 50.36 %[0m
+[0;32mI (1072860) sensor-node: Temperature: 20.50 C, Humidity: 50.32 %[0m
+[0;32mI (1083060) sensor-node: Temperature: 20.54 C, Humidity: 50.33 %[0m
+[0;32mI (1092010) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (1093260) sensor-node: Temperature: 20.55 C, Humidity: 50.38 %[0m
+[0;32mI (1093540) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (1103460) sensor-node: Temperature: 20.51 C, Humidity: 50.40 %[0m
+[0;32mI (1113660) sensor-node: Temperature: 20.51 C, Humidity: 50.45 %[0m
+[0;32mI (1123860) sensor-node: Temperature: 20.53 C, Humidity: 50.53 %[0m
+[0;32mI (1134060) sensor-node: Temperature: 20.51 C, Humidity: 50.64 %[0m
+[0;32mI (1144260) sensor-node: Temperature: 20.53 C, Humidity: 50.69 %[0m
+[0;32mI (1152010) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (1153550) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (1154460) sensor-node: Temperature: 20.53 C, Humidity: 50.72 %[0m
+[0;32mI (1164660) sensor-node: Temperature: 20.51 C, Humidity: 50.72 %[0m
+[0;32mI (1174860) sensor-node: Temperature: 20.51 C, Humidity: 50.69 %[0m
+[0;32mI (1185060) sensor-node: Temperature: 20.51 C, Humidity: 50.64 %[0m
+[0;32mI (1195260) sensor-node: Temperature: 20.53 C, Humidity: 50.61 %[0m
+[0;32mI (1205460) sensor-node: Temperature: 20.54 C, Humidity: 50.64 %[0m
+[0;32mI (1212010) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (1213140) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (1215660) sensor-node: Temperature: 20.53 C, Humidity: 50.67 %[0m
+[0;32mI (1225860) sensor-node: Temperature: 20.54 C, Humidity: 50.69 %[0m
+[0;32mI (1236060) sensor-node: Temperature: 20.55 C, Humidity: 50.68 %[0m
+[0;32mI (1246260) sensor-node: Temperature: 20.50 C, Humidity: 50.66 %[0m
+[0;32mI (1256460) sensor-node: Temperature: 20.51 C, Humidity: 50.62 %[0m
+[0;32mI (1266660) sensor-node: Temperature: 20.53 C, Humidity: 50.57 %[0m
+[0;32mI (1272010) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (1273350) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (1276860) sensor-node: Temperature: 20.53 C, Humidity: 50.54 %[0m
+[0;32mI (1287060) sensor-node: Temperature: 20.53 C, Humidity: 50.52 %[0m
+[0;32mI (1297260) sensor-node: Temperature: 20.53 C, Humidity: 50.56 %[0m
+[0;32mI (1307460) sensor-node: Temperature: 20.51 C, Humidity: 50.59 %[0m
+[0;32mI (1317660) sensor-node: Temperature: 20.53 C, Humidity: 50.61 %[0m
+[0;32mI (1327860) sensor-node: Temperature: 20.53 C, Humidity: 50.60 %[0m
+[0;32mI (1332010) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (1333060) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (1338060) sensor-node: Temperature: 20.55 C, Humidity: 50.58 %[0m
+[0;32mI (1348260) sensor-node: Temperature: 20.55 C, Humidity: 50.61 %[0m
+[0;32mI (1358460) sensor-node: Temperature: 20.55 C, Humidity: 50.58 %[0m
+[0;32mI (1368660) sensor-node: Temperature: 20.55 C, Humidity: 50.51 %[0m
+[0;32mI (1378860) sensor-node: Temperature: 20.56 C, Humidity: 50.46 %[0m
+[0;32mI (1389060) sensor-node: Temperature: 20.55 C, Humidity: 50.45 %[0m
+[0;32mI (1392010) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (1393500) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (1399260) sensor-node: Temperature: 20.54 C, Humidity: 50.48 %[0m
+[0;32mI (1409460) sensor-node: Temperature: 20.56 C, Humidity: 50.50 %[0m
+[0;32mI (1419660) sensor-node: Temperature: 20.55 C, Humidity: 50.47 %[0m
+[0;32mI (1429860) sensor-node: Temperature: 20.55 C, Humidity: 50.42 %[0m
+[0;32mI (1440060) sensor-node: Temperature: 20.55 C, Humidity: 50.37 %[0m
+[0;32mI (1450260) sensor-node: Temperature: 20.55 C, Humidity: 50.33 %[0m
+[0;32mI (1452010) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (1453370) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (1460460) sensor-node: Temperature: 20.56 C, Humidity: 50.27 %[0m
+[0;32mI (1470660) sensor-node: Temperature: 20.54 C, Humidity: 50.22 %[0m
+[0;32mI (1480860) sensor-node: Temperature: 20.55 C, Humidity: 50.18 %[0m
+[0;32mI (1491060) sensor-node: Temperature: 20.54 C, Humidity: 50.19 %[0m
+[0;32mI (1501260) sensor-node: Temperature: 20.51 C, Humidity: 50.14 %[0m
+[0;32mI (1511460) sensor-node: Temperature: 20.53 C, Humidity: 50.13 %[0m
+[0;32mI (1512010) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (1513260) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (1521660) sensor-node: Temperature: 20.50 C, Humidity: 50.11 %[0m
+[0;32mI (1531860) sensor-node: Temperature: 20.54 C, Humidity: 50.11 %[0m
+[0;32mI (1542060) sensor-node: Temperature: 20.51 C, Humidity: 50.14 %[0m
+[0;32mI (1552260) sensor-node: Temperature: 20.53 C, Humidity: 50.19 %[0m
+[0;32mI (1562460) sensor-node: Temperature: 20.51 C, Humidity: 50.22 %[0m
+[0;32mI (1572010) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (1572700) sensor-node: Temperature: 20.51 C, Humidity: 50.25 %[0m
+[0;32mI (1573180) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (1582910) sensor-node: Temperature: 20.49 C, Humidity: 50.27 %[0m
+[0;32mI (1593110) sensor-node: Temperature: 20.50 C, Humidity: 50.30 %[0m
+[0;32mI (1603310) sensor-node: Temperature: 20.50 C, Humidity: 50.38 %[0m
+[0;32mI (1613510) sensor-node: Temperature: 20.50 C, Humidity: 50.43 %[0m
+[0;32mI (1623710) sensor-node: Temperature: 20.49 C, Humidity: 50.50 %[0m
+[0;32mI (1632010) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (1633590) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (1633910) sensor-node: Temperature: 20.48 C, Humidity: 50.53 %[0m
+[0;32mI (1644110) sensor-node: Temperature: 20.49 C, Humidity: 50.55 %[0m
+[0;32mI (1654310) sensor-node: Temperature: 20.49 C, Humidity: 50.52 %[0m
+[0;32mI (1664510) sensor-node: Temperature: 20.49 C, Humidity: 50.51 %[0m
+[0;32mI (1674710) sensor-node: Temperature: 20.49 C, Humidity: 50.48 %[0m
+[0;32mI (1684910) sensor-node: Temperature: 20.50 C, Humidity: 50.50 %[0m
+[0;32mI (1692010) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (1693400) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (1695110) sensor-node: Temperature: 20.46 C, Humidity: 50.53 %[0m
+[0;32mI (1705310) sensor-node: Temperature: 20.46 C, Humidity: 50.56 %[0m
+[0;32mI (1715510) sensor-node: Temperature: 20.47 C, Humidity: 50.55 %[0m
+[0;32mI (1725710) sensor-node: Temperature: 20.47 C, Humidity: 50.51 %[0m
+[0;32mI (1735910) sensor-node: Temperature: 20.47 C, Humidity: 50.49 %[0m
+[0;32mI (1746110) sensor-node: Temperature: 20.46 C, Humidity: 50.51 %[0m
+[0;32mI (1752010) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (1753200) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (1756310) sensor-node: Temperature: 20.48 C, Humidity: 50.51 %[0m
+[0;32mI (1766510) sensor-node: Temperature: 20.45 C, Humidity: 50.52 %[0m
+[0;32mI (1776710) sensor-node: Temperature: 20.48 C, Humidity: 50.54 %[0m
+[0;32mI (1786910) sensor-node: Temperature: 20.45 C, Humidity: 50.54 %[0m
+[0;32mI (1797110) sensor-node: Temperature: 20.47 C, Humidity: 50.55 %[0m
+[0;32mI (1807310) sensor-node: Temperature: 20.47 C, Humidity: 50.55 %[0m
+[0;32mI (1812010) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (1813400) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (1817510) sensor-node: Temperature: 20.48 C, Humidity: 50.51 %[0m
+[0;32mI (1827710) sensor-node: Temperature: 20.49 C, Humidity: 50.55 %[0m
+[0;32mI (1837910) sensor-node: Temperature: 20.49 C, Humidity: 50.62 %[0m
+[0;32mI (1848110) sensor-node: Temperature: 20.48 C, Humidity: 50.65 %[0m
+[0;32mI (1858310) sensor-node: Temperature: 20.50 C, Humidity: 50.68 %[0m
+[0;32mI (1868510) sensor-node: Temperature: 20.49 C, Humidity: 50.63 %[0m
+[0;32mI (1872010) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (1873410) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (1878710) sensor-node: Temperature: 20.48 C, Humidity: 50.59 %[0m
+[0;32mI (1888910) sensor-node: Temperature: 20.49 C, Humidity: 50.55 %[0m
+[0;32mI (1899110) sensor-node: Temperature: 20.47 C, Humidity: 50.53 %[0m
+[0;32mI (1909310) sensor-node: Temperature: 20.48 C, Humidity: 50.50 %[0m
+[0;32mI (1919510) sensor-node: Temperature: 20.45 C, Humidity: 50.49 %[0m
+[0;32mI (1929710) sensor-node: Temperature: 20.46 C, Humidity: 50.42 %[0m
+[0;32mI (1932010) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (1933620) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (1939910) sensor-node: Temperature: 20.49 C, Humidity: 50.36 %[0m
+[0;32mI (1950110) sensor-node: Temperature: 20.49 C, Humidity: 50.25 %[0m
+[0;32mI (1960310) sensor-node: Temperature: 20.48 C, Humidity: 50.22 %[0m
+[0;32mI (1970510) sensor-node: Temperature: 20.48 C, Humidity: 50.20 %[0m
+[0;32mI (1980710) sensor-node: Temperature: 20.48 C, Humidity: 50.22 %[0m
+[0;32mI (1990910) sensor-node: Temperature: 20.45 C, Humidity: 50.24 %[0m
+[0;32mI (1992010) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (1993640) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (2001110) sensor-node: Temperature: 20.46 C, Humidity: 50.22 %[0m
+[0;32mI (2011310) sensor-node: Temperature: 20.45 C, Humidity: 50.17 %[0m
+[0;32mI (2021510) sensor-node: Temperature: 20.46 C, Humidity: 50.15 %[0m
+[0;32mI (2031710) sensor-node: Temperature: 20.45 C, Humidity: 50.15 %[0m
+[0;32mI (2041910) sensor-node: Temperature: 20.45 C, Humidity: 50.22 %[0m
+[0;32mI (2052010) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (2052110) sensor-node: Temperature: 20.45 C, Humidity: 50.29 %[0m
+[0;32mI (2053430) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (2062310) sensor-node: Temperature: 20.47 C, Humidity: 50.38 %[0m
+[0;32mI (2072510) sensor-node: Temperature: 20.44 C, Humidity: 50.45 %[0m
+[0;32mI (2082710) sensor-node: Temperature: 20.46 C, Humidity: 50.51 %[0m
+[0;32mI (2092910) sensor-node: Temperature: 20.45 C, Humidity: 50.49 %[0m
+[0;32mI (2103110) sensor-node: Temperature: 20.45 C, Humidity: 50.46 %[0m
+[0;32mI (2112010) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (2113300) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (2113310) sensor-node: Temperature: 20.46 C, Humidity: 50.42 %[0m
+[0;32mI (2123510) sensor-node: Temperature: 20.45 C, Humidity: 50.39 %[0m
+[0;32mI (2133710) sensor-node: Temperature: 20.45 C, Humidity: 50.35 %[0m
+[0;32mI (2143910) sensor-node: Temperature: 20.46 C, Humidity: 50.25 %[0m
+[0;32mI (2154110) sensor-node: Temperature: 20.46 C, Humidity: 50.10 %[0m
+[0;32mI (2164310) sensor-node: Temperature: 20.45 C, Humidity: 50.03 %[0m
+[0;32mI (2172010) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (2173660) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (2174510) sensor-node: Temperature: 20.46 C, Humidity: 49.93 %[0m
+[0;32mI (2184710) sensor-node: Temperature: 20.46 C, Humidity: 49.90 %[0m
+[0;32mI (2194910) sensor-node: Temperature: 20.45 C, Humidity: 49.90 %[0m
+[0;32mI (2205110) sensor-node: Temperature: 20.47 C, Humidity: 49.90 %[0m
+[0;32mI (2215310) sensor-node: Temperature: 20.45 C, Humidity: 49.91 %[0m
+[0;32mI (2225510) sensor-node: Temperature: 20.48 C, Humidity: 49.93 %[0m
+[0;32mI (2232010) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (2233450) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (2235710) sensor-node: Temperature: 20.46 C, Humidity: 49.93 %[0m
+[0;32mI (2245910) sensor-node: Temperature: 20.46 C, Humidity: 49.93 %[0m
+[0;32mI (2256110) sensor-node: Temperature: 20.46 C, Humidity: 49.91 %[0m
+[0;32mI (2266310) sensor-node: Temperature: 20.47 C, Humidity: 49.91 %[0m
+[0;32mI (2276510) sensor-node: Temperature: 20.47 C, Humidity: 49.86 %[0m
+[0;32mI (2286710) sensor-node: Temperature: 20.48 C, Humidity: 49.81 %[0m
+[0;32mI (2292010) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (2293650) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (2296910) sensor-node: Temperature: 20.48 C, Humidity: 49.78 %[0m
+[0;32mI (2307110) sensor-node: Temperature: 20.47 C, Humidity: 49.74 %[0m
+[0;32mI (2317310) sensor-node: Temperature: 20.46 C, Humidity: 49.69 %[0m
+[0;32mI (2327510) sensor-node: Temperature: 20.45 C, Humidity: 49.64 %[0m
+[0;32mI (2337710) sensor-node: Temperature: 20.46 C, Humidity: 49.56 %[0m
+[0;32mI (2347910) sensor-node: Temperature: 20.46 C, Humidity: 49.52 %[0m
+[0;32mI (2352010) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (2353450) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (2358110) sensor-node: Temperature: 20.44 C, Humidity: 49.52 %[0m
+[0;32mI (2368310) sensor-node: Temperature: 20.44 C, Humidity: 49.52 %[0m
+[0;32mI (2378510) sensor-node: Temperature: 20.45 C, Humidity: 49.50 %[0m
+[0;32mI (2388710) sensor-node: Temperature: 20.44 C, Humidity: 49.52 %[0m
+[0;32mI (2398910) sensor-node: Temperature: 20.45 C, Humidity: 49.49 %[0m
+[0;32mI (2409110) sensor-node: Temperature: 20.45 C, Humidity: 49.50 %[0m
+[0;32mI (2412010) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (2413460) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (2419310) sensor-node: Temperature: 20.45 C, Humidity: 49.49 %[0m
+[0;32mI (2429510) sensor-node: Temperature: 20.47 C, Humidity: 49.86 %[0m
+[0;32mI (2439710) sensor-node: Temperature: 20.48 C, Humidity: 50.17 %[0m
+[0;32mI (2449910) sensor-node: Temperature: 20.49 C, Humidity: 50.40 %[0m
+[0;32mI (2460110) sensor-node: Temperature: 20.53 C, Humidity: 50.66 %[0m
+[0;32mI (2470310) sensor-node: Temperature: 20.54 C, Humidity: 50.61 %[0m
+[0;32mI (2472010) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (2473000) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (2480510) sensor-node: Temperature: 20.54 C, Humidity: 50.43 %[0m
+[0;32mI (2490710) sensor-node: Temperature: 20.55 C, Humidity: 50.39 %[0m
+[0;32mI (2500910) sensor-node: Temperature: 20.53 C, Humidity: 50.30 %[0m
+[0;32mI (2511110) sensor-node: Temperature: 20.56 C, Humidity: 50.13 %[0m
+[0;32mI (2521310) sensor-node: Temperature: 20.56 C, Humidity: 49.98 %[0m
+[0;32mI (2531510) sensor-node: Temperature: 20.51 C, Humidity: 49.81 %[0m
+[0;32mI (2532010) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (2533060) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (2541710) sensor-node: Temperature: 20.55 C, Humidity: 49.70 %[0m
+[0;32mI (2551910) sensor-node: Temperature: 20.55 C, Humidity: 49.64 %[0m
+[0;32mI (2562110) sensor-node: Temperature: 20.55 C, Humidity: 49.54 %[0m
+[0;32mI (2572310) sensor-node: Temperature: 20.54 C, Humidity: 49.45 %[0m
+[0;32mI (2582510) sensor-node: Temperature: 20.55 C, Humidity: 49.37 %[0m
+[0;32mI (2592010) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (2592750) sensor-node: Temperature: 20.56 C, Humidity: 49.52 %[0m
+[0;32mI (2593680) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (2602960) sensor-node: Temperature: 20.56 C, Humidity: 49.74 %[0m
+[0;32mI (2613160) sensor-node: Temperature: 20.55 C, Humidity: 49.71 %[0m
+[0;32mI (2623360) sensor-node: Temperature: 20.55 C, Humidity: 49.61 %[0m
+[0;32mI (2633560) sensor-node: Temperature: 20.56 C, Humidity: 49.44 %[0m
+[0;32mI (2643760) sensor-node: Temperature: 20.55 C, Humidity: 49.23 %[0m
+[0;32mI (2652010) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (2653480) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (2653960) sensor-node: Temperature: 20.56 C, Humidity: 49.06 %[0m
+[0;32mI (2664160) sensor-node: Temperature: 20.60 C, Humidity: 49.39 %[0m
+[0;32mI (2674360) sensor-node: Temperature: 20.58 C, Humidity: 49.49 %[0m
+[0;32mI (2684560) sensor-node: Temperature: 20.59 C, Humidity: 49.56 %[0m
+[0;32mI (2694760) sensor-node: Temperature: 20.59 C, Humidity: 49.66 %[0m
+[0;32mI (2704960) sensor-node: Temperature: 20.61 C, Humidity: 49.57 %[0m
+[0;32mI (2712010) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (2713490) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (2715160) sensor-node: Temperature: 20.59 C, Humidity: 49.44 %[0m
+[0;32mI (2725360) sensor-node: Temperature: 20.61 C, Humidity: 49.31 %[0m
+[0;32mI (2735560) sensor-node: Temperature: 20.60 C, Humidity: 49.14 %[0m
+[0;32mI (2745760) sensor-node: Temperature: 20.60 C, Humidity: 49.02 %[0m
+[0;32mI (2755960) sensor-node: Temperature: 20.62 C, Humidity: 49.00 %[0m
+[0;32mI (2766160) sensor-node: Temperature: 20.59 C, Humidity: 49.05 %[0m
+[0;32mI (2772010) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (2773700) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (2776360) sensor-node: Temperature: 20.62 C, Humidity: 49.10 %[0m
+[0;32mI (2786560) sensor-node: Temperature: 20.61 C, Humidity: 49.12 %[0m
+[0;32mI (2796760) sensor-node: Temperature: 20.62 C, Humidity: 49.13 %[0m
+[0;32mI (2806960) sensor-node: Temperature: 20.64 C, Humidity: 49.61 %[0m
+[0;32mI (2817160) sensor-node: Temperature: 20.65 C, Humidity: 50.01 %[0m
+[0;32mI (2827360) sensor-node: Temperature: 20.66 C, Humidity: 50.32 %[0m
+[0;32mI (2832010) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (2833510) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (2837560) sensor-node: Temperature: 20.68 C, Humidity: 50.44 %[0m
+[0;32mI (2847760) sensor-node: Temperature: 20.66 C, Humidity: 50.25 %[0m
+[0;32mI (2857960) sensor-node: Temperature: 20.65 C, Humidity: 49.93 %[0m
+[0;32mI (2868160) sensor-node: Temperature: 20.66 C, Humidity: 49.61 %[0m
+[0;32mI (2878360) sensor-node: Temperature: 20.68 C, Humidity: 49.34 %[0m
+[0;32mI (2888560) sensor-node: Temperature: 20.63 C, Humidity: 49.16 %[0m
+[0;32mI (2892010) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (2893090) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (2898760) sensor-node: Temperature: 20.66 C, Humidity: 49.05 %[0m

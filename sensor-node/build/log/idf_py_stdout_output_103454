@@ -1,0 +1,550 @@
+Command: /home/paula/.espressif/python_env/idf5.5_py3.12_env/bin/python /home/paula/sed/esp-idf/tools/idf_monitor.py -p /dev/ttyACM0 -b 115200 --toolchain-prefix riscv32-esp-elf- --target esp32c3 --revision 3 --decode-panic backtrace /home/paula/sed/esp-workspace/auto-irrigation-system/sensor-node/build/sensor-node.elf /home/paula/sed/esp-workspace/auto-irrigation-system/sensor-node/build/bootloader/bootloader.elf -m '/home/paula/.espressif/python_env/idf5.5_py3.12_env/bin/python' '/home/paula/sed/esp-idf/tools/idf.py' '-p' '/dev/ttyACM0'
+[0;32mI (126) esp_image: segment 1: paddr=000384c8 vaddr=3fc95000 sizeESP-ROM:esp32c3-api1-20210207[0m
+Build:Feb  7 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0xc (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4004d2aa
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x155c
+load:0x403cbf10,len:0xc84
+load:0x403ce710,len:0x3034
+entry 0x403cbf1a
+[0;32mI (24) boot: ESP-IDF v5.5.3 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time May 12 2026 12:01:25[0m
+[0;32mI (25) boot: chip revision: v0.4[0m
+[0;32mI (25) boot: efuse block revision: v1.2[0m
+[0;32mI (28) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (32) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (36) boot.esp32c3: SPI Flash Size : 4MB[0m
+[0;32mI (39) boot: Enabling RNG early entropy source...[0m
+[0;32mI (44) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (53) boot:  0 nvs              WiFi data        01 02 00009000 00004000[0m
+[0;32mI (59) boot:  1 otadata          OTA data         01 00 0000d000 00002000[0m
+[0;32mI (66) boot:  2 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  3 ota_0            OTA app          00 10 00010000 00177000[0m
+[0;32mI (79) boot:  4 ota_1            OTA app          00 11 00190000 00177000[0m
+[0;32mI (85) boot: End of partition table[0m
+[0;32mI (89) boot: No factory image, trying OTA 0[0m
+[0;32mI (93) esp_image: segment 0: paddr=00010020 vaddr=3c0d0020 size=284a0h (165024) map[0m
+[0;32mI (126) esp_image: segment 1: paddr=000384c8 vaddr=3fc95000 size=031a4h ( 12708) load[0m
+[0;32mI (128) esp_image: segment 2: paddr=0003b674 vaddr=40380000 size=049a4h ( 18852) load[0m
+[0;32mI (133) esp_image: segment 3: paddr=00040020 vaddr=42000020 size=c9e34h (826932) map[0m
+[0;32mI (266) esp_image: segment 4: paddr=00109e5c vaddr=403849a4 size=104bch ( 66748) load[0m
+[0;32mI (279) esp_image: segment 5: paddr=0011a320 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (285) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (332) boot: Set actual ota_seq=1 in otadata[0][0m
+[0;32mI (332) boot: Disabling RNG early entropy source...[0m
+[0;32mI (341) cpu_start: Unicore app[0m
+[0;32mI (349) cpu_start: GPIO 20 and 21 are used as console UART I/O pins[0m
+[0;32mI (350) cpu_start: Pro cpu start user code[0m
+[0;32mI (350) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (352) app_init: Application information:[0m
+[0;32mI (355) app_init: Project name:     sensor-node[0m
+[0;32mI (360) app_init: App version:      539746c-dirty[0m
+[0;32mI (364) app_init: Compile time:     May 12 2026 12:01:19[0m
+[0;32mI (369) app_init: ELF file SHA256:  3ccb76cab...[0m
+[0;32mI (374) app_init: ESP-IDF:          v5.5.3[0m
+[0;32mI (377) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (381) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (385) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (389) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (395) heap_init: At 3FC9CDB0 len 00023250 (140 KiB): RAM[0m
+[0;32mI (400) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (407) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (413) heap_init: At 50000020 len 00001FC8 (7 KiB): RTCRAM[0m
+[0;32mI (419) spi_flash: detected chip: generic[0m
+[0;32mI (422) spi_flash: flash io: dio[0m
+[0;32mI (425) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (431) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (438) main_task: Started on CPU0[0m
+[0;32mI (438) main_task: Calling app_main()[0m
+--- SYSTEM STARTED ---
+Firmware Version: s_1.0.0
+Running from partition: ota_0
+Offset Address: 0x00010000
+[0;32mI (458) pp: pp rom version: 9387209[0m
+[0;32mI (458) net80211: net80211 rom version: 9387209[0m
+[0;32mI (468) wifi:wifi driver task: 3fca61e4, prio:23, stack:6656, core=0[0m
+[0;32mI (468) wifi:wifi firmware version: 4df78f2[0m
+[0;32mI (468) wifi:wifi certification version: v7.0[0m
+[0;32mI (468) wifi:config NVS flash: enabled[0m
+[0;32mI (478) wifi:config nano formatting: disabled[0m
+[0;32mI (478) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (478) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (488) wifi:Init management short buffer num: 32[0m
+[0;32mI (488) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (498) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (498) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (508) wifi:Init static rx buffer num: 10[0m
+[0;32mI (508) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (508) wifi_init: rx ba win: 6[0m
+[0;32mI (518) wifi_init: accept mbox: 6[0m
+[0;32mI (518) wifi_init: tcpip mbox: 32[0m
+[0;32mI (518) wifi_init: udp mbox: 6[0m
+[0;32mI (518) wifi_init: tcp mbox: 6[0m
+[0;32mI (528) wifi_init: tcp tx win: 5760[0m
+[0;32mI (528) wifi_init: tcp rx win: 5760[0m
+[0;32mI (528) wifi_init: tcp mss: 1440[0m
+[0;32mI (538) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (538) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (538) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (548) phy_init: phy_version 1232,d493f299,Aug 25 2025,19:01:20[0m
+[0;32mI (588) wifi:mode : sta (34:85:18:02:93:94)[0m
+[0;32mI (588) wifi:enable tsf[0m
+[0;32mI (588) WIFI: Connecting to Paula...[0m
+[0;32mI (588) sensor-node: Waiting for WiFi connection...[0m
+[0;32mI (598) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (598) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (618) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (628) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (648) wifi:connected with Paula, aid = 3, channel 11, BW20, bssid = 8a:04:de:aa:05:40[0m
+[0;32mI (648) wifi:security: WPA2-PSK, phy: bgn, rssi: -33[0m
+[0;32mI (648) wifi:pm start, type: 1[0m
+
+[0;32mI (648) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (658) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (668) wifi:<ba-add>idx:0 (ifx:0, 8a:04:de:aa:05:40), tid:0, ssn:0, winSize:64[0m
+[0;32mI (728) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (728) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (1698) esp_netif_handlers: sta ip: 10.12.62.250, mask: 255.255.255.0, gw: 10.12.62.234[0m
+[0;32mI (10598) MENDER: Starting Mender client with MAC: 34:85:18:02:93:94[0m
+[0;32mI (10598) mender: ./external/mender-mcu-client/platform/storage/esp-idf/nvs/src/mender-storage.c (157): Deployment data not available[0m
+[0;32mI (12318) MENDER: Authentication successful with the server[0m
+[0;32mI (12318) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (13328) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (15768) i2cdev: [Port 0] First initialization. Configuring bus with SDA=10, SCL=8 (Pullups SCL:0 SDA:0)[0m
+[0;33mW (15768) i2c.master: Please check pull-up resistances whether be connected properly. Otherwise unexpected behavior would happen. For more detailed information, please read docs[0m
+[0;32mI (15778) i2cdev: [Port 0] Successfully installed I2C master bus (Handle: 0x3fcb08e4).[0m
+[0;32mI (15788) i2cdev: [0x40 at 0] Device added successfully (Device Handle: 0x3fcb0fa8, Speed: 400000 Hz).[0m
+[0;32mI (15798) main_task: Returned from app_main()[0m
+[0;32mI (15998) sensor-node: Sensor read OK: 20.88 C, 49.59 %[0m
+[0;32mI (16188) sensor-node: Sensor node connected to Broker[0m
+[0;32mI (16198) sensor-node: Published: temp=20.88, hum=49.59[0m
+[0;32mI (26198) sensor-node: Sensor read OK: 20.90 C, 49.71 %[0m
+[0;32mI (26198) sensor-node: Published: temp=20.90, hum=49.71[0m
+[0;32mI (36398) sensor-node: Sensor read OK: 20.88 C, 49.81 %[0m
+[0;32mI (36398) sensor-node: Published: temp=20.88, hum=49.81[0m
+[0;32mI (46598) sensor-node: Sensor read OK: 20.91 C, 49.94 %[0m
+[0;32mI (46598) sensor-node: Published: temp=20.91, hum=49.94[0m
+[0;32mI (56798) sensor-node: Sensor read OK: 20.90 C, 49.95 %[0m
+[0;32mI (56798) sensor-node: Published: temp=20.90, hum=49.95[0m
+[0;32mI (66998) sensor-node: Sensor read OK: 20.91 C, 49.82 %[0m
+[0;32mI (66998) sensor-node: Published: temp=20.91, hum=49.82[0m
+[0;32mI (72328) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (73788) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (77198) sensor-node: Sensor read OK: 20.91 C, 49.71 %[0m
+[0;32mI (77198) sensor-node: Published: temp=20.91, hum=49.71[0m
+[0;32mI (87398) sensor-node: Sensor read OK: 23.10 C, 50.61 %[0m
+[0;32mI (87398) sensor-node: Published: temp=23.10, hum=50.61[0m
+[0;32mI (97598) sensor-node: Sensor read OK: 25.89 C, 54.57 %[0m
+[0;32mI (97598) sensor-node: Published: temp=25.89, hum=54.57[0m
+[0;32mI (107798) sensor-node: Sensor read OK: 25.43 C, 54.78 %[0m
+[0;32mI (107798) sensor-node: Published: temp=25.43, hum=54.78[0m
+[0;32mI (117998) sensor-node: Sensor read OK: 24.63 C, 51.58 %[0m
+[0;32mI (117998) sensor-node: Published: temp=24.63, hum=51.58[0m
+[0;32mI (128198) sensor-node: Sensor read OK: 24.05 C, 49.49 %[0m
+[0;32mI (128198) sensor-node: Published: temp=24.05, hum=49.49[0m
+[0;32mI (132328) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (133678) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (138398) sensor-node: Sensor read OK: 23.61 C, 48.02 %[0m
+[0;32mI (138398) sensor-node: Published: temp=23.61, hum=48.02[0m
+[0;32mI (148598) sensor-node: Sensor read OK: 23.28 C, 47.04 %[0m
+[0;32mI (148598) sensor-node: Published: temp=23.28, hum=47.04[0m
+[0;32mI (158798) sensor-node: Sensor read OK: 22.99 C, 46.37 %[0m
+[0;32mI (158798) sensor-node: Published: temp=22.99, hum=46.37[0m
+[0;32mI (168998) sensor-node: Sensor read OK: 22.75 C, 46.11 %[0m
+[0;32mI (168998) sensor-node: Published: temp=22.75, hum=46.11[0m
+[0;32mI (179198) sensor-node: Sensor read OK: 22.51 C, 45.93 %[0m
+[0;32mI (179198) sensor-node: Published: temp=22.51, hum=45.93[0m
+[0;32mI (189398) sensor-node: Sensor read OK: 22.33 C, 45.84 %[0m
+[0;32mI (189398) sensor-node: Published: temp=22.33, hum=45.84[0m
+[0;32mI (192328) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (193578) mender: ./external/mender-mcu-client/core/src/mender-client.c (930): Downloading deployment artifact with id 'ed7a33d6-05f3-4222-8c65-1c5e89e93918', artifact name 's_1.0.1' and uri 'https://c271964d41749feb10da762816c952ee.r2.cloudflarestorage.com/mender-artifact-storage-prod-hm-eu/69e657a1f00c6fa71c79009d/3a34c48f-35e6-4d[0m
+[0;32mI (195198) MENDER: Deployment status: downloading[0m
+[0;32mI (196258) mender: ./external/mender-mcu-client/core/src/mender-artifact.c (374): Artifact has valid version[0m
+[0;32mI (196308) mender: ./external/mender-mcu-client/platform/flash/esp-idf/src/mender-flash.c (40): Start flashing artifact 'sensor-node.bin' with size 1090416[0m
+[0;32mI (196308) mender: ./external/mender-mcu-client/platform/flash/esp-idf/src/mender-flash.c (53): Next update partition is 'ota_1', subtype 17 at offset 0x190000 and with size 1536000[0m
+[0;32mI (199648) sensor-node: Sensor read OK: 22.14 C, 45.91 %[0m
+[0;32mI (199648) sensor-node: Published: temp=22.14, hum=45.91[0m
+[0;32mI (209898) sensor-node: Sensor read OK: 22.02 C, 46.27 %[0m
+[0;32mI (209908) sensor-node: Published: temp=22.02, hum=46.27[0m
+[0;32mI (220118) sensor-node: Sensor read OK: 21.88 C, 46.46 %[0m
+[0;32mI (220128) sensor-node: Published: temp=21.88, hum=46.46[0m
+[0;32mI (220938) esp_image: segment 0: paddr=00190020 vaddr=3c0d0020 size=284a0h (165024) map[0m
+[0;32mI (220958) esp_image: segment 1: paddr=001b84c8 vaddr=3fc95000 size=031a4h ( 12708) [0m
+[0;32mI (220958) esp_image: segment 2: paddr=001bb674 vaddr=40380000 size=049a4h ( 18852) [0m
+[0;32mI (220968) esp_image: segment 3: paddr=001c0020 vaddr=42000020 size=c9e34h (826932) map[0m
+[0;32mI (221068) esp_image: segment 4: paddr=00289e5c vaddr=403849a4 size=104bch ( 66748) [0m
+[0;32mI (221068) esp_image: segment 5: paddr=0029a320 vaddr=50000000 size=00020h (    32) [0m
+[0;32mI (221078) mender: ./external/mender-mcu-client/core/src/mender-client.c (943): Download done, installing artifact[0m
+[0;32mI (222518) MENDER: Deployment status: installing[0m
+[0;32mI (222518) esp_image: segment 0: paddr=00190020 vaddr=3c0d0020 size=284a0h (165024) map[0m
+[0;32mI (222538) esp_image: segment 1: paddr=001b84c8 vaddr=3fc95000 size=031a4h ( 12708) [0m
+[0;32mI (222538) esp_image: segment 2: paddr=001bb674 vaddr=40380000 size=049a4h ( 18852) [0m
+[0;32mI (222548) esp_image: segment 3: paddr=001c0020 vaddr=42000020 size=c9e34h (826932) map[0m
+[0;32mI (222648) esp_image: segment 4: paddr=00289e5c vaddr=403849a4 size=104bch ( 66748) [0m
+[0;32mI (222658) esp_image: segment 5: paddr=0029a320 vaddr=50000000 size=00020h (    32) [0m
+[0;32mI (224688) MENDER: Deployment status: rebooting[0m
+[0;32mI (224688) MENDER: Restarting system as requested by OTA...[0m
+[0;32mI (224688) wifi:state: run -> init (0x0)[0m
+[0;32mI (224698) wifi:pm stop, total sleep time: 180192152 us / 224042610 us[0m
+
+[0;32mI (224698) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (224698) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[1;31mE (224708) transport_base: tcp_read error, errno=Software caused connection abort[0m
+[1;31mE (224718) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=113[0m
+[1;31mE (224718) sensor-node: Error on MQTT stack[0m
+[1;31mE (224728) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (224738) sensor-node: Sensor node disconnected from Broker[0m
+[0;32mI (225018) wifi:flush txq[0m
+[0;32mI (225018) wifi:stop sw txq[0m
+[0;32mI (225018) wifi:lmac stop hw txq[0m
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0xc (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40385c1a
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x155c
+load:0x403cbf10,len:0xc84
+load:0x403ce710,len:0x3034
+entry 0x403cbf1a
+[0;32mI (24) boot: ESP-IDF v5.5.3 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time May 12 2026 12:01:25[0m
+[0;32mI (24) boot: chip revision: v0.4[0m
+[0;32mI (24) boot: efuse block revision: v1.2[0m
+[0;32mI (27) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (31) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (35) boot.esp32c3: SPI Flash Size : 4MB[0m
+[0;32mI (39) boot: Enabling RNG early entropy source...[0m
+[0;32mI (43) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (52) boot:  0 nvs              WiFi data        01 02 00009000 00004000[0m
+[0;32mI (59) boot:  1 otadata          OTA data         01 00 0000d000 00002000[0m
+[0;32mI (65) boot:  2 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  3 ota_0            OTA app          00 10 00010000 00177000[0m
+[0;32mI (78) boot:  4 ota_1            OTA app          00 11 00190000 00177000[0m
+[0;32mI (85) boot: End of partition table[0m
+[0;32mI (128) esp_image: segment 0: paddr=00190020 vaddr=3c0d0020 size=284a0h (165024) map[0m
+[0;32mI (155) esp_image: segment 1: paddr=001b84c8 vaddr=3fc95000 size=031a4h ( 12708) load[0m
+[0;32mI (157) esp_image: segment 2: paddr=001bb674 vaddr=40380000 size=049a4h ( 18852) load[0m
+[0;32mI (162) esp_image: segment 3: paddr=001c0020 vaddr=42000020 size=c9e34h (826932) map[0m
+[0;32mI (295) esp_image: segment 4: paddr=00289e5c vaddr=403849a4 size=104bch ( 66748) load[0m
+[0;32mI (308) esp_image: segment 5: paddr=0029a320 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (314) boot: Loaded app from partition at offset 0x190000[0m
+[0;32mI (314) boot: Disabling RNG early entropy source...[0m
+[0;32mI (325) cpu_start: Unicore app[0m
+[0;32mI (334) cpu_start: GPIO 20 and 21 are used as console UART I/O pins[0m
+[0;32mI (334) cpu_start: Pro cpu start user code[0m
+[0;32mI (334) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (336) app_init: Application information:[0m
+[0;32mI (340) app_init: Project name:     sensor-node[0m
+[0;32mI (344) app_init: App version:      539746c-dirty[0m
+[0;32mI (349) app_init: Compile time:     May 12 2026 12:01:19[0m
+[0;32mI (354) app_init: ELF file SHA256:  acd962860...[0m
+[0;32mI (358) app_init: ESP-IDF:          v5.5.3[0m
+[0;32mI (362) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (366) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (370) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (373) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (380) heap_init: At 3FC9CDB0 len 00023250 (140 KiB): RAM[0m
+[0;32mI (385) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (391) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (397) heap_init: At 50000020 len 00001FC8 (7 KiB): RTCRAM[0m
+[0;32mI (403) spi_flash: detected chip: generic[0m
+[0;32mI (406) spi_flash: flash io: dio[0m
+[0;32mI (409) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (415) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (422) main_task: Started on CPU0[0m
+[0;32mI (422) main_task: Calling app_main()[0m
+--- SYSTEM STARTED ---
+Firmware Version: s_1.0.1
+Running from partition: ota_1
+Offset Address: 0x00190000
+[0;32mI (442) pp: pp rom version: 9387209[0m
+[0;32mI (442) net80211: net80211 rom version: 9387209[0m
+[0;32mI (452) wifi:wifi driver task: 3fca61e4, prio:23, stack:6656, core=0[0m
+[0;32mI (452) wifi:wifi firmware version: 4df78f2[0m
+[0;32mI (452) wifi:wifi certification version: v7.0[0m
+[0;32mI (452) wifi:config NVS flash: enabled[0m
+[0;32mI (462) wifi:config nano formatting: disabled[0m
+[0;32mI (462) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (462) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (472) wifi:Init management short buffer num: 32[0m
+[0;32mI (472) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (482) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (482) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (492) wifi:Init static rx buffer num: 10[0m
+[0;32mI (492) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (492) wifi_init: rx ba win: 6[0m
+[0;32mI (502) wifi_init: accept mbox: 6[0m
+[0;32mI (502) wifi_init: tcpip mbox: 32[0m
+[0;32mI (502) wifi_init: udp mbox: 6[0m
+[0;32mI (502) wifi_init: tcp mbox: 6[0m
+[0;32mI (512) wifi_init: tcp tx win: 5760[0m
+[0;32mI (512) wifi_init: tcp rx win: 5760[0m
+[0;32mI (512) wifi_init: tcp mss: 1440[0m
+[0;32mI (522) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (522) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (522) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (532) phy_init: phy_version 1232,d493f299,Aug 25 2025,19:01:20[0m
+[0;32mI (572) wifi:mode : sta (34:85:18:02:93:94)[0m
+[0;32mI (572) wifi:enable tsf[0m
+[0;32mI (572) WIFI: Connecting to Paula...[0m
+[0;32mI (582) sensor-node: Waiting for WiFi connection...[0m
+[0;32mI (582) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (582) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (612) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (622) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (642) wifi:connected with Paula, aid = 3, channel 11, BW20, bssid = 8a:04:de:aa:05:40[0m
+[0;32mI (642) wifi:security: WPA2-PSK, phy: bgn, rssi: -36[0m
+[0;32mI (642) wifi:pm start, type: 1[0m
+
+[0;32mI (652) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (652) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (672) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (672) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (682) wifi:<ba-add>idx:0 (ifx:0, 8a:04:de:aa:05:40), tid:0, ssn:0, winSize:64[0m
+[0;32mI (1712) esp_netif_handlers: sta ip: 10.12.62.250, mask: 255.255.255.0, gw: 10.12.62.234[0m
+[0;32mI (10582) OTA: Image in trial period. Starting self-diagnosis...[0m
+[0;32mI (10582) HEALTH: Connected to AP with RSSI: -41[0m
+[0;32mI (10582) OTA: Health verified. Marking firmware as VALID.[0m
+[0;32mI (10632) MENDER: Starting Mender client with MAC: 34:85:18:02:93:94[0m
+[0;32mI (12392) MENDER: Authentication successful with the server[0m
+[0;32mI (13642) MENDER: Deployment status: success[0m
+[0;32mI (13652) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (15212) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (15792) i2cdev: [Port 0] First initialization. Configuring bus with SDA=10, SCL=8 (Pullups SCL:0 SDA:0)[0m
+[0;33mW (15792) i2c.master: Please check pull-up resistances whether be connected properly. Otherwise unexpected behavior would happen. For more detailed information, please read docs[0m
+[0;32mI (15802) i2cdev: [Port 0] Successfully installed I2C master bus (Handle: 0x3fcb08e8).[0m
+[0;32mI (15812) i2cdev: [0x40 at 0] Device added successfully (Device Handle: 0x3fcb0d04, Speed: 400000 Hz).[0m
+[0;32mI (15822) main_task: Returned from app_main()[0m
+[0;32mI (16022) sensor-node: Sensor read OK: 21.68 C, 46.56 %[0m
+[0;32mI (16442) sensor-node: Sensor node connected to Broker[0m
+[0;32mI (16442) sensor-node: Published: temp=21.68, hum=46.56[0m
+[0;32mI (26222) sensor-node: Sensor read OK: 21.61 C, 46.65 %[0m
+[0;32mI (26222) sensor-node: Published: temp=21.61, hum=46.65[0m
+[0;32mI (36422) sensor-node: Sensor read OK: 21.50 C, 46.77 %[0m
+[0;32mI (36422) sensor-node: Published: temp=21.50, hum=46.77[0m
+[0;32mI (46622) sensor-node: Sensor read OK: 21.44 C, 46.93 %[0m
+[0;32mI (46622) sensor-node: Published: temp=21.44, hum=46.93[0m
+[0;32mI (56822) sensor-node: Sensor read OK: 21.36 C, 47.09 %[0m
+[0;32mI (56822) sensor-node: Published: temp=21.36, hum=47.09[0m
+[0;32mI (67022) sensor-node: Sensor read OK: 21.30 C, 47.23 %[0m
+[0;32mI (67022) sensor-node: Published: temp=21.30, hum=47.23[0m
+[0;32mI (73652) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (75232) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (77222) sensor-node: Sensor read OK: 21.25 C, 47.37 %[0m
+[0;32mI (77222) sensor-node: Published: temp=21.25, hum=47.37[0m
+[0;32mI (87422) sensor-node: Sensor read OK: 21.20 C, 47.49 %[0m
+[0;32mI (87422) sensor-node: Published: temp=21.20, hum=47.49[0m
+[0;32mI (97622) sensor-node: Sensor read OK: 21.18 C, 47.68 %[0m
+[0;32mI (97622) sensor-node: Published: temp=21.18, hum=47.68[0m
+[0;32mI (107822) sensor-node: Sensor read OK: 21.13 C, 47.87 %[0m
+[0;32mI (107822) sensor-node: Published: temp=21.13, hum=47.87[0m
+[0;32mI (118022) sensor-node: Sensor read OK: 21.11 C, 48.03 %[0m
+[0;32mI (118022) sensor-node: Published: temp=21.11, hum=48.03[0m
+[0;32mI (128222) sensor-node: Sensor read OK: 21.09 C, 48.16 %[0m
+[0;32mI (128222) sensor-node: Published: temp=21.09, hum=48.16[0m
+[0;32mI (133652) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (134612) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (138422) sensor-node: Sensor read OK: 21.05 C, 48.30 %[0m
+[0;32mI (138422) sensor-node: Published: temp=21.05, hum=48.30[0m
+[0;32mI (148622) sensor-node: Sensor read OK: 21.04 C, 48.46 %[0m
+[0;32mI (148622) sensor-node: Published: temp=21.04, hum=48.46[0m
+[0;32mI (158822) sensor-node: Sensor read OK: 21.03 C, 48.78 %[0m
+[0;32mI (158822) sensor-node: Published: temp=21.03, hum=48.78[0m
+[0;32mI (169022) sensor-node: Sensor read OK: 21.01 C, 48.94 %[0m
+[0;32mI (169022) sensor-node: Published: temp=21.01, hum=48.94[0m
+[0;32mI (179222) sensor-node: Sensor read OK: 21.00 C, 48.98 %[0m
+[0;32mI (179222) sensor-node: Published: temp=21.00, hum=48.98[0m
+[0;32mI (189422) sensor-node: Sensor read OK: 20.98 C, 49.14 %[0m
+[0;32mI (189422) sensor-node: Published: temp=20.98, hum=49.14[0m
+[0;32mI (193652) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (195042) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (199622) sensor-node: Sensor read OK: 20.94 C, 49.22 %[0m
+[0;32mI (199622) sensor-node: Published: temp=20.94, hum=49.22[0m
+[0;32mI (209822) sensor-node: Sensor read OK: 20.91 C, 49.15 %[0m
+[0;32mI (209822) sensor-node: Published: temp=20.91, hum=49.15[0m
+[0;32mI (220022) sensor-node: Sensor read OK: 20.91 C, 49.13 %[0m
+[0;32mI (220022) sensor-node: Published: temp=20.91, hum=49.13[0m
+[0;32mI (230222) sensor-node: Sensor read OK: 20.90 C, 49.12 %[0m
+[0;32mI (230222) sensor-node: Published: temp=20.90, hum=49.12[0m
+[0;32mI (240422) sensor-node: Sensor read OK: 20.86 C, 49.12 %[0m
+[0;32mI (240422) sensor-node: Published: temp=20.86, hum=49.12[0m
+[0;32mI (250622) sensor-node: Sensor read OK: 20.89 C, 49.16 %[0m
+[0;32mI (250622) sensor-node: Published: temp=20.89, hum=49.16[0m
+[0;32mI (253652) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (254832) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (260822) sensor-node: Sensor read OK: 20.87 C, 49.19 %[0m
+[0;32mI (260822) sensor-node: Published: temp=20.87, hum=49.19[0m
+[0;32mI (271022) sensor-node: Sensor read OK: 20.84 C, 49.18 %[0m
+[0;32mI (271022) sensor-node: Published: temp=20.84, hum=49.18[0m
+[0;32mI (281222) sensor-node: Sensor read OK: 20.84 C, 49.13 %[0m
+[0;32mI (281222) sensor-node: Published: temp=20.84, hum=49.13[0m
+[0;32mI (291422) sensor-node: Sensor read OK: 20.81 C, 49.08 %[0m
+[0;32mI (291422) sensor-node: Published: temp=20.81, hum=49.08[0m
+[0;32mI (301622) sensor-node: Sensor read OK: 20.81 C, 49.05 %[0m
+[0;32mI (301622) sensor-node: Published: temp=20.81, hum=49.05[0m
+[0;32mI (311822) sensor-node: Sensor read OK: 20.81 C, 49.05 %[0m
+[0;32mI (311822) sensor-node: Published: temp=20.81, hum=49.05[0m
+[0;32mI (313652) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (315252) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (322022) sensor-node: Sensor read OK: 20.81 C, 49.10 %[0m
+[0;32mI (322022) sensor-node: Published: temp=20.81, hum=49.10[0m
+[0;32mI (332222) sensor-node: Sensor read OK: 20.83 C, 49.10 %[0m
+[0;32mI (332222) sensor-node: Published: temp=20.83, hum=49.10[0m
+[0;32mI (342422) sensor-node: Sensor read OK: 20.80 C, 49.07 %[0m
+[0;32mI (342422) sensor-node: Published: temp=20.80, hum=49.07[0m
+[0;32mI (352622) sensor-node: Sensor read OK: 20.78 C, 49.04 %[0m
+[0;32mI (352622) sensor-node: Published: temp=20.78, hum=49.04[0m
+[0;32mI (362822) sensor-node: Sensor read OK: 20.77 C, 49.06 %[0m
+[0;32mI (362822) sensor-node: Published: temp=20.77, hum=49.06[0m
+[0;32mI (373022) sensor-node: Sensor read OK: 20.78 C, 49.07 %[0m
+[0;32mI (373022) sensor-node: Published: temp=20.78, hum=49.07[0m
+[0;32mI (373652) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (374842) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (383222) sensor-node: Sensor read OK: 20.79 C, 49.06 %[0m
+[0;32mI (383222) sensor-node: Published: temp=20.79, hum=49.06[0m
+[0;32mI (393422) sensor-node: Sensor read OK: 20.80 C, 49.10 %[0m
+[0;32mI (393422) sensor-node: Published: temp=20.80, hum=49.10[0m
+[0;32mI (403622) sensor-node: Sensor read OK: 20.81 C, 49.15 %[0m
+[0;32mI (403622) sensor-node: Published: temp=20.81, hum=49.15[0m
+[0;32mI (413822) sensor-node: Sensor read OK: 20.81 C, 49.15 %[0m
+[0;32mI (413822) sensor-node: Published: temp=20.81, hum=49.15[0m
+[0;32mI (424022) sensor-node: Sensor read OK: 20.84 C, 49.13 %[0m
+[0;32mI (424022) sensor-node: Published: temp=20.84, hum=49.13[0m
+[0;32mI (433652) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (434252) sensor-node: Sensor read OK: 20.84 C, 49.10 %[0m
+[0;32mI (434272) sensor-node: Published: temp=20.84, hum=49.10[0m
+[0;32mI (435052) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (444452) sensor-node: Sensor read OK: 20.86 C, 49.21 %[0m
+[0;32mI (444452) sensor-node: Published: temp=20.86, hum=49.21[0m
+[0;32mI (454652) sensor-node: Sensor read OK: 20.86 C, 49.49 %[0m
+[0;32mI (454652) sensor-node: Published: temp=20.86, hum=49.49[0m
+[0;32mI (464852) sensor-node: Sensor read OK: 20.88 C, 49.81 %[0m
+[0;32mI (464852) sensor-node: Published: temp=20.88, hum=49.81[0m
+[0;32mI (475052) sensor-node: Sensor read OK: 20.89 C, 50.14 %[0m
+[0;32mI (475052) sensor-node: Published: temp=20.89, hum=50.14[0m
+[0;32mI (485252) sensor-node: Sensor read OK: 20.92 C, 50.32 %[0m
+[0;32mI (485252) sensor-node: Published: temp=20.92, hum=50.32[0m
+[0;32mI (493652) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (495272) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (495452) sensor-node: Sensor read OK: 20.93 C, 50.55 %[0m
+[0;32mI (495452) sensor-node: Published: temp=20.93, hum=50.55[0m
+[0;32mI (505652) sensor-node: Sensor read OK: 20.94 C, 50.43 %[0m
+[0;32mI (505652) sensor-node: Published: temp=20.94, hum=50.43[0m
+[0;32mI (515852) sensor-node: Sensor read OK: 20.96 C, 50.22 %[0m
+[0;32mI (515852) sensor-node: Published: temp=20.96, hum=50.22[0m
+[0;32mI (526052) sensor-node: Sensor read OK: 20.95 C, 49.97 %[0m
+[0;32mI (526052) sensor-node: Published: temp=20.95, hum=49.97[0m
+[0;32mI (536252) sensor-node: Sensor read OK: 20.96 C, 49.72 %[0m
+[0;32mI (536252) sensor-node: Published: temp=20.96, hum=49.72[0m
+[0;32mI (546452) sensor-node: Sensor read OK: 20.94 C, 49.56 %[0m
+[0;32mI (546452) sensor-node: Published: temp=20.94, hum=49.56[0m
+[0;32mI (553652) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (554872) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (556652) sensor-node: Sensor read OK: 20.96 C, 49.39 %[0m
+[0;32mI (556652) sensor-node: Published: temp=20.96, hum=49.39[0m
+[0;32mI (566852) sensor-node: Sensor read OK: 20.94 C, 49.31 %[0m
+[0;32mI (566852) sensor-node: Published: temp=20.94, hum=49.31[0m
+[0;32mI (577052) sensor-node: Sensor read OK: 20.95 C, 49.13 %[0m
+[0;32mI (577052) sensor-node: Published: temp=20.95, hum=49.13[0m
+[0;32mI (587252) sensor-node: Sensor read OK: 20.95 C, 48.85 %[0m
+[0;32mI (587252) sensor-node: Published: temp=20.95, hum=48.85[0m
+[0;32mI (597452) sensor-node: Sensor read OK: 20.95 C, 48.66 %[0m
+[0;32mI (597452) sensor-node: Published: temp=20.95, hum=48.66[0m
+[0;32mI (607652) sensor-node: Sensor read OK: 20.93 C, 48.60 %[0m
+[0;32mI (607652) sensor-node: Published: temp=20.93, hum=48.60[0m
+[0;32mI (613652) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (614602) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (617852) sensor-node: Sensor read OK: 20.93 C, 48.53 %[0m
+[0;32mI (617852) sensor-node: Published: temp=20.93, hum=48.53[0m
+(364) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RI (522) wifi_init: WiFi RX IRAM OP enabled
+[0;33mW (522) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (532) phy_init: phy_version 1232,d493f299,Aug 25 2025,19:01:20[0m
+[0;32mI (572) wifi:mode : sta (34:85:18:02:93:94)[0m
+[0;32mI (572) wifi:enable tsf[0m
+[0;32mI (572) WIFI: Connecting to Paula...[0m
+[0;32mI (572) sensor-node: Waiting for WiFi connection...[0m
+[0;32mI (582) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (582) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (592) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (602) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (632) wifi:connected with Paula, aid = 3, channel 11, BW20, bssid = 8a:04:de:aa:05:40[0m
+[0;32mI (632) wifi:security: WPA2-PSK, phy: bgn, rssi: -31[0m
+[0;32mI (632) wifi:pm start, type: 1[0m
+
+[0;32mI (632) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (642) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (652) wifi:<ba-add>idx:0 (ifx:0, 8a:04:de:aa:05:40), tid:0, ssn:0, winSize:64[0m
+[0;32mI (702) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (702) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (1682) esp_netif_handlers: sta ip: 10.12.62.250, mask: 255.255.255.0, gw: 10.12.62.234[0m
+[0;32mI (10572) MENDER: Starting Mender client with MAC: 34:85:18:02:93:94[0m
+[0;32mI (10572) mender: ./external/mender-mcu-client/platform/storage/esp-idf/nvs/src/mender-storage.c (157): Deployment data not available[0m
+[0;32mI (12292) MENDER: Authentication successful with the server[0m
+[0;32mI (12292) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (13382) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (15742) i2cdev: [Port 0] First initialization. Configuring bus with SDA=10, SCL=8 (Pullups SCL:0 SDA:0)[0m
+[0;33mW (15742) i2c.master: Please check pull-up resistances whether be connected properly. Otherwise unexpected behavior would happen. For more detailed information, please read docs[0m
+[0;32mI (15752) i2cdev: [Port 0] Successfully installed I2C master bus (Handle: 0x3fcb08d4).[0m
+[0;32mI (15762) i2cdev: [0x40 at 0] Device added successfully (Device Handle: 0x3fcb0cf0, Speed: 400000 Hz).[0m
+[0;32mI (15772) main_task: Returned from app_main()[0m
+[0;32mI (15972) sensor-node: Sensor read OK: 20.90 C, 48.34 %[0m
+[0;32mI (15972) sensor-node: Sensor node connected to Broker[0m
+[0;32mI (15972) sensor-node: Published: temp=20.90, hum=48.34[0m
+[0;32mI (26172) sensor-node: Sensor read OK: 20.90 C, 48.21 %[0m
+[0;32mI (26172) sensor-node: Published: temp=20.90, hum=48.21[0m
+[0;32mI (36372) sensor-node: Sensor read OK: 20.89 C, 48.12 %[0m
+[0;32mI (36372) sensor-node: Published: temp=20.89, hum=48.12[0m
+[0;32mI (40332) wifi:state: run -> init (0x1c0)[0m
+[0;32mI (40352) wifi:pm stop, total sleep time: 34120948 us / 39715724 us[0m
+
+[0;32mI (40352) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (40352) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[1;31mE (40352) transport_base: tcp_read error, errno=Software caused connection abort[0m
+[1;31mE (40362) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=113[0m
+[1;31mE (40372) sensor-node: Error on MQTT stack[0m
+[1;31mE (40372) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (40382) sensor-node: Sensor node disconnected from Broker[0m
+[0;32mI (46572) sensor-node: Sensor read OK: 20.87 C, 48.15 %[0m
+[0;32mI (46572) sensor-node: Published: temp=20.87, hum=48.15[0m
+[0;32mI (56772) sensor-node: Sensor read OK: 20.87 C, 48.23 %[0m
+[1;31mE (61742) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (61742) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (61742) mqtt_client: Error transport connect[0m
+[1;31mE (61742) sensor-node: Error on MQTT stack[0m
+[0;33mW (61752) sensor-node: Sensor node disconnected from Broker[0m
+[0;32mI (61752) sensor-node: Published: temp=20.87, hum=48.23[0m
+[0;32mI (66972) sensor-node: Sensor read OK: 20.89 C, 48.21 %[0m
+[0;32mI (66972) sensor-node: Published: temp=20.89, hum=48.21[0m
+[0;32mI (72292) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[1;31mE (72292) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (72292) esp-tls: Failed to open new connection[0m
+[1;31mE (72292) transport_base: Failed to open a new connection[0m
+[1;31mE (72302) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (72302) mender: ./external/mender-mcu-client/platform/net/esp-idf/src/mender-http.c (126): Unable to open HTTP client connection (ESP_ERR_HTTP_CONNECT)[0m
+[1;31mE (72322) mender: ./external/mender-mcu-client/core/src/mender-api.c (219): Unable to perform HTTP request[0m
+[1;31mE (72332) mender: ./external/mender-mcu-client/core/src/mender-client.c (905): Unable to check for deployment[0m
+[0;32mI (77172) sensor-node: Sensor read OK: 20.86 C, 48.21 %[0m
+[1;31mE (83742) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (83742) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (83742) mqtt_client: Error transport connect[0m
+[1;31mE (83742) sensor-node: Error on MQTT stack[0m
+[0;33mW (83752) sensor-node: Sensor node disconnected from Broker[0m
+[0;32mI (83752) sensor-node: Published: temp=20.86, hum=48.21[0m
+[0;32mI (87372) sensor-node: Sensor read OK: 20.87 C, 48.20 %[0m
+[0;32mI (87372) sensor-node: Published: temp=20.87, hum=48.20[0m
+[0;32mI (97572) sensor-node: Sensor read OK: 20.85 C, 48.13 %[0m
+[0;32mI (97572) sensor-node: Published: temp=20.85, hum=48.13[0m
+[1;31mE (105742) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (105742) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (105742) mqtt_client: Error transport connect[0m
+[1;31mE (105742) sensor-node: Error on MQTT stack[0m
+[0;33mW (105752) sensor-node: Sensor node disconnected from Broker[0m
+[0;32mI (107772) sensor-node: Sensor read OK: 20.84 C, 48.07 %[0m
+[0;32mI (107772) sensor-node: Published: temp=20.84, hum=48.07[0m
+[0;32mI (117972) sensor-node: Sensor read OK: 20.85 C, 48.02 %[0m
+[0;32mI (117972) sensor-node: Published: temp=20.85, hum=48.02[0m

@@ -1,0 +1,1029 @@
+[
+    {
+        "id": "3a8922d1641384bf",
+        "type": "tab",
+        "label": "Auto Irrigation System",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "9d7c1ad97b1aa434",
+        "type": "mqtt in",
+        "z": "3a8922d1641384bf",
+        "name": "mqtt-in",
+        "topic": "sed/G03/auto-irrigation-system/sensor/hum",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "eb2ebfb0aa601aed",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 70,
+        "y": 120,
+        "wires": [
+            [
+                "44651c5ac007af9a"
+            ]
+        ]
+    },
+    {
+        "id": "44651c5ac007af9a",
+        "type": "json",
+        "z": "3a8922d1641384bf",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 230,
+        "y": 120,
+        "wires": [
+            [
+                "fc2bf995c6bfedd2",
+                "5af8d8aa6c2003d9",
+                "ea8d6ea7bb54aae2"
+            ]
+        ]
+    },
+    {
+        "id": "fc2bf995c6bfedd2",
+        "type": "switch",
+        "z": "3a8922d1641384bf",
+        "name": "switch",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "lt",
+                "v": "40",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 230,
+        "y": 200,
+        "wires": [
+            [
+                "4c285442519dac25"
+            ]
+        ]
+    },
+    {
+        "id": "e991ab3b0c6bc118",
+        "type": "debug",
+        "z": "3a8922d1641384bf",
+        "name": "debug",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 230,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "4c285442519dac25",
+        "type": "change",
+        "z": "3a8922d1641384bf",
+        "name": "change",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "¡ALERT! Humidity below 40 %",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 220,
+        "y": 280,
+        "wires": [
+            [
+                "e991ab3b0c6bc118"
+            ]
+        ]
+    },
+    {
+        "id": "5af8d8aa6c2003d9",
+        "type": "ui-chart",
+        "z": "3a8922d1641384bf",
+        "group": "ca1447e5eedff742",
+        "name": "Humidity Chart",
+        "label": "chart",
+        "order": 3,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "",
+        "xAxisProperty": "",
+        "xAxisPropertyType": "timestamp",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "",
+        "yAxisProperty": "payload",
+        "yAxisPropertyType": "msg",
+        "ymin": "",
+        "ymax": "",
+        "bins": 10,
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 4,
+        "showLegend": true,
+        "removeOlder": 1,
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "",
+        "colors": [
+            "#0095ff",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": 6,
+        "height": 8,
+        "className": "",
+        "interpolation": "linear",
+        "x": 500,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7712e0afbddcb2d5",
+        "type": "ui-slider",
+        "z": "3a8922d1641384bf",
+        "group": "ca1447e5eedff742",
+        "name": "hum-threshold",
+        "label": "Set Humidity Threshold",
+        "tooltip": "",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "outs": "end",
+        "topic": "topic",
+        "topicType": "msg",
+        "thumbLabel": "true",
+        "showTicks": "always",
+        "min": "0",
+        "max": "100",
+        "step": 1,
+        "className": "",
+        "iconPrepend": "",
+        "iconAppend": "",
+        "color": "",
+        "colorTrack": "",
+        "colorThumb": "",
+        "showTextField": false,
+        "x": 500,
+        "y": 300,
+        "wires": [
+            [
+                "af3bf60c78b659e6"
+            ]
+        ]
+    },
+    {
+        "id": "ea8d6ea7bb54aae2",
+        "type": "ui-gauge",
+        "z": "3a8922d1641384bf",
+        "name": "Humidity Gauge",
+        "group": "ca1447e5eedff742",
+        "order": 2,
+        "value": "payload",
+        "valueType": "msg",
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "gauge",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "units",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#5cd65c",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "4",
+                "color": "#ffc800",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "7",
+                "color": "#ea5353",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "50",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 500,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "af3bf60c78b659e6",
+        "type": "mqtt out",
+        "z": "3a8922d1641384bf",
+        "name": "mqtt-out",
+        "topic": "sed/G03/auto-irrigation-system/actuator/hum",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "eb2ebfb0aa601aed",
+        "x": 680,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "a73fa633d54f49b6",
+        "type": "mqtt in",
+        "z": "3a8922d1641384bf",
+        "name": "mqtt-in",
+        "topic": "sed/G03/auto-irrigation-system/sensor/temp",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "eb2ebfb0aa601aed",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 70,
+        "y": 580,
+        "wires": [
+            [
+                "a83bb66c9346a3f0"
+            ]
+        ]
+    },
+    {
+        "id": "a83bb66c9346a3f0",
+        "type": "json",
+        "z": "3a8922d1641384bf",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 230,
+        "y": 580,
+        "wires": [
+            [
+                "ce772df9c5afd6fa",
+                "3687c8d53c6268e5",
+                "a88a74583484ee59"
+            ]
+        ]
+    },
+    {
+        "id": "ce772df9c5afd6fa",
+        "type": "switch",
+        "z": "3a8922d1641384bf",
+        "name": "switch",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gt",
+                "v": "22",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 230,
+        "y": 660,
+        "wires": [
+            [
+                "f548517cb457a977"
+            ]
+        ]
+    },
+    {
+        "id": "920bc91c20d002a4",
+        "type": "debug",
+        "z": "3a8922d1641384bf",
+        "name": "debug",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 210,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "f548517cb457a977",
+        "type": "change",
+        "z": "3a8922d1641384bf",
+        "name": "change",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "¡ALERT! Temperature above 22 ºC",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 220,
+        "y": 740,
+        "wires": [
+            [
+                "920bc91c20d002a4"
+            ]
+        ]
+    },
+    {
+        "id": "3687c8d53c6268e5",
+        "type": "ui-chart",
+        "z": "3a8922d1641384bf",
+        "group": "4cdc0bc330136f41",
+        "name": "Temperature Chart",
+        "label": "chart",
+        "order": 3,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "",
+        "xAxisProperty": "",
+        "xAxisPropertyType": "timestamp",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "",
+        "yAxisProperty": "payload",
+        "yAxisPropertyType": "msg",
+        "ymin": "",
+        "ymax": "",
+        "bins": 10,
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 4,
+        "showLegend": true,
+        "removeOlder": 1,
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "",
+        "colors": [
+            "#0095ff",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": 6,
+        "height": 8,
+        "className": "",
+        "interpolation": "linear",
+        "x": 510,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "caeae276a6c460f2",
+        "type": "ui-slider",
+        "z": "3a8922d1641384bf",
+        "group": "4cdc0bc330136f41",
+        "name": "temp-threshold",
+        "label": "Set Temperature Threshold",
+        "tooltip": "",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "outs": "end",
+        "topic": "topic",
+        "topicType": "msg",
+        "thumbLabel": "true",
+        "showTicks": "always",
+        "min": "-20",
+        "max": "50",
+        "step": 1,
+        "className": "",
+        "iconPrepend": "",
+        "iconAppend": "",
+        "color": "",
+        "colorTrack": "",
+        "colorThumb": "",
+        "showTextField": false,
+        "x": 500,
+        "y": 760,
+        "wires": [
+            [
+                "8f371e8b41ec9432"
+            ]
+        ]
+    },
+    {
+        "id": "a88a74583484ee59",
+        "type": "ui-gauge",
+        "z": "3a8922d1641384bf",
+        "name": "Temperature Gauge",
+        "group": "4cdc0bc330136f41",
+        "order": 2,
+        "value": "payload",
+        "valueType": "msg",
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "gauge",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "units",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#5cd65c",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "4",
+                "color": "#ffc800",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "7",
+                "color": "#ea5353",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "50",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 520,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8f371e8b41ec9432",
+        "type": "mqtt out",
+        "z": "3a8922d1641384bf",
+        "name": "mqtt-out",
+        "topic": "sed/G03/auto-irrigation-system/actuator/temp",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "eb2ebfb0aa601aed",
+        "x": 680,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "0bd36ad39bf3d3e1",
+        "type": "comment",
+        "z": "3a8922d1641384bf",
+        "name": "Sensor Humidity Detection",
+        "info": "Receives the humidity value from the sensor node\n\nSet's an alarm in case the humidity value is below 40 %. ",
+        "x": 150,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "0e106b1bc624aae7",
+        "type": "comment",
+        "z": "3a8922d1641384bf",
+        "name": "Sensor Temperature Detection",
+        "info": "Receives the humidity value from the sensor node\n\nSet's an alarm in case the temperature value is above 22 degrees. ",
+        "x": 160,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "939562404b11189f",
+        "type": "mqtt in",
+        "z": "3a8922d1641384bf",
+        "name": "mqtt-in",
+        "topic": "sed/G03/auto-irrigation-system/actuator/action",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "eb2ebfb0aa601aed",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 70,
+        "y": 1000,
+        "wires": [
+            [
+                "240763b51210bd6b"
+            ]
+        ]
+    },
+    {
+        "id": "240763b51210bd6b",
+        "type": "json",
+        "z": "3a8922d1641384bf",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 230,
+        "y": 1000,
+        "wires": [
+            [
+                "d809b4b78362a085"
+            ]
+        ]
+    },
+    {
+        "id": "d809b4b78362a085",
+        "type": "switch",
+        "z": "3a8922d1641384bf",
+        "name": "switch",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 230,
+        "y": 1120,
+        "wires": [
+            [
+                "5622f08d293fb988"
+            ],
+            [
+                "da86f138aff2809b"
+            ]
+        ]
+    },
+    {
+        "id": "d8786907b253a3d8",
+        "type": "debug",
+        "z": "3a8922d1641384bf",
+        "name": "debug",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 590,
+        "y": 1080,
+        "wires": []
+    },
+    {
+        "id": "77cd2b1bab10926e",
+        "type": "comment",
+        "z": "3a8922d1641384bf",
+        "name": "Actuator Action Log",
+        "info": "Receives the action status of the actuator node\n",
+        "x": 110,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "6b4105305514f23d",
+        "type": "debug",
+        "z": "3a8922d1641384bf",
+        "name": "debug",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 590,
+        "y": 1160,
+        "wires": []
+    },
+    {
+        "id": "733f6d5bed7a50e7",
+        "type": "mqtt in",
+        "z": "3a8922d1641384bf",
+        "name": "mqtt-in",
+        "topic": "sed/G03/auto-irrigation-system/actuator/survival",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "eb2ebfb0aa601aed",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 70,
+        "y": 1300,
+        "wires": [
+            [
+                "f0bf4c2c6d4bb477"
+            ]
+        ]
+    },
+    {
+        "id": "f0bf4c2c6d4bb477",
+        "type": "function",
+        "z": "3a8922d1641384bf",
+        "name": "passthrough",
+        "func": "return msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 230,
+        "y": 1300,
+        "wires": [
+            [
+                "ee130990331b6b35"
+            ]
+        ]
+    },
+    {
+        "id": "31eed0075e40611d",
+        "type": "comment",
+        "z": "3a8922d1641384bf",
+        "name": "Actuator Action Log",
+        "info": "Receives the action status of the actuator node\n",
+        "x": 110,
+        "y": 1240,
+        "wires": []
+    },
+    {
+        "id": "ee130990331b6b35",
+        "type": "function",
+        "z": "3a8922d1641384bf",
+        "name": "desconnection_time",
+        "func": "if (msg.payload === null) {\n    msg.payload = \"\";\n    return msg;\n}\nconst seconds = msg.payload.no_sensor_data_seconds;\nif (seconds === undefined || isNaN(seconds) || seconds <= 30) return null;\nif (seconds < 60) {\n    msg.payload = `${seconds} seconds`;\n} else {\n    msg.payload = `${(seconds / 60).toFixed(2)} minutes`;\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 1300,
+        "wires": [
+            [
+                "a70db7a16f5471e8"
+            ]
+        ]
+    },
+    {
+        "id": "a70db7a16f5471e8",
+        "type": "ui-text",
+        "z": "3a8922d1641384bf",
+        "group": "99994baf6e20da2f",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "time without receiving data",
+        "label": " Time elapsed without receiving data: ",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 700,
+        "y": 1300,
+        "wires": []
+    },
+    {
+        "id": "dd7694c785170623",
+        "type": "ui-text",
+        "z": "3a8922d1641384bf",
+        "group": "99994baf6e20da2f",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "Activate/Deactivate",
+        "label": "Irrigation Status:",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#ff0000",
+        "wrapText": true,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 630,
+        "y": 1120,
+        "wires": []
+    },
+    {
+        "id": "da86f138aff2809b",
+        "type": "change",
+        "z": "3a8922d1641384bf",
+        "name": "change",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "UNACTIVE",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 420,
+        "y": 1160,
+        "wires": [
+            [
+                "6b4105305514f23d",
+                "dd7694c785170623"
+            ]
+        ]
+    },
+    {
+        "id": "5622f08d293fb988",
+        "type": "change",
+        "z": "3a8922d1641384bf",
+        "name": "change",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "ACTIVE",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 420,
+        "y": 1080,
+        "wires": [
+            [
+                "d8786907b253a3d8",
+                "dd7694c785170623"
+            ]
+        ]
+    },
+    {
+        "id": "eb2ebfb0aa601aed",
+        "type": "mqtt-broker",
+        "name": "SED",
+        "broker": "broker.hivemq.com",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "ca1447e5eedff742",
+        "type": "ui-group",
+        "name": "Humidity",
+        "page": "7b81cd1d0fbff4b2",
+        "width": 6,
+        "height": 1,
+        "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "4cdc0bc330136f41",
+        "type": "ui-group",
+        "name": "Temperature",
+        "page": "7b81cd1d0fbff4b2",
+        "width": 6,
+        "height": 1,
+        "order": 3,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "99994baf6e20da2f",
+        "type": "ui-group",
+        "name": "Irrigation Status",
+        "page": "7b81cd1d0fbff4b2",
+        "width": "12",
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "7b81cd1d0fbff4b2",
+        "type": "ui-page",
+        "name": "SED",
+        "ui": "2998c59bbc44345f",
+        "path": "/page2",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "14f5ba99f15890fd",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "2998c59bbc44345f",
+        "type": "ui-base",
+        "name": "My Dashboard",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "page",
+        "navigationStyle": "default",
+        "titleBarStyle": "default",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": 1,
+        "showDisconnectNotification": true,
+        "allowInstall": false
+    },
+    {
+        "id": "14f5ba99f15890fd",
+        "type": "ui-theme",
+        "name": "Default Theme",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0094CE",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "30afbb9ef16139df",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "@flowfuse/node-red-dashboard": "1.30.2"
+        }
+    }
+]

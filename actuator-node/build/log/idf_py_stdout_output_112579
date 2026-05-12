@@ -1,0 +1,219 @@
+Command: /home/paula/.espressif/python_env/idf5.5_py3.12_env/bin/python /home/paula/sed/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/paula/sed/esp-workspace/auto-irrigation-system/actuator-node/build/actuator-node.elf /home/paula/sed/esp-workspace/auto-irrigation-system/actuator-node/build/bootloader/bootloader.elf -m '/home/paula/.espressif/python_env/idf5.5_py3.12_env/bin/python' '/home/paula/sed/esp-idf/tools/idf.py' '-p' '/dev/ttyUSB0'
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6280
+load:0x40078000,len:15944
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (27) boot: ESP-IDF v5.5.3 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time May 12 2026 11:58:09[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v3.0[0m
+[0;32mI (32) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (35) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (42) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00004000[0m
+[0;32mI (62) boot:  1 otadata          OTA data         01 00 0000d000 00002000[0m
+[0;32mI (69) boot:  2 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (75) boot:  3 ota_0            OTA app          00 10 00010000 00177000[0m
+[0;32mI (82) boot:  4 ota_1            OTA app          00 11 00190000 00177000[0m
+[0;32mI (88) boot: End of partition table[0m
+[0;32mI (92) boot: No factory image, trying OTA 0[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=26518h (156952) map[0m
+[0;32mI (157) esp_image: segment 1: paddr=00036540 vaddr=3ffb0000 size=04378h ( 17272) load[0m
+[0;32mI (163) esp_image: segment 2: paddr=0003a8c0 vaddr=40080000 size=05758h ( 22360) load[0m
+[0;32mI (172) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=ae704h (714500) map[0m
+[0;32mI (417) esp_image: segment 4: paddr=000ee72c vaddr=40085758 size=13080h ( 77952) load[0m
+[0;32mI (447) esp_image: segment 5: paddr=001017b4 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (459) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (508) boot: Set actual ota_seq=1 in otadata[0][0m
+[0;32mI (509) boot: Disabling RNG early entropy source...[0m
+[0;32mI (518) cpu_start: Multicore app[0m
+[0;32mI (527) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (527) cpu_start: Pro cpu start user code[0m
+[0;32mI (527) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (529) app_init: Application information:[0m
+[0;32mI (533) app_init: Project name:     actuator-node[0m
+[0;32mI (537) app_init: App version:      539746c-dirty[0m
+[0;32mI (541) app_init: Compile time:     May 12 2026 11:58:03[0m
+[0;32mI (546) app_init: ELF file SHA256:  324b33f1e...[0m
+[0;32mI (551) app_init: ESP-IDF:          v5.5.3[0m
+[0;32mI (555) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (558) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (562) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (566) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (573) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (578) heap_init: At 3FFB8EF8 len 00027108 (156 KiB): DRAM[0m
+[0;32mI (583) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (588) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (594) heap_init: At 400987D8 len 00007828 (30 KiB): IRAM[0m
+[0;32mI (601) spi_flash: detected chip: generic[0m
+[0;32mI (603) spi_flash: flash io: dio[0m
+[0;32mI (607) main_task: Started on CPU0[0m
+[0;32mI (617) main_task: Calling app_main()[0m
+--- SYSTEM STARTED ---
+Firmware Version: a_1.0.0
+Running from partition: ota_0
+Offset Address: 0x00010000
+[0;32mI (657) wifi:wifi driver task: 3ffc17e0, prio:23, stack:6656, core=0[0m
+[0;32mI (667) wifi:wifi firmware version: 4df78f2[0m
+[0;32mI (667) wifi:wifi certification version: v7.0[0m
+[0;32mI (667) wifi:config NVS flash: enabled[0m
+[0;32mI (667) wifi:config nano formatting: disabled[0m
+[0;32mI (667) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (677) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (677) wifi:Init management short buffer num: 32[0m
+[0;32mI (687) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (687) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (697) wifi:Init static rx buffer num: 10[0m
+[0;32mI (697) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (697) wifi_init: rx ba win: 6[0m
+[0;32mI (707) wifi_init: accept mbox: 6[0m
+[0;32mI (707) wifi_init: tcpip mbox: 32[0m
+[0;32mI (707) wifi_init: udp mbox: 6[0m
+[0;32mI (707) wifi_init: tcp mbox: 6[0m
+[0;32mI (717) wifi_init: tcp tx win: 5760[0m
+[0;32mI (717) wifi_init: tcp rx win: 5760[0m
+[0;32mI (717) wifi_init: tcp mss: 1440[0m
+[0;32mI (727) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (727) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (737) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (737) phy_init: phy_version 4863,a3a4459,Oct 28 2025,14:30:06[0m
+[0;32mI (817) wifi:mode : sta (94:3c:c6:cd:c5:cc)[0m
+[0;32mI (817) wifi:enable tsf[0m
+[0;32mI (817) WIFI: Connecting to Paula...[0m
+[0;32mI (837) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (837) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (857) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (867) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (877) wifi:connected with Paula, aid = 2, channel 11, BW20, bssid = 8a:04:de:aa:05:40[0m
+[0;32mI (877) wifi:security: WPA2-PSK, phy: bgn, rssi: -39[0m
+[0;32mI (887) wifi:pm start, type: 1[0m
+
+[0;32mI (887) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (897) wifi:<ba-add>idx:0 (ifx:0, 8a:04:de:aa:05:40), tid:0, ssn:0, winSize:64[0m
+[0;32mI (947) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (947) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (1927) esp_netif_handlers: sta ip: 10.12.62.244, mask: 255.255.255.0, gw: 10.12.62.234[0m
+[0;32mI (10827) MENDER: Starting Mender client with MAC: 94:3c:c6:cd:c5:cc[0m
+[0;32mI (10827) mender: ./external/mender-mcu-client/platform/storage/esp-idf/nvs/src/mender-storage.c (157): Deployment data not available[0m
+[0;32mI (12087) MENDER: Authentication successful with the server[0m
+[0;32mI (12087) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (13457) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (15827) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (15827) main_task: Returned from app_main()[0m
+[0;32mI (16317) actuator-node: Actuator node connected to Broker[0m
+[0;32mI (22867) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (22867) actuator-node: Humidity updated: 48.85 %[0m
+[0;32mI (23077) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (23077) actuator-node: Temperature updated: 20.95 °C[0m
+[0;32mI (26327) actuator-node: Actuator ON (temp=20.95, hum=48.85)[0m
+[0;32mI (33107) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (33107) actuator-node: Humidity updated: 48.66 %[0m
+[0;32mI (33317) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (33317) actuator-node: Temperature updated: 20.95 °C[0m
+[0;32mI (36327) actuator-node: Actuator ON (temp=20.95, hum=48.66)[0m
+[0;32mI (37307) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/actuator/temp[0m
+[0;32mI (37307) actuator-node: Temperature threshold set to: 19.00 °C[0m
+[0;32mI (40687) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/actuator/hum[0m
+[0;32mI (40687) actuator-node: Humidity threshold set to: 21.00 %[0m
+[0;32mI (43347) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (43357) actuator-node: Humidity updated: 48.60 %[0m
+[0;32mI (43557) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (43557) actuator-node: Temperature updated: 20.93 °C[0m
+[0;32mI (46327) actuator-node: Actuator OFF (temp=20.93, hum=48.60)[0m
+[0;32mI (49027) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/actuator/hum[0m
+[0;32mI (49027) actuator-node: Humidity threshold set to: 84.00 %[0m
+[0;32mI (53387) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (53387) actuator-node: Humidity updated: 48.53 %[0m
+[0;32mI (53597) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (53597) actuator-node: Temperature updated: 20.93 °C[0m
+[0;32mI (56327) actuator-node: Actuator ON (temp=20.93, hum=48.53)[0m
+[0;32mI (60347) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/actuator/hum[0m
+[0;32mI (60347) actuator-node: Humidity threshold set to: 28.00 %[0m
+[0;32mI (66327) actuator-node: Actuator OFF (temp=20.93, hum=48.53)[0m
+[0;32mI (72087) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (73467) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (76327) actuator-node: Actuator OFF (temp=20.93, hum=48.53)[0m
+[0;33mW (85827) actuator-node: Invalidating sensor data[0m
+[0;32mI (86327) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (96327) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (106327) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (108577) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (108587) actuator-node: Temperature updated: 20.90 °C[0m
+[0;32mI (108667) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (108667) actuator-node: Humidity updated: 48.34 %[0m
+[0;32mI (116327) actuator-node: Actuator OFF (temp=20.90, hum=48.34)[0m
+[0;32mI (118717) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (118717) actuator-node: Humidity updated: 48.21 %[0m
+[0;32mI (118927) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (118927) actuator-node: Temperature updated: 20.90 °C[0m
+[0;32mI (126327) actuator-node: Actuator OFF (temp=20.90, hum=48.21)[0m
+[0;32mI (128747) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (128747) actuator-node: Humidity updated: 48.12 %[0m
+[0;32mI (128957) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (128957) actuator-node: Temperature updated: 20.89 °C[0m
+[0;32mI (132087) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (132287) wifi:state: run -> init (0x1c0)[0m
+[0;32mI (132297) wifi:pm stop, total sleep time: 114982000 us / 131407764 us[0m
+
+[0;32mI (132297) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (132297) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[1;31mE (132307) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x004C[0m
+[1;31mE (132307) transport_base: tcp_read error, errno=Software caused connection abort[0m
+[1;31mE (132307) esp-tls: Failed to open new connection[0m
+[1;31mE (132317) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=113[0m
+[1;31mE (132317) transport_base: Failed to open a new connection[0m
+[1;31mE (132327) actuator-node: Error on MQTT stack[0m
+[1;31mE (132337) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (132337) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[1;31mE (132337) mender: ./external/mender-mcu-client/platform/net/esp-idf/src/mender-http.c (126): Unable to open HTTP client connection (ESP_ERR_HTTP_CONNECT)[0m
+[0;33mW (132347) actuator-node: MQTT disconnected from Broker[0m
+[1;31mE (132357) mender: ./external/mender-mcu-client/core/src/mender-api.c (219): Unable to perform HTTP request[0m
+[0;33mW (132367) actuator-node: Invalidating sensor data[0m
+[1;31mE (132377) mender: ./external/mender-mcu-client/core/src/mender-client.c (905): Unable to check for deployment[0m
+[0;32mI (136327) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (136327) mqtt_client: Publish: Losing qos0 data when client not connected[0m
+[0;32mI (146327) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[1;31mE (149087) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (149087) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (149087) mqtt_client: Error transport connect[0m
+[1;31mE (149087) actuator-node: Error on MQTT stack[0m
+[0;33mW (149097) actuator-node: MQTT disconnected from Broker[0m
+[0;33mW (149097) mqtt_client: Publish: Losing qos0 data when client not connected[0m
+[0;32mI (159107) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (159107) mqtt_client: Publish: Losing qos0 data when client not connected[0m
+[0;32mI (169107) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[1;31mE (171087) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (171087) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (171087) mqtt_client: Error transport connect[0m
+[1;31mE (171087) actuator-node: Error on MQTT stack[0m
+[0;33mW (171097) actuator-node: MQTT disconnected from Broker[0m
+[0;33mW (171097) mqtt_client: Publish: Losing qos0 data when client not connected[0m
+[0;32mI (181107) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (181107) mqtt_client: Publish: Losing qos0 data when client not connected[0m
+[0;32mI (191107) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (192087) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[1;31mE (192087) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (192087) esp-tls: Failed to open new connection[0m
+[1;31mE (192087) transport_base: Failed to open a new connection[0m
+[1;31mE (192097) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (192097) mender: ./external/mender-mcu-client/platform/net/esp-idf/src/mender-http.c (126): Unable to open HTTP client connection (ESP_ERR_HTTP_CONNECT)[0m
+[1;31mE (192117) mender: ./external/mender-mcu-client/core/src/mender-api.c (219): Unable to perform HTTP request[0m
+[1;31mE (192127) mender: ./external/mender-mcu-client/core/src/mender-client.c (905): Unable to check for deployment[0m
+[1;31mE (193087) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (193087) transport_base: Failed to open a new connection: 32769[0m
+[1;31mE (193087) mqtt_client: Error transport connect[0m
+[1;31mE (193087) actuator-node: Error on MQTT stack[0m
+[0;33mW (193097) actuator-node: MQTT disconnected from Broker[0m
+[0;33mW (193097) mqtt_client: Publish: Losing qos0 data when client not connected[0m
+[0;32mI (203107) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (203107) mqtt_client: Publish: Losing qos0 data when client not connected[0m
+[0;32mI (213107) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m

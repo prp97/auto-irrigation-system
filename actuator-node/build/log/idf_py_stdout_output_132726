@@ -1,0 +1,662 @@
+Command: /home/paula/.espressif/python_env/idf5.5_py3.12_env/bin/python /home/paula/sed/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/paula/sed/esp-workspace/auto-irrigation-system/actuator-node/build/actuator-node.elf /home/paula/sed/esp-workspace/auto-irrigation-system/actuator-node/build/bootloader/bootloader.elf -m '/home/paula/.espressif/python_env/idf5.5_py3.12_env/bin/python' '/home/paula/sed/esp-idf/tools/idf.py' '-p' '/dev/ttyUSB0'
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6280
+load:0x40078000,len:15944
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (27) boot: ESP-IDF v5.5.3 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time May 12 2026 11:58:09[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v3.0[0m
+[0;32mI (32) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (35) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (42) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00004000[0m
+[0;32mI (62) boot:  1 otadata          OTA data         01 00 0000d000 00002000[0m
+[0;32mI (69) boot:  2 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (75) boot:  3 ota_0            OTA app          00 10 00010000 00177000[0m
+[0;32mI (82) boot:  4 ota_1            OTA app          00 11 00190000 00177000[0m
+[0;32mI (88) boot: End of partition table[0m
+[0;32mI (92) boot: No factory image, trying OTA 0[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=26658h (157272) map[0m
+[0;32mI (157) esp_image: segment 1: paddr=00036680 vaddr=3ffb0000 size=04378h ( 17272) load[0m
+[0;32mI (163) esp_image: segment 2: paddr=0003aa00 vaddr=40080000 size=05618h ( 22040) load[0m
+[0;32mI (172) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=ae7f8h (714744) map[0m
+[0;32mI (417) esp_image: segment 4: paddr=000ee820 vaddr=40085618 size=131c0h ( 78272) load[0m
+[0;32mI (447) esp_image: segment 5: paddr=001019e8 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (460) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (508) boot: Set actual ota_seq=1 in otadata[0][0m
+[0;32mI (509) boot: Disabling RNG early entropy source...[0m
+[0;32mI (518) cpu_start: Multicore app[0m
+[0;32mI (527) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (527) cpu_start: Pro cpu start user code[0m
+[0;32mI (527) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (529) app_init: Application information:[0m
+[0;32mI (533) app_init: Project name:     actuator-node[0m
+[0;32mI (537) app_init: App version:      539746c-dirty[0m
+[0;32mI (542) app_init: Compile time:     May 12 2026 11:58:03[0m
+[0;32mI (547) app_init: ELF file SHA256:  c5c91bbf3...[0m
+[0;32mI (551) app_init: ESP-IDF:          v5.5.3[0m
+[0;32mI (555) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (559) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (563) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (567) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (573) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (578) heap_init: At 3FFB8EF8 len 00027108 (156 KiB): DRAM[0m
+[0;32mI (583) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (588) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (594) heap_init: At 400987D8 len 00007828 (30 KiB): IRAM[0m
+[0;32mI (601) spi_flash: detected chip: generic[0m
+[0;32mI (603) spi_flash: flash io: dio[0m
+[0;32mI (607) main_task: Started on CPU0[0m
+[0;32mI (617) main_task: Calling app_main()[0m
+--- SYSTEM STARTED ---
+Firmware Version: a_1.0.0
+Running from partition: ota_0
+Offset Address: 0x00010000
+[0;32mI (657) wifi:wifi driver task: 3ffc17e0, prio:23, stack:6656, core=0[0m
+[0;32mI (667) wifi:wifi firmware version: 4df78f2[0m
+[0;32mI (667) wifi:wifi certification version: v7.0[0m
+[0;32mI (667) wifi:config NVS flash: enabled[0m
+[0;32mI (667) wifi:config nano formatting: disabled[0m
+[0;32mI (667) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (677) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (677) wifi:Init management short buffer num: 32[0m
+[0;32mI (687) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (687) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (697) wifi:Init static rx buffer num: 10[0m
+[0;32mI (697) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (697) wifi_init: rx ba win: 6[0m
+[0;32mI (707) wifi_init: accept mbox: 6[0m
+[0;32mI (707) wifi_init: tcpip mbox: 32[0m
+[0;32mI (707) wifi_init: udp mbox: 6[0m
+[0;32mI (707) wifi_init: tcp mbox: 6[0m
+[0;32mI (717) wifi_init: tcp tx win: 5760[0m
+[0;32mI (717) wifi_init: tcp rx win: 5760[0m
+[0;32mI (717) wifi_init: tcp mss: 1440[0m
+[0;32mI (727) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (727) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (737) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (737) phy_init: phy_version 4863,a3a4459,Oct 28 2025,14:30:06[0m
+[0;32mI (817) wifi:mode : sta (94:3c:c6:cd:c5:cc)[0m
+[0;32mI (817) wifi:enable tsf[0m
+[0;32mI (827) WIFI: Connecting to Paula...[0m
+[0;32mI (877) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (877) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (897) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (907) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (937) wifi:connected with Paula, aid = 1, channel 1, BW20, bssid = 8a:04:de:aa:05:40[0m
+[0;32mI (937) wifi:security: WPA2-PSK, phy: bgn, rssi: -33[0m
+[0;32mI (947) wifi:pm start, type: 1[0m
+
+[0;32mI (947) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (957) wifi:<ba-add>idx:0 (ifx:0, 8a:04:de:aa:05:40), tid:0, ssn:0, winSize:64[0m
+[0;32mI (1017) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (1027) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (1977) esp_netif_handlers: sta ip: 10.12.62.244, mask: 255.255.255.0, gw: 10.12.62.234[0m
+[0;32mI (1977) sensor-node: Connected! IP: 10.12.62.244[0m
+[0;32mI (10827) MENDER: Starting Mender client with MAC: 94:3c:c6:cd:c5:cc[0m
+[0;32mI (10827) mender: ./external/mender-mcu-client/platform/storage/esp-idf/nvs/src/mender-storage.c (157): Deployment data not available[0m
+[0;32mI (12187) MENDER: Authentication successful with the server[0m
+[0;32mI (12187) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (13327) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (15827) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (15827) main_task: Returned from app_main()[0m
+[0;32mI (16187) actuator-node: Actuator node connected to Broker[0m
+[0;32mI (26197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (36197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (46197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (56197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (66197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (72187) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (73547) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (76197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (86197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (96197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (106197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (116197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (126197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (132187) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (133567) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (136197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (141317) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (141317) actuator-node: Humidity updated: 54.57 %[0m
+[0;32mI (141517) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (141527) actuator-node: Temperature updated: 21.00 °C[0m
+[0;32mI (146197) actuator-node: Actuator OFF (temp=21.00, hum=54.57)[0m
+[0;32mI (151367) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (151377) actuator-node: Humidity updated: 54.59 %[0m
+[0;32mI (151557) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (151557) actuator-node: Temperature updated: 21.01 °C[0m
+[0;32mI (156197) actuator-node: Actuator OFF (temp=21.01, hum=54.59)[0m
+[0;32mI (161377) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (161387) actuator-node: Humidity updated: 54.57 %[0m
+[0;32mI (161597) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (161597) actuator-node: Temperature updated: 21.01 °C[0m
+[0;32mI (166197) actuator-node: Actuator OFF (temp=21.01, hum=54.57)[0m
+[0;32mI (171627) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (171627) actuator-node: Humidity updated: 54.54 %[0m
+[0;32mI (171827) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (171837) actuator-node: Temperature updated: 21.00 °C[0m
+[0;32mI (176197) actuator-node: Actuator OFF (temp=21.00, hum=54.54)[0m
+[0;32mI (181887) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (181887) actuator-node: Humidity updated: 54.52 %[0m
+[0;32mI (181947) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (181947) actuator-node: Temperature updated: 21.01 °C[0m
+[0;32mI (186197) actuator-node: Actuator OFF (temp=21.01, hum=54.52)[0m
+[0;32mI (191897) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (191897) actuator-node: Humidity updated: 54.50 %[0m
+[0;32mI (192107) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (192107) actuator-node: Temperature updated: 20.98 °C[0m
+[0;32mI (192187) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (193567) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (196197) actuator-node: Actuator OFF (temp=20.98, hum=54.50)[0m
+[0;32mI (202137) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (202137) actuator-node: Humidity updated: 54.49 %[0m
+[0;32mI (202347) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (202347) actuator-node: Temperature updated: 21.00 °C[0m
+[0;32mI (206197) actuator-node: Actuator OFF (temp=21.00, hum=54.49)[0m
+[0;32mI (212377) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (212377) actuator-node: Humidity updated: 54.48 %[0m
+[0;32mI (212587) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (212587) actuator-node: Temperature updated: 21.00 °C[0m
+[0;32mI (216197) actuator-node: Actuator OFF (temp=21.00, hum=54.48)[0m
+[0;32mI (222617) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (222617) actuator-node: Humidity updated: 54.50 %[0m
+[0;32mI (222827) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (222827) actuator-node: Temperature updated: 21.00 °C[0m
+[0;32mI (226197) actuator-node: Actuator OFF (temp=21.00, hum=54.50)[0m
+[0;32mI (232857) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (232857) actuator-node: Humidity updated: 54.54 %[0m
+[0;32mI (233087) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (233087) actuator-node: Temperature updated: 20.98 °C[0m
+[0;32mI (236197) actuator-node: Actuator OFF (temp=20.98, hum=54.54)[0m
+[0;32mI (242897) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (242897) actuator-node: Humidity updated: 54.55 %[0m
+[0;32mI (242977) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (242977) actuator-node: Temperature updated: 21.01 °C[0m
+[0;32mI (246197) actuator-node: Actuator OFF (temp=21.01, hum=54.55)[0m
+[0;32mI (252187) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (253037) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (253037) actuator-node: Humidity updated: 54.56 %[0m
+[0;32mI (253347) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (253347) actuator-node: Temperature updated: 21.00 °C[0m
+[0;32mI (253547) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (256197) actuator-node: Actuator OFF (temp=21.00, hum=54.56)[0m
+[0;32mI (263377) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (263377) actuator-node: Humidity updated: 54.57 %[0m
+[0;32mI (263577) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (263577) actuator-node: Temperature updated: 21.00 °C[0m
+[0;32mI (266197) actuator-node: Actuator OFF (temp=21.00, hum=54.57)[0m
+[0;32mI (276197) actuator-node: Actuator OFF (temp=21.00, hum=54.57)[0m
+[0;32mI (286197) actuator-node: Actuator OFF (temp=21.00, hum=54.57)[0m
+[0;33mW (295827) actuator-node: Invalidating sensor data[0m
+[0;33mW (295827) actuator-node: No sensor data for 32 seconds[0m
+[0;32mI (296197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (305827) actuator-node: No sensor data for 42 seconds[0m
+[0;32mI (306197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (312187) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (313557) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;33mW (315827) actuator-node: No sensor data for 52 seconds[0m
+[0;32mI (316197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (325827) actuator-node: No sensor data for 62 seconds[0m
+[0;32mI (326197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (335827) actuator-node: No sensor data for 72 seconds[0m
+[0;32mI (336197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (345827) actuator-node: No sensor data for 82 seconds[0m
+[0;32mI (346197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (355827) actuator-node: No sensor data for 92 seconds[0m
+[0;32mI (356197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (365827) actuator-node: No sensor data for 102 seconds[0m
+[0;32mI (366197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (372187) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (373277) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;33mW (375827) actuator-node: No sensor data for 112 seconds[0m
+[0;32mI (376197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (385827) actuator-node: No sensor data for 122 seconds[0m
+[0;32mI (386197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (395827) actuator-node: No sensor data for 132 seconds[0m
+[0;32mI (396197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (405827) actuator-node: No sensor data for 142 seconds[0m
+[0;32mI (406197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (415827) actuator-node: No sensor data for 152 seconds[0m
+[0;32mI (416197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (425827) actuator-node: No sensor data for 162 seconds[0m
+[0;32mI (426197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (432187) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (433777) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;33mW (435827) actuator-node: No sensor data for 172 seconds[0m
+[0;32mI (436197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (445827) actuator-node: No sensor data for 182 seconds[0m
+[0;32mI (446197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (455827) actuator-node: No sensor data for 192 seconds[0m
+[0;32mI (456197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (465827) actuator-node: No sensor data for 202 seconds[0m
+[0;32mI (466197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (475827) actuator-node: No sensor data for 212 seconds[0m
+[0;32mI (476197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (485827) actuator-node: No sensor data for 222 seconds[0m
+[0;32mI (486197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (492187) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (493577) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;33mW (495827) actuator-node: No sensor data for 232 seconds[0m
+[0;32mI (496197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (505827) actuator-node: No sensor data for 242 seconds[0m
+[0;32mI (506197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (515827) actuator-node: No sensor data for 252 seconds[0m
+[0;32mI (516197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (525827) actuator-node: No sensor data for 262 seconds[0m
+[0;32mI (526197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (535827) actuator-node: No sensor data for 272 seconds[0m
+[0;32mI (536197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (545827) actuator-node: No sensor data for 282 seconds[0m
+[0;32mI (546197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (552187) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (553167) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;33mW (555827) actuator-node: No sensor data for 292 seconds[0m
+[0;32mI (556197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (565827) actuator-node: No sensor data for 302 seconds[0m
+[0;32mI (566197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (575827) actuator-node: No sensor data for 312 seconds[0m
+[0;32mI (576197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (585827) actuator-node: No sensor data for 322 seconds[0m
+[0;32mI (586197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (595827) actuator-node: No sensor data for 332 seconds[0m
+[0;32mI (596197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (605827) actuator-node: No sensor data for 342 seconds[0m
+[0;32mI (606197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (612187) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (613177) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;33mW (615827) actuator-node: No sensor data for 352 seconds[0m
+[0;32mI (616197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (625827) actuator-node: No sensor data for 362 seconds[0m
+[0;32mI (626197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (635827) actuator-node: No sensor data for 372 seconds[0m
+[0;32mI (636197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (645827) actuator-node: No sensor data for 382 seconds[0m
+[0;32mI (646197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (655827) actuator-node: No sensor data for 392 seconds[0m
+[0;32mI (656197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (665827) actuator-node: No sensor data for 402 seconds[0m
+[0;32mI (666197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (672187) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (673607) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;33mW (675827) actuator-node: No sensor data for 412 seconds[0m
+[0;32mI (676197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (685827) actuator-node: No sensor data for 422 seconds[0m
+[0;32mI (686197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (695827) actuator-node: No sensor data for 432 seconds[0m
+[0;32mI (696197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (705827) actuator-node: No sensor data for 442 seconds[0m
+[0;32mI (706197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (715827) actuator-node: No sensor data for 452 seconds[0m
+[0;32mI (716197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (725827) actuator-node: No sensor data for 462 seconds[0m
+[0;32mI (726197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (732187) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (733597) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;33mW (735827) actuator-node: No sensor data for 472 seconds[0m
+[0;32mI (736197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (745827) actuator-node: No sensor data for 482 seconds[0m
+[0;32mI (746197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (755827) actuator-node: No sensor data for 492 seconds[0m
+[0;32mI (756197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (765827) actuator-node: No sensor data for 502 seconds[0m
+[0;32mI (766197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (775827) actuator-node: No sensor data for 512 seconds[0m
+[0;32mI (776197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (785827) actuator-node: No sensor data for 522 seconds[0m
+[0;32mI (786197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (792187) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (793607) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;33mW (795827) actuator-node: No sensor data for 532 seconds[0m
+[0;32mI (796197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (805827) actuator-node: No sensor data for 542 seconds[0m
+[0;32mI (806197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (815827) actuator-node: No sensor data for 552 seconds[0m
+[0;32mI (816197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (825827) actuator-node: No sensor data for 562 seconds[0m
+[0;32mI (826197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (835827) actuator-node: No sensor data for 572 seconds[0m
+[0;32mI (836197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (845827) actuator-node: No sensor data for 582 seconds[0m
+[0;32mI (846197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (852187) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (853407) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;33mW (855827) actuator-node: No sensor data for 592 seconds[0m
+[0;32mI (856197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (865827) actuator-node: No sensor data for 602 seconds[0m
+[0;32mI (866197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (875827) actuator-node: No sensor data for 612 seconds[0m
+[0;32mI (876197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (885827) actuator-node: No sensor data for 622 seconds[0m
+[0;32mI (886197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (895827) actuator-node: No sensor data for 632 seconds[0m
+[0;32mI (896197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (905827) actuator-node: No sensor data for 642 seconds[0m
+[0;32mI (906197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (912187) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (913307) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;33mW (915827) actuator-node: No sensor data for 652 seconds[0m
+[0;32mI (916197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (925827) actuator-node: No sensor data for 662 seconds[0m
+[0;32mI (926197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (935827) actuator-node: No sensor data for 672 seconds[0m
+[0;32mI (936197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (945827) actuator-node: No sensor data for 682 seconds[0m
+[0;32mI (946197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (955827) actuator-node: No sensor data for 692 seconds[0m
+[0;32mI (956197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (965827) actuator-node: No sensor data for 702 seconds[0m
+[0;32mI (966197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (972187) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (973417) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;33mW (975827) actuator-node: No sensor data for 712 seconds[0m
+[0;32mI (976197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (985827) actuator-node: No sensor data for 722 seconds[0m
+[0;32mI (986197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (995827) actuator-node: No sensor data for 732 seconds[0m
+[0;32mI (996197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (1005827) actuator-node: No sensor data for 742 seconds[0m
+[0;32mI (1006197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (1015827) actuator-node: No sensor data for 752 seconds[0m
+[0;32mI (1016197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (1025827) actuator-node: No sensor data for 762 seconds[0m
+[0;32mI (1026197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1032187) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (1033627) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;33mW (1035827) actuator-node: No sensor data for 772 seconds[0m
+[0;32mI (1036197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (1045827) actuator-node: No sensor data for 782 seconds[0m
+[0;32mI (1046197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (1055827) actuator-node: No sensor data for 792 seconds[0m
+[0;32mI (1056197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (1065827) actuator-node: No sensor data for 802 seconds[0m
+[0;32mI (1066197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (1075827) actuator-node: No sensor data for 812 seconds[0m
+[0;32mI (1076197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (1085827) actuator-node: No sensor data for 822 seconds[0m
+[0;32mI (1086197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1092187) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (1093847) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;33mW (1095827) actuator-node: No sensor data for 832 seconds[0m
+[0;32mI (1096197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (1105827) actuator-node: No sensor data for 842 seconds[0m
+[0;32mI (1106197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (1115827) actuator-node: No sensor data for 852 seconds[0m
+[0;32mI (1116197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (1125827) actuator-node: No sensor data for 862 seconds[0m
+[0;32mI (1126197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (1135827) actuator-node: No sensor data for 872 seconds[0m
+[0;32mI (1136197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (1145827) actuator-node: No sensor data for 882 seconds[0m
+[0;32mI (1146197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1152187) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (1153847) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;33mW (1155827) actuator-node: No sensor data for 892 seconds[0m
+[0;32mI (1156197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (1165827) actuator-node: No sensor data for 902 seconds[0m
+[0;32mI (1166197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (1175827) actuator-node: No sensor data for 912 seconds[0m
+[0;32mI (1176197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (1185827) actuator-node: No sensor data for 922 seconds[0m
+[0;32mI (1186197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (1195827) actuator-node: No sensor data for 932 seconds[0m
+[0;32mI (1196197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (1205827) actuator-node: No sensor data for 942 seconds[0m
+[0;32mI (1206197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1212187) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (1213237) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;33mW (1215827) actuator-node: No sensor data for 952 seconds[0m
+[0;32mI (1216197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (1225827) actuator-node: No sensor data for 962 seconds[0m
+[0;32mI (1226197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (1235827) actuator-node: No sensor data for 972 seconds[0m
+[0;32mI (1236197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (1245827) actuator-node: No sensor data for 982 seconds[0m
+[0;32mI (1246197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (1255827) actuator-node: No sensor data for 992 seconds[0m
+[0;32mI (1256197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (1265827) actuator-node: No sensor data for 1002 seconds[0m
+[0;32mI (1266197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1272187) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (1273657) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;33mW (1275827) actuator-node: No sensor data for 1012 seconds[0m
+[0;32mI (1276197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (1285827) actuator-node: No sensor data for 1022 seconds[0m
+[0;32mI (1286197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (1295827) actuator-node: No sensor data for 1032 seconds[0m
+[0;32mI (1296197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (1305827) actuator-node: No sensor data for 1042 seconds[0m
+[0;32mI (1306197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (1315827) actuator-node: No sensor data for 1052 seconds[0m
+[0;32mI (1316197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (1325827) actuator-node: No sensor data for 1062 seconds[0m
+[0;32mI (1326197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1332187) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (1333667) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;33mW (1335827) actuator-node: No sensor data for 1072 seconds[0m
+[0;32mI (1336197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (1345827) actuator-node: No sensor data for 1082 seconds[0m
+[0;32mI (1346197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (1355827) actuator-node: No sensor data for 1092 seconds[0m
+[0;32mI (1356197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (1365827) actuator-node: No sensor data for 1102 seconds[0m
+[0;32mI (1366197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (1375827) actuator-node: No sensor data for 1112 seconds[0m
+[0;32mI (1376197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (1385827) actuator-node: No sensor data for 1122 seconds[0m
+[0;32mI (1386197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1392187) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (1393467) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;33mW (1395827) actuator-node: No sensor data for 1132 seconds[0m
+[0;32mI (1396197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (1405827) actuator-node: No sensor data for 1142 seconds[0m
+[0;32mI (1406197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (1415827) actuator-node: No sensor data for 1152 seconds[0m
+[0;32mI (1416197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (1425827) actuator-node: No sensor data for 1162 seconds[0m
+[0;32mI (1426197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (1435827) actuator-node: No sensor data for 1172 seconds[0m
+[0;32mI (1436197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (1445827) actuator-node: No sensor data for 1182 seconds[0m
+[0;32mI (1446197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1452187) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (1453477) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;33mW (1455827) actuator-node: No sensor data for 1192 seconds[0m
+[0;32mI (1456197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (1465827) actuator-node: No sensor data for 1202 seconds[0m
+[0;32mI (1466197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (1475827) actuator-node: No sensor data for 1212 seconds[0m
+[0;32mI (1476197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (1485827) actuator-node: No sensor data for 1222 seconds[0m
+[0;32mI (1486197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (1495827) actuator-node: No sensor data for 1232 seconds[0m
+[0;32mI (1496197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (1505827) actuator-node: No sensor data for 1242 seconds[0m
+[0;32mI (1506197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1512187) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (1513477) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;33mW (1515827) actuator-node: No sensor data for 1252 seconds[0m
+[0;32mI (1516197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (1525827) actuator-node: No sensor data for 1262 seconds[0m
+[0;32mI (1526197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (1535827) actuator-node: No sensor data for 1272 seconds[0m
+[0;32mI (1536197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (1545827) actuator-node: No sensor data for 1282 seconds[0m
+[0;32mI (1546197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (1555827) actuator-node: No sensor data for 1292 seconds[0m
+[0;32mI (1556197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (1565827) actuator-node: No sensor data for 1302 seconds[0m
+[0;32mI (1566197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1572187) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (1573637) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;33mW (1575827) actuator-node: No sensor data for 1312 seconds[0m
+[0;32mI (1576197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (1585827) actuator-node: No sensor data for 1322 seconds[0m
+[0;32mI (1586197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (1595827) actuator-node: No sensor data for 1332 seconds[0m
+[0;32mI (1596197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (1605827) actuator-node: No sensor data for 1342 seconds[0m
+[0;32mI (1606197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (1615827) actuator-node: No sensor data for 1352 seconds[0m
+[0;32mI (1616197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (1625827) actuator-node: No sensor data for 1362 seconds[0m
+[0;32mI (1626197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1632187) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (1633277) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;33mW (1635827) actuator-node: No sensor data for 1372 seconds[0m
+[0;32mI (1636197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (1645827) actuator-node: No sensor data for 1382 seconds[0m
+[0;32mI (1646197) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (1647207) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1647207) actuator-node: Humidity updated: 58.36 %[0m
+[0;32mI (1647307) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1647307) actuator-node: Temperature updated: 21.20 °C[0m
+[0;32mI (1656197) actuator-node: Actuator OFF (temp=21.20, hum=58.36)[0m
+[0;32mI (1656777) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1656777) actuator-node: Humidity updated: 58.32 %[0m
+[0;32mI (1656937) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1656937) actuator-node: Temperature updated: 21.20 °C[0m
+[0;32mI (1666197) actuator-node: Actuator OFF (temp=21.20, hum=58.32)[0m
+[0;32mI (1667077) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1667077) actuator-node: Humidity updated: 58.43 %[0m
+[0;32mI (1667287) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1667287) actuator-node: Temperature updated: 21.23 °C[0m
+[0;32mI (1676197) actuator-node: Actuator OFF (temp=21.23, hum=58.43)[0m
+[0;32mI (1677307) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1677307) actuator-node: Humidity updated: 58.53 %[0m
+[0;32mI (1677527) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1677527) actuator-node: Temperature updated: 21.23 °C[0m
+[0;32mI (1686197) actuator-node: Actuator OFF (temp=21.23, hum=58.53)[0m
+[0;32mI (1687557) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1687557) actuator-node: Humidity updated: 58.66 %[0m
+[0;32mI (1687627) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1687627) actuator-node: Temperature updated: 21.23 °C[0m
+[0;32mI (1692187) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (1693497) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (1696197) actuator-node: Actuator OFF (temp=21.23, hum=58.66)[0m
+[0;32mI (1697797) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1697797) actuator-node: Humidity updated: 58.78 %[0m
+[0;32mI (1697857) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1697857) actuator-node: Temperature updated: 21.23 °C[0m
+[0;32mI (1706197) actuator-node: Actuator OFF (temp=21.23, hum=58.78)[0m
+[0;32mI (1707837) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1707837) actuator-node: Humidity updated: 58.91 %[0m
+[0;32mI (1707897) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1707897) actuator-node: Temperature updated: 21.23 °C[0m
+[0;32mI (1716197) actuator-node: Actuator OFF (temp=21.23, hum=58.91)[0m
+[0;32mI (1718077) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1718077) actuator-node: Humidity updated: 59.09 %[0m
+[0;32mI (1718277) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1718277) actuator-node: Temperature updated: 21.23 °C[0m
+[0;32mI (1726197) actuator-node: Actuator OFF (temp=21.23, hum=59.09)[0m
+[0;32mI (1728307) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1728307) actuator-node: Humidity updated: 59.26 %[0m
+[0;32mI (1728557) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1728557) actuator-node: Temperature updated: 21.23 °C[0m
+[0;32mI (1736197) actuator-node: Actuator OFF (temp=21.23, hum=59.26)[0m
+[0;32mI (1738547) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1738547) actuator-node: Humidity updated: 59.30 %[0m
+[0;32mI (1738607) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1738607) actuator-node: Temperature updated: 21.25 °C[0m
+[0;32mI (1746197) actuator-node: Actuator OFF (temp=21.25, hum=59.30)[0m
+[0;32mI (1748787) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1748787) actuator-node: Humidity updated: 59.39 %[0m
+[0;32mI (1748997) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1748997) actuator-node: Temperature updated: 21.23 °C[0m
+[0;32mI (1752187) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (1753217) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (1756197) actuator-node: Actuator OFF (temp=21.23, hum=59.39)[0m
+[0;32mI (1758827) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1758827) actuator-node: Humidity updated: 59.46 %[0m
+[0;32mI (1759027) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1759027) actuator-node: Temperature updated: 21.23 °C[0m
+[0;32mI (1766197) actuator-node: Actuator OFF (temp=21.23, hum=59.46)[0m
+[0;32mI (1769067) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1769067) actuator-node: Humidity updated: 59.50 %[0m
+[0;32mI (1769267) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1769267) actuator-node: Temperature updated: 21.23 °C[0m
+[0;32mI (1776197) actuator-node: Actuator OFF (temp=21.23, hum=59.50)[0m
+[0;32mI (1779307) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1779307) actuator-node: Humidity updated: 59.59 %[0m
+[0;32mI (1779517) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1779517) actuator-node: Temperature updated: 21.24 °C[0m
+[0;32mI (1786197) actuator-node: Actuator OFF (temp=21.24, hum=59.59)[0m
+[0;32mI (1789547) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1789547) actuator-node: Humidity updated: 59.68 %[0m
+[0;32mI (1789747) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1789747) actuator-node: Temperature updated: 21.23 °C[0m
+[0;32mI (1796197) actuator-node: Actuator OFF (temp=21.23, hum=59.68)[0m
+[0;32mI (1799787) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1799787) actuator-node: Humidity updated: 59.85 %[0m
+[0;32mI (1799867) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1799867) actuator-node: Temperature updated: 21.25 °C[0m
+[0;32mI (1806197) actuator-node: Actuator OFF (temp=21.25, hum=59.85)[0m
+[0;32mI (1810027) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1810027) actuator-node: Humidity updated: 59.88 %[0m
+[0;32mI (1810087) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1810087) actuator-node: Temperature updated: 21.28 °C[0m
+[0;32mI (1812187) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (1813507) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (1816197) actuator-node: Actuator OFF (temp=21.28, hum=59.88)[0m
+[0;32mI (1820057) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1820057) actuator-node: Humidity updated: 59.80 %[0m
+[0;32mI (1820117) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1820117) actuator-node: Temperature updated: 21.27 °C[0m
+[0;32mI (1826197) actuator-node: Actuator OFF (temp=21.27, hum=59.80)[0m
+[0;32mI (1830307) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1830317) actuator-node: Humidity updated: 59.64 %[0m
+[0;32mI (1830497) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1830497) actuator-node: Temperature updated: 21.25 °C[0m
+[0;32mI (1836197) actuator-node: Actuator OFF (temp=21.25, hum=59.64)[0m
+[0;32mI (1840537) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1840537) actuator-node: Humidity updated: 59.65 %[0m
+[0;32mI (1840617) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1840617) actuator-node: Temperature updated: 21.24 °C[0m
+[0;32mI (1846197) actuator-node: Actuator OFF (temp=21.24, hum=59.65)[0m
+[0;32mI (1850777) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1850777) actuator-node: Humidity updated: 59.86 %[0m
+[0;32mI (1850837) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1850837) actuator-node: Temperature updated: 21.24 °C[0m
+[0;32mI (1856197) actuator-node: Actuator OFF (temp=21.24, hum=59.86)[0m
+[0;32mI (1861287) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1861287) actuator-node: Humidity updated: 60.08 %[0m
+[0;32mI (1862257) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1862257) actuator-node: Temperature updated: 21.29 °C[0m
+[0;32mI (1866197) actuator-node: Actuator OFF (temp=21.29, hum=60.08)[0m
+[0;32mI (1871057) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1871057) actuator-node: Humidity updated: 60.21 %[0m
+[0;32mI (1871127) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1871127) actuator-node: Temperature updated: 21.27 °C[0m
+[0;32mI (1872187) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (1873517) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (1876197) actuator-node: Actuator OFF (temp=21.27, hum=60.21)[0m
+[0;32mI (1881297) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1881297) actuator-node: Humidity updated: 60.29 %[0m
+[0;32mI (1881497) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1881497) actuator-node: Temperature updated: 21.28 °C[0m
+[0;32mI (1886197) actuator-node: Actuator OFF (temp=21.28, hum=60.29)[0m
+[0;32mI (1891587) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1891587) actuator-node: Humidity updated: 60.36 %[0m
+[0;32mI (1891947) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1891947) actuator-node: Temperature updated: 21.29 °C[0m
+[0;32mI (1896197) actuator-node: Actuator OFF (temp=21.29, hum=60.36)[0m
+[0;32mI (1901767) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1901767) actuator-node: Humidity updated: 60.36 %[0m
+[0;32mI (1901987) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1901987) actuator-node: Temperature updated: 21.28 °C[0m
+[0;32mI (1906197) actuator-node: Actuator OFF (temp=21.28, hum=60.36)[0m
+[0;32mI (1912007) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1912017) actuator-node: Humidity updated: 60.30 %[0m
+[0;32mI (1912217) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1912217) actuator-node: Temperature updated: 21.24 °C[0m
+[0;32mI (1916197) actuator-node: Actuator OFF (temp=21.24, hum=60.30)[0m

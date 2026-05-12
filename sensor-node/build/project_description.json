@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "sensor-node",
-    "project_version":    "1",
+    "project_version":    "539746c-dirty",
     "project_path":       "/home/paula/sed/esp-workspace/auto-irrigation-system/sensor-node",
     "idf_path":           "/home/paula/sed/esp-idf",
     "build_dir":          "/home/paula/sed/esp-workspace/auto-irrigation-system/sensor-node/build",
@@ -1300,7 +1300,7 @@
             "managed_reqs": [],
             "managed_priv_reqs": [ "esp-idf-lib__i2cdev", "esp-idf-lib__si7021" ],
             "file": "/home/paula/sed/esp-workspace/auto-irrigation-system/sensor-node/build/esp-idf/main/libmain.a",
-            "sources": [ "/home/paula/sed/esp-workspace/auto-irrigation-system/sensor-node/main/sensor-node.c" ],
+            "sources": [ "/home/paula/sed/esp-workspace/auto-irrigation-system/sensor-node/main/sensor-node.c", "/home/paula/sed/esp-workspace/auto-irrigation-system/sensor-node/main/wifi_manager.c", "/home/paula/sed/esp-workspace/auto-irrigation-system/sensor-node/main/mqtt_manager.c", "/home/paula/sed/esp-workspace/auto-irrigation-system/sensor-node/main/sensor_manager.c", "/home/paula/sed/esp-workspace/auto-irrigation-system/sensor-node/main/ota_updates_manager.c" ],
             "include_dirs": [ "." ]
         },
         "mbedtls": {

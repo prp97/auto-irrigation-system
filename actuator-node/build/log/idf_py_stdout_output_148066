@@ -1,0 +1,95 @@
+Command: ninja flash
+[1/10] Performing build step for 'bootloader'
+[1/1] cd /home/paula/sed/esp-workspace/auto-irrigation-system/actuator-node/build/bootloader/esp-idf/esptool_py && /home/paula/.espressif/python_env/idf5.5_py3.12_env/bin/python /home/paula/sed/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /home/paula/sed/esp-workspace/auto-irrigation-system/actuator-node/build/bootloader/bootloader.bin
+Bootloader binary size 0x6680 bytes. 0x980 bytes (8%) free.
+[2/10] No install step for 'bootloader'
+[3/10] Completed 'bootloader'
+[4/10] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/actuator_manager.c.obj
+[5/10] Linking C static library esp-idf/main/libmain.a
+[6/10] Generating esp-idf/esp_system/ld/sections.ld
+[7/10] Linking CXX executable actuator-node.elf
+[8/10] Generating binary image from built executable
+esptool.py v4.12.dev1
+Creating esp32 image...
+Merged 2 ELF sections
+Successfully created esp32 image.
+Generated /home/paula/sed/esp-workspace/auto-irrigation-system/actuator-node/build/actuator-node.bin
+[9/10] cd /home/paula/sed/esp-workspace/auto-irrigation-system/actuator-node/build/esp-idf/esptool_py && /home/paula/.espressif/python_env/idf5.5_py3.12_env/bin/python /home/paula/sed/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/paula/sed/esp-workspace/auto-irrigation-system/actuator-node/build/partition_table/partition-table.bin /home/paula/sed/esp-workspace/auto-irrigation-system/actuator-node/build/actuator-node.bin
+actuator-node.bin binary size 0xf1ac0 bytes. Smallest app partition is 0x177000 bytes. 0x85540 bytes (36%) free.
+[9/10] cd /home/paula/sed/esp-idf/components/esptool_py && /usr/bin/cmake -D IDF_PATH=/home/paula/sed/esp-idf -D "SERIAL_TOOL=/home/paula/.espressif/python_env/idf5.5_py3.12_env/bin/python;;/home/paula/sed/esp-idf/components/esptool_py/esptool/esptool.py;--chip;esp32" -D "SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args" -D WORKING_DIRECTORY=/home/paula/sed/esp-workspace/auto-irrigation-system/actuator-node/build -P /home/paula/sed/esp-idf/components/esptool_py/run_serial_tool.cmake
+esptool.py --chip esp32 -p /dev/ttyUSB0 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 4MB 0x1000 bootloader/bootloader.bin 0x10000 actuator-node.bin 0x8000 partition_table/partition-table.bin 0xd000 ota_data_initial.bin
+esptool.py v4.12.dev1
+Serial port /dev/ttyUSB0
+Connecting....
+Chip is ESP32-D0WD-V3 (revision v3.0)
+Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
+Crystal is 40MHz
+MAC: 94:3c:c6:cd:c5:cc
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00001000 to 0x00007fff...
+Flash will be erased from 0x00010000 to 0x00101fff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+Flash will be erased from 0x0000d000 to 0x0000efff...
+SHA digest in image updated
+Compressed 26240 bytes to 16594...
+Writing at 0x00001000... (50 %)
+Writing at 0x00007562... (100 %)
+Wrote 26240 bytes (16594 compressed) at 0x00001000 in 0.8 seconds (effective 256.1 kbit/s)...
+Hash of data verified.
+Compressed 989888 bytes to 617192...
+Writing at 0x00010000... (2 %)
+Writing at 0x0001ca0f... (5 %)
+Writing at 0x00029c24... (7 %)
+Writing at 0x00031da3... (10 %)
+Writing at 0x0003c9b0... (13 %)
+Writing at 0x00042a7a... (15 %)
+Writing at 0x00048325... (18 %)
+Writing at 0x0004dd30... (21 %)
+Writing at 0x00053a1e... (23 %)
+Writing at 0x000595b1... (26 %)
+Writing at 0x0005f7fc... (28 %)
+Writing at 0x000654cb... (31 %)
+Writing at 0x0006aff2... (34 %)
+Writing at 0x00070e8e... (36 %)
+Writing at 0x0007760b... (39 %)
+Writing at 0x0007d50a... (42 %)
+Writing at 0x000832b3... (44 %)
+Writing at 0x00088787... (47 %)
+Writing at 0x0008dafa... (50 %)
+Writing at 0x00093800... (52 %)
+Writing at 0x000993d3... (55 %)
+Writing at 0x0009ebd4... (57 %)
+Writing at 0x000a4537... (60 %)
+Writing at 0x000aa244... (63 %)
+Writing at 0x000afc70... (65 %)
+Writing at 0x000b5555... (68 %)
+Writing at 0x000bb271... (71 %)
+Writing at 0x000c0ffb... (73 %)
+Writing at 0x000c6870... (76 %)
+Writing at 0x000cc607... (78 %)
+Writing at 0x000d210d... (81 %)
+Writing at 0x000d7aee... (84 %)
+Writing at 0x000de06e... (86 %)
+Writing at 0x000e6b08... (89 %)
+Writing at 0x000ec933... (92 %)
+Writing at 0x000f2495... (94 %)
+Writing at 0x000f87ac... (97 %)
+Writing at 0x000fdb15... (100 %)
+Wrote 989888 bytes (617192 compressed) at 0x00010000 in 15.0 seconds (effective 528.2 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 128...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (128 compressed) at 0x00008000 in 0.1 seconds (effective 427.2 kbit/s)...
+Hash of data verified.
+Compressed 8192 bytes to 31...
+Writing at 0x0000d000... (100 %)
+Wrote 8192 bytes (31 compressed) at 0x0000d000 in 0.1 seconds (effective 518.9 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...

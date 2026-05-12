@@ -1,0 +1,161 @@
+Command: /home/paula/.espressif/python_env/idf5.5_py3.12_env/bin/python /home/paula/sed/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/paula/sed/esp-workspace/auto-irrigation-system/actuator-node/build/actuator-node.elf /home/paula/sed/esp-workspace/auto-irrigation-system/actuator-node/build/bootloader/bootloader.elf -m '/home/paula/.espressif/python_env/idf5.5_py3.12_env/bin/python' '/home/paula/sed/esp-idf/tools/idf.py' '-p' '/dev/ttyUSB0'
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6280
+load:0x40078000,len:15944
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (27) boot: ESP-IDF v5.5.3 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time May 12 2026 11:58:09[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v3.0[0m
+[0;32mI (32) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (35) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (42) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00004000[0m
+[0;32mI (62) boot:  1 otadata          OTA data         01 00 0000d000 00002000[0m
+[0;32mI (69) boot:  2 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (75) boot:  3 ota_0            OTA app          00 10 00010000 00177000[0m
+[0;32mI (82) boot:  4 ota_1            OTA app          00 11 00190000 00177000[0m
+[0;32mI (88) boot: End of partition table[0m
+[0;32mI (92) boot: No factory image, trying OTA 0[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=264a8h (156840) map[0m
+[0;32mI (157) esp_image: segment 1: paddr=000364d0 vaddr=3ffb0000 size=04378h ( 17272) load[0m
+[0;32mI (163) esp_image: segment 2: paddr=0003a850 vaddr=40080000 size=057c8h ( 22472) load[0m
+[0;32mI (172) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=ae57ch (714108) map[0m
+[0;32mI (417) esp_image: segment 4: paddr=000ee5a4 vaddr=400857c8 size=13010h ( 77840) load[0m
+[0;32mI (447) esp_image: segment 5: paddr=001015bc vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (459) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (508) boot: Set actual ota_seq=1 in otadata[0][0m
+[0;32mI (508) boot: Disabling RNG early entropy source...[0m
+[0;32mI (518) cpu_start: Multicore app[0m
+[0;32mI (526) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (527) cpu_start: Pro cpu start user code[0m
+[0;32mI (527) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (529) app_init: Application information:[0m
+[0;32mI (532) app_init: Project name:     actuator-node[0m
+[0;32mI (537) app_init: App version:      539746c-dirty[0m
+[0;32mI (541) app_init: Compile time:     May 12 2026 11:58:03[0m
+[0;32mI (546) app_init: ELF file SHA256:  1c14ffd80...[0m
+[0;32mI (551) app_init: ESP-IDF:          v5.5.3[0m
+[0;32mI (554) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (558) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (562) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (566) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (573) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (577) heap_init: At 3FFB8ED0 len 00027130 (156 KiB): DRAM[0m
+[0;32mI (583) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (588) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (594) heap_init: At 400987D8 len 00007828 (30 KiB): IRAM[0m
+[0;32mI (600) spi_flash: detected chip: generic[0m
+[0;32mI (603) spi_flash: flash io: dio[0m
+[0;32mI (607) main_task: Started on CPU0[0m
+[0;32mI (617) main_task: Calling app_main()[0m
+--- SYSTEM STARTED ---
+Firmware Version: a_1.0.8
+Running from partition: ota_0
+Offset Address: 0x00010000
+[0;32mI (657) wifi:wifi driver task: 3ffc1760, prio:23, stack:6656, core=0[0m
+[0;32mI (667) wifi:wifi firmware version: 4df78f2[0m
+[0;32mI (667) wifi:wifi certification version: v7.0[0m
+[0;32mI (667) wifi:config NVS flash: enabled[0m
+[0;32mI (667) wifi:config nano formatting: disabled[0m
+[0;32mI (667) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (677) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (677) wifi:Init management short buffer num: 32[0m
+[0;32mI (687) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (687) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (697) wifi:Init static rx buffer num: 10[0m
+[0;32mI (697) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (697) wifi_init: rx ba win: 6[0m
+[0;32mI (707) wifi_init: accept mbox: 6[0m
+[0;32mI (707) wifi_init: tcpip mbox: 32[0m
+[0;32mI (707) wifi_init: udp mbox: 6[0m
+[0;32mI (707) wifi_init: tcp mbox: 6[0m
+[0;32mI (717) wifi_init: tcp tx win: 5760[0m
+[0;32mI (717) wifi_init: tcp rx win: 5760[0m
+[0;32mI (717) wifi_init: tcp mss: 1440[0m
+[0;32mI (727) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (727) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (727) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (737) phy_init: phy_version 4863,a3a4459,Oct 28 2025,14:30:06[0m
+[0;32mI (817) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (877) wifi:mode : sta (94:3c:c6:cd:c5:cc)[0m
+[0;32mI (887) wifi:enable tsf[0m
+[0;32mI (887) WIFI: Connecting to Paula...[0m
+[0;32mI (897) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (897) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (907) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (917) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (997) wifi:connected with Paula, aid = 2, channel 11, BW20, bssid = 8a:04:de:aa:05:40[0m
+[0;32mI (997) wifi:security: WPA2-PSK, phy: bgn, rssi: -24[0m
+[0;32mI (997) wifi:pm start, type: 1[0m
+
+[0;32mI (997) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1007) wifi:<ba-add>idx:0 (ifx:0, 8a:04:de:aa:05:40), tid:0, ssn:0, winSize:64[0m
+[0;32mI (1087) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (1087) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (2037) esp_netif_handlers: sta ip: 10.12.62.244, mask: 255.255.255.0, gw: 10.12.62.234[0m
+[0;32mI (10887) MENDER: Starting Mender client with MAC: 94:3c:c6:cd:c5:cc[0m
+[0;32mI (10887) mender: ./external/mender-mcu-client/platform/storage/esp-idf/nvs/src/mender-storage.c (157): Deployment data not available[0m
+[0;32mI (12677) MENDER: Authentication successful with the server[0m
+[0;32mI (12677) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (13897) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (15887) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (15887) main_task: Returned from app_main()[0m
+[0;32mI (16557) actuator-node: Actuator node connected to Broker[0m
+[0;32mI (26567) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (33197) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (33197) actuator-node: Humidity received: 52.44[0m
+[0;32mI (33347) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (33357) actuator-node: Temperature received: 20.63[0m
+[0;32mI (36567) actuator-node: Actuator OFF (temp=20.63, hum=52.44)[0m
+[0;32mI (43387) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (43387) actuator-node: Humidity received: 52.44[0m
+[0;32mI (43587) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (43597) actuator-node: Temperature received: 20.64[0m
+[0;32mI (46567) actuator-node: Actuator OFF (temp=20.64, hum=52.44)[0m
+[0;32mI (53627) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (53627) actuator-node: Humidity received: 52.48[0m
+[0;32mI (53827) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (53827) actuator-node: Temperature received: 20.64[0m
+[0;32mI (56567) actuator-node: Actuator OFF (temp=20.64, hum=52.48)[0m
+[0;32mI (66567) actuator-node: Actuator OFF (temp=20.64, hum=52.48)[0m
+[0;32mI (72677) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (74117) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (76567) actuator-node: Actuator OFF (temp=20.64, hum=52.48)[0m
+[0;32mI (86567) actuator-node: Actuator OFF (temp=20.64, hum=52.48)[0m
+[0;32mI (96567) actuator-node: Actuator OFF (temp=20.64, hum=52.48)[0m
+[0;32mI (106567) actuator-node: Actuator OFF (temp=20.64, hum=52.48)[0m
+[0;32mI (116567) actuator-node: Actuator OFF (temp=20.64, hum=52.48)[0m
+[0;32mI (126567) actuator-node: Actuator OFF (temp=20.64, hum=52.48)[0m
+[0;32mI (132677) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (134047) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (136567) actuator-node: Actuator OFF (temp=20.64, hum=52.48)[0m
+[0;32mI (146567) actuator-node: Actuator OFF (temp=20.64, hum=52.48)[0m
+[0;32mI (156567) actuator-node: Actuator OFF (temp=20.64, hum=52.48)[0m
+[0;32mI (166567) actuator-node: Actuator OFF (temp=20.64, hum=52.48)[0m
+[0;32mI (176567) actuator-node: Actuator OFF (temp=20.64, hum=52.48)[0m
+[0;32mI (186567) actuator-node: Actuator OFF (temp=20.64, hum=52.48)[0m
+[0;32mI (192677) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (194127) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (196567) actuator-node: Actuator OFF (temp=20.64, hum=52.48)[0m
+[0;32mI (206567) actuator-node: Actuator OFF (temp=20.64, hum=52.48)[0m
+[0;32mI (216567) actuator-node: Actuator OFF (temp=20.64, hum=52.48)[0m
+[0;32mI (226567) actuator-node: Actuator OFF (temp=20.64, hum=52.48)[0m
+[0;32mI (236567) actuator-node: Actuator OFF (temp=20.64, hum=52.48)[0m
+[0;32mI (246567) actuator-node: Actuator OFF (temp=20.64, hum=52.48)[0m
+[0;32mI (252677) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (254127) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (256567) actuator-node: Actuator OFF (temp=20.64, hum=52.48)[0m
+[0;32mI (266567) actuator-node: Actuator OFF (temp=20.64, hum=52.48)[0m
+[0;32mI (276567) actuator-node: Actuator OFF (temp=20.64, hum=52.48)[0m
+[0;32mI (286567) actuator-node: Actuator OFF (temp=20.64, hum=52.48)[0m
+[0;32mI (296567) actuator-node: Actuator OFF (temp=20.64, hum=52.48)[0m

@@ -1,0 +1,1107 @@
+Command: /home/paula/.espressif/python_env/idf5.5_py3.12_env/bin/python /home/paula/sed/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/paula/sed/esp-workspace/auto-irrigation-system/actuator-node/build/actuator-node.elf /home/paula/sed/esp-workspace/auto-irrigation-system/actuator-node/build/bootloader/bootloader.elf -m '/home/paula/.espressif/python_env/idf5.5_py3.12_env/bin/python' '/home/paula/sed/esp-idf/tools/idf.py' '-p' '/dev/ttyUSB0'
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6280
+load:0x40078000,len:15944
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (27) boot: ESP-IDF v5.5.3 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time May 12 2026 11:58:09[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v3.0[0m
+[0;32mI (32) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (35) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (42) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00004000[0m
+[0;32mI (62) boot:  1 otadata          OTA data         01 00 0000d000 00002000[0m
+[0;32mI (69) boot:  2 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (75) boot:  3 ota_0            OTA app          00 10 00010000 00177000[0m
+[0;32mI (82) boot:  4 ota_1            OTA app          00 11 00190000 00177000[0m
+[0;32mI (88) boot: End of partition table[0m
+[0;32mI (92) boot: No factory image, trying OTA 0[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=26618h (157208) map[0m
+[0;32mI (157) esp_image: segment 1: paddr=00036640 vaddr=3ffb0000 size=04378h ( 17272) load[0m
+[0;32mI (163) esp_image: segment 2: paddr=0003a9c0 vaddr=40080000 size=05658h ( 22104) load[0m
+[0;32mI (172) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=ae7d0h (714704) map[0m
+[0;32mI (417) esp_image: segment 4: paddr=000ee7f8 vaddr=40085658 size=13180h ( 78208) load[0m
+[0;32mI (447) esp_image: segment 5: paddr=00101980 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (460) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (513) boot: Set actual ota_seq=1 in otadata[0][0m
+[0;32mI (513) boot: Disabling RNG early entropy source...[0m
+[0;32mI (523) cpu_start: Multicore app[0m
+[0;32mI (531) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (531) cpu_start: Pro cpu start user code[0m
+[0;32mI (531) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (533) app_init: Application information:[0m
+[0;32mI (537) app_init: Project name:     actuator-node[0m
+[0;32mI (541) app_init: App version:      539746c-dirty[0m
+[0;32mI (546) app_init: Compile time:     May 12 2026 11:58:03[0m
+[0;32mI (551) app_init: ELF file SHA256:  608799f7b...[0m
+[0;32mI (555) app_init: ESP-IDF:          v5.5.3[0m
+[0;32mI (559) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (563) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (567) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (571) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (577) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (582) heap_init: At 3FFB8EF8 len 00027108 (156 KiB): DRAM[0m
+[0;32mI (587) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (592) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (598) heap_init: At 400987D8 len 00007828 (30 KiB): IRAM[0m
+[0;32mI (605) spi_flash: detected chip: generic[0m
+[0;32mI (607) spi_flash: flash io: dio[0m
+[0;32mI (611) main_task: Started on CPU0[0m
+[0;32mI (621) main_task: Calling app_main()[0m
+--- SYSTEM STARTED ---
+Firmware Version: a_1.0.0
+Running from partition: ota_0
+Offset Address: 0x00010000
+[0;32mI (661) wifi:wifi driver task: 3ffc17e0, prio:23, stack:6656, core=0[0m
+[0;32mI (671) wifi:wifi firmware version: 4df78f2[0m
+[0;32mI (671) wifi:wifi certification version: v7.0[0m
+[0;32mI (671) wifi:config NVS flash: enabled[0m
+[0;32mI (671) wifi:config nano formatting: disabled[0m
+[0;32mI (671) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (681) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (681) wifi:Init management short buffer num: 32[0m
+[0;32mI (691) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (691) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (701) wifi:Init static rx buffer num: 10[0m
+[0;32mI (701) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (701) wifi_init: rx ba win: 6[0m
+[0;32mI (711) wifi_init: accept mbox: 6[0m
+[0;32mI (711) wifi_init: tcpip mbox: 32[0m
+[0;32mI (711) wifi_init: udp mbox: 6[0m
+[0;32mI (711) wifi_init: tcp mbox: 6[0m
+[0;32mI (721) wifi_init: tcp tx win: 5760[0m
+[0;32mI (721) wifi_init: tcp rx win: 5760[0m
+[0;32mI (721) wifi_init: tcp mss: 1440[0m
+[0;32mI (731) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (731) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (741) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (741) phy_init: phy_version 4863,a3a4459,Oct 28 2025,14:30:06[0m
+[0;32mI (821) wifi:mode : sta (94:3c:c6:cd:c5:cc)[0m
+[0;32mI (821) wifi:enable tsf[0m
+[0;32mI (831) WIFI: Connecting to Paula...[0m
+[0;32mI (851) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (851) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (871) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (881) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (951) wifi:connected with Paula, aid = 1, channel 1, BW20, bssid = 8a:04:de:aa:05:40[0m
+[0;32mI (951) wifi:security: WPA2-PSK, phy: bgn, rssi: -16[0m
+[0;32mI (951) wifi:pm start, type: 1[0m
+
+[0;32mI (951) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (961) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (971) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (971) wifi:<ba-add>idx:0 (ifx:0, 8a:04:de:aa:05:40), tid:0, ssn:0, winSize:64[0m
+[0;32mI (2001) esp_netif_handlers: sta ip: 10.12.62.244, mask: 255.255.255.0, gw: 10.12.62.234[0m
+[0;32mI (2001) sensor-node: Connected! IP: 10.12.62.244[0m
+[0;32mI (10831) MENDER: Starting Mender client with MAC: 94:3c:c6:cd:c5:cc[0m
+[0;32mI (10831) mender: ./external/mender-mcu-client/platform/storage/esp-idf/nvs/src/mender-storage.c (157): Deployment data not available[0m
+[0;32mI (12721) MENDER: Authentication successful with the server[0m
+[0;32mI (12731) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (13881) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (15831) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (15831) main_task: Returned from app_main()[0m
+[0;32mI (16531) actuator-node: Actuator node connected to Broker[0m
+[0;32mI (26541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (36541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (46541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (56541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (66541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (72731) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (74091) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (76541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (86541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (96541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (106541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (116541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (126541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (132731) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (133911) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (136541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (146541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (156541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (166541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (176541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (186541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (192731) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (193891) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (196541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (206541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (216541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (226541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (236541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (246541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (252731) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (254721) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (256541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (266541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (276541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (286541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (296541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (306541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (312731) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (314111) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (316541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (326541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (336541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (346541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (356541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (366541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (372731) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (373861) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (376541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (386541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (396541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (406541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (416541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (426541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (432731) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (434131) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (436541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (446541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (456541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (466541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (476541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (486541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (492731) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (493921) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (496541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (506541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (516541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (526541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (536541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (546541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (552731) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (553901) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (556541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (566541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (576541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (586541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (596541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (606541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (612731) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (614351) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (616541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (626541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (636541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (646541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (656541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (666541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (672731) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (674301) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (676541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (686541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (696541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (706541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (716541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (726541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (732731) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (733951) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (736541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (746541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (752781) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/actuator/hum[0m
+[0;32mI (752781) actuator-node: Humidity threshold set to: 57.00 %[0m
+[0;32mI (756481) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (756481) actuator-node: Humidity updated: 54.44 %[0m
+[0;32mI (756541) actuator-node: Actuator ON (temp=-1.00, hum=54.44)[0m
+[0;32mI (756671) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (756681) actuator-node: Temperature updated: 21.25 °C[0m
+[0;32mI (766311) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (766311) actuator-node: Humidity updated: 54.10 %[0m
+[0;32mI (766531) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (766531) actuator-node: Temperature updated: 21.32 °C[0m
+[0;32mI (766541) actuator-node: Actuator ON (temp=21.32, hum=54.10)[0m
+[0;32mI (776541) actuator-node: Actuator ON (temp=21.32, hum=54.10)[0m
+[0;32mI (776571) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (776571) actuator-node: Humidity updated: 53.56 %[0m
+[0;32mI (777051) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (777051) actuator-node: Temperature updated: 21.37 °C[0m
+[0;32mI (786541) actuator-node: Actuator ON (temp=21.37, hum=53.56)[0m
+[0;32mI (786551) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (786551) actuator-node: Humidity updated: 53.04 %[0m
+[0;32mI (786991) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (786991) actuator-node: Temperature updated: 21.44 °C[0m
+[0;32mI (792731) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (794161) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (796541) actuator-node: Actuator ON (temp=21.44, hum=53.04)[0m
+[0;32mI (796821) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (796821) actuator-node: Humidity updated: 52.60 %[0m
+[0;32mI (796891) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (796891) actuator-node: Temperature updated: 21.46 °C[0m
+[0;32mI (806541) actuator-node: Actuator ON (temp=21.46, hum=52.60)[0m
+[0;32mI (806961) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (806961) actuator-node: Humidity updated: 52.18 %[0m
+[0;32mI (807261) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (807261) actuator-node: Temperature updated: 21.50 °C[0m
+[0;32mI (816541) actuator-node: Actuator ON (temp=21.50, hum=52.18)[0m
+[0;32mI (817301) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (817301) actuator-node: Humidity updated: 51.82 %[0m
+[0;32mI (817511) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (817511) actuator-node: Temperature updated: 21.54 °C[0m
+[0;32mI (826541) actuator-node: Actuator ON (temp=21.54, hum=51.82)[0m
+[0;32mI (827541) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (827551) actuator-node: Humidity updated: 51.52 %[0m
+[0;32mI (827741) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (827741) actuator-node: Temperature updated: 21.55 °C[0m
+[0;32mI (833371) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/actuator/hum[0m
+[0;32mI (833381) actuator-node: Humidity threshold set to: 7.00 %[0m
+[0;32mI (836541) actuator-node: Actuator OFF (temp=21.55, hum=51.52)[0m
+[0;32mI (837601) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (837601) actuator-node: Humidity updated: 51.26 %[0m
+[0;32mI (837781) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (837791) actuator-node: Temperature updated: 21.60 °C[0m
+[0;32mI (846541) actuator-node: Actuator OFF (temp=21.60, hum=51.26)[0m
+[0;32mI (847821) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (847821) actuator-node: Humidity updated: 51.02 %[0m
+[0;32mI (848041) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (848041) actuator-node: Temperature updated: 21.62 °C[0m
+[0;32mI (852731) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (854171) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (856541) actuator-node: Actuator OFF (temp=21.62, hum=51.02)[0m
+[0;32mI (858061) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (858061) actuator-node: Humidity updated: 50.83 %[0m
+[0;32mI (858481) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (858491) actuator-node: Temperature updated: 21.63 °C[0m
+[0;32mI (866541) actuator-node: Actuator OFF (temp=21.63, hum=50.83)[0m
+[0;32mI (868291) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (868301) actuator-node: Humidity updated: 50.64 %[0m
+[0;32mI (868501) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (868501) actuator-node: Temperature updated: 21.68 °C[0m
+[0;32mI (876541) actuator-node: Actuator OFF (temp=21.68, hum=50.64)[0m
+[0;32mI (878561) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (878561) actuator-node: Humidity updated: 50.52 %[0m
+[0;32mI (878761) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (878761) actuator-node: Temperature updated: 21.68 °C[0m
+[0;32mI (886541) actuator-node: Actuator OFF (temp=21.68, hum=50.52)[0m
+[0;32mI (888781) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (888781) actuator-node: Humidity updated: 50.41 %[0m
+[0;32mI (888981) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (888981) actuator-node: Temperature updated: 21.68 °C[0m
+[0;32mI (896541) actuator-node: Actuator OFF (temp=21.68, hum=50.41)[0m
+[0;32mI (898811) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (898811) actuator-node: Humidity updated: 50.30 %[0m
+[0;32mI (898881) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (898881) actuator-node: Temperature updated: 21.72 °C[0m
+[0;32mI (906541) actuator-node: Actuator OFF (temp=21.72, hum=50.30)[0m
+[0;32mI (909071) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (909071) actuator-node: Humidity updated: 50.20 %[0m
+[0;32mI (909131) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (909131) actuator-node: Temperature updated: 21.73 °C[0m
+[0;32mI (912731) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (913921) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (916541) actuator-node: Actuator OFF (temp=21.73, hum=50.20)[0m
+[0;32mI (919291) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (919291) actuator-node: Humidity updated: 50.11 %[0m
+[0;32mI (919491) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (919491) actuator-node: Temperature updated: 21.74 °C[0m
+[0;32mI (926541) actuator-node: Actuator OFF (temp=21.74, hum=50.11)[0m
+[0;32mI (929531) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (929531) actuator-node: Humidity updated: 50.03 %[0m
+[0;32mI (929731) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (929741) actuator-node: Temperature updated: 21.75 °C[0m
+[0;32mI (936541) actuator-node: Actuator OFF (temp=21.75, hum=50.03)[0m
+[0;32mI (939771) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (939771) actuator-node: Humidity updated: 49.95 %[0m
+[0;32mI (939851) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (939851) actuator-node: Temperature updated: 21.75 °C[0m
+[0;32mI (946541) actuator-node: Actuator OFF (temp=21.75, hum=49.95)[0m
+[0;32mI (949811) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (949811) actuator-node: Humidity updated: 49.89 %[0m
+[0;32mI (949901) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (949901) actuator-node: Temperature updated: 21.76 °C[0m
+[0;32mI (956541) actuator-node: Actuator OFF (temp=21.76, hum=49.89)[0m
+[0;32mI (960251) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (960251) actuator-node: Humidity updated: 49.83 %[0m
+[0;32mI (960451) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (960451) actuator-node: Temperature updated: 21.77 °C[0m
+[0;32mI (966541) actuator-node: Actuator OFF (temp=21.77, hum=49.83)[0m
+[0;32mI (970291) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (970291) actuator-node: Humidity updated: 49.77 %[0m
+[0;32mI (970491) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (970491) actuator-node: Temperature updated: 21.78 °C[0m
+[0;32mI (972731) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (974391) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (976541) actuator-node: Actuator OFF (temp=21.78, hum=49.77)[0m
+[0;32mI (980521) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (980531) actuator-node: Humidity updated: 49.78 %[0m
+[0;32mI (980731) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (980731) actuator-node: Temperature updated: 21.78 °C[0m
+[0;32mI (986541) actuator-node: Actuator OFF (temp=21.78, hum=49.78)[0m
+[0;32mI (990761) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (990761) actuator-node: Humidity updated: 49.76 %[0m
+[0;32mI (990841) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (990841) actuator-node: Temperature updated: 21.79 °C[0m
+[0;32mI (996541) actuator-node: Actuator OFF (temp=21.79, hum=49.76)[0m
+[0;32mI (1001001) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1001001) actuator-node: Humidity updated: 49.73 %[0m
+[0;32mI (1001211) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1001211) actuator-node: Temperature updated: 21.81 °C[0m
+[0;32mI (1006541) actuator-node: Actuator OFF (temp=21.81, hum=49.73)[0m
+[0;32mI (1011041) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1011041) actuator-node: Humidity updated: 49.69 %[0m
+[0;32mI (1011241) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1011241) actuator-node: Temperature updated: 21.80 °C[0m
+[0;32mI (1016541) actuator-node: Actuator OFF (temp=21.80, hum=49.69)[0m
+[0;32mI (1021281) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1021281) actuator-node: Humidity updated: 49.66 %[0m
+[0;32mI (1021481) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1021491) actuator-node: Temperature updated: 21.79 °C[0m
+[0;32mI (1026541) actuator-node: Actuator OFF (temp=21.79, hum=49.66)[0m
+[0;32mI (1031521) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1031521) actuator-node: Humidity updated: 49.61 %[0m
+[0;32mI (1031721) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1031721) actuator-node: Temperature updated: 21.81 °C[0m
+[0;32mI (1032731) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (1034181) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (1036541) actuator-node: Actuator OFF (temp=21.81, hum=49.61)[0m
+[0;32mI (1041761) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1041761) actuator-node: Humidity updated: 49.58 %[0m
+[0;32mI (1041961) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1041961) actuator-node: Temperature updated: 21.81 °C[0m
+[0;32mI (1046541) actuator-node: Actuator OFF (temp=21.81, hum=49.58)[0m
+[0;32mI (1051801) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1051801) actuator-node: Humidity updated: 49.56 %[0m
+[0;32mI (1052001) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1052001) actuator-node: Temperature updated: 21.81 °C[0m
+[0;32mI (1056541) actuator-node: Actuator OFF (temp=21.81, hum=49.56)[0m
+[1;31mE (1057321) transport_base: tcp_read error, errno=Connection reset by peer[0m
+[1;31mE (1057321) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=104[0m
+[1;31mE (1057331) actuator-node: Error on MQTT stack[0m
+[1;31mE (1057331) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1057341) actuator-node: MQTT disconnected from Broker[0m
+[0;33mW (1057341) actuator-node: Invalidating sensor data[0m
+[0;32mI (1066541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;33mW (1066541) mqtt_client: Publish: Losing qos0 data when client not connected[0m
+[0;32mI (1067971) actuator-node: Actuator node connected to Broker[0m
+[0;32mI (1072271) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1072271) actuator-node: Humidity updated: 49.48 %[0m
+[0;32mI (1072481) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1072481) actuator-node: Temperature updated: 21.83 °C[0m
+[0;32mI (1076541) actuator-node: Actuator OFF (temp=21.83, hum=49.48)[0m
+[0;32mI (1082541) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1082541) actuator-node: Humidity updated: 49.47 %[0m
+[0;32mI (1082721) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1082721) actuator-node: Temperature updated: 21.81 °C[0m
+[0;32mI (1086541) actuator-node: Actuator OFF (temp=21.81, hum=49.47)[0m
+[0;32mI (1092731) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (1092751) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1092761) actuator-node: Humidity updated: 49.48 %[0m
+[0;32mI (1092831) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1092831) actuator-node: Temperature updated: 21.81 °C[0m
+[0;32mI (1093991) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (1096541) actuator-node: Actuator OFF (temp=21.81, hum=49.48)[0m
+[0;32mI (1102791) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1102791) actuator-node: Humidity updated: 49.45 %[0m
+[0;32mI (1102891) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1102891) actuator-node: Temperature updated: 21.84 °C[0m
+[0;32mI (1106541) actuator-node: Actuator OFF (temp=21.84, hum=49.45)[0m
+[0;32mI (1113261) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1113261) actuator-node: Humidity updated: 49.45 %[0m
+[0;32mI (1113641) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1113651) actuator-node: Temperature updated: 21.84 °C[0m
+[0;32mI (1116541) actuator-node: Actuator OFF (temp=21.84, hum=49.45)[0m
+[0;32mI (1123271) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1123271) actuator-node: Humidity updated: 49.44 %[0m
+[0;32mI (1123341) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1123341) actuator-node: Temperature updated: 21.82 °C[0m
+[0;32mI (1126541) actuator-node: Actuator OFF (temp=21.82, hum=49.44)[0m
+[0;32mI (1133511) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1133511) actuator-node: Humidity updated: 49.43 %[0m
+[0;32mI (1133711) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1133711) actuator-node: Temperature updated: 21.81 °C[0m
+[0;32mI (1136541) actuator-node: Actuator OFF (temp=21.81, hum=49.43)[0m
+[0;32mI (1143961) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1143961) actuator-node: Humidity updated: 49.44 %[0m
+[0;32mI (1144161) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1144161) actuator-node: Temperature updated: 21.84 °C[0m
+[0;32mI (1146541) actuator-node: Actuator OFF (temp=21.84, hum=49.44)[0m
+[0;32mI (1152731) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (1153781) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1153791) actuator-node: Humidity updated: 49.41 %[0m
+[0;32mI (1153871) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1153871) actuator-node: Temperature updated: 21.84 °C[0m
+[0;32mI (1153951) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (1156541) actuator-node: Actuator OFF (temp=21.84, hum=49.41)[0m
+[0;32mI (1164021) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1164021) actuator-node: Humidity updated: 49.42 %[0m
+[0;32mI (1164231) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1164231) actuator-node: Temperature updated: 21.82 °C[0m
+[0;32mI (1166541) actuator-node: Actuator OFF (temp=21.82, hum=49.42)[0m
+[0;32mI (1174291) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1174291) actuator-node: Humidity updated: 49.42 %[0m
+[0;32mI (1174361) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1174361) actuator-node: Temperature updated: 21.84 °C[0m
+[0;32mI (1176541) actuator-node: Actuator OFF (temp=21.84, hum=49.42)[0m
+[0;32mI (1184501) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1184501) actuator-node: Humidity updated: 49.40 %[0m
+[0;32mI (1184601) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1184611) actuator-node: Temperature updated: 21.82 °C[0m
+[0;32mI (1186541) actuator-node: Actuator OFF (temp=21.82, hum=49.40)[0m
+[0;32mI (1194751) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1194751) actuator-node: Humidity updated: 49.42 %[0m
+[0;32mI (1194951) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1194951) actuator-node: Temperature updated: 21.85 °C[0m
+[0;32mI (1196541) actuator-node: Actuator OFF (temp=21.85, hum=49.42)[0m
+[0;32mI (1204981) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1204981) actuator-node: Humidity updated: 49.42 %[0m
+[0;32mI (1205211) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1205211) actuator-node: Temperature updated: 21.83 °C[0m
+[0;32mI (1206541) actuator-node: Actuator OFF (temp=21.83, hum=49.42)[0m
+[0;32mI (1212731) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (1214001) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (1215021) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1215021) actuator-node: Humidity updated: 49.44 %[0m
+[0;32mI (1215241) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1215251) actuator-node: Temperature updated: 21.85 °C[0m
+[0;32mI (1216541) actuator-node: Actuator OFF (temp=21.85, hum=49.44)[0m
+[0;32mI (1225261) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1225261) actuator-node: Humidity updated: 49.39 %[0m
+[0;32mI (1225331) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1225341) actuator-node: Temperature updated: 21.84 °C[0m
+[0;32mI (1226541) actuator-node: Actuator OFF (temp=21.84, hum=49.39)[0m
+[0;32mI (1235501) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1235501) actuator-node: Humidity updated: 49.43 %[0m
+[0;32mI (1235711) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1235711) actuator-node: Temperature updated: 21.84 °C[0m
+[0;32mI (1236541) actuator-node: Actuator OFF (temp=21.84, hum=49.43)[0m
+[0;32mI (1245591) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1245591) actuator-node: Humidity updated: 49.45 %[0m
+[0;32mI (1245941) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1245941) actuator-node: Temperature updated: 21.85 °C[0m
+[0;32mI (1246541) actuator-node: Actuator OFF (temp=21.85, hum=49.45)[0m
+[0;32mI (1255981) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1255981) actuator-node: Humidity updated: 49.43 %[0m
+[0;32mI (1256051) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1256051) actuator-node: Temperature updated: 21.88 °C[0m
+[0;32mI (1256541) actuator-node: Actuator OFF (temp=21.88, hum=49.43)[0m
+[0;32mI (1266011) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1266011) actuator-node: Humidity updated: 49.43 %[0m
+[0;32mI (1266221) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1266221) actuator-node: Temperature updated: 21.87 °C[0m
+[0;32mI (1266541) actuator-node: Actuator OFF (temp=21.87, hum=49.43)[0m
+[0;32mI (1272731) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (1273801) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (1276461) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1276461) actuator-node: Humidity updated: 49.43 %[0m
+[0;32mI (1276541) actuator-node: Actuator OFF (temp=21.87, hum=49.43)[0m
+[0;32mI (1276661) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1276671) actuator-node: Temperature updated: 21.88 °C[0m
+[0;32mI (1286491) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1286491) actuator-node: Humidity updated: 49.45 %[0m
+[0;32mI (1286541) actuator-node: Actuator OFF (temp=21.88, hum=49.45)[0m
+[0;32mI (1286641) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1286641) actuator-node: Temperature updated: 21.85 °C[0m
+[0;32mI (1296541) actuator-node: Actuator OFF (temp=21.85, hum=49.45)[0m
+[0;32mI (1296571) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1296581) actuator-node: Humidity updated: 49.46 %[0m
+[0;32mI (1296941) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1296941) actuator-node: Temperature updated: 21.85 °C[0m
+[0;32mI (1306541) actuator-node: Actuator OFF (temp=21.85, hum=49.46)[0m
+[0;32mI (1306771) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1306771) actuator-node: Humidity updated: 49.47 %[0m
+[0;32mI (1306981) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1306981) actuator-node: Temperature updated: 21.89 °C[0m
+[0;32mI (1316541) actuator-node: Actuator OFF (temp=21.89, hum=49.47)[0m
+[0;32mI (1317011) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1317011) actuator-node: Humidity updated: 49.51 %[0m
+[0;32mI (1317211) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1317221) actuator-node: Temperature updated: 21.84 °C[0m
+[0;32mI (1326541) actuator-node: Actuator OFF (temp=21.84, hum=49.51)[0m
+[0;32mI (1327251) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1327251) actuator-node: Humidity updated: 49.52 %[0m
+[0;32mI (1327451) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1327451) actuator-node: Temperature updated: 21.88 °C[0m
+[0;32mI (1332731) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (1334221) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (1336541) actuator-node: Actuator OFF (temp=21.88, hum=49.52)[0m
+[0;32mI (1337491) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1337491) actuator-node: Humidity updated: 49.54 %[0m
+[0;32mI (1337701) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1337701) actuator-node: Temperature updated: 21.89 °C[0m
+[0;32mI (1346541) actuator-node: Actuator OFF (temp=21.89, hum=49.54)[0m
+[0;32mI (1347731) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1347731) actuator-node: Humidity updated: 49.57 %[0m
+[0;32mI (1347931) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1347931) actuator-node: Temperature updated: 21.88 °C[0m
+[0;32mI (1356541) actuator-node: Actuator OFF (temp=21.88, hum=49.57)[0m
+[0;32mI (1358791) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1358791) actuator-node: Humidity updated: 49.56 %[0m
+[0;32mI (1358991) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1358991) actuator-node: Temperature updated: 21.89 °C[0m
+[0;32mI (1366541) actuator-node: Actuator OFF (temp=21.89, hum=49.56)[0m
+[0;32mI (1368001) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1368001) actuator-node: Humidity updated: 49.57 %[0m
+[0;32mI (1368211) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1368211) actuator-node: Temperature updated: 21.89 °C[0m
+[0;32mI (1376541) actuator-node: Actuator OFF (temp=21.89, hum=49.57)[0m
+[0;32mI (1378241) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1378251) actuator-node: Humidity updated: 49.57 %[0m
+[0;32mI (1378451) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1378451) actuator-node: Temperature updated: 21.91 °C[0m
+[0;32mI (1386541) actuator-node: Actuator OFF (temp=21.91, hum=49.57)[0m
+[0;32mI (1388481) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1388481) actuator-node: Humidity updated: 49.56 %[0m
+[0;32mI (1388691) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1388691) actuator-node: Temperature updated: 21.93 °C[0m
+[0;32mI (1392731) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (1394221) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (1396541) actuator-node: Actuator OFF (temp=21.93, hum=49.56)[0m
+[0;32mI (1398581) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1398581) actuator-node: Humidity updated: 49.74 %[0m
+[0;32mI (1398921) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1398921) actuator-node: Temperature updated: 21.95 °C[0m
+[0;32mI (1406541) actuator-node: Actuator OFF (temp=21.95, hum=49.74)[0m
+[0;32mI (1408971) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1408971) actuator-node: Humidity updated: 49.97 %[0m
+[0;32mI (1409041) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1409041) actuator-node: Temperature updated: 21.96 °C[0m
+[0;32mI (1416541) actuator-node: Actuator OFF (temp=21.96, hum=49.97)[0m
+[0;32mI (1419001) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1419001) actuator-node: Humidity updated: 50.06 %[0m
+[0;32mI (1419211) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1419211) actuator-node: Temperature updated: 21.98 °C[0m
+[0;32mI (1426541) actuator-node: Actuator OFF (temp=21.98, hum=50.06)[0m
+[0;32mI (1429241) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1429241) actuator-node: Humidity updated: 50.12 %[0m
+[0;32mI (1429451) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1429451) actuator-node: Temperature updated: 22.01 °C[0m
+[0;32mI (1436541) actuator-node: Actuator OFF (temp=22.01, hum=50.12)[0m
+[0;32mI (1439481) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1439481) actuator-node: Humidity updated: 50.12 %[0m
+[0;32mI (1439691) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1439691) actuator-node: Temperature updated: 21.99 °C[0m
+[0;32mI (1446541) actuator-node: Actuator OFF (temp=21.99, hum=50.12)[0m
+[0;32mI (1449721) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1449721) actuator-node: Humidity updated: 50.10 %[0m
+[0;32mI (1449931) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1449931) actuator-node: Temperature updated: 21.99 °C[0m
+[0;32mI (1452731) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (1454231) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (1456541) actuator-node: Actuator OFF (temp=21.99, hum=50.10)[0m
+[0;32mI (1459961) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1459961) actuator-node: Humidity updated: 50.06 %[0m
+[0;32mI (1460051) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1460051) actuator-node: Temperature updated: 21.98 °C[0m
+[0;32mI (1466541) actuator-node: Actuator OFF (temp=21.98, hum=50.06)[0m
+[0;32mI (1470011) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1470011) actuator-node: Humidity updated: 50.03 %[0m
+[0;32mI (1470201) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1470201) actuator-node: Temperature updated: 21.98 °C[0m
+[0;32mI (1476541) actuator-node: Actuator OFF (temp=21.98, hum=50.03)[0m
+[0;32mI (1480231) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1480231) actuator-node: Humidity updated: 50.04 %[0m
+[0;32mI (1480431) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1480441) actuator-node: Temperature updated: 21.99 °C[0m
+[0;32mI (1486541) actuator-node: Actuator OFF (temp=21.99, hum=50.04)[0m
+[0;32mI (1490471) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1490471) actuator-node: Humidity updated: 50.02 %[0m
+[0;32mI (1490671) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1490671) actuator-node: Temperature updated: 21.99 °C[0m
+[0;32mI (1496541) actuator-node: Actuator OFF (temp=21.99, hum=50.02)[0m
+[0;32mI (1500721) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1500721) actuator-node: Humidity updated: 49.98 %[0m
+[0;32mI (1500791) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1500791) actuator-node: Temperature updated: 21.98 °C[0m
+[0;32mI (1506541) actuator-node: Actuator OFF (temp=21.98, hum=49.98)[0m
+[0;32mI (1510951) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1510961) actuator-node: Humidity updated: 49.99 %[0m
+[0;32mI (1511151) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1511161) actuator-node: Temperature updated: 21.97 °C[0m
+[0;32mI (1512731) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (1514031) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (1516541) actuator-node: Actuator OFF (temp=21.97, hum=49.99)[0m
+[0;32mI (1520991) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1520991) actuator-node: Humidity updated: 49.96 %[0m
+[0;32mI (1521051) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1521061) actuator-node: Temperature updated: 21.96 °C[0m
+[0;32mI (1526541) actuator-node: Actuator OFF (temp=21.96, hum=49.96)[0m
+[0;32mI (1531231) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1531231) actuator-node: Humidity updated: 49.97 %[0m
+[0;32mI (1531441) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1531441) actuator-node: Temperature updated: 21.94 °C[0m
+[0;32mI (1536541) actuator-node: Actuator OFF (temp=21.94, hum=49.97)[0m
+[0;32mI (1541461) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1541461) actuator-node: Humidity updated: 49.95 %[0m
+[0;32mI (1541671) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1541671) actuator-node: Temperature updated: 21.96 °C[0m
+[0;32mI (1546541) actuator-node: Actuator OFF (temp=21.96, hum=49.95)[0m
+[0;32mI (1551701) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1551701) actuator-node: Humidity updated: 49.94 %[0m
+[0;32mI (1551911) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1551911) actuator-node: Temperature updated: 21.92 °C[0m
+[0;32mI (1556541) actuator-node: Actuator OFF (temp=21.92, hum=49.94)[0m
+[0;32mI (1561971) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1561971) actuator-node: Humidity updated: 49.94 %[0m
+[0;32mI (1562151) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1562151) actuator-node: Temperature updated: 21.92 °C[0m
+[0;32mI (1566541) actuator-node: Actuator OFF (temp=21.92, hum=49.94)[0m
+[0;32mI (1572181) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1572191) actuator-node: Humidity updated: 49.98 %[0m
+[0;32mI (1572391) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1572391) actuator-node: Temperature updated: 21.92 °C[0m
+[0;32mI (1572731) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (1574031) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (1576541) actuator-node: Actuator OFF (temp=21.92, hum=49.98)[0m
+[0;32mI (1582221) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1582221) actuator-node: Humidity updated: 49.98 %[0m
+[0;32mI (1582431) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1582431) actuator-node: Temperature updated: 21.89 °C[0m
+[0;32mI (1586541) actuator-node: Actuator OFF (temp=21.89, hum=49.98)[0m
+[0;32mI (1592461) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1592461) actuator-node: Humidity updated: 49.98 %[0m
+[0;32mI (1592661) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1592661) actuator-node: Temperature updated: 21.90 °C[0m
+[0;32mI (1596541) actuator-node: Actuator OFF (temp=21.90, hum=49.98)[0m
+[0;32mI (1602701) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1602701) actuator-node: Humidity updated: 49.98 %[0m
+[0;32mI (1602791) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1602791) actuator-node: Temperature updated: 21.89 °C[0m
+[0;32mI (1606541) actuator-node: Actuator OFF (temp=21.89, hum=49.98)[0m
+[0;32mI (1612941) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1612941) actuator-node: Humidity updated: 49.99 %[0m
+[0;32mI (1613141) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1613151) actuator-node: Temperature updated: 21.89 °C[0m
+[0;32mI (1616541) actuator-node: Actuator OFF (temp=21.89, hum=49.99)[0m
+[0;32mI (1623191) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1623191) actuator-node: Humidity updated: 50.00 %[0m
+[0;32mI (1623391) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1623391) actuator-node: Temperature updated: 21.89 °C[0m
+[0;32mI (1626541) actuator-node: Actuator OFF (temp=21.89, hum=50.00)[0m
+[0;32mI (1632731) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (1633221) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1633221) actuator-node: Humidity updated: 50.00 %[0m
+[0;32mI (1633431) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1633431) actuator-node: Temperature updated: 21.88 °C[0m
+[0;32mI (1634241) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (1636541) actuator-node: Actuator OFF (temp=21.88, hum=50.00)[0m
+[0;32mI (1643461) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1643461) actuator-node: Humidity updated: 50.01 %[0m
+[0;32mI (1643531) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1643531) actuator-node: Temperature updated: 21.84 °C[0m
+[0;32mI (1646541) actuator-node: Actuator OFF (temp=21.84, hum=50.01)[0m
+[0;32mI (1653701) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1653701) actuator-node: Humidity updated: 50.01 %[0m
+[0;32mI (1653771) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1653771) actuator-node: Temperature updated: 21.84 °C[0m
+[0;32mI (1656541) actuator-node: Actuator OFF (temp=21.84, hum=50.01)[0m
+[0;32mI (1663941) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1663941) actuator-node: Humidity updated: 50.03 %[0m
+[0;32mI (1664151) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1664151) actuator-node: Temperature updated: 21.83 °C[0m
+[0;32mI (1666541) actuator-node: Actuator OFF (temp=21.83, hum=50.03)[0m
+[0;32mI (1674181) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1674181) actuator-node: Humidity updated: 50.07 %[0m
+[0;32mI (1674381) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1674381) actuator-node: Temperature updated: 21.83 °C[0m
+[0;32mI (1676541) actuator-node: Actuator OFF (temp=21.83, hum=50.07)[0m
+[0;32mI (1684411) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1684411) actuator-node: Humidity updated: 50.17 %[0m
+[0;32mI (1684631) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1684631) actuator-node: Temperature updated: 21.83 °C[0m
+[0;32mI (1686541) actuator-node: Actuator OFF (temp=21.83, hum=50.17)[0m
+[0;32mI (1692731) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (1694261) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (1694461) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1694461) actuator-node: Humidity updated: 50.22 %[0m
+[0;32mI (1694651) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1694661) actuator-node: Temperature updated: 21.84 °C[0m
+[0;32mI (1696541) actuator-node: Actuator OFF (temp=21.84, hum=50.22)[0m
+[0;32mI (1704691) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1704701) actuator-node: Humidity updated: 50.26 %[0m
+[0;32mI (1704891) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1704901) actuator-node: Temperature updated: 21.84 °C[0m
+[0;32mI (1706541) actuator-node: Actuator OFF (temp=21.84, hum=50.26)[0m
+[0;32mI (1714851) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1714851) actuator-node: Humidity updated: 50.28 %[0m
+[0;32mI (1715131) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1715141) actuator-node: Temperature updated: 21.83 °C[0m
+[0;32mI (1716541) actuator-node: Actuator OFF (temp=21.83, hum=50.28)[0m
+[0;32mI (1725171) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1725171) actuator-node: Humidity updated: 50.26 %[0m
+[0;32mI (1725381) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1725381) actuator-node: Temperature updated: 21.84 °C[0m
+[0;32mI (1726541) actuator-node: Actuator OFF (temp=21.84, hum=50.26)[0m
+[0;32mI (1735421) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1735421) actuator-node: Humidity updated: 50.24 %[0m
+[0;32mI (1735491) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1735491) actuator-node: Temperature updated: 21.84 °C[0m
+[0;32mI (1736541) actuator-node: Actuator OFF (temp=21.84, hum=50.24)[0m
+[0;32mI (1745451) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1745451) actuator-node: Humidity updated: 50.27 %[0m
+[0;32mI (1745521) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1745521) actuator-node: Temperature updated: 21.84 °C[0m
+[0;32mI (1746541) actuator-node: Actuator OFF (temp=21.84, hum=50.27)[0m
+[0;32mI (1752731) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (1754051) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (1755691) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1755691) actuator-node: Humidity updated: 50.23 %[0m
+[0;32mI (1755901) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1755901) actuator-node: Temperature updated: 21.84 °C[0m
+[0;32mI (1756541) actuator-node: Actuator OFF (temp=21.84, hum=50.23)[0m
+[0;32mI (1765931) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1765931) actuator-node: Humidity updated: 50.24 %[0m
+[0;32mI (1766131) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1766131) actuator-node: Temperature updated: 21.84 °C[0m
+[0;32mI (1766541) actuator-node: Actuator OFF (temp=21.84, hum=50.24)[0m
+[0;32mI (1776171) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1776171) actuator-node: Humidity updated: 50.24 %[0m
+[0;32mI (1776371) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1776371) actuator-node: Temperature updated: 21.84 °C[0m
+[0;32mI (1776541) actuator-node: Actuator OFF (temp=21.84, hum=50.24)[0m
+[0;32mI (1786541) actuator-node: Actuator OFF (temp=21.84, hum=50.24)[0m
+[0;32mI (1786591) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1786591) actuator-node: Humidity updated: 50.24 %[0m
+[0;32mI (1786821) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1786821) actuator-node: Temperature updated: 21.84 °C[0m
+[0;32mI (1796441) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1796441) actuator-node: Humidity updated: 50.24 %[0m
+[0;32mI (1796541) actuator-node: Actuator OFF (temp=21.84, hum=50.24)[0m
+[0;32mI (1796561) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1796561) actuator-node: Temperature updated: 21.82 °C[0m
+[0;32mI (1806541) actuator-node: Actuator OFF (temp=21.82, hum=50.24)[0m
+[0;32mI (1806691) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1806691) actuator-node: Humidity updated: 50.24 %[0m
+[0;32mI (1806891) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1806891) actuator-node: Temperature updated: 21.81 °C[0m
+[0;32mI (1812731) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (1814071) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (1816541) actuator-node: Actuator OFF (temp=21.81, hum=50.24)[0m
+[0;32mI (1816931) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1816931) actuator-node: Humidity updated: 50.26 %[0m
+[0;32mI (1817131) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1817131) actuator-node: Temperature updated: 21.81 °C[0m
+[0;32mI (1826541) actuator-node: Actuator OFF (temp=21.81, hum=50.26)[0m
+[0;32mI (1827171) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1827171) actuator-node: Humidity updated: 50.29 %[0m
+[0;32mI (1827371) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1827371) actuator-node: Temperature updated: 21.81 °C[0m
+[0;32mI (1836541) actuator-node: Actuator OFF (temp=21.81, hum=50.29)[0m
+[0;32mI (1837401) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1837401) actuator-node: Humidity updated: 50.29 %[0m
+[0;32mI (1837611) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1837611) actuator-node: Temperature updated: 21.81 °C[0m
+[0;32mI (1846541) actuator-node: Actuator OFF (temp=21.81, hum=50.29)[0m
+[0;32mI (1847451) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1847451) actuator-node: Humidity updated: 50.29 %[0m
+[0;32mI (1847641) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1847641) actuator-node: Temperature updated: 21.79 °C[0m
+[0;32mI (1856541) actuator-node: Actuator OFF (temp=21.79, hum=50.29)[0m
+[0;32mI (1857681) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1857681) actuator-node: Humidity updated: 50.29 %[0m
+[0;32mI (1857891) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1857891) actuator-node: Temperature updated: 21.79 °C[0m
+[0;32mI (1866541) actuator-node: Actuator OFF (temp=21.79, hum=50.29)[0m
+[0;32mI (1867921) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1867921) actuator-node: Humidity updated: 50.31 %[0m
+[0;32mI (1868131) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1868131) actuator-node: Temperature updated: 21.79 °C[0m
+[0;32mI (1872731) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (1874381) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (1876541) actuator-node: Actuator OFF (temp=21.79, hum=50.31)[0m
+[0;32mI (1878361) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1878361) actuator-node: Humidity updated: 50.32 %[0m
+[0;32mI (1878571) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1878571) actuator-node: Temperature updated: 21.80 °C[0m
+[0;32mI (1886541) actuator-node: Actuator OFF (temp=21.80, hum=50.32)[0m
+[0;32mI (1888221) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1888221) actuator-node: Humidity updated: 50.32 %[0m
+[0;32mI (1888601) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1888601) actuator-node: Temperature updated: 21.78 °C[0m
+[0;32mI (1896541) actuator-node: Actuator OFF (temp=21.78, hum=50.32)[0m
+[0;32mI (1898641) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1898651) actuator-node: Humidity updated: 50.29 %[0m
+[0;32mI (1898841) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1898841) actuator-node: Temperature updated: 21.77 °C[0m
+[0;32mI (1906541) actuator-node: Actuator OFF (temp=21.77, hum=50.29)[0m
+[0;32mI (1908881) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1908881) actuator-node: Humidity updated: 50.28 %[0m
+[0;32mI (1909081) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1909081) actuator-node: Temperature updated: 21.81 °C[0m
+[0;32mI (1916541) actuator-node: Actuator OFF (temp=21.81, hum=50.28)[0m
+[0;32mI (1918901) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1918911) actuator-node: Humidity updated: 50.29 %[0m
+[0;32mI (1919121) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1919131) actuator-node: Temperature updated: 21.80 °C[0m
+[0;32mI (1926541) actuator-node: Actuator OFF (temp=21.80, hum=50.29)[0m
+[0;32mI (1929151) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1929151) actuator-node: Humidity updated: 50.27 %[0m
+[0;32mI (1929461) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1929461) actuator-node: Temperature updated: 21.81 °C[0m
+[0;32mI (1932731) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (1934071) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (1936541) actuator-node: Actuator OFF (temp=21.81, hum=50.27)[0m
+[0;32mI (1939391) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1939391) actuator-node: Humidity updated: 50.27 %[0m
+[0;32mI (1939601) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1939601) actuator-node: Temperature updated: 21.81 °C[0m
+[0;32mI (1946541) actuator-node: Actuator OFF (temp=21.81, hum=50.27)[0m
+[0;32mI (1949431) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1949431) actuator-node: Humidity updated: 50.31 %[0m
+[0;32mI (1949631) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1949631) actuator-node: Temperature updated: 21.80 °C[0m
+[0;32mI (1956541) actuator-node: Actuator OFF (temp=21.80, hum=50.31)[0m
+[0;32mI (1959871) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1959871) actuator-node: Humidity updated: 50.32 %[0m
+[0;32mI (1960191) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1960191) actuator-node: Temperature updated: 21.81 °C[0m
+[0;32mI (1966541) actuator-node: Actuator OFF (temp=21.81, hum=50.32)[0m
+[0;32mI (1969911) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1969911) actuator-node: Humidity updated: 50.55 %[0m
+[0;32mI (1970121) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1970121) actuator-node: Temperature updated: 21.84 °C[0m
+[0;32mI (1976541) actuator-node: Actuator OFF (temp=21.84, hum=50.55)[0m
+[0;32mI (1980151) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1980161) actuator-node: Humidity updated: 50.65 %[0m
+[0;32mI (1980351) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1980351) actuator-node: Temperature updated: 21.88 °C[0m
+[0;32mI (1986541) actuator-node: Actuator OFF (temp=21.88, hum=50.65)[0m
+[0;32mI (1990401) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (1990401) actuator-node: Humidity updated: 50.67 %[0m
+[0;32mI (1990501) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (1990501) actuator-node: Temperature updated: 21.87 °C[0m
+[0;32mI (1992731) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (1994091) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (1996541) actuator-node: Actuator OFF (temp=21.87, hum=50.67)[0m
+[0;32mI (2000421) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (2000431) actuator-node: Humidity updated: 50.64 %[0m
+[0;32mI (2000501) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (2000501) actuator-node: Temperature updated: 21.88 °C[0m
+[0;32mI (2006541) actuator-node: Actuator OFF (temp=21.88, hum=50.64)[0m
+[0;32mI (2010671) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (2010671) actuator-node: Humidity updated: 50.65 %[0m
+[0;32mI (2010861) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (2010871) actuator-node: Temperature updated: 21.89 °C[0m
+[0;32mI (2016541) actuator-node: Actuator OFF (temp=21.89, hum=50.65)[0m
+[0;32mI (2020911) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (2020911) actuator-node: Humidity updated: 50.65 %[0m
+[0;32mI (2021111) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (2021111) actuator-node: Temperature updated: 21.88 °C[0m
+[0;32mI (2026541) actuator-node: Actuator OFF (temp=21.88, hum=50.65)[0m
+[0;32mI (2032371) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (2032381) actuator-node: Humidity updated: 50.65 %[0m
+[0;32mI (2032581) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (2032581) actuator-node: Temperature updated: 21.91 °C[0m
+[0;32mI (2036541) actuator-node: Actuator OFF (temp=21.91, hum=50.65)[0m
+[0;32mI (2041611) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (2041621) actuator-node: Humidity updated: 50.66 %[0m
+[0;32mI (2041791) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (2041791) actuator-node: Temperature updated: 21.95 °C[0m
+[0;32mI (2046541) actuator-node: Actuator OFF (temp=21.95, hum=50.66)[0m
+[0;32mI (2051621) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (2051621) actuator-node: Humidity updated: 50.67 %[0m
+[0;32mI (2051821) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (2051831) actuator-node: Temperature updated: 21.93 °C[0m
+[0;32mI (2052731) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (2054081) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (2056541) actuator-node: Actuator OFF (temp=21.93, hum=50.67)[0m
+[0;32mI (2061621) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (2061621) actuator-node: Humidity updated: 50.66 %[0m
+[0;32mI (2061871) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (2061871) actuator-node: Temperature updated: 21.92 °C[0m
+[0;32mI (2066541) actuator-node: Actuator OFF (temp=21.92, hum=50.66)[0m
+[0;32mI (2071891) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (2071891) actuator-node: Humidity updated: 50.66 %[0m
+[0;32mI (2072111) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (2072111) actuator-node: Temperature updated: 21.92 °C[0m
+[0;32mI (2076541) actuator-node: Actuator OFF (temp=21.92, hum=50.66)[0m
+[0;32mI (2082341) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (2082341) actuator-node: Humidity updated: 50.65 %[0m
+[0;32mI (2082551) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (2082551) actuator-node: Temperature updated: 21.95 °C[0m
+[0;32mI (2086541) actuator-node: Actuator OFF (temp=21.95, hum=50.65)[0m
+[0;32mI (2092371) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (2092371) actuator-node: Humidity updated: 50.65 %[0m
+[0;32mI (2092581) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (2092581) actuator-node: Temperature updated: 21.95 °C[0m
+[0;32mI (2096541) actuator-node: Actuator OFF (temp=21.95, hum=50.65)[0m
+[0;32mI (2104671) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (2104671) actuator-node: Humidity updated: 50.66 %[0m
+[0;32mI (2105511) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (2105511) actuator-node: Temperature updated: 21.95 °C[0m
+[0;32mI (2105521) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (2105521) actuator-node: Humidity updated: 50.66 %[0m
+[0;32mI (2106541) actuator-node: Actuator OFF (temp=21.95, hum=50.66)[0m
+[0;32mI (2112651) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (2112661) actuator-node: Humidity updated: 50.66 %[0m
+[0;32mI (2112731) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (2112741) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (2112741) actuator-node: Temperature updated: 21.95 °C[0m
+[0;32mI (2113891) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (2116541) actuator-node: Actuator OFF (temp=21.95, hum=50.66)[0m
+[0;32mI (2123091) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (2123091) actuator-node: Humidity updated: 50.65 %[0m
+[0;32mI (2123301) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (2123301) actuator-node: Temperature updated: 21.92 °C[0m
+[0;32mI (2126541) actuator-node: Actuator OFF (temp=21.92, hum=50.65)[0m
+[0;32mI (2133341) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (2133341) actuator-node: Humidity updated: 50.64 %[0m
+[0;32mI (2133541) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (2133541) actuator-node: Temperature updated: 21.95 °C[0m
+[0;32mI (2136541) actuator-node: Actuator OFF (temp=21.95, hum=50.64)[0m
+[0;32mI (2143371) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (2143371) actuator-node: Humidity updated: 50.64 %[0m
+[0;32mI (2143581) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (2143581) actuator-node: Temperature updated: 21.97 °C[0m
+[0;32mI (2146541) actuator-node: Actuator OFF (temp=21.97, hum=50.64)[0m
+[0;32mI (2153621) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (2153621) actuator-node: Humidity updated: 50.64 %[0m
+[0;32mI (2153811) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (2153821) actuator-node: Temperature updated: 21.98 °C[0m
+[0;32mI (2156541) actuator-node: Actuator OFF (temp=21.98, hum=50.64)[0m
+[0;32mI (2163691) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (2163691) actuator-node: Humidity updated: 50.67 %[0m
+[0;32mI (2163851) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (2163851) actuator-node: Temperature updated: 21.98 °C[0m
+[0;32mI (2166541) actuator-node: Actuator OFF (temp=21.98, hum=50.67)[0m
+[0;32mI (2172731) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (2173881) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (2173881) actuator-node: Humidity updated: 50.67 %[0m
+[0;32mI (2174091) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (2174091) actuator-node: Temperature updated: 21.97 °C[0m
+[0;32mI (2174091) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (2176541) actuator-node: Actuator OFF (temp=21.97, hum=50.67)[0m
+[0;32mI (2184131) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (2184131) actuator-node: Humidity updated: 50.64 %[0m
+[0;32mI (2184201) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (2184201) actuator-node: Temperature updated: 21.96 °C[0m
+[0;32mI (2186541) actuator-node: Actuator OFF (temp=21.96, hum=50.64)[0m
+[0;32mI (2194371) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (2194371) actuator-node: Humidity updated: 50.64 %[0m
+[0;32mI (2194561) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (2194571) actuator-node: Temperature updated: 21.97 °C[0m
+[0;32mI (2196541) actuator-node: Actuator OFF (temp=21.97, hum=50.64)[0m
+[0;32mI (2204631) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (2204631) actuator-node: Humidity updated: 50.64 %[0m
+[0;32mI (2204711) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (2204711) actuator-node: Temperature updated: 21.96 °C[0m
+[0;32mI (2206541) actuator-node: Actuator OFF (temp=21.96, hum=50.64)[0m
+[0;32mI (2214651) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (2214651) actuator-node: Humidity updated: 50.67 %[0m
+[0;32mI (2214851) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (2214851) actuator-node: Temperature updated: 21.97 °C[0m
+[0;32mI (2216541) actuator-node: Actuator OFF (temp=21.97, hum=50.67)[0m
+[0;32mI (2224891) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (2224891) actuator-node: Humidity updated: 50.70 %[0m
+[0;32mI (2225191) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (2225191) actuator-node: Temperature updated: 21.96 °C[0m
+[0;32mI (2226541) actuator-node: Actuator OFF (temp=21.96, hum=50.70)[0m
+[0;32mI (2232731) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (2234101) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (2235131) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (2235131) actuator-node: Humidity updated: 50.71 %[0m
+[0;32mI (2235331) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (2235331) actuator-node: Temperature updated: 21.97 °C[0m
+[0;32mI (2236541) actuator-node: Actuator OFF (temp=21.97, hum=50.71)[0m
+[0;32mI (2245361) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (2245361) actuator-node: Humidity updated: 50.72 %[0m
+[0;32mI (2245561) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (2245561) actuator-node: Temperature updated: 21.96 °C[0m
+[0;32mI (2246541) actuator-node: Actuator OFF (temp=21.96, hum=50.72)[0m
+[0;32mI (2255601) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (2255601) actuator-node: Humidity updated: 50.74 %[0m
+[0;32mI (2255811) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (2255811) actuator-node: Temperature updated: 21.95 °C[0m
+[0;32mI (2256541) actuator-node: Actuator OFF (temp=21.95, hum=50.74)[0m
+[0;32mI (2265841) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (2265841) actuator-node: Humidity updated: 50.77 %[0m
+[0;32mI (2266051) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (2266051) actuator-node: Temperature updated: 21.94 °C[0m
+[0;32mI (2266541) actuator-node: Actuator OFF (temp=21.94, hum=50.77)[0m
+[0;32mI (2275801) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (2275801) actuator-node: Humidity updated: 50.80 %[0m
+[0;32mI (2276071) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (2276081) actuator-node: Temperature updated: 21.94 °C[0m
+[0;32mI (2276541) actuator-node: Actuator OFF (temp=21.94, hum=50.80)[0m
+[0;32mI (2286541) actuator-node: Actuator OFF (temp=21.94, hum=50.80)[0m
+[0;32mI (2292731) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (2293911) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (2296541) actuator-node: Actuator OFF (temp=21.94, hum=50.80)[0m
+[0;32mI (2306541) actuator-node: Actuator OFF (temp=21.94, hum=50.80)[0m
+[0;33mW (2310831) actuator-node: Invalidating sensor data[0m
+[0;32mI (2316541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (2326541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (2336541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (2346541) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (2352731) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (2353911) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+-> aut0�Gth -> assoc (0x0)
+[0;32mI (795) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (825) wifi:connected with Paula, aid = 1, channel 1, BW20, bssid = 8a:04:de:aa:05:40[0m
+[0;32mI (825) wifi:security: WPA2-PSK, phy: bgn, rssi: -23[0m
+[0;32mI (825) wifi:pm start, type: 1[0m
+
+[0;32mI (825) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (835) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (845) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (865) wifi:<ba-add>idx:0 (ifx:0, 8a:04:de:aa:05:40), tid:0, ssn:0, winSize:64[0m
+[0;32mI (1895) esp_netif_handlers: sta ip: 10.12.62.244, mask: 255.255.255.0, gw: 10.12.62.234[0m
+[0;32mI (1895) sensor-node: Connected! IP: 10.12.62.244[0m
+[0;32mI (10775) MENDER: Starting Mender client with MAC: 94:3c:c6:cd:c5:cc[0m
+[0;32mI (10775) mender: ./external/mender-mcu-client/platform/storage/esp-idf/nvs/src/mender-storage.c (157): Deployment data not available[0m
+[0;32mI (12735) MENDER: Authentication successful with the server[0m
+[0;32mI (12745) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (13755) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (15775) actuator-node: Actuator OFF (temp=-1.00, hum=-1.00)[0m
+[0;32mI (15775) main_task: Returned from app_main()[0m
+[0;32mI (16415) actuator-node: Actuator node connected to Broker[0m
+[0;32mI (24405) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (24405) actuator-node: Humidity updated: 53.93 %[0m
+[0;32mI (24605) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (24605) actuator-node: Temperature updated: 20.99 °C[0m
+[0;32mI (26425) actuator-node: Actuator OFF (temp=20.99, hum=53.93)[0m
+[0;32mI (34425) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (34425) actuator-node: Humidity updated: 53.97 %[0m
+[0;32mI (34635) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (34635) actuator-node: Temperature updated: 21.00 °C[0m
+[0;32mI (36425) actuator-node: Actuator OFF (temp=21.00, hum=53.97)[0m
+[0;32mI (44495) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (44495) actuator-node: Humidity updated: 53.99 %[0m
+[0;32mI (44885) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (44885) actuator-node: Temperature updated: 21.01 °C[0m
+[0;32mI (46425) actuator-node: Actuator OFF (temp=21.01, hum=53.99)[0m
+[0;32mI (54715) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (54715) actuator-node: Humidity updated: 54.03 %[0m
+[0;32mI (54905) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (54905) actuator-node: Temperature updated: 21.01 °C[0m
+[0;32mI (56425) actuator-node: Actuator OFF (temp=21.01, hum=54.03)[0m
+[0;32mI (64945) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (64945) actuator-node: Humidity updated: 54.05 %[0m
+[0;32mI (65005) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (65005) actuator-node: Temperature updated: 21.03 °C[0m
+[0;32mI (66425) actuator-node: Actuator OFF (temp=21.03, hum=54.05)[0m
+[0;32mI (72745) mender: ./external/mender-mcu-client/core/src/mender-client.c (903): Checking for deployment...[0m
+[0;32mI (74165) mender: ./external/mender-mcu-client/core/src/mender-client.c (911): No deployment available[0m
+[0;32mI (75185) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (75185) actuator-node: Humidity updated: 54.56 %[0m
+[0;32mI (75395) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (75395) actuator-node: Temperature updated: 21.04 °C[0m
+[0;32mI (76425) actuator-node: Actuator OFF (temp=21.04, hum=54.56)[0m
+[0;32mI (85425) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (85425) actuator-node: Humidity updated: 55.34 %[0m
+[0;32mI (85635) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (85635) actuator-node: Temperature updated: 21.06 °C[0m
+[0;32mI (86425) actuator-node: Actuator OFF (temp=21.06, hum=55.34)[0m
+[0;32mI (95665) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (95665) actuator-node: Humidity updated: 55.61 %[0m
+[0;32mI (95875) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (95875) actuator-node: Temperature updated: 21.07 °C[0m
+[0;32mI (96425) actuator-node: Actuator OFF (temp=21.07, hum=55.61)[0m
+[0;32mI (105705) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (105705) actuator-node: Humidity updated: 55.50 %[0m
+[0;32mI (105905) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (105905) actuator-node: Temperature updated: 21.07 °C[0m
+[0;32mI (106425) actuator-node: Actuator OFF (temp=21.07, hum=55.50)[0m
+[0;32mI (115945) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/hum[0m
+[0;32mI (115945) actuator-node: Humidity updated: 55.34 %[0m
+[0;32mI (116145) actuator-node: Message received in Topic: sed/G03/auto-irrigation-system/sensor/temp[0m
+[0;32mI (116145) actuator-node: Temperature updated: 21.07 °C[0m
+[0;32mI (116425) actuator-node: Actuator OFF (temp=21.07, hum=55.34)[0m

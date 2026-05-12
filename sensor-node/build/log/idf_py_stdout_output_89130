@@ -1,0 +1,111 @@
+Command: /home/paula/.espressif/python_env/idf5.5_py3.12_env/bin/python /home/paula/sed/esp-idf/tools/idf_monitor.py -p /dev/ttyACM0 -b 115200 --toolchain-prefix riscv32-esp-elf- --target esp32c3 --revision 3 --decode-panic backtrace /home/paula/sed/esp-workspace/auto-irrigation-system/sensor-node/build/sensor-node.elf /home/paula/sed/esp-workspace/auto-irrigation-system/sensor-node/build/bootloader/bootloader.elf -m '/home/paula/.espressif/python_env/idf5.5_py3.12_env/bin/python' '/home/paula/sed/esp-idf/tools/idf.py' '-p' '/dev/ttyACM0'
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0xc (SPI_FAST_FLASH_BOOT)
+Saved PC:0x400462e2
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x155c
+load:0x403cbf10,len:0xc84
+load:0x403ce710,len:0x3034
+entry 0x403cbf1a
+[0;32mI (24) boot: ESP-IDF v5.5.3 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time May 12 2026 12:01:25[0m
+[0;32mI (25) boot: chip revision: v0.4[0m
+[0;32mI (25) boot: efuse block revision: v1.2[0m
+[0;32mI (28) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (32) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (36) boot.esp32c3: SPI Flash Size : 4MB[0m
+[0;32mI (39) boot: Enabling RNG early entropy source...[0m
+[0;32mI (44) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (53) boot:  0 nvs              WiFi data        01 02 00009000 00004000[0m
+[0;32mI (59) boot:  1 otadata          OTA data         01 00 0000d000 00002000[0m
+[0;32mI (66) boot:  2 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  3 ota_0            OTA app          00 10 00010000 00177000[0m
+[0;32mI (79) boot:  4 ota_1            OTA app          00 11 00190000 00177000[0m
+[0;32mI (85) boot: End of partition table[0m
+[0;32mI (89) esp_image: segment 0: paddr=00010020 vaddr=3c0d0020 size=283c8h (164808) map[0m
+[0;32mI (122) esp_image: segment 1: paddr=000383f0 vaddr=3fc95000 size=031a4h ( 12708) load[0m
+[0;32mI (124) esp_image: segment 2: paddr=0003b59c vaddr=40380000 size=04a7ch ( 19068) load[0m
+[0;32mI (129) esp_image: segment 3: paddr=00040020 vaddr=42000020 size=c98e4h (825572) map[0m
+[0;32mI (262) esp_image: segment 4: paddr=0010990c vaddr=40384a7c size=103e4h ( 66532) load[0m
+[0;32mI (274) esp_image: segment 5: paddr=00119cf8 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (281) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (281) boot: Disabling RNG early entropy source...[0m
+[0;32mI (292) cpu_start: Unicore app[0m
+[0;32mI (300) cpu_start: GPIO 20 and 21 are used as console UART I/O pins[0m
+[0;32mI (301) cpu_start: Pro cpu start user code[0m
+[0;32mI (301) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (303) app_init: Application information:[0m
+[0;32mI (307) app_init: Project name:     sensor-node[0m
+[0;32mI (311) app_init: App version:      539746c-dirty[0m
+[0;32mI (315) app_init: Compile time:     May 12 2026 12:01:19[0m
+[0;32mI (320) app_init: ELF file SHA256:  f9dfaa15a...[0m
+[0;32mI (325) app_init: ESP-IDF:          v5.5.3[0m
+[0;32mI (328) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (332) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (336) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (340) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (346) heap_init: At 3FC9CDA0 len 00023260 (140 KiB): RAM[0m
+[0;32mI (352) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (358) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (364) heap_init: At 50000020 len 00001FC8 (7 KiB): RTCRAM[0m
+[0;32mI (370) spi_flash: detected chip: generic[0m
+[0;32mI (373) spi_flash: flash io: dio[0m
+[0;32mI (376) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (382) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (389) main_task: Started on CPU0[0m
+[0;32mI (389) main_task: Calling app_main()[0m
+--- SYSTEM STARTED ---
+Firmware Version: s_1.0.1
+Running from partition: ota_0
+Offset Address: 0x00010000
+[0;32mI (409) pp: pp rom version: 9387209[0m
+[0;32mI (409) net80211: net80211 rom version: 9387209[0m
+[0;32mI (419) wifi:wifi driver task: 3fca61d4, prio:23, stack:6656, core=0[0m
+[0;32mI (419) wifi:wifi firmware version: 4df78f2[0m
+[0;32mI (419) wifi:wifi certification version: v7.0[0m
+[0;32mI (419) wifi:config NVS flash: enabled[0m
+[0;32mI (429) wifi:config nano formatting: disabled[0m
+[0;32mI (429) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (429) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (439) wifi:Init management short buffer num: 32[0m
+[0;32mI (439) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (449) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (449) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (459) wifi:Init static rx buffer num: 10[0m
+[0;32mI (459) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (459) wifi_init: rx ba win: 6[0m
+[0;32mI (469) wifi_init: accept mbox: 6[0m
+[0;32mI (469) wifi_init: tcpip mbox: 32[0m
+[0;32mI (469) wifi_init: udp mbox: 6[0m
+[0;32mI (469) wifi_init: tcp mbox: 6[0m
+[0;32mI (479) wifi_init: tcp tx win: 5760[0m
+[0;32mI (479) wifi_init: tcp rx win: 5760[0m
+[0;32mI (479) wifi_init: tcp mss: 1440[0m
+[0;32mI (489) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (489) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (489) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (499) phy_init: phy_version 1232,d493f299,Aug 25 2025,19:01:20[0m
+[0;32mI (549) wifi:mode : sta (34:85:18:02:93:94)[0m
+[0;32mI (549) wifi:enable tsf[0m
+[0;32mI (549) WIFI: Connecting to Paula...[0m
+[0;32mI (549) sensor-node: Waiting for WiFi connection...[0m
+[0;32mI (559) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (559) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (579) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (579) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (659) wifi:connected with Paula, aid = 3, channel 11, BW20, bssid = 8a:04:de:aa:05:40[0m
+[0;32mI (659) wifi:security: WPA2-PSK, phy: bgn, rssi: -36[0m
+[0;32mI (669) wifi:pm start, type: 1[0m
+
+[0;32mI (669) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (679) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (679) wifi:<ba-add>idx:0 (ifx:0, 8a:04:de:aa:05:40), tid:0, ssn:0, winSize:64[0m
+[0;32mI (739) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (739) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (1719) esp_netif_handlers: sta ip: 10.12.62.250, mask: 255.255.255.0, gw: 10.12.62.234[0m
+[0;32mI (10549) MENDER: Starting Mender client with MAC: 34:85:18:02:93:94[0m
+[0;32mI (10549) mender: ./external/mender-mcu-client/platform/storage/esp-idf/nvs/src/mender-storage.c (157): Deployment data not available[0m
+[0;32mI (12429) MENDER: Authentication successful with the server[0m
