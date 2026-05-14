@@ -22,9 +22,10 @@ Sistema de riego automático basado en ESP32 con monitoreo de temperatura y hume
 - [Solución de Problemas](#solución-de-problemas)
 - [Estructura del Proyecto](#estructura-del-proyecto)
 - [Tópicos MQTT Utilizados](#tópicos-mqtt-utilizados)
-- [Versiones de Firmware](#versiones-de-firmware)
+- [Enlace a Vídeo Demostrativo](#video-demostrativo)
 - [Licencia](#licencia)
 - [Autores](#autores)
+
 - [Referencias](#referencias)
 
 ---
@@ -499,16 +500,9 @@ auto-irrigation-system/
 | `sed/G03/auto-irrigation-system/actuator/survival` | Actuador → Broker | Heartbeat / señal de vida del actuador |
 
 ---
+## Enlace a Vídeo Demostrativo
 
-## Versiones de Firmware
-
-| Nodo | Versión actual | Artefacto Mender |
-|------|---------------|-----------------|
-| Sensor Node | `s_1.0.2` | `s_1.0.2.mender` |
-| Actuator Node | `a_1.0.2` | `a_1.0.2.mender` |
-
-> Las versiones anteriores (`s_1.0.1`, `a_1.0.1`) están disponibles como artefactos para pruebas de rollback OTA.
-
+[Ver vídeo demostrativo](https://drive.google.com/file/d/1eZtBneKyeZtB1-Q2OqrrbiRHnyDHzhq9/view?usp=drive_link)
 ---
 
 ## Licencia
