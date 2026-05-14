@@ -17,7 +17,6 @@ Sistema de riego automático basado en ESP32 con monitoreo de temperatura y hume
   - [4. Instalación del Nodo Actuador](#4-instalación-del-nodo-actuador)
   - [5. Configuración de Mender (OTA)](#5-configuración-de-mender-ota)
 - [Conexiones de Hardware](#conexiones-de-hardware)
-- [Uso del Sistema](#uso-del-sistema)
 - [Node-RED](#node-red)
 - [Solución de Problemas](#solución-de-problemas)
 - [Estructura del Proyecto](#estructura-del-proyecto)
@@ -323,48 +322,11 @@ Los archivos `.mender` se suben al servidor de Mender para distribuir las actual
 | SCL | GPIO 8 | Reloj I2C |
 
 ### Relé → ESP32
-
-> 📌 _Completar con el pin GPIO utilizado para controlar el relé_
-
----
-
-## Uso del Sistema
-
-### Pruebas con Mosquitto
-
-#### Suscribirse a tópicos (recibir datos)
-
-```bash
-# Ver temperatura del sensor
-mosquitto_sub -h broker.hivemq.com -t "sed/G03/auto-irrigation-system/sensor/temp" -v
-
-# Ver humedad del sensor
-mosquitto_sub -h broker.hivemq.com -t "sed/G03/auto-irrigation-system/sensor/hum" -v
-
-# Ver estado del sistema
-mosquitto_sub -h broker.hivemq.com -t "sed/G03/auto-irrigation-system/status" -v
-
-# Ver acción del actuador
-mosquitto_sub -h broker.hivemq.com -t "sed/G03/auto-irrigation-system/actuator/action" -v
-```
-
-#### Publicar comandos (ajustar umbrales)
-
-```bash
-# Establecer umbral de temperatura (en °C)
-mosquitto_pub -h broker.hivemq.com -t "sed/G03/auto-irrigation-system/actuator/temp" -m "25.0"
-
-# Establecer umbral de humedad (en %)
-mosquitto_pub -h broker.hivemq.com -t "sed/G03/auto-irrigation-system/actuator/hum" -m "60.0"
-```
-
-#### Alternativa con test.mosquitto.org
-
-```bash
-mosquitto_sub -h test.mosquitto.org -t "sed/G03/auto-irrigation-system/sensor/temp" -v
-mosquitto_pub -h test.mosquitto.org -t "sed/G03/auto-irrigation-system/actuator/temp" -m "25.0"
-```
-
+| Pin Relé | Pin ESP32 | Función |
+|----------|-----------|---------|
+| VCC | 3V3 | Alimentación del relé |
+| GND | GND | Tierra |
+| IN | GPIO 2 | Control del relé (bomba) |
 ---
 
 ## Node-RED
@@ -502,7 +464,7 @@ auto-irrigation-system/
 ---
 ## Enlace a Vídeo Demostrativo
 
-[Ver vídeo demostrativo](https://drive.google.com/file/d/1eZtBneKyeZtB1-Q2OqrrbiRHnyDHzhq9/view?usp=drive_link)
+[Ver vídeo demostrativo](https://drive.google.com/file/d/1pFAJGlWtBG-smcf-cjIZeC8EuFzPHfIs/view?usp=sharing)
 ---
 
 ## Licencia

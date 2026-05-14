@@ -4,7 +4,7 @@
 #include <esp_netif.h>
 #include <esp_log.h>
 
-static const char *TAG = "sensor-node";
+static const char *TAG = "actuator-node";
 
 static void wifi_event_handler(void *arg, esp_event_base_t event_base,
                                int32_t event_id, void *event_data)
