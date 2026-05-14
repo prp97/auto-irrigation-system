@@ -44,68 +44,9 @@ Este proyecto implementa un sistema empotrado distribuido de riego automático c
 
 ---
 
-## Diagramas del Sistema
+## Diagrama de Bloques del Sistema
 
-### Diagrama de Bloques (BDD)
-
-> 📌 _Insertar diagrama BDD aquí_
-
-<!-- BDD: Diagrama de definición de bloques SysML que muestra los tipos de bloques del sistema
-     (SistemaRiego, NodoSensor, NodoActuador, BrokerMQTT, Dashboard, etc.) y sus relaciones de composición/herencia -->
-
----
-
-### Diagrama de Bloques Interno (iBD)
-
-> 📌 _Insertar diagrama iBD aquí_
-
-<!-- iBD: Diagrama de bloques interno SysML que muestra los flujos de información entre los bloques:
-     NodoSensor → [MQTT: temp, hum] → Broker → [MQTT: temp, hum, set_temp, set_hum] → NodoActuador
-     NodoActuador → [MQTT: action, survival] → Broker → Dashboard -->
-
-**Flujos de información entre bloques:**
-
-| Puerto origen | Bloque origen | Tópico MQTT | Tipo de dato | Bloque destino | Puerto destino |
-|---|---|---|---|---|---|
-| `out:temp` | NodoSensor | `sensor/temp` | `String` (float en texto, ej. `"23.50"`) | Broker | — |
-| `out:hum` | NodoSensor | `sensor/hum` | `String` (float en texto, ej. `"45.10"`) | Broker | — |
-| — | Broker | `sensor/temp` | `String` → `float` | NodoActuador | `in:temp` |
-| — | Broker | `sensor/hum` | `String` → `float` | NodoActuador | `in:hum` |
-| — | Broker | `actuator/temp` | `String` → `float` (set-point °C) | NodoActuador | `in:set_temp` |
-| — | Broker | `actuator/hum` | `String` → `float` (set-point %) | NodoActuador | `in:set_hum` |
-| `out:action` | NodoActuador | `actuator/action` | `String` (`"1.00"` = ON, `"0.00"` = OFF) | Broker | — |
-| `out:survival` | NodoActuador | `actuator/survival` | `JSON` (`{"no_sensor_data_seconds": int64}`) | Broker | — |
-| — | Broker | `status` | `String` (`"Online"` / `"Offline"`) | Dashboard | `in:status` |
-| — | Broker | `actuator/action` | `String` (`"1.00"` / `"0.00"`) | Dashboard | `in:action` |
-| — | Broker | `actuator/survival` | `JSON` | Dashboard | `in:survival` |
-| — | Broker | `sensor/temp` | `String` | Dashboard | `in:temp` |
-| — | Broker | `sensor/hum` | `String` | Dashboard | `in:hum` |
-
-<!-- iBD notas:
-     - NodoSensor publica temp/hum como String con snprintf("%.2f")
-     - NodoActuador parsea con atof() al recibir temp/hum del sensor
-     - NodoActuador publica action como String "1.00"/"0.00" (QoS 0, no retain)
-     - NodoActuador publica survival como JSON (QoS 1, no retain)
-     - status se publica con retain=1, QoS 1 (LWT "Offline" / conectado "Online")
-     - set_temp y set_hum los publica el Dashboard o Mosquitto como String float -->
-
----
-
-### Máquina de Estados
-
-#### Nodo Sensor
-
-> 📌 _Insertar máquina de estados del Nodo Sensor aquí_
-
-<!-- Estados: INIT → WIFI_CONNECTING → MQTT_CONNECTING → READING → PUBLISHING → (bucle READING/PUBLISHING)
-     Con transiciones de error y reconexión -->
-
-#### Nodo Actuador
-
-> 📌 _Insertar máquina de estados del Nodo Actuador aquí_
-
-<!-- Estados: INIT → WIFI_CONNECTING → MQTT_CONNECTING → IDLE → EVALUATING → PUMP_ON / PUMP_OFF → (bucle)
-     Con transiciones de umbral superado/no superado y señal de survival -->
+<img src="diagrama_sysml.png" alt="Diagrama de bloques del sistema" width="700">
 
 ---
 
